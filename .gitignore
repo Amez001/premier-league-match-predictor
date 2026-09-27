@@ -13,9 +13,7 @@ data/processed/*.csv
 data/processed/*.parquet
 
 # player snapshots fetched by scripts/download_player_data.py ARE committed
-# on purpose (unlike data/raw/ and data/players/ crests are not - see
-# frontend/.gitignore for club crests, which are trademarked; player stats
-# are plain public facts). Committing snapshots lets the weekly cloud
+# on purpose (unlike data/raw/ above). Committing snapshots lets the weekly cloud
 # routine's "recent form" delta (see player_goals.py) survive across its
 # ephemeral runs, and lets a local checkout `git pull` fresh squad data
 # instead of having to re-scrape FBref itself.

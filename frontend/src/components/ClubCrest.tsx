@@ -8,7 +8,7 @@ interface Props {
 
 /**
  * Real club crest when scripts/download_club_crests.py has fetched one for
- * this team (best-effort, not committed to the repo - see README). Falls
+ * this team (best-effort - see README). Falls
  * back to a colored monogram so a missing/failed crest never shows a broken
  * image icon.
  */

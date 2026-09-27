@@ -12,10 +12,6 @@ dist
 dist-ssr
 *.local
 
-# real club crests fetched by scripts/download_club_crests.py - trademarked
-# logos, not redistributed through the public repo (see README)
-public/crests/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

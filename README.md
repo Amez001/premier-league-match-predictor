@@ -238,18 +238,19 @@ backtest.
 
 ## Crests des clubs
 
-Les vrais logos des clubs sont des marques déposées : ce repo ne les
-redistribue **pas** publiquement. À la place,
-[`scripts/download_club_crests.py`](scripts/download_club_crests.py) va les
-chercher sur Wikipedia à la demande, en best-effort, et les enregistre
-localement dans `frontend/public/crests/` (ignoré par git). L'API
-`pageimages` de Wikipedia exclut les logos ("non-free content"), donc le
-script analyse la liste des images de la page de chaque club et choisit le
-meilleur candidat par heuristique sur le nom de fichier. Un club dont le
-crest n'est pas trouvé (ou le script jamais lancé) affiche simplement un
-monogramme coloré dans l'interface — voir
+Les logos sont inclus dans `frontend/public/crests/`, récupérés sur Wikipedia
+par [`scripts/download_club_crests.py`](scripts/download_club_crests.py). Il
+suffit de relancer ce script quand un club promu arrive : il ne télécharge
+que les logos manquants. L'API `pageimages` de Wikipedia exclut les logos
+("non-free content"), donc le script analyse la liste des images de la page
+de chaque club et choisit le meilleur candidat par heuristique sur le nom de
+fichier. Un club sans logo affiche un monogramme coloré — voir
 [`ClubCrest.tsx`](frontend/src/components/ClubCrest.tsx) — jamais d'icône
 cassée.
+
+> Les logos sont des marques déposées appartenant à leurs clubs respectifs.
+> Ils sont utilisés ici uniquement pour identifier les équipes, dans un projet
+> personnel et non commercial sans lien avec la Premier League ni les clubs.
 
 ## Méthodologie
 
@@ -642,7 +643,7 @@ premier-league-match-predictor/
 │   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, AwardTable, LeaderList, FormGuide, ...
 │   │   ├── data/clubColors.ts      # couleurs (monogrammes de repli) + slugs des clubs
 │   │   └── api.ts                   # wrapper fetch typé vers l'API FastAPI
-│   └── public/crests/              # crests téléchargés (non versionnés, voir plus haut)
+│   └── public/crests/              # logos des clubs (Wikipedia, voir plus haut)
 ├── dashboard/app.py            # dashboard Streamlit (legacy, gardé en secours)
 ├── scripts/
 │   ├── download_data.py

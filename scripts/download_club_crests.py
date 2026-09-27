@@ -5,12 +5,11 @@ Usage:
     python scripts/download_club_crests.py
 
 Writes frontend/public/crests/<slug>.png for each of the 20 current clubs it
-manages to resolve. Not committed to git (see .gitignore): these are
-trademarked club logos, so this project doesn't redistribute them through
-the public repo - each user regenerates their own local copy with this
-script. Anything it can't confidently resolve is simply skipped; the
-frontend's <ClubCrest> component falls back to a colored monogram for those,
-so a missing crest never breaks the UI.
+manages to resolve; skips clubs that already have one (--force to re-fetch).
+The resulting files are committed, so this only needs re-running when a
+newly promoted club arrives. Anything it can't confidently resolve is simply
+skipped; the frontend's <ClubCrest> component falls back to a colored
+monogram for those, so a missing crest never breaks the UI.
 
 Wikipedia's `pageimages` API deliberately excludes non-free logos, so this
 walks the article's image list instead and picks the most plausible crest
