@@ -1,0 +1,331 @@
+# ⚽ premier-league-match-predictor
+
+Estimer, à partir des performances historiques des équipes, la probabilité qu'un
+match de Premier League se termine par une **victoire à domicile**, un **nul**
+ou une **victoire à l'extérieur** — avec des probabilités calibrées, pas
+seulement un pronostic binaire.
+
+```
+Arsenal vs Liverpool
+
+Home win:     48.2%
+Draw:         25.7%
+Away win:     26.1%
+
+Predicted result: Arsenal win
+```
+
+Quatre approches sont implémentées et comparées **out-of-sample**, du plus
+simple au plus sophistiqué : régression logistique multinomiale, rating Elo
+maison, modèle de buts à la Poisson (économétrie du football), puis Random
+Forest / XGBoost. Le tout est validé avec un **backtest walk-forward par
+saison** (jamais de split aléatoire sur des matchs historiques) et mesuré en
+**accuracy, log loss et Brier score**.
+
+## Pourquoi ce projet
+
+Un modèle qui prédit "Arsenal 51%, nul 25%, Liverpool 24%" est beaucoup plus
+informatif — et beaucoup plus difficile à bien faire — qu'un modèle qui dit
+juste "Arsenal gagne". Ce repo est construit autour de cette idée : chaque
+étape (Elo, Poisson, ML) est jugée sur sa **calibration probabiliste**, pas
+seulement sur le taux de bonnes réponses.
+
+## Sommaire
+
+- [Installation](#installation)
+- [Récupérer les données](#récupérer-les-données)
+- [Lancer le backtest](#lancer-le-backtest)
+- [Prédire un match](#prédire-un-match)
+- [Dashboard](#dashboard)
+- [Méthodologie](#méthodologie)
+  - [1. Baseline — régression logistique multinomiale](#1-baseline--régression-logistique-multinomiale)
+  - [2. Elo Rating](#2-elo-rating)
+  - [3. Modèle de buts Poisson](#3-modèle-de-buts-poisson)
+  - [4. Machine Learning (Random Forest, XGBoost)](#4-machine-learning-random-forest-xgboost)
+- [Validation temporelle (pas de data leakage)](#validation-temporelle-pas-de-data-leakage)
+- [Métriques](#métriques)
+- [Performances du modèle](#performances-du-modèle)
+- [Structure du projet](#structure-du-projet)
+- [Sources de données](#sources-de-données)
+
+## Installation
+
+```bash
+git clone https://github.com/<votre-user>/premier-league-match-predictor.git
+cd premier-league-match-predictor
+python -m venv .venv && .venv\Scripts\activate   # ou `source .venv/bin/activate` sous Linux/Mac
+pip install -r requirements.txt
+pip install -e .
+```
+
+## Récupérer les données
+
+Les données historiques (scores, saison par saison, depuis 2000) viennent de
+[football-data.co.uk](https://www.football-data.co.uk/englandm.php) — des CSV
+gratuits, sans clé API, avec un historique long, indispensables pour le
+backtest walk-forward et l'entraînement du Elo/Poisson.
+
+```bash
+python scripts/download_data.py
+# ou une plage de saisons précise :
+python scripts/download_data.py --start-year 2010 --end-year 2024
+```
+
+Les fichiers sont enregistrés dans `data/raw/` (ignorés par git — voir
+`.gitignore` — chacun peut les re-télécharger en une commande).
+
+> Optionnel : pour peupler le sélecteur "prochains matchs" du dashboard avec
+> le calendrier réel à venir, on peut aussi s'appuyer sur
+> [tarun7r/Premier-League-API](https://github.com/tarun7r/Premier-League-API)
+> (`pip install git+https://github.com/tarun7r/Premier-League-API`). Voir
+> [`src/pl_predictor/data/fixtures_api.py`](src/pl_predictor/data/fixtures_api.py) —
+> cette API n'a pas d'historique complet donc elle n'est **pas** utilisée pour
+> l'entraînement, seulement pour l'affichage des fixtures à venir.
+
+## Lancer le backtest
+
+```bash
+python scripts/run_backtest.py
+```
+
+Ça entraîne chaque modèle en walk-forward (voir plus bas) et écrit :
+
+- `reports/backtest_per_season.csv` — métriques saison par saison, par modèle
+- `reports/backtest_summary.csv` — moyenne pondérée par nombre de matchs, tous modèles confondus
+
+## Prédire un match
+
+```bash
+python scripts/predict_match.py "Arsenal" "Liverpool"
+```
+
+```
+Arsenal vs Liverpool
+
+Home win:      48.2%
+Draw:          25.7%
+Away win:      26.1%
+
+Predicted result: Arsenal win
+
+Expected goals
+Arsenal        1.72
+Liverpool      1.18
+
+Most likely scores
+1-1             11.4%
+1-0              9.8%
+2-1              8.7%
+2-0              7.5%
+0-0              6.9%
+```
+
+## Dashboard
+
+```bash
+streamlit run dashboard/app.py
+```
+
+Sélectionne une équipe à domicile et une équipe à l'extérieur, et obtiens les
+probabilités H/D/A, les buts attendus (xG) et les scores les plus probables —
+plus un onglet avec les performances historiques du backtest.
+
+## Méthodologie
+
+### 1. Baseline — régression logistique multinomiale
+
+Variables explicatives simples calculées **sans fuite temporelle** (voir
+[Validation temporelle](#validation-temporelle-pas-de-data-leakage)) :
+forme sur les 5 derniers matchs (points, buts marqués/encaissés), forme
+spécifique domicile/extérieur, position et points par match dans le classement
+en cours de saison, écart Elo.
+
+$$P(Y_i = k \mid X_i), \quad Y_i \in \{\text{Home win}, \text{Draw}, \text{Away win}\}$$
+
+Implémentation : [`src/pl_predictor/models/baseline_logreg.py`](src/pl_predictor/models/baseline_logreg.py).
+
+### 2. Elo Rating
+
+Un système Elo maison ([`src/pl_predictor/features/elo.py`](src/pl_predictor/features/elo.py)),
+avec bonus d'avantage du terrain et multiplicateur de marge de victoire (une
+victoire 4-0 déplace plus le rating qu'une victoire 1-0) :
+
+$$Elo_{new} = Elo_{old} + K \cdot (S - E)$$
+
+où `E` est le score attendu (formule logistique standard, ajustée de
+l'avantage du terrain) et `S` le résultat réel (1 victoire, 0.5 nul, 0
+défaite). L'écart de rating Elo est ensuite utilisé comme variable explicative
+(seule, dans une régression logistique — "modèle Elo" du backtest) et comme
+feature dans le modèle baseline.
+
+```
+Manchester City    1874
+Arsenal             1841
+Liverpool           1819
+Chelsea             1762
+...
+```
+
+(classement complet obtenu via `EloRatings.as_table()`)
+
+### 3. Modèle de buts Poisson
+
+Les buts à domicile et à l'extérieur sont modélisés séparément :
+
+$$Goals_{home} \sim \text{Poisson}(\lambda_{home}), \qquad Goals_{away} \sim \text{Poisson}(\lambda_{away})$$
+
+$$\log(\lambda_{home}) = \alpha + Attack_{home} - Defense_{away} + HomeAdvantage$$
+$$\log(\lambda_{away}) = \alpha + Attack_{away} - Defense_{home}$$
+
+En pratique, ce modèle est estimé comme une régression de Poisson avec effets
+fixes par équipe (attaque + défense), sur les données mises en "long format"
+(une ligne par équipe et par match) — voir
+[`src/pl_predictor/models/poisson_model.py`](src/pl_predictor/models/poisson_model.py).
+On en tire la matrice complète des scores probables :
+
+```
+        Liverpool
+        0     1     2     3
+Arsenal
+0      8.1%  7.4%  3.4%  1.0%
+1      9.6%  8.8%  4.0%  1.2%
+2      5.7%  5.2%  2.4%  0.7%
+3      2.2%  2.0%  0.9%  0.3%
+```
+
+puis les probabilités d'issue par sommation :
+
+$$P(\text{Home win}) = \sum_{i>j} P(\text{Home}=i, \text{Away}=j)$$
+
+(et de même pour le nul et la victoire à l'extérieur).
+
+### 4. Machine Learning (Random Forest, XGBoost)
+
+Sur les mêmes features engineerées, pour voir si des modèles plus flexibles
+apportent réellement quelque chose **out-of-sample**, ou s'ils se contentent
+de sur-apprendre le bruit historique — voir
+[`src/pl_predictor/models/ml_models.py`](src/pl_predictor/models/ml_models.py).
+
+## Validation temporelle (pas de data leakage)
+
+Deux précautions structurent tout le projet :
+
+1. **Les features elles-mêmes sont calculées en un seul passage chronologique** :
+   la forme, le classement en cours de saison et le rating Elo d'un match ne
+   dépendent que des matchs strictement antérieurs à celui-ci (voir
+   [`src/pl_predictor/features/`](src/pl_predictor/features/)). Résultat :
+   quel que soit l'endroit où l'on coupe ensuite les données par date, aucune
+   fuite du futur ne peut se glisser dans les colonnes.
+
+2. **Le split train/test est un walk-forward saison par saison**, jamais un
+   `train_test_split(random=True)` :
+
+```
+2010-2018 → training       2010-2019 → training       2010-2020 → training
+2019       → test          2020       → test          2021       → test
+```
+
+Implémenté dans [`src/pl_predictor/evaluation/backtest.py`](src/pl_predictor/evaluation/backtest.py)
+et piloté par `scripts/run_backtest.py`.
+
+## Métriques
+
+- **Accuracy** — `# prédictions correctes / # matchs`. Facile à lire, mais
+  aveugle à la confiance : "Arsenal 34%" et "Arsenal 90%" comptent pareil si
+  Arsenal gagne.
+- **Log loss** — $-\frac{1}{N}\sum_i \log P(y_i)$. Punit sévèrement une
+  prédiction confiante et fausse.
+- **Brier score** — erreur quadratique moyenne entre les probabilités
+  prédites et le résultat one-hot. Plus intuitif que le log loss, même
+  sensibilité à la calibration.
+
+Une baseline naïve ("toujours prédire la fréquence historique H/D/A") est
+incluse dans chaque backtest (`naive_base_rate`) : un modèle qui ne la bat pas
+sur log loss/Brier n'apporte rien.
+
+## Performances du modèle
+
+Backtest walk-forward sur 12 saisons de test (2013-14 → 2024-25, soit 4560
+matchs), en s'entraînant à chaque fois uniquement sur les saisons antérieures.
+Généré par `python scripts/run_backtest.py` ; voir
+[`reports/backtest_summary.csv`](reports/backtest_summary.csv) et
+[`reports/backtest_per_season.csv`](reports/backtest_per_season.csv) pour le
+détail saison par saison.
+
+| model              | accuracy | log_loss | brier_score |
+|--------------------|---------:|---------:|-------------:|
+| baseline_logistic  |   54.4%  |  0.9732  |  0.5760     |
+| elo_logistic       |   54.3%  |  0.9731  |  0.5760     |
+| random_forest      |   54.3%  |  0.9761  |  0.5792     |
+| xgboost            |   54.0%  |  0.9796  |  0.5803     |
+| poisson            |   51.4%  |  1.0091  |  0.6030     |
+| naive_base_rate    |   44.8%  |  1.0669  |  0.6452     |
+
+Quelques enseignements :
+
+- **Tout modèle bat largement la baseline naïve** (fréquence historique
+  H/D/A) sur les trois métriques — le signal Elo/forme/classement apporte
+  bien de l'information out-of-sample.
+- **La régression logistique (baseline ou Elo seul) et le Random Forest sont
+  quasiment à égalité**, et devancent légèrement XGBoost : sur ce problème,
+  la complexité supplémentaire des arbres n'apporte pas grand-chose une fois
+  qu'on valide correctement dans le temps — un résultat cohérent avec la
+  littérature sur la prédiction de matchs de football.
+- **Le modèle Poisson est net derrière** en accuracy/log loss sur l'issue du
+  match, mais reste la seule approche ici à produire une **distribution de
+  scores complète** (utile pour le xG et les scores probables du dashboard) —
+  d'où l'intérêt de le garder pour cet usage plutôt que de le juger sur la
+  seule accuracy H/D/A.
+- Les deux modèles (Elo/logistique pour H/D/A, Poisson pour le scoreline)
+  sont ajustés indépendamment et peuvent occasionnellement se contredire sur
+  un match donné (ex. le Poisson donne plus de buts attendus à l'équipe à
+  l'extérieur alors que le modèle Elo la donne perdante) : c'est attendu,
+  l'avantage du terrain à domicile pèse plus lourd dans le modèle Elo/forme
+  que l'écart d'attaque/défense pur du Poisson.
+
+## Structure du projet
+
+```
+premier-league-match-predictor/
+├── data/
+│   ├── raw/                  # CSV football-data.co.uk téléchargés (non versionnés)
+│   └── processed/            # tables de features mises en cache (non versionnées)
+├── src/pl_predictor/
+│   ├── config.py              # chemins, constantes, codes de saison
+│   ├── data/
+│   │   ├── download.py         # téléchargement football-data.co.uk
+│   │   ├── load.py              # nettoyage + concaténation en une table de matchs
+│   │   └── fixtures_api.py       # wrapper optionnel Premier-League-API (fixtures à venir)
+│   ├── features/
+│   │   ├── elo.py               # système de rating Elo maison
+│   │   └── engineering.py        # forme, classement en cours de saison
+│   ├── models/
+│   │   ├── base.py               # interface commune OutcomeModel
+│   │   ├── naive.py               # baseline fréquence historique
+│   │   ├── baseline_logreg.py      # régression logistique multinomiale (+ modèle "Elo")
+│   │   ├── poisson_model.py         # modèle de buts Poisson (attaque/défense)
+│   │   └── ml_models.py              # Random Forest, XGBoost
+│   ├── evaluation/
+│   │   ├── metrics.py             # accuracy, log loss, Brier score
+│   │   └── backtest.py             # validation walk-forward par saison
+│   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI
+├── dashboard/app.py            # dashboard Streamlit
+├── scripts/
+│   ├── download_data.py
+│   ├── run_backtest.py
+│   └── predict_match.py
+├── tests/                       # tests unitaires (Elo, Poisson, métriques)
+└── reports/                      # résultats de backtest générés
+```
+
+## Sources de données
+
+- [football-data.co.uk](https://www.football-data.co.uk/englandm.php) — historique
+  des résultats de Premier League (utilisé pour l'entraînement et le backtest).
+- [tarun7r/Premier-League-API](https://github.com/tarun7r/Premier-League-API) — client
+  non officiel pour les fixtures/classements en cours (utilisé uniquement pour
+  le calendrier à venir dans le dashboard, en option).
+
+## Licence
+
+MIT — voir [LICENSE](LICENSE).
