@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 PLAYERS_DIR = ROOT_DIR / "data" / "players"
 SNAPSHOTS_DIR = PLAYERS_DIR / "snapshots"
 LATEST_PATH = PLAYERS_DIR / "latest.csv"
+PREVIOUS_SEASON_PATH = PLAYERS_DIR / "previous_season.csv"
 
 for _d in (PLAYERS_DIR, SNAPSHOTS_DIR):
     _d.mkdir(parents=True, exist_ok=True)
@@ -106,6 +107,10 @@ def fetch_current_squad_stats(season_start_year: int) -> pd.DataFrame:
         {
             "team": df["team"].replace(FBREF_TEAM_NAME_FIXES),
             "player": df["player"],
+            # birth year + nationality tell a player who changed clubs mid-season
+            # (listed once per club) apart from two different players sharing a name
+            "born": pd.to_numeric(df["born"], errors="coerce"),
+            "nation": df["nation"],
             "position": df["pos"],
             "minutes_90s": pd.to_numeric(df["Playing Time_90s"], errors="coerce").fillna(0.0),
             "season_goals": pd.to_numeric(df["Performance_Gls"], errors="coerce").fillna(0.0),
@@ -117,6 +122,34 @@ def fetch_current_squad_stats(season_start_year: int) -> pd.DataFrame:
     out["snapshot_date"] = dt.date.today().isoformat()
     out["season_start_year"] = season_start_year
     return out.reset_index(drop=True)
+
+
+def fetch_previous_season_totals(season_start_year: int) -> pd.DataFrame:
+    """Last season's Premier League totals per player (summed across clubs).
+
+    Used as the prior for goal/assist shares (see player_goals._shrunk_share):
+    five games into a season, a player's own track record says far more about
+    his scoring and creating than his position alone.
+    """
+    prev = fetch_current_squad_stats(season_start_year - 1)
+    keys = ["player", "born", "nation"]
+    totals = prev.groupby(keys, dropna=False)[["minutes_90s", "season_goals", "season_assists"]].sum().reset_index()
+    totals["season_start_year"] = season_start_year - 1
+    return totals
+
+
+def save_previous_season_totals(df: pd.DataFrame) -> None:
+    df.to_csv(PREVIOUS_SEASON_PATH, index=False, encoding="utf-8")
+
+
+def load_previous_season_totals(season_start_year: int) -> pd.DataFrame | None:
+    """Last season's totals, or None if missing or not for season_start_year - 1."""
+    if not PREVIOUS_SEASON_PATH.exists():
+        return None
+    df = pd.read_csv(PREVIOUS_SEASON_PATH, encoding="utf-8")
+    if df.empty or int(df["season_start_year"].iloc[0]) != season_start_year - 1:
+        return None
+    return df
 
 
 def save_snapshot(df: pd.DataFrame) -> None:

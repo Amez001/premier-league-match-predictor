@@ -19,6 +19,7 @@ const SECTIONS = [
   ['poisson', 'Le modèle de buts'],
   ['buteurs', 'Les buteurs'],
   ['simulation', 'La simulation de saison'],
+  ['trophees', 'Buteur et passeur'],
   ['validation', 'La validation'],
   ['limites', 'Les limites'],
 ] as const
@@ -208,6 +209,34 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
             <p>
               Le calcul est vectorisé avec des matrices d'incidence équipes × matchs : jusqu'à 3,8 millions de matchs tirés
               en un quart de seconde.
+            </p>
+          </section>
+
+          <section id="trophees">
+            <h2>Meilleur buteur et meilleur passeur</h2>
+            <p>
+              Même principe, au niveau des joueurs. Les buts qu'un club doit encore marquer suivent une loi de Poisson
+              de moyenne <Tex>{'\\Lambda_{club}'}</Tex>, la somme de ses buts attendus sur les matchs restants. Chaque but
+              revient à un joueur avec une probabilité égale à sa part (la même que pour les buteurs d'un match), multipliée
+              par la proportion de buts réellement attribués à un buteur cette saison, puisque les autres sont des buts
+              contre son camp.
+            </p>
+            <p>
+              Une propriété de la loi de Poisson simplifie tout : répartir au hasard un nombre de buts poissonnien donne,
+              pour chaque joueur, un nombre de buts lui aussi poissonnien et indépendant des autres. On tire donc
+              directement le total futur de chaque joueur, sans simuler but par but :
+            </p>
+            <Tex display>{'\\text{Buts}_i^{\\text{fin}} = \\text{buts}_i^{\\text{actuels}} + \\text{Poisson}\\big(\\Lambda_{club} \\cdot \\rho \\cdot \\text{part}_i\\big)'}</Tex>
+            <p>
+              Pour les passes décisives, <Tex>{'\\rho'}</Tex> devient le nombre de passes par but, mesuré lui aussi sur la
+              saison en cours (environ 0,7). Un joueur transféré garde ses buts marqués dans son ancien club, puisque le
+              titre compte tous les buts en Premier League, mais n'est projeté que dans son club actuel. En cas d'égalité
+              dans une saison simulée, le titre est partagé.
+            </p>
+            <p>
+              La part de chaque joueur s'appuie sur sa saison précédente : après cinq journées, les 27 buts d'un attaquant
+              l'an dernier en disent plus long que son poste. Les nouveaux venus en Premier League repartent de la moyenne
+              de leur poste.
             </p>
           </section>
 

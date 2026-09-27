@@ -14,7 +14,7 @@ import pandas as pd
 
 from pl_predictor.config import OUTCOME_NAMES
 from pl_predictor.data.load import get_current_season_teams
-from pl_predictor.data.player_stats import load_latest_snapshot, load_previous_snapshot
+from pl_predictor.data.player_stats import load_latest_snapshot, load_previous_season_totals, load_previous_snapshot
 from pl_predictor.features.elo import compute_running_elo
 from pl_predictor.features.engineering import add_form_features
 from pl_predictor.models.baseline_logreg import LogisticOutcomeModel
@@ -57,7 +57,10 @@ class MatchPredictor:
             logger.info("no player data snapshot found; probable-scorer predictions disabled")
             return None
         previous = load_previous_snapshot()
-        return prepare_player_features(latest, previous)
+        last_season = None
+        if "season_start_year" in latest.columns:
+            last_season = load_previous_season_totals(int(latest["season_start_year"].iloc[0]))
+        return prepare_player_features(latest, previous, last_season)
 
     def latest_elo_diff(self, home: str, away: str) -> float:
         return self.elo.get(home) - self.elo.get(away)

@@ -27,7 +27,9 @@ from pl_predictor.config import REPORTS_DIR, season_label  # noqa: E402
 from pl_predictor.data.fixtures_api import get_upcoming_fixtures  # noqa: E402
 from pl_predictor.data.load import load_clean_matches  # noqa: E402
 from pl_predictor.predict import MatchPredictor  # noqa: E402
+from pl_predictor.season_awards import project_awards  # noqa: E402
 from pl_predictor.simulation import simulate_season  # noqa: E402
+from pl_predictor.stats import current_stats  # noqa: E402
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 FRONTEND_DIST = ROOT_DIR / "frontend" / "dist"
@@ -42,6 +44,12 @@ async def lifespan(app: FastAPI):
     _state["predictor"] = predictor
     # ~0.25s for 10k seasons, so compute once at startup and serve from memory.
     _state["season"] = simulate_season(matches, predictor.poisson_model).to_dict()
+    _state["awards"] = (
+        project_awards(matches, predictor.player_df, predictor.poisson_model)
+        if predictor.player_df is not None
+        else {"n_sims": 0, "top_scorer": [], "top_assister": []}
+    )
+    _state["stats"] = current_stats(matches, predictor.player_df)
     _state["meta"] = {
         "season": season_label(int(matches["season_start_year"].max())),
         "last_match_date": matches["date"].max().date().isoformat(),
@@ -89,6 +97,18 @@ def predict(home: str, away: str) -> dict:
 def season() -> dict:
     """Monte Carlo projection of the rest of the current season (see simulation.py)."""
     return _state["season"]
+
+
+@app.get("/api/awards")
+def awards() -> dict:
+    """Top-scorer and top-assist races, projected to the end of the season (see season_awards.py)."""
+    return _state["awards"]
+
+
+@app.get("/api/stats")
+def stats() -> dict:
+    """Real current-season numbers: table, form, latest results, scoring and assist leaders."""
+    return _state["stats"]
 
 
 @app.get("/api/meta")

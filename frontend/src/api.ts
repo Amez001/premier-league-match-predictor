@@ -63,6 +63,57 @@ export interface SeasonSimulation {
   projections: Projection[]
 }
 
+export interface AwardRow {
+  player: string
+  team: string
+  position: string
+  current: number
+  expected_final: number
+  p10: number
+  p90: number
+  p_top: number
+}
+
+export interface Awards {
+  n_sims: number
+  top_scorer: AwardRow[]
+  top_assister: AwardRow[]
+}
+
+export interface PlayerLeader {
+  player: string
+  team: string
+  position: string
+  goals: number
+  assists: number
+  minutes_90s: number
+}
+
+export interface RecentResult {
+  date: string
+  home_team: string
+  away_team: string
+  home_goals: number
+  away_goals: number
+}
+
+export interface Stats {
+  season_start_year: number
+  matches_played: number
+  total_goals: number
+  goals_per_match: number
+  table: (TableRow & { form: ('W' | 'D' | 'L')[] })[]
+  recent_results: RecentResult[]
+  top_scorers: Leaderboard
+  top_assisters: Leaderboard
+}
+
+export interface Leaderboard {
+  rows: PlayerLeader[]
+  /** players level with the last one shown, left out by the list length */
+  more_tied: number
+}
+
 export interface Meta {
   season: string
   last_match_date: string
@@ -94,6 +145,8 @@ export const api = {
   predict: (home: string, away: string) =>
     getJson<Prediction>(`/api/predict?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}`),
   getSeason: () => getJson<SeasonSimulation>('/api/season'),
+  getAwards: () => getJson<Awards>('/api/awards'),
+  getStats: () => getJson<Stats>('/api/stats'),
   getMeta: () => getJson<Meta>('/api/meta'),
   getBacktestSummary: () => getJson<BacktestRow[]>('/api/backtest-summary'),
 }

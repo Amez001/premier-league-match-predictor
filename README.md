@@ -51,6 +51,8 @@ seulement sur le taux de bonnes réponses.
   - [4. Machine Learning (Random Forest, XGBoost)](#4-machine-learning-random-forest-xgboost)
 - [Effectifs & buteurs probables](#effectifs--buteurs-probables)
 - [Simulation de la saison](#simulation-de-la-saison)
+- [Meilleur buteur et meilleur passeur](#meilleur-buteur-et-meilleur-passeur)
+- [Statistiques réelles](#statistiques-réelles)
 - [Validation temporelle (pas de data leakage)](#validation-temporelle-pas-de-data-leakage)
 - [Métriques](#métriques)
 - [Performances du modèle](#performances-du-modèle)
@@ -171,14 +173,17 @@ Most likely scores
 ### React (recommandé)
 
 Backend FastAPI (fine couche HTTP sur `pl_predictor`, sans dupliquer la
-logique) + frontend React/Vite en trois pages :
+logique) + frontend React/Vite en quatre pages :
 
 - **Match** : l'affiche sert de titre, et chaque nom de club se clique pour
   changer d'équipe. Probabilités victoire/nul/défaite, buts attendus, grille
   des scores exacts (carte de chaleur), buteurs probables. La prédiction se
   met à jour dès qu'on change d'équipe.
-- **Saison** : course au titre, lutte pour le maintien et classement projeté,
-  avec pour chaque club la distribution complète de ses positions finales.
+- **Stats** : les chiffres réels, sans modèle. Classement avec la forme sur
+  les 5 derniers matchs, meilleurs buteurs et passeurs, derniers résultats.
+- **Projections** : course au titre, lutte pour le maintien, meilleur buteur
+  et meilleur passeur en fin de saison, et classement projeté avec pour chaque
+  club la distribution complète de ses positions finales.
 - **Méthode** : toute la méthode expliquée, formules comprises (KaTeX), avec
   le tableau du backtest et les limites du modèle.
 
@@ -396,13 +401,17 @@ que du bruit), le nombre de buts attendus de l'équipe — déjà validé par le
 backtest — est **réparti entre les joueurs de l'effectif** :
 
 1. `attack_share` : part de chaque joueur dans les buts de son équipe cette
-   saison, **rétrécie vers un a priori** (temps de jeu × taux de buts moyen
-   de son poste dans la ligue) avec $K = 8$ buts fictifs :
+   saison, **rétrécie vers un a priori** avec $K = 8$ buts fictifs :
    $\text{part}_i = (\text{buts}_i + K \cdot \text{a priori}_i) / (\text{buts}_{\text{équipe}} + K)$.
-   Sans ça, un attaquant auteur de 4 des 7 premiers buts de son équipe
-   recevait 57 % de tous ses buts futurs, et près de 50 % de chances de
-   marquer à l'extérieur chez un gros. $K$ est un choix raisonné, pas réglé
-   sur données : le projet n'a pas d'historique joueur pluri-saisons.
+   L'a priori, c'est le temps de jeu × le taux de buts par 90 minutes du
+   joueur **la saison précédente** (`data/players/previous_season.csv`), lui
+   même rétréci vers le taux moyen de son poste ; un nouveau venu en Premier
+   League repart de la moyenne de son poste. Sans rétrécissement, un
+   attaquant auteur de 4 des 7 premiers buts de son équipe recevait 57 % de
+   tous ses buts futurs ; sans l'historique, après cinq journées, un buteur
+   confirmé et un joueur quelconque au même poste étaient indiscernables.
+   $K$ est un choix raisonné, pas réglé sur données. `assist_share` applique
+   le même traitement aux passes décisives.
 2. `recent_form_multiplier` : ratio entre le taux de buts/90 min "récent"
    (delta entre les deux derniers snapshots) et le taux saison, **clippé à
    [0.5, 1.8]** pour ne pas laisser un petit échantillon (une semaine entre
@@ -420,6 +429,12 @@ fabriquer un signal de récence à partir d'une seule mesure. Le signal
 s'affine ensuite au fil des rafraîchissements successifs de
 `data/players/`. Deux snapshots de saisons différentes ne sont jamais
 comparés : les totaux repartent de zéro chaque mois d'août.
+
+**Transferts en cours de saison** : FBref liste un joueur transféré une fois
+par club. Il est identifié par nom + année de naissance + nationalité (pour
+ne pas fusionner deux homonymes), et son club actuel est celui où ses minutes
+ont augmenté depuis le relevé précédent, ou à défaut celui où il a le plus
+joué. Il n'apparaît plus parmi les buteurs probables de son ancien club.
 
 ## Simulation de la saison
 
@@ -457,6 +472,53 @@ matriciels. 3,3 millions de matchs tirés en un quart de seconde.
 (blessures, transferts et forme ne sont pas modélisés, et l'incertitude sur la
 force elle-même n'est pas propagée), donc les probabilités du favori sont un
 peu trop tranchées, surtout en début de saison.
+
+## Meilleur buteur et meilleur passeur
+
+```
+Top scorer              Team              Now   Proj.   P(top)
+Erling Haaland          Man City            5    28.0    62.1%
+Alexander Isak          Liverpool           4    25.3    31.9%
+Bukayo Saka             Arsenal             3    18.0     1.7%
+...
+Top assists             Team              Now   Proj.   P(top)
+Cody Gakpo              Liverpool           3    15.2    36.1%
+Evanilson               Bournemouth         3    13.2    14.6%
+...
+```
+
+[`src/pl_predictor/season_awards.py`](src/pl_predictor/season_awards.py)
+pousse la simulation au niveau des joueurs :
+
+1. Les buts qu'un club doit encore marquer suivent une loi de Poisson de
+   moyenne $\Lambda_{\text{club}}$, la somme de ses buts attendus sur ses matchs
+   restants.
+2. Chaque but revient au joueur $i$ avec une probabilité
+   $\rho \cdot \text{part}_i$ : $\text{part}_i$ est la part décrite plus haut, et
+   $\rho$ la proportion de buts attribués à un buteur (le reste, ce sont des
+   CSC), **mesurée sur la saison en cours** (0,95). Pour les passes, $\rho$
+   devient le nombre de passes décisives par but (0,69).
+3. **Amincissement de Poisson** : répartir au hasard un nombre poissonnien
+   donne pour chaque joueur un nombre lui aussi poissonnien,
+   $\text{Poisson}(\Lambda_{\text{club}} \cdot \rho \cdot \text{part}_i)$, et
+   indépendant des autres. On tire donc directement le total futur de chaque
+   joueur, 10 000 fois, sans simuler but par but. C'est exact sous les
+   hypothèses du modèle, et ça tourne en 0,6 s.
+4. Total final = buts déjà marqués (dans tous ses clubs, comme pour le
+   Soulier d'or) + buts simulés (dans son club actuel seulement). En cas
+   d'égalité dans une saison simulée, le titre est partagé.
+
+La page Projections affiche pour chaque joueur la projection de fin de saison
+et l'intervalle où tombent 8 saisons simulées sur 10.
+
+## Statistiques réelles
+
+[`src/pl_predictor/stats.py`](src/pl_predictor/stats.py) alimente la page
+Stats sans aucun modèle : classement calculé à partir des matchs joués, forme
+sur les 5 derniers matchs, derniers résultats, meilleurs buteurs et passeurs
+(un joueur transféré cumule ses deux clubs). Quand la liste des 10 premiers
+coupe un groupe d'ex æquo, la page le signale ("Et 1 autre joueur à 3 buts")
+plutôt que d'en choisir certains arbitrairement.
 
 ## Validation temporelle (pas de data leakage)
 
@@ -570,12 +632,14 @@ premier-league-match-predictor/
 │   │   ├── metrics.py             # accuracy, log loss, Brier score
 │   │   └── backtest.py             # walk-forward par saison + évaluation glissante en cours de saison
 │   ├── simulation.py              # Monte Carlo de la fin de saison (titre, top 4, relégation)
+│   ├── season_awards.py           # Monte Carlo meilleur buteur / meilleur passeur
+│   ├── stats.py                   # statistiques réelles (classement, forme, leaders)
 │   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI/l'API
 ├── api/main.py                  # backend FastAPI (fine couche HTTP sur pl_predictor)
 ├── frontend/                    # front React/Vite
 │   ├── src/
-│   │   ├── pages/                 # MatchPage, SeasonPage, HowItWorksPage
-│   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, PositionStrip, Tooltip, ...
+│   │   ├── pages/                 # MatchPage, StatsPage, SeasonPage, HowItWorksPage
+│   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, AwardTable, LeaderList, FormGuide, ...
 │   │   ├── data/clubColors.ts      # couleurs (monogrammes de repli) + slugs des clubs
 │   │   └── api.ts                   # wrapper fetch typé vers l'API FastAPI
 │   └── public/crests/              # crests téléchargés (non versionnés, voir plus haut)
@@ -586,9 +650,10 @@ premier-league-match-predictor/
 │   ├── download_club_crests.py
 │   ├── run_backtest.py
 │   ├── tune_poisson.py             # réglage du Poisson sur saisons de validation
-│   ├── simulate_season.py
+│   ├── simulate_season.py          # titre / relégation + meilleur buteur / passeur
+│   ├── wait_for_server.py          # utilisé par run_app.bat
 │   └── predict_match.py
-├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs, simulation)
+├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs, simulation, trophées, stats)
 └── reports/                      # résultats de backtest générés
 ```
 
@@ -610,7 +675,8 @@ premier-league-match-predictor/
 **Fait** : Elo/Poisson/ML avec backtest walk-forward (Phase 0), restriction
 aux 20 équipes actuelles + buteurs probables (Phase 1), API FastAPI + front
 React avec vrais crests des clubs (Phase 2), simulation de saison, Poisson
-pondéré dans le temps et refonte du site en trois pages (Phase 3).
+pondéré dans le temps et refonte du site (Phase 3), meilleur buteur/passeur,
+page de statistiques réelles et gestion des transferts (Phase 4).
 
 **Prochain chantier possible** :
 

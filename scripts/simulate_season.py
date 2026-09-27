@@ -11,6 +11,8 @@ import time
 from pl_predictor.config import season_label
 from pl_predictor.data.load import load_clean_matches
 from pl_predictor.models.poisson_model import PoissonGoalsModel
+from pl_predictor.predict import MatchPredictor
+from pl_predictor.season_awards import project_awards
 from pl_predictor.simulation import DEFAULT_N_SIMS, simulate_season
 
 
@@ -37,6 +39,16 @@ def main():
             f"{r.team:<16}{r.current_points:>5}{r.expected_points:>7.1f}"
             f"{r.p_title * 100:>7.1f}%{r.p_top4 * 100:>7.1f}%{r.p_relegation * 100:>7.1f}%"
         )
+
+    player_df = MatchPredictor._load_player_features()
+    if player_df is None:
+        print("\n(no player data - run scripts/download_player_data.py for the top scorer / assist races)")
+        return
+    awards = project_awards(matches, player_df, model, n_sims=args.sims)
+    for key, title, unit in (("top_scorer", "Top scorer", "goals"), ("top_assister", "Top assists", "assists")):
+        print(f"\n{title:<24}{'Team':<16}{'Now':>5}{'Proj.':>8}{'P(top)':>9}")
+        for r in awards[key][:6]:
+            print(f"{r['player']:<24}{r['team']:<16}{r['current']:>5}{r['expected_final']:>8.1f}{r['p_top'] * 100:>8.1f}%")
 
 
 if __name__ == "__main__":

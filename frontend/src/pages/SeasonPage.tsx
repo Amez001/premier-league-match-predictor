@@ -1,4 +1,5 @@
-import type { SeasonSimulation } from '../api'
+import type { Awards, SeasonSimulation } from '../api'
+import { AwardTable } from '../components/AwardTable'
 import { ClubCrest } from '../components/ClubCrest'
 import { HBarChart } from '../components/HBarChart'
 import { PositionStrip, PositionStripHeader } from '../components/PositionStrip'
@@ -7,7 +8,7 @@ import { int, num1, pct, signed } from '../format'
 const MIN_SHOWN = 0.001 // only chart clubs with at least a 0.1% chance...
 const MAX_SHOWN = 8 // ...and at most 8 of them
 
-export function SeasonPage({ sim }: { sim: SeasonSimulation | null }) {
+export function SeasonPage({ sim, awards }: { sim: SeasonSimulation | null; awards: Awards | null }) {
   if (!sim) {
     return (
       <div className="page">
@@ -78,6 +79,19 @@ export function SeasonPage({ sim }: { sim: SeasonSimulation | null }) {
           <h2>Relégation</h2>
           <p className="module-note">Probabilité de finir dans les trois derniers.</p>
           <HBarChart tone="away" data={relegation.map((r) => ({ key: r.team, team: r.team, label: r.team, value: r.p_relegation }))} />
+        </section>
+      </div>
+
+      <div className="columns">
+        <section className="module">
+          <h2>Meilleur buteur</h2>
+          <p className="module-note">Probabilité de finir meilleur buteur ; en cas d'égalité, le titre est partagé.</p>
+          <AwardTable tone="home" unit="buts" rows={awards?.top_scorer ?? []} />
+        </section>
+        <section className="module">
+          <h2>Meilleur passeur</h2>
+          <p className="module-note">Probabilité de finir avec le plus de passes décisives.</p>
+          <AwardTable tone="away" unit="passes" rows={awards?.top_assister ?? []} />
         </section>
       </div>
 

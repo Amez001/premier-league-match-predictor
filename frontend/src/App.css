@@ -1005,6 +1005,226 @@ code {
   color: var(--ink-3);
 }
 
+/* Season awards (projection) ------------------------------------------------ */
+.award-table td {
+  vertical-align: middle;
+}
+
+.award-who {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.award-team {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.award-range {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.award-p {
+  display: grid;
+  grid-template-columns: minmax(60px, 1fr) 4rem;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 150px;
+}
+
+.award-p .tabular {
+  text-align: right;
+}
+
+.award-bar {
+  height: 8px;
+}
+
+.award-table tbody tr:focus-visible {
+  outline-offset: -2px;
+}
+
+/* ===========================================================================
+   Stats page (real numbers)
+=========================================================================== */
+.figures-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.figure-player {
+  font-size: 1.9rem;
+  line-height: 1.05;
+}
+
+.form-col {
+  padding-left: 1rem !important;
+}
+
+.form {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.form-chip {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* status colors, each with a letter that clears 4.5:1 on its fill */
+.form-W {
+  background: #0ca30c;
+  color: #101114;
+}
+
+.form-D {
+  background: var(--draw);
+  color: #fff;
+}
+
+.form-L {
+  background: #d03b3b;
+  color: #fff;
+}
+
+.leaders {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.leader {
+  display: grid;
+  grid-template-columns: 1.6rem 22px minmax(0, 1.4fr) minmax(40px, 1fr) 2.2rem;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.leader:first-child {
+  border-top: 1px solid var(--rule);
+}
+
+.leaders-more {
+  margin-top: 0.7rem;
+  font-size: 0.84rem;
+  color: var(--ink-3);
+}
+
+.leader-rank {
+  font-size: 0.85rem;
+  color: var(--ink-3);
+  text-align: right;
+}
+
+.leader-who {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.leader-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.95rem;
+}
+
+.leader-team {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.leader-bar {
+  height: 6px;
+}
+
+.leader-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+}
+
+.leader-bar-home {
+  background: var(--home);
+}
+
+.leader-bar-away {
+  background: var(--away);
+}
+
+.leader-value {
+  text-align: right;
+  font-family: var(--condensed);
+  font-stretch: 75%;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 3.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 3.6rem minmax(0, 1fr) 3.4rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.92rem;
+  color: var(--ink-2);
+}
+
+.result-date {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+.result-team {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.result-home {
+  justify-content: flex-end;
+}
+
+.result-team.is-winner {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.result-score {
+  text-align: center;
+  font-family: var(--condensed);
+  font-stretch: 78%;
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
 /* ===========================================================================
    Method page
 =========================================================================== */
@@ -1152,6 +1372,23 @@ code {
    Responsive
 =========================================================================== */
 @media (max-width: 960px) {
+  .figures-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .figures-4 .figure:nth-child(3) {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .figures-4 .figure:nth-child(n + 3) {
+    border-top: 1px solid var(--rule);
+  }
+
+  .results {
+    grid-template-columns: 1fr;
+  }
+
   .doc-layout {
     grid-template-columns: 1fr;
   }
@@ -1167,7 +1404,24 @@ code {
 
 @media (max-width: 760px) {
   .topbar-inner {
-    gap: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  /* Four tabs + the wordmark don't fit a phone: keep the mark only, and let
+     the tabs scroll sideways on the narrowest screens rather than widening
+     the whole page. */
+  .brand-name {
+    display: none;
+  }
+
+  .nav {
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
   }
 
   .data-stamp {
@@ -1175,7 +1429,7 @@ code {
   }
 
   .nav {
-    gap: 1.25rem;
+    gap: 1.1rem;
   }
 
   .main {
@@ -1255,6 +1509,26 @@ code {
 
   .pipeline {
     grid-template-columns: 1fr;
+  }
+
+  /* Award tables fit a phone: the percentage stays, its bar goes; the range
+     moves under the projection; long names wrap. */
+  .award-table td,
+  .award-table th {
+    white-space: normal;
+  }
+
+  .award-p {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .award-bar {
+    display: none;
+  }
+
+  .award-range {
+    display: block;
   }
 
   /* KaTeX display formulas are sized for a text column; scale them down so
