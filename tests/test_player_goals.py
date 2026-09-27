@@ -26,8 +26,20 @@ def _toy_squad() -> pd.DataFrame:
 def test_attack_shares_sum_to_one_per_team():
     df = compute_attack_shares(_toy_squad())
     assert np.isclose(df["attack_share"].sum(), 1.0)
-    # the striker scored 8 of the team's 10 goals -> 80% share
-    assert np.isclose(df.loc[df.player == "Striker", "attack_share"].iloc[0], 0.8)
+    shares = df.set_index("player")["attack_share"]
+    assert shares["Striker"] > shares["Winger"] > shares["Defender"]
+
+
+def test_attack_shares_are_shrunk_early_and_converge_late():
+    # 8 of 10 goals is a small sample: the share is pulled below the raw 80%...
+    early = compute_attack_shares(_toy_squad()).set_index("player")["attack_share"]
+    assert 0.5 < early["Striker"] < 0.8
+
+    # ...but with 20x the goals (same proportions) the data dominates the prior.
+    late_squad = _toy_squad()
+    late_squad["season_goals"] *= 20
+    late = compute_attack_shares(late_squad).set_index("player")["attack_share"]
+    assert abs(late["Striker"] - 0.8) < 0.02
 
 
 def test_attack_shares_fall_back_to_minutes_when_team_has_no_goals():

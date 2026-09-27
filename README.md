@@ -22,6 +22,11 @@ Forest / XGBoost. Le tout est validé avec un **backtest walk-forward par
 saison** (jamais de split aléatoire sur des matchs historiques) et mesuré en
 **accuracy, log loss et Brier score**.
 
+Au-dessus des modèles : les **buteurs probables** de chaque match, une
+**simulation Monte Carlo de la saison** (probabilité de titre, de top 4 et de
+relégation pour chaque club, sur 10 000 saisons rejouées), et un site web
+(FastAPI + React) avec une page qui explique toute la méthode.
+
 ## Pourquoi ce projet
 
 Un modèle qui prédit "Arsenal 51%, nul 25%, Liverpool 24%" est beaucoup plus
@@ -44,6 +49,7 @@ seulement sur le taux de bonnes réponses.
   - [3. Modèle de buts Poisson](#3-modèle-de-buts-poisson)
   - [4. Machine Learning (Random Forest, XGBoost)](#4-machine-learning-random-forest-xgboost)
 - [Effectifs & buteurs probables](#effectifs--buteurs-probables)
+- [Simulation de la saison](#simulation-de-la-saison)
 - [Validation temporelle (pas de data leakage)](#validation-temporelle-pas-de-data-leakage)
 - [Métriques](#métriques)
 - [Performances du modèle](#performances-du-modèle)
@@ -140,9 +146,22 @@ Most likely scores
 
 ### React (recommandé)
 
-Backend FastAPI (réutilise directement `predict.py`/`player_goals.py`, sans
-dupliquer la logique) + frontend React/Vite avec thème sombre, crests des
-clubs et section buteurs probables.
+Backend FastAPI (fine couche HTTP sur `pl_predictor`, sans dupliquer la
+logique) + frontend React/Vite en trois pages :
+
+- **Match** : deux équipes (sélecteur avec crests), probabilités
+  victoire/nul/défaite, buts attendus, grille des scores exacts (carte de
+  chaleur), buteurs probables. La prédiction se met à jour dès qu'on change
+  d'équipe.
+- **Saison** : course au titre, lutte pour le maintien et classement projeté,
+  avec pour chaque club la distribution complète de ses positions finales.
+- **Comment ça marche** : toute la méthode expliquée, formules comprises
+  (KaTeX), avec le tableau du backtest et les limites du modèle.
+
+Les couleurs des graphiques ne reprennent pas celles des clubs (Arsenal et
+Liverpool, par exemple, ont deux rouges quasi identiques) : domicile = bleu,
+nul = gris, extérieur = orange, une palette validée pour la lisibilité par
+les daltoniens. L'identité des clubs passe par les crests.
 
 **Développement** (deux process, avec rechargement à chaud) :
 
@@ -251,6 +270,33 @@ En pratique, ce modèle est estimé comme une régression de Poisson avec effets
 fixes par équipe (attaque + défense), sur les données mises en "long format"
 (une ligne par équipe et par match) — voir
 [`src/pl_predictor/models/poisson_model.py`](src/pl_predictor/models/poisson_model.py).
+Trois détails comptent beaucoup :
+
+- **Pondération temporelle** (Dixon & Coles, 1997) : un match compte deux
+  fois moins tous les 365 jours, $w = 0.5^{\text{âge}/365}$. Sans ça, un club
+  promu est jugé sur sa dernière saison en Premier League, parfois vieille de
+  25 ans.
+- **Effets d'équipe centrés sur la moyenne de la ligue** : la version manuel
+  scolaire retire une équipe de référence, mais alors la pénalité L2 tire
+  toutes les équipes mal connues vers *cette* équipe, alphabétiquement la
+  première, c'est-à-dire Arsenal. Un promu se retrouvait noté presque comme
+  Arsenal. Avec toutes les équipes encodées et un intercept, le rétrécissement
+  se fait vers la moyenne.
+- **Régularisation choisie pour l'usage réel** : le site réentraîne le modèle
+  en cours de saison, où un promu n'a que quelques matchs récents. Évaluée
+  avec un réentraînement chaque semaine
+  ([`run_in_season_rolling`](src/pl_predictor/evaluation/backtest.py)), une
+  pénalité trop faible laissait 5 matchs dicter la note d'une équipe : une
+  première version projetait un promu à 21 points. Log loss sur les matchs de
+  début de saison : 0,999 avec α = 0,001, contre **0,980 avec α = 0,01**.
+
+Ces réglages sont choisis par
+[`scripts/tune_poisson.py`](scripts/tune_poisson.py) sur les saisons
+2008-09 → 2012-13 uniquement, toutes antérieures aux saisons du backtest
+publié, pour ne pas "tricher" en réglant le modèle sur ses propres données
+de test. Un effet "promu" a aussi été testé, sans gain mesurable : il reste
+disponible mais désactivé.
+
 On en tire la matrice complète des scores probables :
 
 ```
@@ -322,9 +368,14 @@ de buts sur une saison pour qu'une estimation individuelle soit autre chose
 que du bruit), le nombre de buts attendus de l'équipe — déjà validé par le
 backtest — est **réparti entre les joueurs de l'effectif** :
 
-1. `attack_share` : part historique de chaque joueur dans les buts de son
-   équipe cette saison (repli sur un partage au prorata des minutes jouées
-   si l'équipe n'a pas encore marqué).
+1. `attack_share` : part de chaque joueur dans les buts de son équipe cette
+   saison, **rétrécie vers un a priori** (temps de jeu × taux de buts moyen
+   de son poste dans la ligue) avec $K = 8$ buts fictifs :
+   $\text{part}_i = (\text{buts}_i + K \cdot \text{a priori}_i) / (\text{buts}_{\text{équipe}} + K)$.
+   Sans ça, un attaquant auteur de 4 des 7 premiers buts de son équipe
+   recevait 57 % de tous ses buts futurs, et près de 50 % de chances de
+   marquer à l'extérieur chez un gros. $K$ est un choix raisonné, pas réglé
+   sur données : le projet n'a pas d'historique joueur pluri-saisons.
 2. `recent_form_multiplier` : ratio entre le taux de buts/90 min "récent"
    (delta entre les deux derniers snapshots) et le taux saison, **clippé à
    [0.5, 1.8]** pour ne pas laisser un petit échantillon (une semaine entre
@@ -340,7 +391,45 @@ seul snapshot existe, donc le multiplicateur de forme reste neutre (1.0) et
 le modèle se rabat sur le taux saison — c'est un choix honnête plutôt que de
 fabriquer un signal de récence à partir d'une seule mesure. Le signal
 s'affine ensuite au fil des rafraîchissements successifs de
-`data/players/`.
+`data/players/`. Deux snapshots de saisons différentes ne sont jamais
+comparés : les totaux repartent de zéro chaque mois d'août.
+
+## Simulation de la saison
+
+```bash
+python scripts/simulate_season.py
+```
+
+```
+2026-27: 50 matches played, 330 remaining - 10,000 simulations in 0.25s
+
+Team              Pts   xPts   Title   Top 4  Releg.
+Man City           15   79.9   62.3%   99.0%    0.0%
+Arsenal            12   76.0   32.7%   96.8%    0.0%
+Liverpool           9   64.8    3.4%   63.9%    0.0%
+...
+```
+
+[`src/pl_predictor/simulation.py`](src/pl_predictor/simulation.py) :
+
+1. Le classement réel est calculé à partir des matchs déjà joués.
+2. Les matchs restants se déduisent **sans calendrier externe** : une saison
+   est un double round-robin, donc restant = tous les couples (domicile,
+   extérieur) − ceux déjà joués.
+3. Chaque match restant reçoit ses deux λ du modèle Poisson, et on tire
+   10 000 scores par match.
+4. Chaque saison simulée est classée (points, différence de buts, buts
+   marqués, puis tirage au sort).
+5. Probabilité d'un événement = part des saisons où il se produit.
+
+Entièrement vectorisé : des matrices d'incidence (matchs × équipes)
+transforment les scores simulés en totaux par équipe en deux produits
+matriciels. 3,3 millions de matchs tirés en un quart de seconde.
+
+**Limite** : la force des équipes est figée pour toute la simulation
+(blessures, transferts et forme ne sont pas modélisés, et l'incertitude sur la
+force elle-même n'est pas propagée), donc les probabilités du favori sont un
+peu trop tranchées, surtout en début de saison.
 
 ## Validation temporelle (pas de data leakage)
 
@@ -381,21 +470,28 @@ sur log loss/Brier n'apporte rien.
 
 ## Performances du modèle
 
-Backtest walk-forward sur 12 saisons de test (2013-14 → 2024-25, soit 4560
-matchs), en s'entraînant à chaque fois uniquement sur les saisons antérieures.
-Généré par `python scripts/run_backtest.py` ; voir
+Backtest walk-forward sur 14 saisons de test (2013-14 → début de 2026-27,
+soit 4 990 matchs), en s'entraînant à chaque fois uniquement sur les saisons
+antérieures. Généré par `python scripts/run_backtest.py` ; voir
 [`reports/backtest_summary.csv`](reports/backtest_summary.csv) et
 [`reports/backtest_per_season.csv`](reports/backtest_per_season.csv) pour le
 détail saison par saison.
 
 | model              | accuracy | log_loss | brier_score |
 |--------------------|---------:|---------:|-------------:|
-| baseline_logistic  |   54.4%  |  0.9732  |  0.5760     |
-| elo_logistic       |   54.3%  |  0.9731  |  0.5760     |
-| random_forest      |   54.3%  |  0.9761  |  0.5792     |
-| xgboost            |   54.0%  |  0.9796  |  0.5803     |
-| poisson            |   51.4%  |  1.0091  |  0.6030     |
-| naive_base_rate    |   44.8%  |  1.0669  |  0.6452     |
+| elo_logistic       |   53.7%  |  0.9783  |  0.5801     |
+| baseline_logistic  |   53.9%  |  0.9786  |  0.5801     |
+| random_forest      |   53.7%  |  0.9813  |  0.5831     |
+| xgboost            |   53.4%  |  0.9853  |  0.5845     |
+| poisson            |   52.5%  |  0.9876  |  0.5878     |
+| naive_base_rate    |   44.5%  |  1.0686  |  0.6463     |
+
+Le modèle Poisson a beaucoup progressé avec la pondération temporelle et le
+centrage des effets d'équipe (log loss **1,009 → 0,988**, voir
+[Modèle de buts Poisson](#3-modèle-de-buts-poisson)). Il reste un cran
+derrière l'Elo dans *ce* backtest, qui entraîne avant chaque saison ; sa
+régularisation est volontairement réglée pour le cas d'usage réel du site,
+un réentraînement en cours de saison.
 
 Quelques enseignements :
 
@@ -407,17 +503,14 @@ Quelques enseignements :
   la complexité supplémentaire des arbres n'apporte pas grand-chose une fois
   qu'on valide correctement dans le temps — un résultat cohérent avec la
   littérature sur la prédiction de matchs de football.
-- **Le modèle Poisson est net derrière** en accuracy/log loss sur l'issue du
-  match, mais reste la seule approche ici à produire une **distribution de
-  scores complète** (utile pour le xG et les scores probables du dashboard) —
-  d'où l'intérêt de le garder pour cet usage plutôt que de le juger sur la
-  seule accuracy H/D/A.
-- Les deux modèles (Elo/logistique pour H/D/A, Poisson pour le scoreline)
-  sont ajustés indépendamment et peuvent occasionnellement se contredire sur
-  un match donné (ex. le Poisson donne plus de buts attendus à l'équipe à
-  l'extérieur alors que le modèle Elo la donne perdante) : c'est attendu,
-  l'avantage du terrain à domicile pèse plus lourd dans le modèle Elo/forme
-  que l'écart d'attaque/défense pur du Poisson.
+- **Le modèle Poisson est le seul à produire une distribution de scores
+  complète** (buts attendus, grille des scores, buteurs, simulation de
+  saison) : c'est pour ces usages qu'il est gardé, pas pour l'issue
+  victoire/nul/défaite, où l'Elo reste un peu meilleur.
+- Les deux modèles (Elo/logistique pour V/N/D, Poisson pour les scores) sont
+  ajustés indépendamment et peuvent occasionnellement se contredire sur un
+  match donné : c'est attendu, chacun capture l'avantage du terrain et la
+  force des équipes à sa façon.
 
 ## Structure du projet
 
@@ -426,7 +519,7 @@ premier-league-match-predictor/
 ├── data/
 │   ├── raw/                  # CSV football-data.co.uk téléchargés (non versionnés)
 │   ├── processed/            # tables de features mises en cache (non versionnées)
-│   └── players/               # snapshots FBref effectifs/stats joueurs (non versionnés)
+│   └── players/               # snapshots FBref effectifs/stats joueurs (versionnés)
 ├── src/pl_predictor/
 │   ├── config.py              # chemins, constantes, codes de saison
 │   ├── data/
@@ -446,23 +539,27 @@ premier-league-match-predictor/
 │   │   └── player_goals.py            # buteurs probables (répartition joueur du λ équipe)
 │   ├── evaluation/
 │   │   ├── metrics.py             # accuracy, log loss, Brier score
-│   │   └── backtest.py             # validation walk-forward par saison
+│   │   └── backtest.py             # walk-forward par saison + évaluation glissante en cours de saison
+│   ├── simulation.py              # Monte Carlo de la fin de saison (titre, top 4, relégation)
 │   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI/l'API
 ├── api/main.py                  # backend FastAPI (fine couche HTTP sur pl_predictor)
-├── frontend/                    # front React/Vite (thème sombre, crests, buteurs)
+├── frontend/                    # front React/Vite
 │   ├── src/
-│   │   ├── components/            # TeamSelect, ClubCrest, OutcomeProbabilities, ...
-│   │   ├── data/clubColors.ts      # couleurs + slugs des 20 clubs actuels
+│   │   ├── pages/                 # MatchPage, SeasonPage, HowItWorksPage
+│   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, PositionStrip, Tooltip, ...
+│   │   ├── data/clubColors.ts      # couleurs (monogrammes de repli) + slugs des clubs
 │   │   └── api.ts                   # wrapper fetch typé vers l'API FastAPI
-│   └── public/crests/              # crests téléchargés (non versionnés, voir plus bas)
+│   └── public/crests/              # crests téléchargés (non versionnés, voir plus haut)
 ├── dashboard/app.py            # dashboard Streamlit (legacy, gardé en secours)
 ├── scripts/
 │   ├── download_data.py
 │   ├── download_player_data.py
 │   ├── download_club_crests.py
 │   ├── run_backtest.py
+│   ├── tune_poisson.py             # réglage du Poisson sur saisons de validation
+│   ├── simulate_season.py
 │   └── predict_match.py
-├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs)
+├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs, simulation)
 └── reports/                      # résultats de backtest générés
 ```
 
@@ -483,7 +580,8 @@ premier-league-match-predictor/
 
 **Fait** : Elo/Poisson/ML avec backtest walk-forward (Phase 0), restriction
 aux 20 équipes actuelles + buteurs probables (Phase 1), API FastAPI + front
-React avec vrais crests des clubs (Phase 2).
+React avec vrais crests des clubs (Phase 2), simulation de saison, Poisson
+pondéré dans le temps et refonte du site en trois pages (Phase 3).
 
 **Prochain chantier possible** :
 
@@ -494,6 +592,9 @@ React avec vrais crests des clubs (Phase 2).
   ([`fixtures_api.py`](src/pl_predictor/data/fixtures_api.py), déjà prêt côté
   backend) sur le front pour proposer directement les prochains matchs plutôt
   que de choisir les deux équipes à la main.
+- **Incertitude sur la force des équipes** dans la simulation (par exemple
+  tirer les paramètres de chaque saison simulée autour de leur estimation),
+  pour des probabilités de titre moins tranchées en début de saison.
 - **Déploiement** : usage local uniquement pour l'instant (pas de Docker/
   hébergement prévu).
 

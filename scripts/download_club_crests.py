@@ -59,6 +59,17 @@ WIKIPEDIA_TITLES = {
     "Tottenham": "Tottenham Hotspur F.C.",
     "West Ham": "West Ham United F.C.",
     "Wolves": "Wolverhampton Wanderers F.C.",
+    "Coventry": "Coventry City F.C.",
+    "Hull": "Hull City A.F.C.",
+    "Ipswich": "Ipswich Town F.C.",
+    "Leicester": "Leicester City F.C.",
+    "Southampton": "Southampton F.C.",
+    "Sheffield United": "Sheffield United F.C.",
+    "Luton": "Luton Town F.C.",
+    "Norwich": "Norwich City F.C.",
+    "Watford": "Watford F.C.",
+    "Middlesbrough": "Middlesbrough F.C.",
+    "West Brom": "West Bromwich Albion F.C.",
 }
 
 _YEAR_RE = re.compile(r"(18|19|20)\d{2}")
@@ -114,6 +125,17 @@ _NAME_KEYWORDS = {
     "Tottenham": ["tottenham"],
     "West Ham": ["west ham"],
     "Wolves": ["wolverhampton", "wolves"],
+    "Coventry": ["coventry"],
+    "Hull": ["hull city"],
+    "Ipswich": ["ipswich"],
+    "Leicester": ["leicester"],
+    "Southampton": ["southampton"],
+    "Sheffield United": ["sheffield united"],
+    "Luton": ["luton"],
+    "Norwich": ["norwich"],
+    "Watford": ["watford"],
+    "Middlesbrough": ["middlesbrough"],
+    "West Brom": ["west bromwich", "west brom"],
 }
 
 

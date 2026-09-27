@@ -22,6 +22,9 @@ export const CLUB_COLORS: Record<string, string> = {
   Tottenham: '#132257',
   'West Ham': '#7A263A',
   Wolves: '#FDB913',
+  Coventry: '#6CADDF',
+  Hull: '#F5A12D',
+  Ipswich: '#3A64A3',
 }
 
 const FALLBACK_COLOR = '#38003C' // Premier League purple

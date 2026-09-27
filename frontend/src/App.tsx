@@ -1,107 +1,101 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import './App.css'
-import { api, type BacktestRow, type Prediction } from './api'
-import { BacktestTable } from './components/BacktestTable'
-import { ExpectedGoalsCard } from './components/ExpectedGoalsCard'
-import { OutcomeProbabilities } from './components/OutcomeProbabilities'
-import { ScorelineTable } from './components/ScorelineTable'
-import { ScorersList } from './components/ScorersList'
-import { TeamSelect } from './components/TeamSelect'
+import { api, type BacktestRow, type Meta, type SeasonSimulation } from './api'
+import { TooltipProvider } from './components/Tooltip'
+import { longDate } from './format'
+import { MatchPage } from './pages/MatchPage'
+import { SeasonPage } from './pages/SeasonPage'
+
+// Loaded on demand: it's the only page using KaTeX (~270 kB), which would
+// otherwise double the bundle for the Match and Season pages.
+const HowItWorksPage = lazy(() => import('./pages/HowItWorksPage').then((m) => ({ default: m.HowItWorksPage })))
+
+type Route = 'match' | 'saison' | 'methode'
+
+const NAV: { route: Route; label: string }[] = [
+  { route: 'match', label: 'Match' },
+  { route: 'saison', label: 'Saison' },
+  { route: 'methode', label: 'Comment ça marche' },
+]
+
+function readRoute(): Route {
+  const r = window.location.hash.replace(/^#\/?/, '').split('/')[0]
+  return r === 'saison' || r === 'methode' ? r : 'match'
+}
 
 export default function App() {
+  const [route, setRoute] = useState<Route>(readRoute)
   const [teams, setTeams] = useState<string[]>([])
-  const [home, setHome] = useState('Arsenal')
-  const [away, setAway] = useState('Liverpool')
-  const [prediction, setPrediction] = useState<Prediction | null>(null)
+  const [season, setSeason] = useState<SeasonSimulation | null>(null)
+  const [meta, setMeta] = useState<Meta | null>(null)
   const [backtest, setBacktest] = useState<BacktestRow[]>([])
-  const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [showBacktest, setShowBacktest] = useState(false)
 
   useEffect(() => {
-    api
-      .getTeams()
-      .then((fetched) => {
-        setTeams(fetched)
-        if (fetched.length >= 2) {
-          const h = fetched.includes('Arsenal') ? 'Arsenal' : fetched[0]
-          const a = fetched.includes('Liverpool') ? 'Liverpool' : fetched[1]
-          setHome(h)
-          setAway(a)
-        }
-      })
-      .catch((err: Error) => setError(err.message))
+    const onHash = () => {
+      setRoute(readRoute())
+      window.scrollTo({ top: 0 })
+    }
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
   useEffect(() => {
+    api.getTeams().then(setTeams).catch((e: Error) => setError(e.message))
+    api.getSeason().then(setSeason).catch(() => setSeason(null))
+    api.getMeta().then(setMeta).catch(() => setMeta(null))
     api.getBacktestSummary().then(setBacktest).catch(() => setBacktest([]))
   }, [])
 
-  const runPrediction = () => {
-    setLoading(true)
-    setError(null)
-    api
-      .predict(home, away)
-      .then(setPrediction)
-      .catch((err: Error) => setError(err.message))
-      .finally(() => setLoading(false))
-  }
-
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>⚽ Premier League Match Predictor</h1>
-        <p className="muted">
-          Elo + logistic regression for match outcome, Poisson goals model for the scoreline and probable scorers.
-        </p>
-      </header>
+    <TooltipProvider>
+      <div className="shell">
+        <header className="topbar">
+          <a href="#/match" className="brand" aria-label="Accueil">
+            <span className="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="20" height="20">
+                <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" strokeWidth="2.4" />
+                <path d="M16 9l6 4.4-2.3 7h-7.4L10 13.4z" fill="currentColor" />
+              </svg>
+            </span>
+            <span className="brand-name">
+              PL<span className="brand-name-light"> Predictor</span>
+            </span>
+          </a>
+          <nav className="tabs" aria-label="Navigation principale">
+            {NAV.map((n) => (
+              <a key={n.route} href={`#/${n.route}`} className={`tab${route === n.route ? ' is-active' : ''}`} aria-current={route === n.route ? 'page' : undefined}>
+                {n.label}
+              </a>
+            ))}
+          </nav>
+          {meta && <span className="season-pill">Saison {meta.season}</span>}
+        </header>
 
-      <section className="card team-picker">
-        <TeamSelect label="Home team" teams={teams} value={home} onChange={setHome} disabledTeam={away} />
-        <TeamSelect label="Away team" teams={teams} value={away} onChange={setAway} disabledTeam={home} />
-        <button className="predict-button" onClick={runPrediction} disabled={loading || teams.length === 0}>
-          {loading ? 'Predicting...' : 'Predict'}
-        </button>
-      </section>
+        <main className="main">
+          {error && (
+            <p className="error">
+              Impossible de joindre l'API ({error}). Lance <code>uvicorn api.main:app --port 8000</code>.
+            </p>
+          )}
+          {route === 'match' && <MatchPage teams={teams} />}
+          {route === 'saison' && <SeasonPage sim={season} />}
+          {route === 'methode' && (
+            <Suspense fallback={<p className="muted">Chargement…</p>}>
+              <HowItWorksPage meta={meta} backtest={backtest} />
+            </Suspense>
+          )}
+        </main>
 
-      {error && <p className="error">{error}</p>}
-
-      {prediction && (
-        <section className="card result">
-          <h2>
-            {prediction.home_team} vs {prediction.away_team}
-          </h2>
-
-          <OutcomeProbabilities prediction={prediction} />
-          <p className="predicted-result">
-            Predicted result: <strong>{prediction.predicted_result}</strong>
-          </p>
-
-          <h3>Expected goals</h3>
-          <ExpectedGoalsCard prediction={prediction} />
-
-          <h3>Most likely scorelines</h3>
-          <ScorelineTable scores={prediction.most_likely_scores} />
-
-          <h3>Most likely scorers</h3>
-          <div className="scorers-columns">
-            <ScorersList team={prediction.home_team} scorers={prediction.top_scorers_home} />
-            <ScorersList team={prediction.away_team} scorers={prediction.top_scorers_away} />
-          </div>
-
-          <p className="muted small">
-            Elo rating gap ({prediction.home_team} - {prediction.away_team}): {prediction.elo_diff >= 0 ? '+' : ''}
-            {prediction.elo_diff.toFixed(0)}
-          </p>
-        </section>
-      )}
-
-      <section className="card">
-        <button className="link-button" onClick={() => setShowBacktest((v) => !v)}>
-          {showBacktest ? '▾' : '▸'} Model backtest performance
-        </button>
-        {showBacktest && <BacktestTable rows={backtest} />}
-      </section>
-    </div>
+        <footer className="footer">
+          <span>
+            Données{' '}
+            <a href="https://www.football-data.co.uk/">football-data.co.uk</a> & <a href="https://fbref.com/">FBref</a>
+            {meta && <> · dernier match pris en compte le {longDate(meta.last_match_date)}</>}
+          </span>
+          <span className="muted">Probabilités, pas des certitudes. Projet perso, non affilié à la Premier League.</span>
+        </footer>
+      </div>
+    </TooltipProvider>
   )
 }

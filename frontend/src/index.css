@@ -1,17 +1,49 @@
-:root {
-  --bg: #0e0e12;
-  --surface: #1a1a22;
-  --surface-alt: #22222c;
-  --border: #2e2e3a;
-  --text: #f2f2f5;
-  --text-muted: #9a9aa8;
-  --accent: #38003c;
-  --accent-bright: #a855f7;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+/* ---------------------------------------------------------------------------
+   Design tokens. The UI chrome (brand violet, surfaces, ink) is separate from
+   the data palette: chart colors are validated for colorblind separation
+   and contrast against --surface (dataviz validate_palette.js, dark mode):
+     --home  #3987e5  (slot 1, blue)     --away  #d95926  (slot 2, orange)
+   Club colors are never used for data marks: several clubs share near-
+   identical reds/blues, so crests carry club identity instead.
+--------------------------------------------------------------------------- */
+:root {
   color-scheme: dark;
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-  color: var(--text);
-  background: var(--bg);
+
+  --page: #09090d;
+  --surface: #15151c;
+  --surface-2: #1c1c25;
+  --surface-3: #24242f;
+  --hairline: rgba(255, 255, 255, 0.07);
+  --hairline-strong: rgba(255, 255, 255, 0.12);
+
+  --ink: #f4f4f7;
+  --ink-2: #b9b9c6;
+  --ink-3: #82828f;
+
+  --brand: #b77cff;
+  --brand-strong: #9a4dff;
+  --brand-deep: #38003c;
+  --brand-glow: rgba(154, 77, 255, 0.28);
+
+  /* data palette (validated) */
+  --home: #3987e5;
+  --away: #d95926;
+  --draw: #62626e;
+  --seq-rgb: 57, 135, 229; /* sequential ramp = --home at varying opacity */
+
+  --radius-lg: 20px;
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 20px 50px -24px rgba(0, 0, 0, 0.8);
+
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  color: var(--ink);
+  background: var(--page);
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -23,18 +55,59 @@ body,
 #root {
   margin: 0;
   min-height: 100vh;
-  background: var(--bg);
 }
 
 body {
-  padding: 0 1rem;
+  background:
+    radial-gradient(1200px 520px at 15% -10%, rgba(154, 77, 255, 0.16), transparent 60%),
+    radial-gradient(900px 480px at 95% 0%, rgba(57, 135, 229, 0.1), transparent 60%),
+    var(--page);
+  background-attachment: fixed;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--brand);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
 
 table {
   border-collapse: collapse;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

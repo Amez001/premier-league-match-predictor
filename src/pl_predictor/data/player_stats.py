@@ -42,6 +42,31 @@ FBREF_TEAM_NAME_FIXES = {
     "Manchester City": "Man City",
     "Manchester Utd": "Man United",
     "Nottingham": "Nottm Forest",
+    "Nott'ham Forest": "Nottm Forest",
+    "Newcastle Utd": "Newcastle",
+    # Clubs that regularly go up/down - listed ahead of time so a newly
+    # promoted side doesn't silently lose its players at the next rollover.
+    "Coventry City": "Coventry",
+    "Hull City": "Hull",
+    "Ipswich Town": "Ipswich",
+    "Leicester City": "Leicester",
+    "Luton Town": "Luton",
+    "Norwich City": "Norwich",
+    "Sheffield Utd": "Sheffield United",
+    "Stoke City": "Stoke",
+    "Swansea City": "Swansea",
+    "Cardiff City": "Cardiff",
+    "Huddersfield Town": "Huddersfield",
+    "Derby County": "Derby",
+    "Blackburn Rovers": "Blackburn",
+    "Bolton Wanderers": "Bolton",
+    "Wigan Athletic": "Wigan",
+    "Queens Park Rangers": "QPR",
+    "Sheffield Wed": "Sheffield Weds",
+    "Wolverhampton Wanderers": "Wolves",
+    "West Ham United": "West Ham",
+    "Tottenham Hotspur": "Tottenham",
+    "Brighton & Hove Albion": "Brighton",
 }
 
 
@@ -90,6 +115,7 @@ def fetch_current_squad_stats(season_start_year: int) -> pd.DataFrame:
     out["season_goals_per90"] = out["season_goals"] / out["minutes_90s"].replace(0, pd.NA)
     out["season_goals_per90"] = out["season_goals_per90"].fillna(0.0)
     out["snapshot_date"] = dt.date.today().isoformat()
+    out["season_start_year"] = season_start_year
     return out.reset_index(drop=True)
 
 
@@ -115,10 +141,18 @@ def load_latest_snapshot() -> pd.DataFrame:
 def load_previous_snapshot() -> pd.DataFrame | None:
     """The second-most-recent snapshot, used to compute a "recent form" delta.
 
-    Returns None if fewer than two snapshots exist yet (e.g. first ever run) -
-    callers should then fall back to season-long rates only.
+    Returns None if fewer than two snapshots exist yet (e.g. first ever run),
+    or if the previous one belongs to a different season: season-to-date
+    totals reset every August, so a cross-season delta would be meaningless.
+    Callers then fall back to season-long rates only.
     """
     snapshots = sorted(SNAPSHOTS_DIR.glob("*.csv"))
     if len(snapshots) < 2:
         return None
-    return pd.read_csv(snapshots[-2], encoding="utf-8")
+    latest = pd.read_csv(snapshots[-1], encoding="utf-8")
+    previous = pd.read_csv(snapshots[-2], encoding="utf-8")
+    if "season_start_year" not in previous.columns or "season_start_year" not in latest.columns:
+        return None  # snapshots from before this column existed can't be trusted to match
+    if previous["season_start_year"].iloc[0] != latest["season_start_year"].iloc[0]:
+        return None
+    return previous

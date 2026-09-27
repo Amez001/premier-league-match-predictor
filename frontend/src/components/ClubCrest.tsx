@@ -13,8 +13,12 @@ interface Props {
  * image icon.
  */
 export function ClubCrest({ team, size = 32 }: Props) {
-  const [failed, setFailed] = useState(false)
+  // Keyed by slug, not a plain boolean: the same component instance is reused
+  // when the selected team changes, and one club's missing crest must not
+  // turn the next club's (available) crest into a monogram.
+  const [failedSlug, setFailedSlug] = useState<string | null>(null)
   const slug = clubSlug(team)
+  const failed = failedSlug === slug
 
   if (failed) {
     return (
@@ -32,8 +36,8 @@ export function ClubCrest({ team, size = 32 }: Props) {
     <img
       className="club-crest"
       src={`/crests/${slug}.png`}
-      onError={() => setFailed(true)}
-      alt={`${team} crest`}
+      onError={() => setFailedSlug(slug)}
+      alt={`Blason de ${team}`}
       width={size}
       height={size}
     />

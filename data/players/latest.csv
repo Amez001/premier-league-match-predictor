@@ -1,552 +1,427 @@
-team,player,position,minutes_90s,season_goals,season_assists,season_goals_per90,snapshot_date
-Arsenal,Ben White,DF,7.8,0,1,0.0,2026-09-27
-Arsenal,Bukayo Saka,"FW,MF",24.7,7,5,0.2834008097165992,2026-09-27
-Arsenal,Christian Nørgaard,MF,1.2,0,0,0.0,2026-09-27
-Arsenal,Cristhian Mosquera,DF,11.0,0,0,0.0,2026-09-27
-Arsenal,David Raya,GK,37.0,0,0,0.0,2026-09-27
-Arsenal,Declan Rice,MF,34.4,4,5,0.11627906976744186,2026-09-27
-Arsenal,Eberechi Eze,"MF,FW",20.1,7,2,0.34825870646766166,2026-09-27
-Arsenal,Ethan Nwaneri,MF,1.9,0,0,0.0,2026-09-27
-Arsenal,Gabriel Jesus,FW,4.8,3,0,0.625,2026-09-27
-Arsenal,Gabriel Magalhães,DF,30.6,3,4,0.09803921568627451,2026-09-27
-Arsenal,Gabriel Martinelli,"FW,MF",12.0,1,4,0.08333333333333333,2026-09-27
-Arsenal,Jurriën Timber,DF,27.3,3,5,0.10989010989010989,2026-09-27
-Arsenal,Kai Havertz,"FW,MF",6.5,2,3,0.3076923076923077,2026-09-27
-Arsenal,Kepa Arrizabalaga,GK,1.0,0,0,0.0,2026-09-27
-Arsenal,Leandro Trossard,"FW,MF",22.2,6,6,0.2702702702702703,2026-09-27
-Arsenal,Martin Ødegaard,MF,15.2,1,6,0.06578947368421052,2026-09-27
-Arsenal,Martín Zubimendi,MF,33.2,5,1,0.1506024096385542,2026-09-27
-Arsenal,Max Dowman,MF,1.7,1,0,0.5882352941176471,2026-09-27
-Arsenal,Mikel Merino,"MF,FW",11.5,4,3,0.34782608695652173,2026-09-27
-Arsenal,Myles Lewis-Skelly,"MF,DF",7.9,0,0,0.0,2026-09-27
-Arsenal,Noni Madueke,"FW,MF",13.5,3,1,0.2222222222222222,2026-09-27
-Arsenal,Piero Hincapié,DF,19.9,1,2,0.05025125628140704,2026-09-27
-Arsenal,Riccardo Calafiori,DF,18.9,1,2,0.052910052910052914,2026-09-27
-Arsenal,Viktor Gyökeres,FW,24.7,14,1,0.5668016194331984,2026-09-27
-Arsenal,William Saliba,DF,29.0,1,0,0.034482758620689655,2026-09-27
-Aston Villa,Alysson,MF,0.5,0,0,0.0,2026-09-27
-Aston Villa,Amadou Onana,MF,19.5,2,0,0.10256410256410256,2026-09-27
-Aston Villa,Andrés García,DF,1.0,0,0,0.0,2026-09-27
-Aston Villa,Boubacar Kamara,MF,15.7,1,3,0.06369426751592357,2026-09-27
-Aston Villa,Bradley Burrowes,MF,0.2,0,0,0.0,2026-09-27
-Aston Villa,Donyell Malen,"FW,MF",7.3,4,1,0.547945205479452,2026-09-27
-Aston Villa,Douglas Luiz,MF,6.7,1,0,0.14925373134328357,2026-09-27
-Aston Villa,Emi Buendía,MF,19.5,6,2,0.3076923076923077,2026-09-27
-Aston Villa,Emiliano Martínez,GK,31.5,0,1,0.0,2026-09-27
-Aston Villa,Evann Guessand,MF,6.5,0,1,0.0,2026-09-27
-Aston Villa,Ezri Konsa,DF,33.7,0,0,0.0,2026-09-27
-Aston Villa,George Hemmings,MF,0.3,0,0,0.0,2026-09-27
-Aston Villa,Harvey Elliott,MF,1.2,0,0,0.0,2026-09-27
-Aston Villa,Ian Maatsen,DF,17.8,0,1,0.0,2026-09-27
-Aston Villa,Jadon Sancho,MF,9.7,0,2,0.0,2026-09-27
-Aston Villa,Jamaldeen Jimoh,MF,0.1,0,0,0.0,2026-09-27
-Aston Villa,John McGinn,MF,23.7,5,4,0.2109704641350211,2026-09-27
-Aston Villa,Lamare Bogarde,"MF,DF",11.7,0,0,0.0,2026-09-27
-Aston Villa,Leon Bailey,MF,5.1,0,1,0.0,2026-09-27
-Aston Villa,Lucas Digne,DF,20.6,0,6,0.0,2026-09-27
-Aston Villa,Marco Bizot,GK,6.5,0,0,0.0,2026-09-27
-Aston Villa,Matty Cash,DF,33.5,3,3,0.08955223880597014,2026-09-27
-Aston Villa,Morgan Rogers,MF,36.4,10,6,0.27472527472527475,2026-09-27
-Aston Villa,Ollie Watkins,FW,31.5,16,3,0.5079365079365079,2026-09-27
-Aston Villa,Pau Torres,DF,18.6,0,0,0.0,2026-09-27
-Aston Villa,Ross Barkley,MF,9.5,3,1,0.3157894736842105,2026-09-27
-Aston Villa,Tammy Abraham,FW,3.2,2,0,0.625,2026-09-27
-Aston Villa,Tyrone Mings,DF,14.7,0,0,0.0,2026-09-27
-Aston Villa,Victor Lindelöf,"DF,MF",10.5,0,1,0.0,2026-09-27
-Aston Villa,Youri Tielemans,MF,20.7,0,4,0.0,2026-09-27
-Bournemouth,Adam Smith,DF,12.0,0,2,0.0,2026-09-27
-Bournemouth,Adrien Truffert,DF,37.5,1,5,0.02666666666666667,2026-09-27
-Bournemouth,Alex Scott,MF,31.7,3,1,0.09463722397476342,2026-09-27
-Bournemouth,Alex Tóth,MF,1.6,0,0,0.0,2026-09-27
-Bournemouth,Amine Adli,MF,12.2,3,1,0.24590163934426232,2026-09-27
-Bournemouth,Antoine Semenyo,MF,20.0,10,3,0.5,2026-09-27
-Bournemouth,Bafodé Diakité,DF,14.2,0,0,0.0,2026-09-27
-Bournemouth,Ben Gannon-Doak,MF,1.3,0,1,0.0,2026-09-27
-Bournemouth,Ben Winterburn,MF,0.1,0,0,0.0,2026-09-27
-Bournemouth,David Brooks,MF,13.4,1,3,0.07462686567164178,2026-09-27
-Bournemouth,Eli Junior Kroupi,"MF,FW",18.6,13,0,0.6989247311827956,2026-09-27
-Bournemouth,Enes Ünal,FW,2.6,1,0,0.3846153846153846,2026-09-27
-Bournemouth,Evanilson,FW,30.5,6,1,0.19672131147540983,2026-09-27
-Bournemouth,Hamed Junior Traorè,MF,0.2,0,1,0.0,2026-09-27
-Bournemouth,James Hill,DF,23.4,0,3,0.0,2026-09-27
-Bournemouth,Julio Soler,DF,0.4,0,0,0.0,2026-09-27
-Bournemouth,Justin Kluivert,MF,10.6,2,0,0.18867924528301888,2026-09-27
-Bournemouth,Lewis Cook,"MF,DF",9.7,0,1,0.0,2026-09-27
-Bournemouth,Marcos Senesi,DF,36.5,0,5,0.0,2026-09-27
-Bournemouth,Marcus Tavernier,MF,30.3,7,4,0.23102310231023102,2026-09-27
-Bournemouth,Rayan,MF,12.3,5,2,0.4065040650406504,2026-09-27
-Bournemouth,Ryan Christie,MF,11.0,2,0,0.18181818181818182,2026-09-27
-Bournemouth,Tyler Adams,MF,19.7,2,2,0.10152284263959391,2026-09-27
-Bournemouth,Veljko Milosavljević,DF,4.1,0,0,0.0,2026-09-27
-Bournemouth,Álex Jiménez,"DF,MF",25.7,1,0,0.038910505836575876,2026-09-27
-Bournemouth,Đorđe Petrović,GK,38.0,0,0,0.0,2026-09-27
-Brentford,Aaron Hickey,"DF,MF",7.7,0,0,0.0,2026-09-27
-Brentford,Antoni Milambo,MF,0.5,0,0,0.0,2026-09-27
-Brentford,Caoimhín Kelleher,GK,37.0,0,0,0.0,2026-09-27
-Brentford,Dango Ouattara,MF,25.3,7,3,0.2766798418972332,2026-09-27
-Brentford,Ethan Pinnock,DF,3.5,0,0,0.0,2026-09-27
-Brentford,Fabio Carvalho,MF,1.1,1,0,0.9090909090909091,2026-09-27
-Brentford,Frank Onyeka,MF,1.0,0,1,0.0,2026-09-27
-Brentford,Hákon Valdimarsson,GK,1.0,0,0,0.0,2026-09-27
-Brentford,Igor Thiago,FW,36.5,22,1,0.6027397260273972,2026-09-27
-Brentford,Jordan Henderson,MF,21.3,1,3,0.046948356807511735,2026-09-27
-Brentford,Josh Dasilva,MF,0.0,0,0,0.0,2026-09-27
-Brentford,Kaye Furo,FW,0.0,0,0,0.0,2026-09-27
-Brentford,Keane Lewis-Potter,"DF,MF",21.9,3,3,0.13698630136986303,2026-09-27
-Brentford,Kevin Schade,"MF,FW",30.5,8,3,0.26229508196721313,2026-09-27
-Brentford,Kristoffer Ajer,DF,20.1,0,1,0.0,2026-09-27
-Brentford,Mathias Jensen,MF,25.0,3,1,0.12,2026-09-27
-Brentford,Michael Kayode,DF,36.2,1,1,0.027624309392265192,2026-09-27
-Brentford,Mikkel Damsgaard,MF,22.8,4,4,0.17543859649122806,2026-09-27
-Brentford,Myles Peart-Harris,MF,0.0,0,0,0.0,2026-09-27
-Brentford,Nathan Collins,DF,33.1,1,2,0.030211480362537763,2026-09-27
-Brentford,Reiss Nelson,"FW,MF",1.4,0,1,0.0,2026-09-27
-Brentford,Rico Henry,DF,14.8,0,1,0.0,2026-09-27
-Brentford,Romelle Donovan,FW,0.5,0,0,0.0,2026-09-27
-Brentford,Sepp van den Berg,DF,30.7,0,2,0.0,2026-09-27
-Brentford,Vitaly Janelt,MF,16.0,1,4,0.0625,2026-09-27
-Brentford,Yehor Yarmoliuk,MF,29.5,1,2,0.03389830508474576,2026-09-27
-Brighton,Bart Verbruggen,GK,38.0,0,0,0.0,2026-09-27
-Brighton,Brajan Gruda,MF,8.0,1,1,0.125,2026-09-27
-Brighton,Carlos Baleba,MF,18.4,0,0,0.0,2026-09-27
-Brighton,Charalampos Kostoulas,FW,4.1,2,1,0.48780487804878053,2026-09-27
-Brighton,Danny Welbeck,FW,25.1,13,1,0.5179282868525896,2026-09-27
-Brighton,Diego Coppola,DF,2.2,0,0,0.0,2026-09-27
-Brighton,Diego Gómez,"MF,FW",23.6,5,1,0.211864406779661,2026-09-27
-Brighton,Ferdi Kadioglu,"DF,MF",34.8,1,0,0.02873563218390805,2026-09-27
-Brighton,Georginio Rutter,"MF,FW",19.8,3,3,0.15151515151515152,2026-09-27
-Brighton,Harry Howell,MF,1.0,0,0,0.0,2026-09-27
-Brighton,Jack Hinshelwood,MF,19.3,4,3,0.20725388601036268,2026-09-27
-Brighton,James Milner,MF,8.7,1,1,0.1149425287356322,2026-09-27
-Brighton,Jan Paul van Hecke,DF,35.7,3,3,0.08403361344537814,2026-09-27
-Brighton,Joe Knight,MF,0.0,0,0,0.0,2026-09-27
-Brighton,Joël Veltman,DF,11.8,1,0,0.0847457627118644,2026-09-27
-Brighton,Kaoru Mitoma,"MF,FW",19.1,3,1,0.15706806282722513,2026-09-27
-Brighton,Lewis Dunk,DF,31.5,1,0,0.031746031746031744,2026-09-27
-Brighton,Mats Wieffer,DF,21.1,2,3,0.0947867298578199,2026-09-27
-Brighton,Matt O'Riley,MF,2.3,1,0,0.4347826086956522,2026-09-27
-Brighton,Maxim De Cuyper,"DF,MF",15.7,2,3,0.12738853503184713,2026-09-27
-Brighton,Nehemiah Oriola,MF,0.0,0,0,0.0,2026-09-27
-Brighton,Olivier Boscagli,DF,8.9,0,1,0.0,2026-09-27
-Brighton,Pascal Groß,MF,18.2,1,3,0.054945054945054944,2026-09-27
-Brighton,Solly March,MF,0.5,0,0,0.0,2026-09-27
-Brighton,Stefanos Tzimas,FW,1.5,1,1,0.6666666666666666,2026-09-27
-Brighton,Tom Watson,MF,0.7,0,0,0.0,2026-09-27
-Brighton,Yankuba Minteh,MF,26.6,3,4,0.11278195488721804,2026-09-27
-Brighton,Yasin Ayari,MF,21.4,3,3,0.14018691588785048,2026-09-27
-Burnley,Armando Broja,FW,9.6,1,1,0.10416666666666667,2026-09-27
-Burnley,Ashley Barnes,"FW,MF",0.5,0,0,0.0,2026-09-27
-Burnley,Axel Tuanzebe,DF,13.3,1,0,0.07518796992481203,2026-09-27
-Burnley,Bashir Humphreys,"DF,MF",17.5,0,0,0.0,2026-09-27
-Burnley,Florentino Luís,MF,23.4,0,2,0.0,2026-09-27
-Burnley,Hannibal Mejbri,MF,13.7,1,4,0.07299270072992702,2026-09-27
-Burnley,Hjalmar Ekdal,DF,17.1,0,0,0.0,2026-09-27
-Burnley,Jacob Bruun Larsen,"MF,FW",11.4,0,1,0.0,2026-09-27
-Burnley,Jaidon Anthony,MF,30.2,8,2,0.26490066225165565,2026-09-27
-Burnley,James Ward-Prowse,MF,7.6,0,1,0.0,2026-09-27
-Burnley,Jaydon Amauri Banel,"FW,MF",0.1,0,0,0.0,2026-09-27
-Burnley,Joe Worrall,DF,5.6,0,0,0.0,2026-09-27
-Burnley,Josh Cullen,MF,16.8,2,2,0.11904761904761904,2026-09-27
-Burnley,Josh Laurent,"DF,MF",19.6,1,0,0.0510204081632653,2026-09-27
-Burnley,Kyle Walker,"DF,MF",34.4,0,2,0.0,2026-09-27
-Burnley,Lesley Ugochukwu,MF,26.0,3,1,0.11538461538461539,2026-09-27
-Burnley,Loum Tchaouna,"MF,FW",14.1,2,1,0.14184397163120568,2026-09-27
-Burnley,Lucas,"MF,DF",15.7,0,0,0.0,2026-09-27
-Burnley,Lyle Foster,"FW,MF",15.2,3,2,0.19736842105263158,2026-09-27
-Burnley,Marcus Edwards,"MF,FW",11.9,1,3,0.08403361344537814,2026-09-27
-Burnley,Martin Dúbravka,GK,35.0,0,0,0.0,2026-09-27
-Burnley,Max Weiß,GK,3.0,0,0,0.0,2026-09-27
-Burnley,Maxime Estève,DF,32.6,0,0,0.0,2026-09-27
-Burnley,Mike Trésor,"FW,MF",0.5,0,0,0.0,2026-09-27
-Burnley,Oliver Sonne,DF,1.9,1,0,0.5263157894736842,2026-09-27
-Burnley,Quilindschy Hartman,DF,20.3,0,5,0.0,2026-09-27
-Burnley,Zeki Amdouni,"FW,MF",0.8,0,0,0.0,2026-09-27
-Burnley,Zian Flemming,FW,19.7,11,0,0.5583756345177665,2026-09-27
-Chelsea,Alejandro Garnacho,MF,14.1,1,4,0.07092198581560284,2026-09-27
-Chelsea,Andrey Santos,MF,14.0,1,0,0.07142857142857142,2026-09-27
-Chelsea,Benoît Badiashile,DF,5.2,0,0,0.0,2026-09-27
-Chelsea,Cole Palmer,MF,21.7,10,1,0.4608294930875576,2026-09-27
-Chelsea,Dario Essugo,MF,0.3,0,0,0.0,2026-09-27
-Chelsea,Enzo Fernández,MF,34.6,10,4,0.2890173410404624,2026-09-27
-Chelsea,Estêvão Willian,MF,9.4,2,2,0.2127659574468085,2026-09-27
-Chelsea,Facundo Buonanotte,MF,0.5,0,0,0.0,2026-09-27
-Chelsea,Filip Jørgensen,GK,4.2,0,0,0.0,2026-09-27
-Chelsea,Jamie Gittens,MF,5.5,0,2,0.0,2026-09-27
-Chelsea,Jesse Derry,MF,0.5,0,0,0.0,2026-09-27
-Chelsea,Jorrel Hato,DF,12.8,0,0,0.0,2026-09-27
-Chelsea,Joshua Acheampong,DF,7.4,1,0,0.13513513513513511,2026-09-27
-Chelsea,João Pedro,"FW,MF",29.6,15,5,0.5067567567567567,2026-09-27
-Chelsea,Levi Colwill,DF,2.5,0,0,0.0,2026-09-27
-Chelsea,Liam Delap,FW,12.3,1,0,0.08130081300813008,2026-09-27
-Chelsea,Malo Gusto,"DF,MF",25.1,2,3,0.0796812749003984,2026-09-27
-Chelsea,Mamadou Sarr,DF,1.1,0,0,0.0,2026-09-27
-Chelsea,Marc Cucurella,DF,30.1,1,4,0.03322259136212624,2026-09-27
-Chelsea,Marc Guiu,FW,2.9,0,1,0.0,2026-09-27
-Chelsea,Moisés Caicedo,MF,31.1,3,1,0.09646302250803858,2026-09-27
-Chelsea,Pedro Neto,"MF,FW",29.2,5,6,0.17123287671232876,2026-09-27
-Chelsea,Reece James,"DF,MF",21.8,2,4,0.09174311926605504,2026-09-27
-Chelsea,Robert Sánchez,GK,33.8,0,1,0.0,2026-09-27
-Chelsea,Roméo Lavia,MF,4.2,0,0,0.0,2026-09-27
-Chelsea,Shumaira Mheuka,FW,0.0,0,0,0.0,2026-09-27
-Chelsea,Tosin Adarabioyo,DF,8.8,0,0,0.0,2026-09-27
-Chelsea,Trevoh Chalobah,DF,30.9,3,0,0.0970873786407767,2026-09-27
-Chelsea,Tyrique George,FW,1.6,0,0,0.0,2026-09-27
-Chelsea,Wesley Fofana,DF,19.1,0,1,0.0,2026-09-27
-Crystal Palace,Adam Wharton,MF,28.4,1,5,0.035211267605633804,2026-09-27
-Crystal Palace,Borna Sosa,"DF,MF",1.1,0,0,0.0,2026-09-27
-Crystal Palace,Brennan Johnson,"MF,FW",12.4,0,1,0.0,2026-09-27
-Crystal Palace,Chadi Riad,DF,6.1,0,1,0.0,2026-09-27
-Crystal Palace,Chris Richards,DF,31.4,1,0,0.03184713375796178,2026-09-27
-Crystal Palace,Christantus Uche,FW,1.9,0,0,0.0,2026-09-27
-Crystal Palace,Daichi Kamada,MF,21.1,0,0,0.0,2026-09-27
-Crystal Palace,Daniel Muñoz,MF,26.7,4,3,0.149812734082397,2026-09-27
-Crystal Palace,Dean Henderson,GK,37.0,0,0,0.0,2026-09-27
-Crystal Palace,Eberechi Eze,MF,0.9,0,0,0.0,2026-09-27
-Crystal Palace,Eddie Nketiah,MF,4.7,2,0,0.425531914893617,2026-09-27
-Crystal Palace,Evann Guessand,MF,3.7,1,1,0.27027027027027023,2026-09-27
-Crystal Palace,Ismaila Sarr,MF,24.2,9,1,0.37190082644628103,2026-09-27
-Crystal Palace,Jaydee Canvot,DF,14.8,0,0,0.0,2026-09-27
-Crystal Palace,Jean-Philippe Mateta,FW,24.6,12,0,0.4878048780487805,2026-09-27
-Crystal Palace,Jefferson Lerma,"MF,DF",19.3,0,2,0.0,2026-09-27
-Crystal Palace,Joél Drakes-Thomas,MF,0.1,0,0,0.0,2026-09-27
-Crystal Palace,Justin Devenny,"MF,FW",8.8,1,0,0.11363636363636363,2026-09-27
-Crystal Palace,Jørgen Strand Larsen,FW,10.0,3,0,0.3,2026-09-27
-Crystal Palace,Kaden Rodney,"DF,MF",0.0,0,0,0.0,2026-09-27
-Crystal Palace,Marc Guéhi,DF,20.0,2,2,0.1,2026-09-27
-Crystal Palace,Maxence Lacroix,DF,34.3,1,2,0.02915451895043732,2026-09-27
-Crystal Palace,Nathaniel Clyne,"MF,DF",6.6,0,1,0.0,2026-09-27
-Crystal Palace,Odsonne Édouard,FW,0.0,0,0,0.0,2026-09-27
-Crystal Palace,Rio Cardines,MF,1.0,0,0,0.0,2026-09-27
-Crystal Palace,Romain Esse,MF,0.5,0,0,0.0,2026-09-27
-Crystal Palace,Tyrick Mitchell,MF,36.1,1,2,0.027700831024930747,2026-09-27
-Crystal Palace,Walter Benítez,GK,1.0,0,0,0.0,2026-09-27
-Crystal Palace,Will Hughes,MF,17.5,0,0,0.0,2026-09-27
-Crystal Palace,Yéremy Pino,"MF,FW",23.1,2,2,0.08658008658008658,2026-09-27
-Everton,Beto,FW,17.4,9,1,0.5172413793103449,2026-09-27
-Everton,Carlos Alcaraz,MF,7.7,0,1,0.0,2026-09-27
-Everton,Dwight McNeil,MF,13.0,0,1,0.0,2026-09-27
-Everton,Harrison Armstrong,MF,5.9,0,0,0.0,2026-09-27
-Everton,Idrissa Gueye,MF,23.3,2,3,0.08583690987124463,2026-09-27
-Everton,Iliman Ndiaye,MF,30.9,6,3,0.1941747572815534,2026-09-27
-Everton,Jack Grealish,MF,18.1,2,6,0.11049723756906077,2026-09-27
-Everton,Jake O'Brien,DF,34.7,1,1,0.02881844380403458,2026-09-27
-Everton,James Garner,"MF,DF",37.9,2,7,0.052770448548812667,2026-09-27
-Everton,James Tarkowski,DF,37.0,2,3,0.05405405405405406,2026-09-27
-Everton,Jarrad Branthwaite,DF,7.6,1,0,0.13157894736842105,2026-09-27
-Everton,Jordan Pickford,GK,38.0,0,0,0.0,2026-09-27
-Everton,Kiernan Dewsbury-Hall,MF,29.2,8,4,0.273972602739726,2026-09-27
-Everton,Merlin Röhl,MF,7.6,1,0,0.13157894736842105,2026-09-27
-Everton,Michael Keane,DF,28.8,3,1,0.10416666666666666,2026-09-27
-Everton,Nathan Patterson,DF,2.7,0,0,0.0,2026-09-27
-Everton,Séamus Coleman,DF,0.2,0,0,0.0,2026-09-27
-Everton,Thierno Barry,FW,21.3,8,0,0.3755868544600939,2026-09-27
-Everton,Tim Iroegbunam,MF,16.5,0,2,0.0,2026-09-27
-Everton,Tyler Dibling,MF,4.0,0,0,0.0,2026-09-27
-Everton,Tyrique George,MF,2.4,0,0,0.0,2026-09-27
-Everton,Vitaliy Mykolenko,DF,32.9,0,1,0.0,2026-09-27
-Fulham,Adama Traoré,MF,3.0,0,0,0.0,2026-09-27
-Fulham,Alex Iwobi,MF,26.9,4,3,0.14869888475836432,2026-09-27
-Fulham,Antonee Robinson,"DF,MF",16.6,1,0,0.06024096385542168,2026-09-27
-Fulham,Bernd Leno,GK,38.0,0,0,0.0,2026-09-27
-Fulham,Calvin Bassey,DF,28.2,1,0,0.03546099290780142,2026-09-27
-Fulham,Emile Smith Rowe,MF,21.4,3,0,0.14018691588785048,2026-09-27
-Fulham,Harrison Reed,MF,1.0,1,0,1.0,2026-09-27
-Fulham,Harry Wilson,MF,29.7,10,7,0.3367003367003367,2026-09-27
-Fulham,Issa Diop,DF,9.1,1,0,0.10989010989010989,2026-09-27
-Fulham,Joachim Andersen,DF,31.9,0,1,0.0,2026-09-27
-Fulham,Jonah Kusi-Asare,FW,0.6,0,0,0.0,2026-09-27
-Fulham,Jorge Cuenca,DF,10.4,0,0,0.0,2026-09-27
-Fulham,Joshua King,MF,14.5,1,2,0.06896551724137931,2026-09-27
-Fulham,Kenny Tete,DF,19.9,1,0,0.05025125628140704,2026-09-27
-Fulham,Kevin,MF,11.6,1,1,0.08620689655172414,2026-09-27
-Fulham,Oscar Bobb,MF,6.3,0,0,0.0,2026-09-27
-Fulham,Raúl Jiménez,FW,24.3,9,3,0.37037037037037035,2026-09-27
-Fulham,Rodrigo Muniz,FW,11.1,1,1,0.0900900900900901,2026-09-27
-Fulham,Ryan Sessegnon,"DF,MF",20.3,3,1,0.14778325123152708,2026-09-27
-Fulham,Samuel Chukwueze,MF,12.0,3,4,0.25,2026-09-27
-Fulham,Sander Berge,MF,32.3,0,1,0.0,2026-09-27
-Fulham,Saša Lukić,MF,19.3,1,2,0.05181347150259067,2026-09-27
-Fulham,Timothy Castagne,"DF,MF",20.5,0,0,0.0,2026-09-27
-Fulham,Tom Cairney,MF,8.6,2,0,0.23255813953488372,2026-09-27
-Leeds,Anton Stach,MF,26.3,5,3,0.19011406844106463,2026-09-27
-Leeds,Ao Tanaka,MF,14.6,2,0,0.136986301369863,2026-09-27
-Leeds,Brenden Aaronson,"MF,FW",27.2,4,5,0.14705882352941177,2026-09-27
-Leeds,Daniel James,"FW,MF",6.2,0,0,0.0,2026-09-27
-Leeds,Dominic Calvert-Lewin,FW,30.2,14,1,0.4635761589403974,2026-09-27
-Leeds,Ethan Ampadu,MF,34.7,1,1,0.02881844380403458,2026-09-27
-Leeds,Facundo Buonanotte,MF,0.4,0,0,0.0,2026-09-27
-Leeds,Gabriel Gudmundsson,"DF,MF",29.2,0,0,0.0,2026-09-27
-Leeds,Ilia Gruev,MF,14.7,0,3,0.0,2026-09-27
-Leeds,Jack Harrison,FW,3.0,0,0,0.0,2026-09-27
-Leeds,Jaka Bijol,DF,21.0,1,2,0.047619047619047616,2026-09-27
-Leeds,James Justin,"DF,MF",21.1,2,1,0.0947867298578199,2026-09-27
-Leeds,Jayden Bogle,"MF,DF",31.0,1,2,0.03225806451612903,2026-09-27
-Leeds,Joe Rodon,DF,32.8,2,0,0.06097560975609757,2026-09-27
-Leeds,Joël Piroe,FW,2.9,0,0,0.0,2026-09-27
-Leeds,Karl Darlow,GK,22.0,0,0,0.0,2026-09-27
-Leeds,Lucas Perri,GK,16.0,0,0,0.0,2026-09-27
-Leeds,Lukas Nmecha,FW,12.0,6,1,0.5,2026-09-27
-Leeds,Noah Okafor,"FW,MF",17.3,8,1,0.4624277456647399,2026-09-27
-Leeds,Pascal Struijk,DF,32.6,0,1,0.0,2026-09-27
-Leeds,Sam Byram,"DF,MF",0.1,0,0,0.0,2026-09-27
-Leeds,Sean Longstaff,MF,11.2,2,2,0.17857142857142858,2026-09-27
-Leeds,Sebastiaan Bornauw,DF,4.8,0,0,0.0,2026-09-27
-Leeds,Wilfried Gnonto,FW,6.0,0,1,0.0,2026-09-27
-Liverpool,Alexander Isak,FW,7.8,3,1,0.38461538461538464,2026-09-27
-Liverpool,Alexis Mac Allister,MF,29.5,2,4,0.06779661016949153,2026-09-27
-Liverpool,Alisson,GK,26.0,0,0,0.0,2026-09-27
-Liverpool,Andy Robertson,DF,13.1,1,0,0.07633587786259542,2026-09-27
-Liverpool,Cody Gakpo,"MF,FW",30.4,7,5,0.23026315789473686,2026-09-27
-Liverpool,Conor Bradley,DF,10.3,0,1,0.0,2026-09-27
-Liverpool,Curtis Jones,"MF,DF",21.5,1,2,0.046511627906976744,2026-09-27
-Liverpool,Dominik Szoboszlai,"MF,DF",35.9,6,7,0.1671309192200557,2026-09-27
-Liverpool,Federico Chiesa,MF,3.8,2,1,0.5263157894736842,2026-09-27
-Liverpool,Florian Wirtz,MF,26.4,5,3,0.1893939393939394,2026-09-27
-Liverpool,Freddie Woodman,GK,2.4,0,0,0.0,2026-09-27
-Liverpool,Giorgi Mamardashvili,GK,9.6,0,0,0.0,2026-09-27
-Liverpool,Harvey Elliott,"FW,MF",0.0,0,0,0.0,2026-09-27
-Liverpool,Hugo Ekitike,FW,20.0,11,4,0.55,2026-09-27
-Liverpool,Ibrahima Konaté,DF,34.3,1,0,0.02915451895043732,2026-09-27
-Liverpool,Jeremie Frimpong,"DF,MF",11.6,0,1,0.0,2026-09-27
-Liverpool,Joe Gomez,DF,6.7,0,2,0.0,2026-09-27
-Liverpool,Milos Kerkez,DF,25.1,2,1,0.0796812749003984,2026-09-27
-Liverpool,Mohamed Salah,MF,23.8,7,7,0.29411764705882354,2026-09-27
-Liverpool,Rio Ngumoha,MF,6.2,2,1,0.3225806451612903,2026-09-27
-Liverpool,Ryan Gravenberch,MF,33.2,5,3,0.1506024096385542,2026-09-27
-Liverpool,Trey Nyoni,MF,0.3,0,0,0.0,2026-09-27
-Liverpool,Virgil van Dijk,DF,38.0,6,0,0.15789473684210525,2026-09-27
-Liverpool,Wataru Endo,DF,1.9,0,1,0.0,2026-09-27
-Man City,Abdukodir Khusanov,DF,15.9,0,0,0.0,2026-09-27
-Man City,Antoine Semenyo,"MF,FW",15.5,7,1,0.45161290322580644,2026-09-27
-Man City,Bernardo Silva,MF,31.9,2,4,0.06269592476489029,2026-09-27
-Man City,Divine Mukasa,MF,0.3,0,0,0.0,2026-09-27
-Man City,Erling Haaland,FW,32.8,27,8,0.8231707317073171,2026-09-27
-Man City,Gianluigi Donnarumma,GK,34.0,0,0,0.0,2026-09-27
-Man City,James Trafford,GK,4.0,0,0,0.0,2026-09-27
-Man City,Jeremy Doku,"MF,FW",19.8,5,5,0.25252525252525254,2026-09-27
-Man City,John Stones,DF,4.9,0,0,0.0,2026-09-27
-Man City,Joško Gvardiol,DF,15.2,2,2,0.13157894736842105,2026-09-27
-Man City,Marc Guéhi,DF,15.0,1,1,0.06666666666666667,2026-09-27
-Man City,Mateo Kovačić,MF,1.4,0,1,0.0,2026-09-27
-Man City,Matheus Nunes,DF,31.8,1,5,0.031446540880503145,2026-09-27
-Man City,Max Alleyne,DF,1.5,0,0,0.0,2026-09-27
-Man City,Nathan Aké,DF,7.7,0,0,0.0,2026-09-27
-Man City,Nico O'Reilly,"DF,MF",29.4,5,3,0.17006802721088435,2026-09-27
-Man City,Nicolás González,MF,17.4,1,0,0.0574712643678161,2026-09-27
-Man City,Omar Marmoush,"FW,MF",7.8,3,3,0.38461538461538464,2026-09-27
-Man City,Oscar Bobb,"MF,FW",5.2,0,1,0.0,2026-09-27
-Man City,Phil Foden,MF,23.2,7,5,0.3017241379310345,2026-09-27
-Man City,Rayan Aït-Nouri,DF,10.8,0,2,0.0,2026-09-27
-Man City,Rayan Cherki,MF,19.8,4,12,0.20202020202020202,2026-09-27
-Man City,Rico Lewis,DF,4.5,0,1,0.0,2026-09-27
-Man City,Rodri,MF,16.8,1,0,0.05952380952380952,2026-09-27
-Man City,Rúben Dias,DF,23.8,2,0,0.08403361344537814,2026-09-27
-Man City,Sávio,MF,9.3,1,1,0.1075268817204301,2026-09-27
-Man City,Tijjani Reijnders,MF,18.1,5,2,0.2762430939226519,2026-09-27
-Man United,Altay Bayındır,GK,6.0,0,0,0.0,2026-09-27
-Man United,Amad Diallo,MF,26.0,2,3,0.07692307692307693,2026-09-27
-Man United,Ayden Heaven,DF,10.3,0,1,0.0,2026-09-27
-Man United,Bendito Mantato,MF,0.2,0,0,0.0,2026-09-27
-Man United,Benjamin Šeško,FW,18.3,11,1,0.6010928961748634,2026-09-27
-Man United,Bruno Fernandes,MF,34.0,9,21,0.2647058823529412,2026-09-27
-Man United,Bryan Mbeumo,"MF,FW",29.0,11,3,0.3793103448275862,2026-09-27
-Man United,Casemiro,MF,28.6,9,2,0.3146853146853147,2026-09-27
-Man United,Diogo Dalot,"DF,MF",29.0,1,3,0.034482758620689655,2026-09-27
-Man United,Harry Maguire,DF,18.4,1,2,0.05434782608695653,2026-09-27
-Man United,Jack Fletcher,MF,1.2,0,0,0.0,2026-09-27
-Man United,Joshua Zirkzee,"FW,MF",7.0,2,1,0.2857142857142857,2026-09-27
-Man United,Kobbie Mainoo,MF,18.5,1,2,0.05405405405405406,2026-09-27
-Man United,Leny Yoro,DF,19.3,0,0,0.0,2026-09-27
-Man United,Lisandro Martínez,DF,13.7,0,0,0.0,2026-09-27
-Man United,Luke Shaw,DF,35.8,1,1,0.02793296089385475,2026-09-27
-Man United,Manuel Ugarte,MF,9.9,0,0,0.0,2026-09-27
-Man United,Mason Mount,MF,11.3,3,0,0.2654867256637168,2026-09-27
-Man United,Matheus Cunha,"MF,FW",27.7,10,2,0.36101083032490977,2026-09-27
-Man United,Matthijs de Ligt,DF,13.0,1,0,0.07692307692307693,2026-09-27
-Man United,Noussair Mazraoui,"DF,MF",10.9,0,0,0.0,2026-09-27
-Man United,Patrick Dorgu,MF,16.1,4,4,0.24844720496894407,2026-09-27
-Man United,Senne Lammens,GK,32.0,0,0,0.0,2026-09-27
-Man United,Shea Lacey,FW,0.5,0,0,0.0,2026-09-27
-Man United,Tyler Fletcher,MF,0.2,0,0,0.0,2026-09-27
-Man United,Tyler Fredricson,DF,0.0,0,0,0.0,2026-09-27
-Man United,Tyrell Malacia,DF,0.2,0,0,0.0,2026-09-27
-Newcastle,Aaron Ramsdale,GK,11.2,0,0,0.0,2026-09-27
-Newcastle,Alex Murphy,DF,0.1,0,0,0.0,2026-09-27
-Newcastle,Anthony Elanga,"FW,MF",14.7,0,1,0.0,2026-09-27
-Newcastle,Anthony Gordon,FW,19.9,6,2,0.30150753768844224,2026-09-27
-Newcastle,Bruno Guimarães,MF,27.3,9,5,0.32967032967032966,2026-09-27
-Newcastle,Dan Burn,DF,24.4,1,2,0.04098360655737705,2026-09-27
-Newcastle,Emil Krafth,DF,0.5,0,0,0.0,2026-09-27
-Newcastle,Fabian Schär,DF,12.1,0,0,0.0,2026-09-27
-Newcastle,Harvey Barnes,"FW,MF",21.8,7,1,0.3211009174311926,2026-09-27
-Newcastle,Jacob Murphy,"FW,MF",18.0,3,2,0.16666666666666666,2026-09-27
-Newcastle,Jacob Ramsey,MF,16.1,2,3,0.12422360248447203,2026-09-27
-Newcastle,Jamaal Lascelles,DF,0.2,0,0,0.0,2026-09-27
-Newcastle,Joe Willock,MF,10.9,0,2,0.0,2026-09-27
-Newcastle,Joelinton,MF,21.7,2,1,0.09216589861751152,2026-09-27
-Newcastle,Kieran Trippier,DF,17.6,0,1,0.0,2026-09-27
-Newcastle,Lewis Hall,DF,24.2,1,1,0.04132231404958678,2026-09-27
-Newcastle,Lewis Miley,"MF,DF",16.6,1,4,0.06024096385542168,2026-09-27
-Newcastle,Malick Thiaw,DF,32.9,4,0,0.12158054711246201,2026-09-27
-Newcastle,Nick Pope,GK,26.8,0,0,0.0,2026-09-27
-Newcastle,Nick Woltemade,"FW,MF",21.1,8,3,0.3791469194312796,2026-09-27
-Newcastle,Sandro Tonali,MF,28.2,0,2,0.0,2026-09-27
-Newcastle,Sean Neave,FW,0.2,0,0,0.0,2026-09-27
-Newcastle,Sven Botman,DF,20.4,1,1,0.04901960784313726,2026-09-27
-Newcastle,Tino Livramento,DF,14.8,0,1,0.0,2026-09-27
-Newcastle,William Osula,FW,9.1,7,0,0.7692307692307693,2026-09-27
-Newcastle,Yoane Wissa,FW,5.9,1,1,0.1694915254237288,2026-09-27
-Nottm Forest,Angus Gunn,GK,0.5,0,0,0.0,2026-09-27
-Nottm Forest,Arnaud Kalimuendo,FW,1.1,0,0,0.0,2026-09-27
-Nottm Forest,Callum Hudson-Odoi,MF,20.5,3,4,0.14634146341463414,2026-09-27
-Nottm Forest,Chris Wood,FW,10.0,3,0,0.3,2026-09-27
-Nottm Forest,Dan Ndoye,MF,13.0,1,1,0.07692307692307693,2026-09-27
-Nottm Forest,Dilane Bakwa,MF,6.1,0,2,0.0,2026-09-27
-Nottm Forest,Douglas Luiz,MF,3.5,0,0,0.0,2026-09-27
-Nottm Forest,Elliot Anderson,MF,37.0,4,4,0.10810810810810811,2026-09-27
-Nottm Forest,Ibrahim Sangaré,MF,23.1,2,2,0.08658008658008658,2026-09-27
-Nottm Forest,Igor Jesus,FW,25.5,6,4,0.23529411764705882,2026-09-27
-Nottm Forest,Jair Cunha,DF,5.7,0,0,0.0,2026-09-27
-Nottm Forest,James Mcatee,MF,3.3,0,1,0.0,2026-09-27
-Nottm Forest,John,GK,4.9,0,0,0.0,2026-09-27
-Nottm Forest,Jota Silva,"FW,MF",0.1,0,0,0.0,2026-09-27
-Nottm Forest,Lorenzo Lucca,FW,1.4,1,0,0.7142857142857143,2026-09-27
-Nottm Forest,Luca Netz,"DF,MF",4.0,0,0,0.0,2026-09-27
-Nottm Forest,Matz Sels,GK,29.6,0,0,0.0,2026-09-27
-Nottm Forest,Morato,DF,14.9,1,0,0.06711409395973154,2026-09-27
-Nottm Forest,Morgan Gibbs-White,MF,34.4,15,4,0.436046511627907,2026-09-27
-Nottm Forest,Murillo,DF,23.7,1,0,0.04219409282700422,2026-09-27
-Nottm Forest,Neco Williams,DF,35.6,2,3,0.056179775280898875,2026-09-27
-Nottm Forest,Nicolás Domínguez,MF,13.1,1,1,0.07633587786259542,2026-09-27
-Nottm Forest,Nicolò Savona,DF,11.4,2,0,0.17543859649122806,2026-09-27
-Nottm Forest,Nikola Milenković,DF,37.5,0,0,0.0,2026-09-27
-Nottm Forest,Ola Aina,DF,17.6,0,0,0.0,2026-09-27
-Nottm Forest,Oleksandr Zinchenko,DF,3.9,0,0,0.0,2026-09-27
-Nottm Forest,Omari Hutchinson,MF,18.8,1,5,0.05319148936170213,2026-09-27
-Nottm Forest,Ryan Yates,MF,6.9,0,2,0.0,2026-09-27
-Nottm Forest,Stefan Ortega,GK,3.0,0,0,0.0,2026-09-27
-Nottm Forest,Taiwo Awoniyi,FW,5.5,4,1,0.7272727272727273,2026-09-27
-Nottm Forest,Zach Abbott,DF,1.8,0,0,0.0,2026-09-27
-Sunderland,Arthur Masuaku,DF,1.4,0,0,0.0,2026-09-27
-Sunderland,Bertrand Traoré,"MF,FW",7.0,1,0,0.14285714285714285,2026-09-27
-Sunderland,Brian Brobbey,FW,21.4,7,1,0.3271028037383178,2026-09-27
-Sunderland,Chemsdine Talbi,"MF,FW",17.3,4,1,0.23121387283236994,2026-09-27
-Sunderland,Chris Rigg,MF,8.5,1,1,0.11764705882352941,2026-09-27
-Sunderland,Dan Neil,MF,0.2,0,0,0.0,2026-09-27
-Sunderland,Daniel Ballard,DF,23.9,2,0,0.08368200836820085,2026-09-27
-Sunderland,Dennis Cirkin,DF,3.6,0,0,0.0,2026-09-27
-Sunderland,Eliezer Mayenda,"FW,MF",8.4,2,0,0.23809523809523808,2026-09-27
-Sunderland,Enzo Le Fée,"MF,FW",32.6,5,6,0.15337423312883436,2026-09-27
-Sunderland,Granit Xhaka,MF,32.3,1,6,0.030959752321981428,2026-09-27
-Sunderland,Habib Diarra,MF,15.6,2,2,0.12820512820512822,2026-09-27
-Sunderland,Jenson Seelt,DF,1.5,0,0,0.0,2026-09-27
-Sunderland,Jocelin Ta Bi,MF,0.4,0,0,0.0,2026-09-27
-Sunderland,Luke O'Nien,DF,6.3,0,1,0.0,2026-09-27
-Sunderland,Lutsharel Geertruida,"DF,MF",18.8,0,0,0.0,2026-09-27
-Sunderland,Marc Guiu,FW,0.2,0,0,0.0,2026-09-27
-Sunderland,Melker Ellborg,GK,3.0,0,0,0.0,2026-09-27
-Sunderland,Nilson Angulo,MF,4.5,0,0,0.0,2026-09-27
-Sunderland,Noah Sadiki,MF,32.1,0,1,0.0,2026-09-27
-Sunderland,Nordi Mukiele,DF,30.9,3,3,0.0970873786407767,2026-09-27
-Sunderland,Omar Alderete,DF,31.1,1,1,0.03215434083601286,2026-09-27
-Sunderland,Patrick Roberts,"FW,MF",0.3,0,0,0.0,2026-09-27
-Sunderland,Reinildo Mandava,DF,21.8,0,1,0.0,2026-09-27
-Sunderland,Robin Roefs,GK,35.0,0,0,0.0,2026-09-27
-Sunderland,Romaine Mundle,MF,4.6,0,0,0.0,2026-09-27
-Sunderland,Simon Adingra,"MF,FW",7.3,1,0,0.136986301369863,2026-09-27
-Sunderland,Trai Hume,"DF,MF",33.7,2,1,0.05934718100890207,2026-09-27
-Sunderland,Wilson Isidor,FW,12.9,6,0,0.46511627906976744,2026-09-27
-Tottenham,Antonín Kinský,GK,7.0,0,0,0.0,2026-09-27
-Tottenham,Archie Gray,"MF,DF",16.4,2,2,0.12195121951219513,2026-09-27
-Tottenham,Ben Davies,DF,1.5,1,0,0.6666666666666666,2026-09-27
-Tottenham,Brennan Johnson,"MF,FW",6.8,2,0,0.29411764705882354,2026-09-27
-Tottenham,Callum Olusesi,MF,0.2,0,0,0.0,2026-09-27
-Tottenham,Conor Gallagher,MF,13.2,1,1,0.07575757575757576,2026-09-27
-Tottenham,Cristian Romero,DF,20.8,4,1,0.1923076923076923,2026-09-27
-Tottenham,Dane Scarlett,FW,0.1,0,0,0.0,2026-09-27
-Tottenham,Destiny Udogie,"DF,MF",14.9,0,1,0.0,2026-09-27
-Tottenham,Djed Spence,"DF,MF",22.8,0,0,0.0,2026-09-27
-Tottenham,Dominic Solanke,FW,11.1,3,0,0.2702702702702703,2026-09-27
-Tottenham,Guglielmo Vicario,GK,31.0,0,0,0.0,2026-09-27
-Tottenham,James Maddison,"FW,MF",0.4,0,0,0.0,2026-09-27
-Tottenham,James Rowswell,DF,0.0,0,0,0.0,2026-09-27
-Tottenham,João Palhinha,MF,24.4,5,2,0.20491803278688525,2026-09-27
-Tottenham,Jun'ai Byfield,DF,0.0,0,0,0.0,2026-09-27
-Tottenham,Kevin Danso,DF,16.6,0,0,0.0,2026-09-27
-Tottenham,Lucas Bergvall,MF,10.7,1,3,0.09345794392523366,2026-09-27
-Tottenham,Mathys Tel,"MF,FW",15.0,4,1,0.26666666666666666,2026-09-27
-Tottenham,Micky van de Ven,DF,33.8,4,1,0.1183431952662722,2026-09-27
-Tottenham,Mohammed Kudus,"MF,FW",17.1,2,5,0.11695906432748537,2026-09-27
-Tottenham,Pape Matar Sarr,MF,15.5,2,4,0.12903225806451613,2026-09-27
-Tottenham,Pedro Porro,DF,31.1,1,2,0.03215434083601286,2026-09-27
-Tottenham,Radu Drăgușin,DF,5.7,0,0,0.0,2026-09-27
-Tottenham,Randal Kolo Muani,"FW,MF",18.5,1,1,0.05405405405405406,2026-09-27
-Tottenham,Richarlison,"FW,MF",21.8,11,4,0.5045871559633027,2026-09-27
-Tottenham,Rodrigo Bentancur,MF,20.9,1,1,0.04784688995215311,2026-09-27
-Tottenham,Souza,MF,1.6,0,0,0.0,2026-09-27
-Tottenham,Wilson Odobert,"MF,FW",10.9,0,2,0.0,2026-09-27
-Tottenham,Xavi Simons,"MF,FW",19.5,2,5,0.10256410256410256,2026-09-27
-Tottenham,Yves Bissouma,MF,6.7,0,0,0.0,2026-09-27
-West Ham,Aaron Wan-Bissaka,"DF,MF",23.1,0,2,0.0,2026-09-27
-West Ham,Adama Traoré,"FW,MF",1.3,0,0,0.0,2026-09-27
-West Ham,Alphonse Areola,GK,20.0,0,1,0.0,2026-09-27
-West Ham,Andy Irving,MF,1.8,0,0,0.0,2026-09-27
-West Ham,Axel Disasi,DF,13.9,0,0,0.0,2026-09-27
-West Ham,Callum Marshall,FW,0.7,0,0,0.0,2026-09-27
-West Ham,Callum Wilson,FW,13.9,7,1,0.5035971223021583,2026-09-27
-West Ham,Crysencio Summerville,"MF,FW",27.4,5,2,0.18248175182481752,2026-09-27
-West Ham,El Hadji Malick Diouf,"DF,MF",30.1,0,5,0.0,2026-09-27
-West Ham,Ezra Mayers,DF,1.3,0,0,0.0,2026-09-27
-West Ham,Freddie Potts,MF,13.0,0,1,0.0,2026-09-27
-West Ham,George Earthy,MF,0.1,0,0,0.0,2026-09-27
-West Ham,Guido Rodríguez,MF,2.0,0,0,0.0,2026-09-27
-West Ham,Igor,DF,1.2,0,0,0.0,2026-09-27
-West Ham,James Ward-Prowse,MF,4.6,0,0,0.0,2026-09-27
-West Ham,Jarrod Bowen,"MF,FW",37.8,9,11,0.2380952380952381,2026-09-27
-West Ham,Jean-Clair Todibo,DF,20.2,0,1,0.0,2026-09-27
-West Ham,Konstantinos Mavropanos,DF,28.2,3,0,0.10638297872340426,2026-09-27
-West Ham,Kyle Walker-Peters,DF,15.4,1,0,0.06493506493506493,2026-09-27
-West Ham,Lucas Paquetá,"MF,FW",16.8,4,1,0.23809523809523808,2026-09-27
-West Ham,Luis Guilherme,FW,1.4,0,0,0.0,2026-09-27
-West Ham,Mads Hermansen,GK,18.0,0,1,0.0,2026-09-27
-West Ham,Mateus Fernandes,MF,33.5,3,4,0.08955223880597014,2026-09-27
-West Ham,Max Kilman,DF,17.3,0,0,0.0,2026-09-27
-West Ham,Mohamadou Kanté,MF,0.8,0,0,0.0,2026-09-27
-West Ham,Nayef Aguerd,DF,2.0,0,0,0.0,2026-09-27
-West Ham,Niclas Füllkrug,FW,4.5,0,0,0.0,2026-09-27
-West Ham,Oliver Scarles,"DF,MF",7.3,0,0,0.0,2026-09-27
-West Ham,Pablo,"MF,FW",9.1,0,1,0.0,2026-09-27
-West Ham,Soungoutou Magassa,MF,10.9,1,0,0.09174311926605504,2026-09-27
-West Ham,Tomáš Souček,MF,24.4,5,0,0.20491803278688525,2026-09-27
-West Ham,Valentín Castellanos,FW,15.4,6,0,0.38961038961038963,2026-09-27
-Wolves,Adam Armstrong,"FW,MF",12.7,2,2,0.15748031496062992,2026-09-27
-Wolves,André,MF,30.7,1,0,0.03257328990228013,2026-09-27
-Wolves,Angel Gomes,"MF,FW",5.1,0,0,0.0,2026-09-27
-Wolves,Daniel Bentley,GK,3.0,0,0,0.0,2026-09-27
-Wolves,David Møller Wolfe,"MF,DF",11.7,0,2,0.0,2026-09-27
-Wolves,Emmanuel Agbadou,DF,12.2,0,0,0.0,2026-09-27
-Wolves,Fer López,MF,2.6,0,1,0.0,2026-09-27
-Wolves,Hugo Bueno,"MF,DF",26.3,1,2,0.03802281368821293,2026-09-27
-Wolves,Hwang Hee-chan,"FW,MF",16.1,2,2,0.12422360248447203,2026-09-27
-Wolves,Jackson Tchatchoua,"MF,DF",20.5,0,1,0.0,2026-09-27
-Wolves,Jean-Ricner Bellegarde,"MF,FW",13.9,1,1,0.07194244604316546,2026-09-27
-Wolves,Jerome Abbey,MF,0.2,0,0,0.0,2026-09-27
-Wolves,Jhon Arias,"FW,MF",12.5,1,0,0.08,2026-09-27
-Wolves,José Sá,GK,23.0,0,0,0.0,2026-09-27
-Wolves,João Gomes,MF,31.4,1,1,0.03184713375796178,2026-09-27
-Wolves,Jørgen Strand Larsen,FW,15.6,1,1,0.06410256410256411,2026-09-27
-Wolves,Ki-Jana Hoever,"MF,DF",4.7,0,0,0.0,2026-09-27
-Wolves,Ladislav Krejčí,"DF,MF",26.2,2,1,0.07633587786259542,2026-09-27
-Wolves,Marshall Munetsi,"MF,FW",9.7,1,1,0.10309278350515465,2026-09-27
-Wolves,Mateus Mane,MF,19.9,3,1,0.15075376884422112,2026-09-27
-Wolves,Matt Doherty,"DF,MF",8.7,0,0,0.0,2026-09-27
-Wolves,Pedro Lima,MF,2.9,0,0,0.0,2026-09-27
-Wolves,Rodrigo Gomes,"MF,FW",10.7,3,0,0.28037383177570097,2026-09-27
-Wolves,Sam Johnstone,GK,12.0,0,0,0.0,2026-09-27
-Wolves,Santiago Bueno,DF,28.4,3,1,0.10563380281690142,2026-09-27
-Wolves,Saša Kalajdžić,"FW,MF",0.2,0,0,0.0,2026-09-27
-Wolves,Tawanda Chirewa,MF,0.3,0,0,0.0,2026-09-27
-Wolves,Tolu Arokodare,FW,15.8,3,1,0.18987341772151897,2026-09-27
-Wolves,Tom Edozie,MF,0.2,1,0,5.0,2026-09-27
-Wolves,Toti Gomes,DF,15.8,0,0,0.0,2026-09-27
-Wolves,Yerson Mosquera,DF,23.7,0,0,0.0,2026-09-27
+team,player,position,minutes_90s,season_goals,season_assists,season_goals_per90,snapshot_date,season_start_year
+Arsenal,Ben White,DF,3.5,0,1,0.0,2026-09-27,2026
+Arsenal,Bruno Guimarães,MF,1.4,1,0,0.7142857142857143,2026-09-27,2026
+Arsenal,Bukayo Saka,MF,4.6,3,0,0.6521739130434783,2026-09-27,2026
+Arsenal,Christos Tzolis,MF,4.0,0,1,0.0,2026-09-27,2026
+Arsenal,Cristhian Mosquera,DF,1.9,0,0,0.0,2026-09-27,2026
+Arsenal,David Raya,GK,5.0,0,0,0.0,2026-09-27,2026
+Arsenal,Declan Rice,MF,4.6,0,2,0.0,2026-09-27,2026
+Arsenal,Eberechi Eze,"FW,MF",1.0,0,0,0.0,2026-09-27,2026
+Arsenal,Ezri Konsa,DF,3.1,0,0,0.0,2026-09-27,2026
+Arsenal,Gabriel Magalhães,DF,5.0,0,0,0.0,2026-09-27,2026
+Arsenal,Jurriën Timber,DF,1.2,0,0,0.0,2026-09-27,2026
+Arsenal,Kai Havertz,FW,4.9,2,0,0.4081632653061224,2026-09-27,2026
+Arsenal,Martin Ødegaard,MF,4.2,2,0,0.47619047619047616,2026-09-27,2026
+Arsenal,Martín Zubimendi,MF,1.0,0,0,0.0,2026-09-27,2026
+Arsenal,Max Dowman,MF,0.1,0,0,0.0,2026-09-27,2026
+Arsenal,Mikel Merino,MF,0.9,0,0,0.0,2026-09-27,2026
+Arsenal,Myles Lewis-Skelly,MF,3.0,0,0,0.0,2026-09-27,2026
+Arsenal,Noni Madueke,"FW,MF",0.3,0,0,0.0,2026-09-27,2026
+Arsenal,Piero Hincapié,DF,0.4,0,0,0.0,2026-09-27,2026
+Arsenal,Riccardo Calafiori,DF,4.6,0,2,0.0,2026-09-27,2026
+Arsenal,Viktor Gyökeres,"FW,MF",0.3,0,0,0.0,2026-09-27,2026
+Aston Villa,Aaron Wan-Bissaka,DF,1.7,0,0,0.0,2026-09-27,2026
+Aston Villa,Alejandro Garnacho,MF,0.4,0,0,0.0,2026-09-27,2026
+Aston Villa,Alysson,MF,1.0,1,0,1.0,2026-09-27,2026
+Aston Villa,Boubacar Kamara,MF,4.9,0,1,0.0,2026-09-27,2026
+Aston Villa,Emi Buendía,"MF,FW",4.5,1,0,0.2222222222222222,2026-09-27,2026
+Aston Villa,George Hemmings,MF,3.3,0,0,0.0,2026-09-27,2026
+Aston Villa,Ian Maatsen,DF,3.7,0,0,0.0,2026-09-27,2026
+Aston Villa,Ibrahim Mbaye,FW,0.4,0,0,0.0,2026-09-27,2026
+Aston Villa,Johan Manzambi,MF,1.1,1,1,0.9090909090909091,2026-09-27,2026
+Aston Villa,John McGinn,MF,4.8,0,2,0.0,2026-09-27,2026
+Aston Villa,João Gomes,MF,1.4,0,0,0.0,2026-09-27,2026
+Aston Villa,Lamare Bogarde,"DF,MF",0.2,0,0,0.0,2026-09-27,2026
+Aston Villa,Marco Bizot,GK,1.0,0,0,0.0,2026-09-27,2026
+Aston Villa,Matteo Ruggeri,DF,1.3,0,0,0.0,2026-09-27,2026
+Aston Villa,Matty Cash,DF,3.3,0,0,0.0,2026-09-27,2026
+Aston Villa,Nicolas Jackson,FW,3.2,1,0,0.3125,2026-09-27,2026
+Aston Villa,Pau Torres,DF,2.1,0,0,0.0,2026-09-27,2026
+Aston Villa,Ross Barkley,MF,3.4,0,0,0.0,2026-09-27,2026
+Aston Villa,Tammy Abraham,FW,0.8,0,0,0.0,2026-09-27,2026
+Aston Villa,Tyrone Mings,DF,2.9,0,0,0.0,2026-09-27,2026
+Aston Villa,Victor Lindelöf,DF,5.0,0,0,0.0,2026-09-27,2026
+Aston Villa,Zion Suzuki,GK,4.0,0,0,0.0,2026-09-27,2026
+Bournemouth,Adam Smith,DF,4.8,0,0,0.0,2026-09-27,2026
+Bournemouth,Adrien Truffert,DF,5.0,0,0,0.0,2026-09-27,2026
+Bournemouth,Alex Scott,MF,4.9,1,0,0.2040816326530612,2026-09-27,2026
+Bournemouth,Alex Tóth,MF,0.2,0,0,0.0,2026-09-27,2026
+Bournemouth,António Silva,DF,5.0,0,0,0.0,2026-09-27,2026
+Bournemouth,Ben Gannon-Doak,MF,0.2,0,0,0.0,2026-09-27,2026
+Bournemouth,Daniel Jebbison,FW,0.4,0,0,0.0,2026-09-27,2026
+Bournemouth,David Brooks,"FW,MF",0.5,0,0,0.0,2026-09-27,2026
+Bournemouth,Evanilson,FW,4.7,0,3,0.0,2026-09-27,2026
+Bournemouth,James Hill,DF,5.0,0,0,0.0,2026-09-27,2026
+Bournemouth,Justin Kluivert,MF,3.3,1,0,0.30303030303030304,2026-09-27,2026
+Bournemouth,Lewis Cook,MF,2.0,0,0,0.0,2026-09-27,2026
+Bournemouth,Marcus Tavernier,MF,4.7,3,0,0.6382978723404255,2026-09-27,2026
+Bournemouth,Rayan,MF,4.8,0,0,0.0,2026-09-27,2026
+Bournemouth,Ryan Christie,MF,1.2,0,0,0.0,2026-09-27,2026
+Bournemouth,Tyler Adams,MF,3.1,0,0,0.0,2026-09-27,2026
+Bournemouth,Álvaro Rodríguez,FW,0.1,0,0,0.0,2026-09-27,2026
+Bournemouth,Đorđe Petrović,GK,5.0,0,0,0.0,2026-09-27,2026
+Brentford,Aaron Hickey,DF,1.7,0,0,0.0,2026-09-27,2026
+Brentford,Callum Wilson,FW,0.2,0,0,0.0,2026-09-27,2026
+Brentford,Caoimhín Kelleher,GK,5.0,0,0,0.0,2026-09-27,2026
+Brentford,Dango Ouattara,MF,2.0,0,0,0.0,2026-09-27,2026
+Brentford,El Hadji Malick Diouf,"DF,MF",0.5,0,0,0.0,2026-09-27,2026
+Brentford,Fabio Carvalho,"FW,MF",0.0,1,0,0.0,2026-09-27,2026
+Brentford,Igor Thiago,FW,4.9,1,0,0.2040816326530612,2026-09-27,2026
+Brentford,Jaidon Anthony,MF,3.0,1,0,0.3333333333333333,2026-09-27,2026
+Brentford,Jannik Schuster,DF,2.8,0,1,0.0,2026-09-27,2026
+Brentford,Keane Lewis-Potter,DF,4.5,1,1,0.2222222222222222,2026-09-27,2026
+Brentford,Kevin Schade,MF,5.0,3,0,0.6,2026-09-27,2026
+Brentford,Kristoffer Ajer,DF,5.0,0,0,0.0,2026-09-27,2026
+Brentford,Mamadou Sangare,MF,3.6,0,1,0.0,2026-09-27,2026
+Brentford,Mathias Jensen,MF,0.7,0,0,0.0,2026-09-27,2026
+Brentford,Michael Kayode,DF,3.3,1,0,0.30303030303030304,2026-09-27,2026
+Brentford,Mikkel Damsgaard,MF,3.2,0,0,0.0,2026-09-27,2026
+Brentford,Nathan Collins,DF,2.2,0,0,0.0,2026-09-27,2026
+Brentford,Rico Henry,"DF,MF",0.0,0,0,0.0,2026-09-27,2026
+Brentford,Vitaly Janelt,MF,5.0,2,0,0.4,2026-09-27,2026
+Brentford,Yehor Yarmoliuk,MF,2.4,0,1,0.0,2026-09-27,2026
+Brighton,Bart Verbruggen,GK,5.0,0,0,0.0,2026-09-27,2026
+Brighton,Charalampos Kostoulas,FW,3.9,2,1,0.5128205128205129,2026-09-27,2026
+Brighton,Chema,MF,1.2,1,1,0.8333333333333334,2026-09-27,2026
+Brighton,Costinha,"DF,MF",0.8,0,0,0.0,2026-09-27,2026
+Brighton,Diego Gómez,MF,4.8,0,2,0.0,2026-09-27,2026
+Brighton,Ferdi Kadioglu,DF,3.7,0,0,0.0,2026-09-27,2026
+Brighton,Georginio Rutter,FW,1.2,0,1,0.0,2026-09-27,2026
+Brighton,Ibrahim Osman,"FW,MF",0.5,0,0,0.0,2026-09-27,2026
+Brighton,Jack Hinshelwood,MF,0.7,2,0,2.857142857142857,2026-09-27,2026
+Brighton,Lewis Dunk,DF,4.0,1,0,0.25,2026-09-27,2026
+Brighton,Luka Vušković,DF,4.9,1,0,0.2040816326530612,2026-09-27,2026
+Brighton,Malick Yalcouye,MF,2.6,2,0,0.7692307692307692,2026-09-27,2026
+Brighton,Mats Wieffer,DF,1.7,0,0,0.0,2026-09-27,2026
+Brighton,Matt O'Riley,MF,0.1,0,0,0.0,2026-09-27,2026
+Brighton,Maxim De Cuyper,MF,4.7,1,2,0.2127659574468085,2026-09-27,2026
+Brighton,Michael Svoboda,DF,0.1,0,0,0.0,2026-09-27,2026
+Brighton,Olivier Boscagli,"DF,MF",4.8,0,0,0.0,2026-09-27,2026
+Brighton,Pascal Groß,MF,5.0,3,3,0.6,2026-09-27,2026
+Brighton,Pascal Struijk,DF,1.1,0,0,0.0,2026-09-27,2026
+Brighton,Promise David,FW,0.3,0,0,0.0,2026-09-27,2026
+Brighton,Yasin Ayari,MF,3.7,1,0,0.27027027027027023,2026-09-27,2026
+Brighton,Zadok Yohanna,FW,0.1,0,0,0.0,2026-09-27,2026
+Chelsea,Cole Palmer,MF,4.9,2,2,0.4081632653061224,2026-09-27,2026
+Chelsea,Danny Welbeck,FW,1.0,0,0,0.0,2026-09-27,2026
+Chelsea,Emiliano Martínez,GK,4.0,0,0,0.0,2026-09-27,2026
+Chelsea,Enzo Fernández,MF,0.3,0,0,0.0,2026-09-27,2026
+Chelsea,Estêvão Willian,MF,0.3,0,0,0.0,2026-09-27,2026
+Chelsea,Geovany Quenda,MF,0.3,0,0,0.0,2026-09-27,2026
+Chelsea,Jordan Henderson,MF,1.0,0,0,0.0,2026-09-27,2026
+Chelsea,Jorrel Hato,"MF,DF",2.9,0,2,0.0,2026-09-27,2026
+Chelsea,Joshua Acheampong,DF,2.5,0,0,0.0,2026-09-27,2026
+Chelsea,João Pedro,FW,4.0,3,3,0.75,2026-09-27,2026
+Chelsea,Levi Colwill,DF,3.8,0,0,0.0,2026-09-27,2026
+Chelsea,Mahdi Jazuli,MF,0.0,0,0,0.0,2026-09-27,2026
+Chelsea,Malo Gusto,"MF,DF",3.0,0,0,0.0,2026-09-27,2026
+Chelsea,Maxence Lacroix,DF,4.1,0,1,0.0,2026-09-27,2026
+Chelsea,Moisés Caicedo,MF,0.2,0,0,0.0,2026-09-27,2026
+Chelsea,Morgan Rogers,MF,4.9,3,1,0.6122448979591836,2026-09-27,2026
+Chelsea,Pedro Neto,MF,3.7,1,0,0.27027027027027023,2026-09-27,2026
+Chelsea,Pep Chavarría,MF,2.3,0,0,0.0,2026-09-27,2026
+Chelsea,Reece James,MF,3.3,0,0,0.0,2026-09-27,2026
+Chelsea,Robert Sánchez,GK,1.0,0,0,0.0,2026-09-27,2026
+Chelsea,Roméo Lavia,MF,2.9,1,0,0.3448275862068966,2026-09-27,2026
+Chelsea,Valentín Barco,MF,1.3,0,0,0.0,2026-09-27,2026
+Chelsea,Wesley Fofana,DF,3.5,0,0,0.0,2026-09-27,2026
+Coventry,Aurèle Amenda,DF,4.0,0,0,0.0,2026-09-27,2026
+Coventry,Bobby Thomas,DF,4.9,0,0,0.0,2026-09-27,2026
+Coventry,Brandon Thomas-Asante,"MF,FW",2.5,0,0,0.0,2026-09-27,2026
+Coventry,Caleb Yirenkyi,MF,3.0,0,0,0.0,2026-09-27,2026
+Coventry,Carl Rushworth,GK,5.0,0,1,0.0,2026-09-27,2026
+Coventry,Ellis Simms,FW,1.2,0,0,0.0,2026-09-27,2026
+Coventry,Ephron Mason-Clark,MF,2.6,0,0,0.0,2026-09-27,2026
+Coventry,Ethan Pinnock,DF,3.1,0,0,0.0,2026-09-27,2026
+Coventry,Frank Onyeka,MF,3.5,0,0,0.0,2026-09-27,2026
+Coventry,Gustavo Hamer,MF,0.4,0,0,0.0,2026-09-27,2026
+Coventry,Jack Rudoni,MF,3.3,0,0,0.0,2026-09-27,2026
+Coventry,Jay Dasilva,"MF,DF",4.9,1,0,0.2040816326530612,2026-09-27,2026
+Coventry,Joël Latibeaudière,"DF,MF",0.0,0,0,0.0,2026-09-27,2026
+Coventry,Loum Tchaouna,MF,2.4,0,0,0.0,2026-09-27,2026
+Coventry,Matt Grimes,MF,4.9,0,0,0.0,2026-09-27,2026
+Coventry,Milan van Ewijk,"MF,DF",4.0,0,0,0.0,2026-09-27,2026
+Coventry,Sidiki Cherif,FW,0.3,0,0,0.0,2026-09-27,2026
+Coventry,Stephen Mfuni,DF,1.0,0,0,0.0,2026-09-27,2026
+Coventry,Taiwo Awoniyi,FW,2.6,0,0,0.0,2026-09-27,2026
+Coventry,Tatsuhiro Sakamoto,"FW,MF",0.4,0,0,0.0,2026-09-27,2026
+Coventry,Victor Torp,MF,0.6,0,0,0.0,2026-09-27,2026
+Crystal Palace,Adam Wharton,MF,4.8,0,0,0.0,2026-09-27,2026
+Crystal Palace,Anan Khalaili,MF,4.2,1,0,0.23809523809523808,2026-09-27,2026
+Crystal Palace,Axel Disasi,DF,1.5,0,0,0.0,2026-09-27,2026
+Crystal Palace,Ben Chilwell,"DF,MF",0.3,1,0,3.3333333333333335,2026-09-27,2026
+Crystal Palace,Chadi Riad,DF,0.8,0,0,0.0,2026-09-27,2026
+Crystal Palace,Chris Richards,DF,5.0,0,0,0.0,2026-09-27,2026
+Crystal Palace,Daichi Kamada,MF,4.9,0,3,0.0,2026-09-27,2026
+Crystal Palace,Daniel Muñoz,MF,0.6,0,0,0.0,2026-09-27,2026
+Crystal Palace,Darío Osorio,"FW,MF",0.0,0,0,0.0,2026-09-27,2026
+Crystal Palace,Dean Henderson,GK,3.0,0,0,0.0,2026-09-27,2026
+Crystal Palace,Dwight McNeil,MF,0.9,0,0,0.0,2026-09-27,2026
+Crystal Palace,Eddie Nketiah,"MF,FW",1.9,0,1,0.0,2026-09-27,2026
+Crystal Palace,Evann Guessand,"FW,MF",0.6,0,0,0.0,2026-09-27,2026
+Crystal Palace,Honest Ahanor,DF,1.0,0,0,0.0,2026-09-27,2026
+Crystal Palace,Ismaila Sarr,"FW,MF",0.1,0,0,0.0,2026-09-27,2026
+Crystal Palace,Jaydee Canvot,DF,4.0,0,0,0.0,2026-09-27,2026
+Crystal Palace,Jean-Philippe Mateta,FW,0.7,0,0,0.0,2026-09-27,2026
+Crystal Palace,Jefferson Lerma,"DF,MF",0.6,0,0,0.0,2026-09-27,2026
+Crystal Palace,Jørgen Strand Larsen,FW,3.3,1,0,0.30303030303030304,2026-09-27,2026
+Crystal Palace,Quinten Timber,MF,2.8,0,0,0.0,2026-09-27,2026
+Crystal Palace,Takehiro Tomiyasu,DF,2.1,0,0,0.0,2026-09-27,2026
+Crystal Palace,Tyrick Mitchell,MF,4.7,2,0,0.425531914893617,2026-09-27,2026
+Crystal Palace,Walter Benítez,GK,2.0,0,0,0.0,2026-09-27,2026
+Crystal Palace,Will Hughes,MF,0.3,0,0,0.0,2026-09-27,2026
+Crystal Palace,Yéremy Pino,MF,3.4,0,0,0.0,2026-09-27,2026
+Crystal Palace,Zavier Gozo,MF,0.3,0,0,0.0,2026-09-27,2026
+Crystal Palace,Óscar Mingueza,"DF,MF",0.2,0,0,0.0,2026-09-27,2026
+Everton,Ainsley Maitland-Niles,DF,2.0,1,0,0.5,2026-09-27,2026
+Everton,Beto,FW,0.4,0,0,0.0,2026-09-27,2026
+Everton,Brennan Johnson,MF,2.7,0,0,0.0,2026-09-27,2026
+Everton,Carlos Alcaraz,MF,0.1,0,0,0.0,2026-09-27,2026
+Everton,Harrison Armstrong,MF,4.9,0,1,0.0,2026-09-27,2026
+Everton,Hayden Hackney,MF,1.6,0,1,0.0,2026-09-27,2026
+Everton,Iliman Ndiaye,MF,2.0,0,1,0.0,2026-09-27,2026
+Everton,Jack Grealish,MF,1.4,0,0,0.0,2026-09-27,2026
+Everton,Jake O'Brien,DF,0.2,0,0,0.0,2026-09-27,2026
+Everton,James Garner,MF,3.7,0,0,0.0,2026-09-27,2026
+Everton,James Tarkowski,DF,5.0,1,1,0.2,2026-09-27,2026
+Everton,Jarrad Branthwaite,DF,5.0,0,0,0.0,2026-09-27,2026
+Everton,Jordan Pickford,GK,5.0,0,0,0.0,2026-09-27,2026
+Everton,Kiernan Dewsbury-Hall,MF,5.0,1,0,0.2,2026-09-27,2026
+Everton,Merlin Röhl,DF,2.8,0,0,0.0,2026-09-27,2026
+Everton,Thierno Barry,FW,4.6,2,0,0.4347826086956522,2026-09-27,2026
+Everton,Tim Iroegbunam,MF,0.1,0,0,0.0,2026-09-27,2026
+Everton,Tyler Dibling,MF,0.3,0,0,0.0,2026-09-27,2026
+Everton,Tyrique George,MF,3.4,1,0,0.29411764705882354,2026-09-27,2026
+Everton,Vitaliy Mykolenko,DF,5.0,0,0,0.0,2026-09-27,2026
+Fulham,Alex Iwobi,MF,4.5,0,0,0.0,2026-09-27,2026
+Fulham,Antonee Robinson,DF,4.8,0,0,0.0,2026-09-27,2026
+Fulham,Bernd Leno,GK,5.0,0,0,0.0,2026-09-27,2026
+Fulham,Calvin Bassey,DF,5.0,0,0,0.0,2026-09-27,2026
+Fulham,César Palacios,MF,2.5,1,0,0.4,2026-09-27,2026
+Fulham,David Affengruber,DF,2.0,0,0,0.0,2026-09-27,2026
+Fulham,Emile Smith Rowe,MF,0.5,0,0,0.0,2026-09-27,2026
+Fulham,Gonzalo García,FW,4.7,1,0,0.2127659574468085,2026-09-27,2026
+Fulham,Hugo Larsson,MF,0.4,0,0,0.0,2026-09-27,2026
+Fulham,Joachim Andersen,DF,2.1,0,0,0.0,2026-09-27,2026
+Fulham,Jorge Cuenca,DF,1.0,0,0,0.0,2026-09-27,2026
+Fulham,Joshua King,MF,4.7,2,0,0.425531914893617,2026-09-27,2026
+Fulham,Kenny Tete,DF,0.3,0,0,0.0,2026-09-27,2026
+Fulham,Kevin,MF,0.7,0,0,0.0,2026-09-27,2026
+Fulham,Oscar Bobb,MF,3.8,0,0,0.0,2026-09-27,2026
+Fulham,Rodrigo Muniz,FW,0.5,0,0,0.0,2026-09-27,2026
+Fulham,Ryan Sessegnon,"DF,FW",0.6,0,0,0.0,2026-09-27,2026
+Fulham,Sander Berge,MF,3.9,0,0,0.0,2026-09-27,2026
+Fulham,Shea Charles,MF,3.4,0,0,0.0,2026-09-27,2026
+Fulham,Timothy Castagne,DF,4.5,0,1,0.0,2026-09-27,2026
+Hull,Bachir Belloumi,MF,4.4,2,2,0.45454545454545453,2026-09-27,2026
+Hull,Brooke Norton-Cuffy,"DF,MF",0.4,0,0,0.0,2026-09-27,2026
+Hull,Cody Drameh,"DF,MF",0.7,0,0,0.0,2026-09-27,2026
+Hull,Elliot Stroud,MF,2.8,0,0,0.0,2026-09-27,2026
+Hull,Hidemasa Morita,MF,0.5,0,0,0.0,2026-09-27,2026
+Hull,Jens Hjertø-Dahl,MF,0.1,0,0,0.0,2026-09-27,2026
+Hull,Joe Gelhardt,"FW,MF",0.1,0,0,0.0,2026-09-27,2026
+Hull,John Egan,DF,4.9,0,0,0.0,2026-09-27,2026
+Hull,Kostas Tzolakis,GK,5.0,0,0,0.0,2026-09-27,2026
+Hull,Lewie Coyle,DF,3.9,0,0,0.0,2026-09-27,2026
+Hull,Liam Millar,"FW,MF",0.6,1,0,1.6666666666666667,2026-09-27,2026
+Hull,Lucas Gourna-Douath,MF,1.5,0,0,0.0,2026-09-27,2026
+Hull,Lucas Herrington,DF,2.2,0,0,0.0,2026-09-27,2026
+Hull,Matt Crooks,MF,2.3,0,0,0.0,2026-09-27,2026
+Hull,Matt Targett,"DF,MF",0.1,0,0,0.0,2026-09-27,2026
+Hull,Mohamed Ali Cho,"FW,MF",0.8,1,0,1.25,2026-09-27,2026
+Hull,Nobel Mendy,DF,2.8,1,0,0.35714285714285715,2026-09-27,2026
+Hull,Oliver McBurnie,FW,4.9,0,1,0.0,2026-09-27,2026
+Hull,Paddy McNair,"DF,MF",0.3,0,0,0.0,2026-09-27,2026
+Hull,Regan Slater,MF,4.9,0,1,0.0,2026-09-27,2026
+Hull,Robinio Vaz,FW,0.2,0,0,0.0,2026-09-27,2026
+Hull,Ryan Giles,DF,4.9,0,1,0.0,2026-09-27,2026
+Hull,Semi Ajayi,DF,4.7,1,0,0.2127659574468085,2026-09-27,2026
+Hull,Sorba Thomas,MF,1.3,0,0,0.0,2026-09-27,2026
+Hull,Tim Iroegbunam,MF,0.7,0,0,0.0,2026-09-27,2026
+Ipswich,Abdoul Ouattara,DF,1.5,0,0,0.0,2026-09-27,2026
+Ipswich,Abdul Fatawu Issahaku,MF,3.9,0,1,0.0,2026-09-27,2026
+Ipswich,Christian Walton,GK,1.0,0,0,0.0,2026-09-27,2026
+Ipswich,Chuba Akpom,"FW,MF",0.9,1,0,1.1111111111111112,2026-09-27,2026
+Ipswich,Daizen Maeda,MF,2.9,0,0,0.0,2026-09-27,2026
+Ipswich,Dara O'Shea,DF,5.0,0,0,0.0,2026-09-27,2026
+Ipswich,Darnell Furlong,"DF,MF",0.2,0,0,0.0,2026-09-27,2026
+Ipswich,Emersonn,FW,3.5,2,1,0.5714285714285714,2026-09-27,2026
+Ipswich,Exequiel Palacios,MF,3.1,0,0,0.0,2026-09-27,2026
+Ipswich,Florentino Luís,MF,0.4,0,0,0.0,2026-09-27,2026
+Ipswich,Issa Diop,DF,5.0,0,0,0.0,2026-09-27,2026
+Ipswich,Jack Clarke,MF,1.9,1,0,0.5263157894736842,2026-09-27,2026
+Ipswich,Jacob Greaves,DF,4.0,0,0,0.0,2026-09-27,2026
+Ipswich,Jaden Philogene Bidace,"FW,MF",0.6,0,0,0.0,2026-09-27,2026
+Ipswich,Julio Enciso,MF,4.6,0,2,0.0,2026-09-27,2026
+Ipswich,Kasey McAteer,MF,0.5,0,0,0.0,2026-09-27,2026
+Ipswich,Kjell Scherpen,GK,4.0,0,0,0.0,2026-09-27,2026
+Ipswich,Leif Davis,DF,5.0,2,1,0.4,2026-09-27,2026
+Ipswich,Marcelino Núñez,MF,1.6,0,0,0.0,2026-09-27,2026
+Ipswich,Saša Lukić,MF,4.4,0,1,0.0,2026-09-27,2026
+Ipswich,Sindre Egeli,"FW,MF",0.1,0,0,0.0,2026-09-27,2026
+Ipswich,Zian Flemming,"FW,MF",0.7,1,0,1.4285714285714286,2026-09-27,2026
+Leeds,Anton Stach,MF,5.0,1,0,0.2,2026-09-27,2026
+Leeds,Ao Tanaka,MF,2.8,0,1,0.0,2026-09-27,2026
+Leeds,Brenden Aaronson,MF,2.2,0,0,0.0,2026-09-27,2026
+Leeds,Daniel James,"FW,MF",0.6,0,0,0.0,2026-09-27,2026
+Leeds,Dominic Calvert-Lewin,FW,4.7,2,1,0.425531914893617,2026-09-27,2026
+Leeds,Ethan Ampadu,MF,5.0,0,0,0.0,2026-09-27,2026
+Leeds,Gabriel Gudmundsson,MF,2.8,0,0,0.0,2026-09-27,2026
+Leeds,Harry Wilson,MF,1.6,0,0,0.0,2026-09-27,2026
+Leeds,Jaka Bijol,DF,1.8,0,0,0.0,2026-09-27,2026
+Leeds,James Justin,"DF,MF",5.0,0,0,0.0,2026-09-27,2026
+Leeds,James Trafford,GK,5.0,0,0,0.0,2026-09-27,2026
+Leeds,Jayden Bogle,MF,4.1,2,0,0.48780487804878053,2026-09-27,2026
+Leeds,Jean Mattéo Bahoya,MF,0.0,0,0,0.0,2026-09-27,2026
+Leeds,Joe Rodon,DF,1.4,0,0,0.0,2026-09-27,2026
+Leeds,Lukas Nmecha,FW,0.8,0,1,0.0,2026-09-27,2026
+Leeds,Melvin Bard,"DF,MF",0.2,0,0,0.0,2026-09-27,2026
+Leeds,Nico Elvedi,DF,3.6,0,0,0.0,2026-09-27,2026
+Leeds,Noah Okafor,"MF,FW",3.3,1,0,0.30303030303030304,2026-09-27,2026
+Leeds,Sean Longstaff,MF,0.1,0,0,0.0,2026-09-27,2026
+Leeds,Tarik Muharemovic,DF,5.0,0,1,0.0,2026-09-27,2026
+Liverpool,Alexander Isak,FW,4.6,4,0,0.8695652173913044,2026-09-27,2026
+Liverpool,Alexis Mac Allister,MF,3.4,0,0,0.0,2026-09-27,2026
+Liverpool,Alisson,GK,5.0,0,0,0.0,2026-09-27,2026
+Liverpool,Bradley Barcola,MF,1.9,0,0,0.0,2026-09-27,2026
+Liverpool,Cody Gakpo,MF,4.1,1,3,0.24390243902439027,2026-09-27,2026
+Liverpool,Dominik Szoboszlai,MF,4.9,1,0,0.2040816326530612,2026-09-27,2026
+Liverpool,Florian Wirtz,MF,4.5,0,1,0.0,2026-09-27,2026
+Liverpool,Jeremie Frimpong,DF,2.0,0,0,0.0,2026-09-27,2026
+Liverpool,Jérémy Jacquet,DF,4.6,0,0,0.0,2026-09-27,2026
+Liverpool,Kostas Tsimikas,DF,0.7,0,0,0.0,2026-09-27,2026
+Liverpool,Lewis Koumas,"FW,MF",0.3,0,0,0.0,2026-09-27,2026
+Liverpool,Milos Kerkez,DF,4.3,0,0,0.0,2026-09-27,2026
+Liverpool,Rio Ngumoha,MF,1.1,0,0,0.0,2026-09-27,2026
+Liverpool,Ronald Araújo,DF,3.2,0,0,0.0,2026-09-27,2026
+Liverpool,Ryan Gravenberch,MF,2.1,0,1,0.0,2026-09-27,2026
+Liverpool,Trey Nyoni,MF,0.5,0,0,0.0,2026-09-27,2026
+Liverpool,Virgil van Dijk,DF,5.0,0,0,0.0,2026-09-27,2026
+Liverpool,Víctor Muñoz,MF,2.9,1,0,0.3448275862068966,2026-09-27,2026
+Man City,Abdukodir Khusanov,DF,3.0,0,0,0.0,2026-09-27,2026
+Man City,Antoine Semenyo,MF,5.0,2,3,0.4,2026-09-27,2026
+Man City,Ayyoub Bouaddi,MF,0.3,0,0,0.0,2026-09-27,2026
+Man City,Elliot Anderson,MF,4.6,0,0,0.0,2026-09-27,2026
+Man City,Enzo Fernández,MF,2.7,1,0,0.37037037037037035,2026-09-27,2026
+Man City,Erling Haaland,FW,5.0,5,0,1.0,2026-09-27,2026
+Man City,Gianluigi Donnarumma,GK,5.0,0,0,0.0,2026-09-27,2026
+Man City,Iliman Ndiaye,MF,2.3,0,0,0.0,2026-09-27,2026
+Man City,Jack Grealish,"FW,MF",0.1,0,0,0.0,2026-09-27,2026
+Man City,Jeremy Doku,"FW,MF",0.2,0,0,0.0,2026-09-27,2026
+Man City,Joško Gvardiol,DF,4.8,1,2,0.20833333333333334,2026-09-27,2026
+Man City,Kaden Braithwaite,DF,0.0,0,0,0.0,2026-09-27,2026
+Man City,Marc Guéhi,"DF,MF",5.0,1,1,0.2,2026-09-27,2026
+Man City,Mateo Kovačić,MF,0.5,0,0,0.0,2026-09-27,2026
+Man City,Matheus Nunes,DF,2.4,0,0,0.0,2026-09-27,2026
+Man City,Nico O'Reilly,MF,1.8,0,0,0.0,2026-09-27,2026
+Man City,Phil Foden,MF,2.4,0,2,0.0,2026-09-27,2026
+Man City,Rayan Cherki,MF,3.4,3,2,0.8823529411764706,2026-09-27,2026
+Man City,Rico Lewis,DF,0.6,0,0,0.0,2026-09-27,2026
+Man City,Ryan Mcaidoo,FW,0.1,0,0,0.0,2026-09-27,2026
+Man City,Rúben Dias,DF,5.0,0,0,0.0,2026-09-27,2026
+Man City,Vitor Reis,DF,0.0,0,0,0.0,2026-09-27,2026
+Man United,Andrey Santos,MF,0.9,0,0,0.0,2026-09-27,2026
+Man United,Ayden Heaven,DF,1.0,0,0,0.0,2026-09-27,2026
+Man United,Benjamin Šeško,FW,0.9,1,0,1.1111111111111112,2026-09-27,2026
+Man United,Bruno Fernandes,MF,5.0,3,1,0.6,2026-09-27,2026
+Man United,Bryan Mbeumo,MF,5.0,2,0,0.4,2026-09-27,2026
+Man United,Diogo Dalot,DF,3.9,0,0,0.0,2026-09-27,2026
+Man United,Harry Maguire,DF,5.0,0,0,0.0,2026-09-27,2026
+Man United,Joshua Zirkzee,FW,0.2,0,0,0.0,2026-09-27,2026
+Man United,Kobbie Mainoo,MF,3.9,0,1,0.0,2026-09-27,2026
+Man United,Leny Yoro,DF,0.3,0,0,0.0,2026-09-27,2026
+Man United,Lisandro Martínez,DF,4.0,0,0,0.0,2026-09-27,2026
+Man United,Luke Shaw,DF,3.7,0,1,0.0,2026-09-27,2026
+Man United,Marcus Rashford,MF,3.9,0,0,0.0,2026-09-27,2026
+Man United,Mason Mount,MF,0.1,0,0,0.0,2026-09-27,2026
+Man United,Matheus Cunha,FW,4.5,1,1,0.2222222222222222,2026-09-27,2026
+Man United,Noussair Mazraoui,DF,1.1,0,0,0.0,2026-09-27,2026
+Man United,Patrick Dorgu,"MF,DF",1.9,0,1,0.0,2026-09-27,2026
+Man United,Senne Lammens,GK,5.0,0,0,0.0,2026-09-27,2026
+Man United,Shea Lacey,FW,0.1,0,0,0.0,2026-09-27,2026
+Man United,Youri Tielemans,MF,4.5,0,0,0.0,2026-09-27,2026
+Newcastle,Aladji Bamba,MF,0.3,0,0,0.0,2026-09-27,2026
+Newcastle,Amar Dedić,DF,3.6,0,1,0.0,2026-09-27,2026
+Newcastle,Anthony Elanga,MF,2.6,2,0,0.7692307692307692,2026-09-27,2026
+Newcastle,Bazoumana Touré,MF,0.6,1,0,1.6666666666666667,2026-09-27,2026
+Newcastle,Fabian Schär,DF,0.3,0,0,0.0,2026-09-27,2026
+Newcastle,Harvey Barnes,MF,5.0,1,2,0.2,2026-09-27,2026
+Newcastle,Jacob Murphy,MF,2.0,0,0,0.0,2026-09-27,2026
+Newcastle,Jacob Ramsey,MF,0.8,1,0,1.25,2026-09-27,2026
+Newcastle,Joe Willock,MF,3.2,2,0,0.625,2026-09-27,2026
+Newcastle,Lewis Hall,DF,5.0,1,1,0.2,2026-09-27,2026
+Newcastle,Lewis Miley,"MF,DF",4.4,0,0,0.0,2026-09-27,2026
+Newcastle,Lukáš Horníček,GK,5.0,0,0,0.0,2026-09-27,2026
+Newcastle,Malick Thiaw,DF,5.0,0,0,0.0,2026-09-27,2026
+Newcastle,Matias Fernandez-Pardo,"MF,FW",1.8,0,0,0.0,2026-09-27,2026
+Newcastle,Nick Woltemade,"FW,MF",0.2,0,1,0.0,2026-09-27,2026
+Newcastle,Nicolás González,MF,1.8,0,0,0.0,2026-09-27,2026
+Newcastle,Sean Steur,MF,2.5,0,0,0.0,2026-09-27,2026
+Newcastle,Sven Botman,DF,5.0,0,0,0.0,2026-09-27,2026
+Newcastle,Tino Livramento,"DF,MF",0.4,0,0,0.0,2026-09-27,2026
+Newcastle,William Osula,FW,0.6,0,1,0.0,2026-09-27,2026
+Newcastle,Yoane Wissa,"FW,MF",4.9,1,1,0.2040816326530612,2026-09-27,2026
+Nottm Forest,Arnaud Kalimuendo,FW,0.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,Callum Hudson-Odoi,"FW,MF",0.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,Chris Wood,FW,0.7,0,0,0.0,2026-09-27,2026
+Nottm Forest,Dan Ndoye,MF,3.5,1,0,0.2857142857142857,2026-09-27,2026
+Nottm Forest,Daniel Muñoz,MF,2.3,0,0,0.0,2026-09-27,2026
+Nottm Forest,Ibrahim Sangaré,MF,1.2,0,0,0.0,2026-09-27,2026
+Nottm Forest,Igor Jesus,FW,2.9,1,0,0.3448275862068966,2026-09-27,2026
+Nottm Forest,Jair Cunha,DF,4.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,James Mcatee,MF,4.6,0,0,0.0,2026-09-27,2026
+Nottm Forest,Liam Delap,FW,3.1,1,0,0.3225806451612903,2026-09-27,2026
+Nottm Forest,Luca Netz,"DF,MF",0.3,0,0,0.0,2026-09-27,2026
+Nottm Forest,Matz Sels,GK,5.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,Morgan Gibbs-White,MF,5.0,1,2,0.2,2026-09-27,2026
+Nottm Forest,Murillo,DF,5.0,0,1,0.0,2026-09-27,2026
+Nottm Forest,Neco Williams,MF,5.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,Nicolás Domínguez,MF,0.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,Nikola Milenković,DF,3.0,0,0,0.0,2026-09-27,2026
+Nottm Forest,Ola Aina,"MF,DF",3.4,0,0,0.0,2026-09-27,2026
+Nottm Forest,Ousmane Diomande,DF,1.8,0,0,0.0,2026-09-27,2026
+Nottm Forest,Xaver Schlager,MF,4.2,0,0,0.0,2026-09-27,2026
+Sunderland,Brian Brobbey,FW,4.4,3,0,0.6818181818181818,2026-09-27,2026
+Sunderland,Chemsdine Talbi,MF,0.4,0,0,0.0,2026-09-27,2026
+Sunderland,Chris Rigg,MF,0.2,0,0,0.0,2026-09-27,2026
+Sunderland,Daniel Ballard,DF,5.0,0,0,0.0,2026-09-27,2026
+Sunderland,Dayann Methalie,DF,1.0,0,0,0.0,2026-09-27,2026
+Sunderland,Enzo Le Fée,MF,4.9,1,1,0.2040816326530612,2026-09-27,2026
+Sunderland,Granit Xhaka,MF,5.0,0,0,0.0,2026-09-27,2026
+Sunderland,Habib Diarra,MF,0.3,0,1,0.0,2026-09-27,2026
+Sunderland,Kevin Danso,DF,3.0,0,0,0.0,2026-09-27,2026
+Sunderland,Luke O'Nien,DF,0.7,0,0,0.0,2026-09-27,2026
+Sunderland,Malick Fofana,"FW,MF",0.7,0,0,0.0,2026-09-27,2026
+Sunderland,Nilson Angulo,MF,3.5,1,1,0.2857142857142857,2026-09-27,2026
+Sunderland,Noah Sadiki,MF,4.6,0,0,0.0,2026-09-27,2026
+Sunderland,Nordi Mukiele,DF,4.0,0,0,0.0,2026-09-27,2026
+Sunderland,Omar Alderete,DF,0.3,0,0,0.0,2026-09-27,2026
+Sunderland,Reinildo Mandava,DF,4.0,0,0,0.0,2026-09-27,2026
+Sunderland,Robin Roefs,GK,5.0,0,0,0.0,2026-09-27,2026
+Sunderland,Romaine Mundle,MF,0.0,0,0,0.0,2026-09-27,2026
+Sunderland,Thomas Meunier,"MF,DF",4.4,0,1,0.0,2026-09-27,2026
+Sunderland,Trai Hume,MF,2.3,0,0,0.0,2026-09-27,2026
+Sunderland,Wilson Isidor,"FW,MF",1.3,1,0,0.7692307692307692,2026-09-27,2026
+Tottenham,Andy Robertson,DF,4.1,0,1,0.0,2026-09-27,2026
+Tottenham,Antonín Kinský,GK,5.0,0,0,0.0,2026-09-27,2026
+Tottenham,Archie Gray,DF,3.4,0,0,0.0,2026-09-27,2026
+Tottenham,Conor Gallagher,MF,1.5,1,0,0.6666666666666666,2026-09-27,2026
+Tottenham,Destiny Udogie,DF,1.0,0,0,0.0,2026-09-27,2026
+Tottenham,Dominic Solanke,FW,1.9,0,0,0.0,2026-09-27,2026
+Tottenham,James Maddison,"FW,MF",0.7,0,0,0.0,2026-09-27,2026
+Tottenham,Jan Paul van Hecke,DF,5.0,1,0,0.2,2026-09-27,2026
+Tottenham,Lucas Bergvall,MF,0.9,0,0,0.0,2026-09-27,2026
+Tottenham,Marcos Senesi,DF,1.0,0,0,0.0,2026-09-27,2026
+Tottenham,Mateus Fernandes,MF,2.8,0,0,0.0,2026-09-27,2026
+Tottenham,Mathys Tel,MF,2.9,0,0,0.0,2026-09-27,2026
+Tottenham,Micky van de Ven,DF,4.0,0,0,0.0,2026-09-27,2026
+Tottenham,Mikey Moore,MF,1.0,0,0,0.0,2026-09-27,2026
+Tottenham,Mohammed Kudus,"FW,MF",1.4,0,1,0.0,2026-09-27,2026
+Tottenham,Mykhailo Mudryk,MF,0.2,0,0,0.0,2026-09-27,2026
+Tottenham,Omar Marmoush,"MF,FW",3.8,0,0,0.0,2026-09-27,2026
+Tottenham,Pedro Porro,"DF,MF",2.2,0,0,0.0,2026-09-27,2026
+Tottenham,Richarlison,FW,0.7,0,0,0.0,2026-09-27,2026
+Tottenham,Rodrigo Bentancur,MF,4.1,0,0,0.0,2026-09-27,2026
+Tottenham,Sandro Tonali,MF,4.7,0,0,0.0,2026-09-27,2026
+Tottenham,Sávio,MF,2.7,0,0,0.0,2026-09-27,2026
+Tottenham,Tosin Adarabioyo,DF,0.1,0,0,0.0,2026-09-27,2026

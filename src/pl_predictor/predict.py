@@ -23,6 +23,8 @@ from pl_predictor.models.poisson_model import PoissonGoalsModel
 
 logger = logging.getLogger(__name__)
 
+SCORE_GRID_MAX_GOALS = 5
+
 
 class MatchPredictor:
     """Fit once on full history, then call .predict(home, away) as many times as needed."""
@@ -83,6 +85,8 @@ class MatchPredictor:
         predicted_idx = int(np.argmax([home_p, draw_p, away_p]))
         predicted_label = [f"{home} win", "Draw", f"{away} win"][predicted_idx]
 
+        grid = self.poisson_model.score_matrix(home, away, max_goals=SCORE_GRID_MAX_GOALS)
+
         return {
             "home_team": home,
             "away_team": away,
@@ -93,7 +97,11 @@ class MatchPredictor:
             "expected_goals_home": lam_home,
             "expected_goals_away": lam_away,
             "most_likely_scores": scores[:5],
+            # P(home scores i, away scores j) for i, j in 0..5, for the scoreline heatmap
+            "score_matrix": grid.tolist(),
             "elo_diff": elo_diff,
+            "elo_home": self.elo.get(home),
+            "elo_away": self.elo.get(away),
             "top_scorers_home": self._top_scorers(home, lam_home),
             "top_scorers_away": self._top_scorers(away, lam_away),
         }

@@ -51,6 +51,57 @@ def run_walk_forward(
     return pd.DataFrame(records)
 
 
+def run_in_season_rolling(
+    matches: pd.DataFrame,
+    model_factories: dict[str, ModelFactory],
+    seasons: list[int],
+    step_days: int = 7,
+) -> pd.DataFrame:
+    """Refit every `step_days` during each season, predict only the next window.
+
+    run_walk_forward trains once, before a season starts - so it never
+    evaluates a model refit mid-season on a handful of current-season matches,
+    which is exactly how the live predictor and the season simulator use it.
+    This mirrors that usage. Returns one row per predicted match with the
+    model's probabilities, plus `matches_played_by_teams` (min of the two
+    clubs' current-season games so far) to slice early-season performance.
+    """
+    records = []
+    for season in seasons:
+        season_df = matches[matches["season_start_year"] == season]
+        start, end = season_df["date"].min(), season_df["date"].max()
+        cutoff = start
+        while cutoff <= end:
+            window_end = cutoff + pd.Timedelta(days=step_days)
+            train_df = matches[matches["date"] < cutoff]
+            test_df = season_df[(season_df["date"] >= cutoff) & (season_df["date"] < window_end)]
+            cutoff = window_end
+            if test_df.empty:
+                continue
+
+            played_so_far = season_df[season_df["date"] < test_df["date"].min()]
+            games = pd.concat([played_so_far["home_team"], played_so_far["away_team"]]).value_counts()
+            n_played = [
+                min(games.get(h, 0), games.get(a, 0)) for h, a in zip(test_df["home_team"], test_df["away_team"])
+            ]
+
+            for model_name, factory in model_factories.items():
+                proba = factory().fit(train_df).predict_proba(test_df)
+                for i, r in enumerate(test_df.itertuples(index=False)):
+                    records.append(
+                        {
+                            "model": model_name,
+                            "season": season,
+                            "result": r.result,
+                            "matches_played_by_teams": n_played[i],
+                            "p_home": proba[i, 0],
+                            "p_draw": proba[i, 1],
+                            "p_away": proba[i, 2],
+                        }
+                    )
+    return pd.DataFrame(records)
+
+
 def summarize(results: pd.DataFrame) -> pd.DataFrame:
     """Aggregate per-season results into one row per model (matches-weighted average)."""
     def _weighted(group: pd.DataFrame, col: str) -> float:

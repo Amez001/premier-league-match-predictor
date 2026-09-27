@@ -62,10 +62,14 @@ def _read_season_csv(path) -> pd.DataFrame:
     teams, score, ...), we defensively truncate/pad every row to the header's
     column count before handing the text to pandas.
     """
+    # Older seasons are latin1; recent ones are UTF-8 with a BOM. latin1 never
+    # fails to decode, so try strict UTF-8 first ("utf-8-sig" also drops the
+    # BOM that would otherwise mangle the first header, "Div").
+    raw_bytes = path.read_bytes()
     try:
-        raw_text = path.read_text(encoding="latin1")
+        raw_text = raw_bytes.decode("utf-8-sig")
     except UnicodeDecodeError:
-        raw_text = path.read_text(encoding="utf-8", errors="ignore")
+        raw_text = raw_bytes.decode("latin1")
 
     lines = [line for line in raw_text.splitlines() if line.strip()]
     if not lines:

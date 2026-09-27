@@ -23,10 +23,11 @@ from fastapi.staticfiles import StaticFiles
 # allow running as `uvicorn api.main:app` without installing the package
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from pl_predictor.config import REPORTS_DIR  # noqa: E402
+from pl_predictor.config import REPORTS_DIR, season_label  # noqa: E402
 from pl_predictor.data.fixtures_api import get_upcoming_fixtures  # noqa: E402
 from pl_predictor.data.load import load_clean_matches  # noqa: E402
 from pl_predictor.predict import MatchPredictor  # noqa: E402
+from pl_predictor.simulation import simulate_season  # noqa: E402
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 FRONTEND_DIST = ROOT_DIR / "frontend" / "dist"
@@ -37,7 +38,19 @@ _state: dict = {}
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     matches = load_clean_matches()
-    _state["predictor"] = MatchPredictor(matches)
+    predictor = MatchPredictor(matches)
+    _state["predictor"] = predictor
+    # ~0.25s for 10k seasons, so compute once at startup and serve from memory.
+    _state["season"] = simulate_season(matches, predictor.poisson_model).to_dict()
+    _state["meta"] = {
+        "season": season_label(int(matches["season_start_year"].max())),
+        "last_match_date": matches["date"].max().date().isoformat(),
+        "n_matches_history": len(matches),
+        "first_season": season_label(int(matches["season_start_year"].min())),
+        "players_snapshot_date": (
+            str(predictor.player_df["snapshot_date"].iloc[0]) if predictor.player_df is not None else None
+        ),
+    }
     yield
     _state.clear()
 
@@ -70,6 +83,17 @@ def predict(home: str, away: str) -> dict:
         return _predictor().predict(home, away)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+
+@app.get("/api/season")
+def season() -> dict:
+    """Monte Carlo projection of the rest of the current season (see simulation.py)."""
+    return _state["season"]
+
+
+@app.get("/api/meta")
+def meta() -> dict:
+    return _state["meta"]
 
 
 @app.get("/api/backtest-summary")

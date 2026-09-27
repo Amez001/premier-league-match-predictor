@@ -29,25 +29,46 @@ import pandas as pd
 
 FORM_MULTIPLIER_BOUNDS = (0.5, 1.8)
 MIN_90S_FOR_RECENT_FORM = 0.5  # below this, there isn't enough recent playing time to trust a delta
+# Weight of the prior in "pseudo-goals": with 8, a club's first 8 goals of the
+# season count as much as the prior, and by midseason (~30 goals) the real
+# goal shares dominate. A judgment call - there's no multi-season player
+# history in this project to tune it on - chosen so that 4 goals in 5 games
+# no longer hands one striker ~60% of his team's attack.
+SHARE_PRIOR_PSEUDO_GOALS = 8.0
+
+
+def _primary_position(position: pd.Series) -> pd.Series:
+    """FBref lists hybrids like "FW,MF"; the first listed role is the main one."""
+    return position.fillna("MF").astype(str).str.split(",").str[0].str.strip()
 
 
 def compute_attack_shares(player_df: pd.DataFrame) -> pd.DataFrame:
-    """Add an `attack_share` column: each player's share of their team's season goals.
+    """Add an `attack_share` column: each player's expected share of his team's goals.
 
-    Falls back to a minutes-based share when a team hasn't scored yet this
-    season (early-season edge case), so shares are always well-defined and
-    sum to 1 within each team.
+    Raw season goal shares are extremely noisy early on (one striker scoring
+    4 of his team's 7 goals would get 57% of every future goal). So shares
+    are shrunk toward a prior built from playing time x the league-wide
+    scoring rate of the player's position (forwards score far more per 90
+    than defenders), estimated from all current-season players pooled:
+
+        share = (goals + K * prior_share) / (team_goals + K)
+
+    which still sums to exactly 1 within each team.
     """
     df = player_df.copy()
-    team_goals = df.groupby("team")["season_goals"].transform("sum")
+    pos = _primary_position(df["position"])
+    league_rate = df.groupby(pos)["season_goals"].sum() / df.groupby(pos)["minutes_90s"].sum().replace(0, np.nan)
+    prior_goals = df["minutes_90s"] * pos.map(league_rate).fillna(0.0)
+
+    team_prior = prior_goals.groupby(df["team"]).transform("sum")
     team_minutes = df.groupby("team")["minutes_90s"].transform("sum")
-
     with np.errstate(invalid="ignore", divide="ignore"):
-        goals_share = df["season_goals"] / team_goals
-        minutes_share = df["minutes_90s"] / team_minutes
+        prior_share = np.where(team_prior > 0, prior_goals / team_prior, df["minutes_90s"] / team_minutes)
+    prior_share = np.nan_to_num(prior_share)
 
-    df["attack_share"] = np.where(team_goals > 0, goals_share, minutes_share).astype(float)
-    df["attack_share"] = df["attack_share"].fillna(0.0)
+    team_goals = df.groupby("team")["season_goals"].transform("sum")
+    k = SHARE_PRIOR_PSEUDO_GOALS
+    df["attack_share"] = (df["season_goals"] + k * prior_share) / (team_goals + k)
     return df
 
 
