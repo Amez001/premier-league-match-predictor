@@ -42,11 +42,13 @@ seulement sur le taux de bonnes réponses.
   - [2. Elo Rating](#2-elo-rating)
   - [3. Modèle de buts Poisson](#3-modèle-de-buts-poisson)
   - [4. Machine Learning (Random Forest, XGBoost)](#4-machine-learning-random-forest-xgboost)
+- [Effectifs & buteurs probables](#effectifs--buteurs-probables)
 - [Validation temporelle (pas de data leakage)](#validation-temporelle-pas-de-data-leakage)
 - [Métriques](#métriques)
 - [Performances du modèle](#performances-du-modèle)
 - [Structure du projet](#structure-du-projet)
 - [Sources de données](#sources-de-données)
+- [Roadmap — Phase 2](#roadmap--phase-2)
 
 ## Installation
 
@@ -81,6 +83,15 @@ Les fichiers sont enregistrés dans `data/raw/` (ignorés par git — voir
 > [`src/pl_predictor/data/fixtures_api.py`](src/pl_predictor/data/fixtures_api.py) —
 > cette API n'a pas d'historique complet donc elle n'est **pas** utilisée pour
 > l'entraînement, seulement pour l'affichage des fixtures à venir.
+
+Pour les effectifs/stats joueurs (buteurs probables) :
+
+```bash
+python scripts/download_player_data.py
+```
+
+Voir [Effectifs & buteurs probables](#effectifs--buteurs-probables) pour la
+méthodologie complète.
 
 ## Lancer le backtest
 
@@ -206,6 +217,59 @@ apportent réellement quelque chose **out-of-sample**, ou s'ils se contentent
 de sur-apprendre le bruit historique — voir
 [`src/pl_predictor/models/ml_models.py`](src/pl_predictor/models/ml_models.py).
 
+## Effectifs & buteurs probables
+
+Les modèles ci-dessus raisonnent au niveau équipe. Mais un attaquant en forme
+peut faire pencher un match indépendamment du niveau global de son équipe —
+d'où une couche supplémentaire, au niveau joueur.
+
+**Restriction aux 20 équipes actuelles.** Le picker d'équipes (dashboard et
+CLI) ne propose que les clubs réellement en Premier League cette saison, pas
+les ~50 clubs passés par la division sur les 25 ans d'historique. Ces 20
+équipes sont dérivées directement de la saison la plus récente présente dans
+`data/raw/` — voir
+[`get_current_season_teams`](src/pl_predictor/data/load.py).
+
+**Effectifs & stats joueurs.** Récupérés depuis FBref via la librairie
+[`soccerdata`](https://github.com/probberechts/soccerdata) (qui gère déjà le
+parsing des tableaux FBref, planqués dans des commentaires HTML, ainsi que le
+cache local et le rate-limiting — pas de scraper maison) :
+
+```bash
+python scripts/download_player_data.py
+```
+
+Chaque appel écrit un snapshot horodaté dans `data/players/snapshots/` et met
+à jour `data/players/latest.csv` — voir
+[`src/pl_predictor/data/player_stats.py`](src/pl_predictor/data/player_stats.py).
+
+**Modèle de buteurs probables**
+([`src/pl_predictor/models/player_goals.py`](src/pl_predictor/models/player_goals.py)) :
+plutôt que d'ajuster un GLM Poisson par joueur (la plupart marquent trop peu
+de buts sur une saison pour qu'une estimation individuelle soit autre chose
+que du bruit), le nombre de buts attendus de l'équipe — déjà validé par le
+backtest — est **réparti entre les joueurs de l'effectif** :
+
+1. `attack_share` : part historique de chaque joueur dans les buts de son
+   équipe cette saison (repli sur un partage au prorata des minutes jouées
+   si l'équipe n'a pas encore marqué).
+2. `recent_form_multiplier` : ratio entre le taux de buts/90 min "récent"
+   (delta entre les deux derniers snapshots) et le taux saison, **clippé à
+   [0.5, 1.8]** pour ne pas laisser un petit échantillon (une semaine entre
+   deux snapshots) s'emballer.
+3. Les parts `attack_share × recent_form_multiplier` sont renormalisées pour
+   sommer à 1 sur l'effectif, puis multipliées par le nombre de buts attendus
+   de l'équipe — la somme des buts attendus par joueur retombe donc
+   exactement sur le total d'équipe déjà backtesté.
+4. `P(joueur marque ≥ 1 but) = 1 - exp(-λ_joueur)` (loi de Poisson).
+
+**Limite assumée sur la "forme récente"** : au tout premier lancement, un
+seul snapshot existe, donc le multiplicateur de forme reste neutre (1.0) et
+le modèle se rabat sur le taux saison — c'est un choix honnête plutôt que de
+fabriquer un signal de récence à partir d'une seule mesure. Le signal
+s'affine ensuite au fil des rafraîchissements successifs de
+`data/players/`.
+
 ## Validation temporelle (pas de data leakage)
 
 Deux précautions structurent tout le projet :
@@ -289,13 +353,15 @@ Quelques enseignements :
 premier-league-match-predictor/
 ├── data/
 │   ├── raw/                  # CSV football-data.co.uk téléchargés (non versionnés)
-│   └── processed/            # tables de features mises en cache (non versionnées)
+│   ├── processed/            # tables de features mises en cache (non versionnées)
+│   └── players/               # snapshots FBref effectifs/stats joueurs (non versionnés)
 ├── src/pl_predictor/
 │   ├── config.py              # chemins, constantes, codes de saison
 │   ├── data/
 │   │   ├── download.py         # téléchargement football-data.co.uk
 │   │   ├── load.py              # nettoyage + concaténation en une table de matchs
-│   │   └── fixtures_api.py       # wrapper optionnel Premier-League-API (fixtures à venir)
+│   │   ├── player_stats.py       # effectifs/stats joueurs via FBref (soccerdata)
+│   │   └── fixtures_api.py        # wrapper optionnel Premier-League-API (fixtures à venir)
 │   ├── features/
 │   │   ├── elo.py               # système de rating Elo maison
 │   │   └── engineering.py        # forme, classement en cours de saison
@@ -304,7 +370,8 @@ premier-league-match-predictor/
 │   │   ├── naive.py               # baseline fréquence historique
 │   │   ├── baseline_logreg.py      # régression logistique multinomiale (+ modèle "Elo")
 │   │   ├── poisson_model.py         # modèle de buts Poisson (attaque/défense)
-│   │   └── ml_models.py              # Random Forest, XGBoost
+│   │   ├── ml_models.py              # Random Forest, XGBoost
+│   │   └── player_goals.py            # buteurs probables (répartition joueur du λ équipe)
 │   ├── evaluation/
 │   │   ├── metrics.py             # accuracy, log loss, Brier score
 │   │   └── backtest.py             # validation walk-forward par saison
@@ -312,9 +379,10 @@ premier-league-match-predictor/
 ├── dashboard/app.py            # dashboard Streamlit
 ├── scripts/
 │   ├── download_data.py
+│   ├── download_player_data.py
 │   ├── run_backtest.py
 │   └── predict_match.py
-├── tests/                       # tests unitaires (Elo, Poisson, métriques)
+├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs)
 └── reports/                      # résultats de backtest générés
 ```
 
@@ -322,9 +390,29 @@ premier-league-match-predictor/
 
 - [football-data.co.uk](https://www.football-data.co.uk/englandm.php) — historique
   des résultats de Premier League (utilisé pour l'entraînement et le backtest).
+- [FBref](https://fbref.com/) (via [`soccerdata`](https://github.com/probberechts/soccerdata)) —
+  effectifs et stats joueurs de la saison en cours (buts, minutes), utilisés
+  pour le modèle de buteurs probables. Scraping fait à un rythme raisonnable
+  (la librairie gère déjà le cache et le rate-limiting) ; évite de relancer
+  `download_player_data.py` en boucle.
 - [tarun7r/Premier-League-API](https://github.com/tarun7r/Premier-League-API) — client
   non officiel pour les fixtures/classements en cours (utilisé uniquement pour
   le calendrier à venir dans le dashboard, en option).
+
+## Roadmap — Phase 2
+
+Prochain chantier, séparé de cette Phase 1 (données + modèle buteurs) : une
+vraie refonte de l'interface, pour remplacer le dashboard Streamlit actuel :
+
+- **Backend** : API FastAPI exposant `predict.py` et `player_goals.py`
+  (`/teams`, `/predict?home=&away=`, `/players?team=`).
+- **Frontend** : application React (Vite) avec un thème sombre sur-mesure,
+  les vrais crests des clubs (usage personnel/non-commercial), et une mise en
+  page pensée dès le départ pour l'affichage des buteurs probables à côté des
+  probabilités H/D/A et des scores.
+- **Enrichissement des données joueurs** : intégrer Understat (xG par
+  joueur/tir) pour affiner le modèle de buteurs au-delà du simple partage de
+  `attack_share × recent_form_multiplier`.
 
 ## Licence
 

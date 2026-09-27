@@ -7,14 +7,21 @@ what produces the "Arsenal vs Liverpool" style printout from the README.
 """
 from __future__ import annotations
 
+import logging
+
 import numpy as np
 import pandas as pd
 
 from pl_predictor.config import OUTCOME_NAMES
+from pl_predictor.data.load import get_current_season_teams
+from pl_predictor.data.player_stats import load_latest_snapshot, load_previous_snapshot
 from pl_predictor.features.elo import compute_running_elo
 from pl_predictor.features.engineering import add_form_features
 from pl_predictor.models.baseline_logreg import LogisticOutcomeModel
+from pl_predictor.models.player_goals import predict_team_scorers, prepare_player_features
 from pl_predictor.models.poisson_model import PoissonGoalsModel
+
+logger = logging.getLogger(__name__)
 
 
 class MatchPredictor:
@@ -23,13 +30,32 @@ class MatchPredictor:
     def __init__(self, matches: pd.DataFrame):
         with_elo, self.elo = compute_running_elo(matches)
         self.feature_df = add_form_features(with_elo)
-        self.known_teams = sorted(set(matches["home_team"]) | set(matches["away_team"]))
+        # Only the 20 clubs actually in the Premier League this season - not
+        # every club that has passed through the division across 25 years.
+        self.known_teams = get_current_season_teams(matches)
 
         self.elo_model = LogisticOutcomeModel(feature_columns=["elo_diff"], name="elo_logistic")
         self.elo_model.fit(self.feature_df)
 
         self.poisson_model = PoissonGoalsModel()
         self.poisson_model.fit(self.feature_df)
+
+        self.player_df = self._load_player_features()
+
+    @staticmethod
+    def _load_player_features() -> pd.DataFrame | None:
+        """Best-effort: probable-scorer predictions are optional extra flavor,
+        never something the rest of the app should crash over if the FBref
+        scrape hasn't been run yet (see scripts/download_player_data.py) or
+        failed.
+        """
+        try:
+            latest = load_latest_snapshot()
+        except FileNotFoundError:
+            logger.info("no player data snapshot found; probable-scorer predictions disabled")
+            return None
+        previous = load_previous_snapshot()
+        return prepare_player_features(latest, previous)
 
     def latest_elo_diff(self, home: str, away: str) -> float:
         return self.elo.get(home) - self.elo.get(away)
@@ -68,7 +94,15 @@ class MatchPredictor:
             "expected_goals_away": lam_away,
             "most_likely_scores": scores[:5],
             "elo_diff": elo_diff,
+            "top_scorers_home": self._top_scorers(home, lam_home),
+            "top_scorers_away": self._top_scorers(away, lam_away),
         }
+
+    def _top_scorers(self, team: str, team_expected_goals: float, top_n: int = 5) -> list[dict]:
+        if self.player_df is None:
+            return []
+        scorers = predict_team_scorers(self.player_df, team, team_expected_goals, top_n=top_n)
+        return scorers.to_dict(orient="records")
 
 
 def format_prediction(pred: dict) -> str:
@@ -90,4 +124,12 @@ def format_prediction(pred: dict) -> str:
     for s in pred["most_likely_scores"]:
         score_str = f"{s['home_goals']}-{s['away_goals']}"
         lines.append(f"{score_str:<14}{s['probability']*100:5.1f}%")
+
+    if pred["top_scorers_home"] or pred["top_scorers_away"]:
+        lines += ["", "Most likely scorers"]
+        for label, scorers in ((pred["home_team"], pred["top_scorers_home"]), (pred["away_team"], pred["top_scorers_away"])):
+            lines.append(f"{label}:")
+            for s in scorers:
+                lines.append(f"  {s['player']:<20}{s['scorer_probability']*100:5.1f}%")
+
     return "\n".join(lines)

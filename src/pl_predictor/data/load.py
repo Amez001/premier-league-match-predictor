@@ -164,6 +164,19 @@ def load_clean_matches() -> pd.DataFrame:
     return clean_matches(load_raw_matches())
 
 
+def get_current_season_teams(matches: pd.DataFrame) -> list[str]:
+    """The 20 clubs in the most recent season present in the data.
+
+    Used everywhere we want to restrict team pickers (dashboard, CLI) to the
+    actual current Premier League - as opposed to `known_teams`-style sets
+    that include every club that has passed through the division across the
+    full ~25 years of history, most of which are long since relegated.
+    """
+    latest_season = matches["season_start_year"].max()
+    latest = matches[matches["season_start_year"] == latest_season]
+    return sorted(set(latest["home_team"]) | set(latest["away_team"]))
+
+
 if __name__ == "__main__":
     matches = load_clean_matches()
     print(matches.shape)

@@ -16,7 +16,7 @@ FD_BASE_URL = "https://www.football-data.co.uk/mmz4281"
 
 # Default range of seasons to download/train on. "2000" means the 2000-01 season.
 DEFAULT_START_YEAR = 2000
-DEFAULT_END_YEAR = 2024  # 2024-25 season
+DEFAULT_END_YEAR = 2025  # 2025-26 season
 
 # Outcome label encoding used everywhere in the project.
 # Kept in this order so probability arrays are always [Home, Draw, Away].
