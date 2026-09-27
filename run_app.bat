@@ -20,8 +20,15 @@ if not exist "frontend\dist\index.html" (
 echo Demarrage du serveur sur http://localhost:8000 ...
 start "PL Predictor - serveur (laisser ouvert)" cmd /k "python -m uvicorn api.main:app --port 8000"
 
-ping -n 3 127.0.0.1 >nul
-start "" http://localhost:8000
+echo Attente du serveur...
+python scripts\wait_for_server.py http://localhost:8000/api/teams 20
+if errorlevel 1 (
+    echo Le serveur met plus longtemps que prevu a demarrer.
+    echo Verifie la fenetre "PL Predictor - serveur" pour d'eventuelles erreurs,
+    echo puis ouvre http://localhost:8000 toi-meme une fois pret.
+) else (
+    start "" http://localhost:8000
+)
 exit /b 0
 
 :popderror
