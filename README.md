@@ -301,6 +301,19 @@ python scripts/download_player_data.py
 Chaque appel écrit un snapshot horodaté dans `data/players/snapshots/` et met
 à jour `data/players/latest.csv` — voir
 [`src/pl_predictor/data/player_stats.py`](src/pl_predictor/data/player_stats.py).
+Contrairement à `data/raw/` (résultats bruts) et aux crests (marques
+déposées, voir plus bas), `data/players/` **est versionné** : ce ne sont que
+des faits publics (effectif, buts, minutes), et les garder dans le dépôt
+permet à la routine cloud hebdomadaire de calculer la "forme récente" d'une
+semaine à l'autre, et à n'importe quel checkout local de récupérer un
+effectif à jour avec un simple `git pull`, sans avoir à re-scraper FBref.
+
+> Les données reflètent toujours FBref au moment du scrape — pas de valeur
+> modifiée à la main. Un transfert de joueur n'apparaît qu'une fois que FBref
+> l'a répercuté ; la routine cloud du mercredi relance justement
+> `download_player_data.py` chaque semaine pour rester à jour, et signale
+> explicitement dans son rapport tout changement de club détecté d'un
+> snapshot à l'autre.
 
 **Modèle de buteurs probables**
 ([`src/pl_predictor/models/player_goals.py`](src/pl_predictor/models/player_goals.py)) :
