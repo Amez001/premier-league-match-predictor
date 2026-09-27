@@ -1,49 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap');
 
 /* ---------------------------------------------------------------------------
-   Design tokens. The UI chrome (brand violet, surfaces, ink) is separate from
-   the data palette: chart colors are validated for colorblind separation
-   and contrast against --surface (dataviz validate_palette.js, dark mode):
-     --home  #3987e5  (slot 1, blue)     --away  #d95926  (slot 2, orange)
-   Club colors are never used for data marks: several clubs share near-
-   identical reds/blues, so crests carry club identity instead.
+   Design tokens.
+
+   The interface itself is monochrome (ink on graphite, hairline rules), so
+   the data is the only thing on the page that carries color. Chart colors
+   are validated for colorblind separation and >= 3:1 contrast against
+   --page (dataviz validate_palette.js, dark mode):
+     --home #3987e5 (blue)   --away #d95926 (orange)   --draw neutral gray
+   Club colors are never used for data marks - several clubs share nearly
+   identical reds and blues - crests carry club identity instead.
+
+   One type family throughout (Archivo): its width axis gives condensed
+   headings and figures and a normal-width text face without mixing fonts.
 --------------------------------------------------------------------------- */
 :root {
   color-scheme: dark;
 
-  --page: #09090d;
-  --surface: #15151c;
-  --surface-2: #1c1c25;
-  --surface-3: #24242f;
-  --hairline: rgba(255, 255, 255, 0.07);
-  --hairline-strong: rgba(255, 255, 255, 0.12);
+  --page: #101114;
+  --raised: #17191d;
+  --raised-2: #1f2226;
+  --rule: rgba(255, 255, 255, 0.09);
+  --rule-strong: rgba(255, 255, 255, 0.18);
 
-  --ink: #f4f4f7;
-  --ink-2: #b9b9c6;
-  --ink-3: #82828f;
-
-  --brand: #b77cff;
-  --brand-strong: #9a4dff;
-  --brand-deep: #38003c;
-  --brand-glow: rgba(154, 77, 255, 0.28);
+  --ink: #ededee;
+  --ink-2: #a6a9b0;
+  --ink-3: #72767e;
 
   /* data palette (validated) */
   --home: #3987e5;
   --away: #d95926;
-  --draw: #62626e;
-  --seq-rgb: 57, 135, 229; /* sequential ramp = --home at varying opacity */
+  --draw: #5d6068;
+  --seq-rgb: 57, 135, 229; /* sequential ramp = --home at increasing opacity */
 
-  --radius-lg: 20px;
-  --radius: 14px;
-  --radius-sm: 10px;
+  --condensed: 'Archivo', system-ui, sans-serif;
+  --text: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 20px 50px -24px rgba(0, 0, 0, 0.8);
-
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  font-feature-settings: 'cv11', 'ss01';
+  font-family: var(--text);
+  font-size: 16px;
   color: var(--ink);
   background: var(--page);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scrollbar-color: var(--raised-2) var(--page);
 }
 
 * {
@@ -55,15 +55,16 @@ body,
 #root {
   margin: 0;
   min-height: 100vh;
+  background: var(--page);
 }
 
 body {
-  background:
-    radial-gradient(1200px 520px at 15% -10%, rgba(154, 77, 255, 0.16), transparent 60%),
-    radial-gradient(900px 480px at 95% 0%, rgba(57, 135, 229, 0.1), transparent 60%),
-    var(--page);
-  background-attachment: fixed;
-  line-height: 1.5;
+  line-height: 1.55;
+}
+
+::selection {
+  background: rgba(var(--seq-rgb), 0.45);
+  color: #fff;
 }
 
 h1,
@@ -71,8 +72,11 @@ h2,
 h3,
 h4 {
   margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-family: var(--condensed);
+  font-stretch: 78%;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
 p {
@@ -80,7 +84,15 @@ p {
 }
 
 a {
-  color: var(--brand);
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+a:hover {
+  text-decoration-color: var(--ink);
 }
 
 button {
@@ -90,9 +102,9 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 2px;
-  border-radius: 6px;
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 table {
@@ -107,7 +119,7 @@ table {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
 }

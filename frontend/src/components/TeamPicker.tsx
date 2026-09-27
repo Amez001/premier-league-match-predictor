@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import { ClubCrest } from './ClubCrest'
 
 interface Props {
+  /** accessible name, e.g. "Équipe à domicile" */
   label: string
   teams: string[]
   value: string
@@ -11,9 +12,10 @@ interface Props {
 }
 
 /**
- * Crest-aware dropdown (a native <select> can't render images in options).
- * Implements the WAI-ARIA listbox pattern: arrows move, Enter selects,
- * Escape / click-outside closes, focus returns to the trigger.
+ * The club name itself is the control: large condensed type with a small
+ * chevron, opening a crest-aware list (a native <select> can't render images
+ * in options). Implements the WAI-ARIA listbox pattern: arrows move, Enter
+ * selects, Escape / click-outside closes, focus returns to the trigger.
  */
 export function TeamPicker({ label, teams, value, onChange, disabledTeam, align = 'left' }: Props) {
   const [open, setOpen] = useState(false)
@@ -67,11 +69,11 @@ export function TeamPicker({ label, teams, value, onChange, disabledTeam, align 
 
   return (
     <div className={`team-picker team-picker-${align}`} ref={rootRef}>
-      <span className="eyebrow">{label}</span>
       <button
         ref={buttonRef}
         type="button"
         className="team-picker-trigger"
+        aria-label={`${label} : ${value}. Changer d'équipe`}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={listId}
@@ -81,8 +83,8 @@ export function TeamPicker({ label, teams, value, onChange, disabledTeam, align 
         }}
       >
         <span className="team-picker-name">{value}</span>
-        <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+        <svg className="chevron" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
 

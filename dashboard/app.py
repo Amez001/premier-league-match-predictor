@@ -15,23 +15,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from pl_predictor.data.load import load_clean_matches  # noqa: E402
 from pl_predictor.predict import MatchPredictor  # noqa: E402
 
-st.set_page_config(page_title="Premier League Match Predictor", page_icon="⚽", layout="centered")
-
-# Light visual polish (accent bar per section) while this stays a Streamlit
-# app - see README "Roadmap - Phase 2" for the planned full React redesign.
-st.markdown(
-    """
-    <style>
-    h2, h3 { border-left: 4px solid #38003c; padding-left: 0.6rem; }
-    div[data-testid="stMetric"] {
-        background: rgba(56, 0, 60, 0.05);
-        border-radius: 0.5rem;
-        padding: 0.6rem 0.8rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# Legacy no-build-step fallback; the main interface is the React app (frontend/).
+st.set_page_config(page_title="Premier League Match Predictor", layout="centered")
 
 
 @st.cache_resource(show_spinner="Loading historical data and fitting models...")
@@ -40,7 +25,7 @@ def get_predictor() -> MatchPredictor:
     return MatchPredictor(matches)
 
 
-st.title("⚽ Premier League Match Predictor")
+st.title("Premier League Match Predictor")
 st.caption(
     "Elo ratings + logistic regression for match outcome, Poisson goals model for the scoreline. "
     "Trained on historical results from football-data.co.uk."

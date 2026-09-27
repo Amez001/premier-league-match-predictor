@@ -1,4 +1,4 @@
-# ⚽ premier-league-match-predictor
+# premier-league-match-predictor
 
 Estimer, à partir des performances historiques des équipes, la probabilité qu'un
 match de Premier League se termine par une **victoire à domicile**, un **nul**
@@ -149,19 +149,22 @@ Most likely scores
 Backend FastAPI (fine couche HTTP sur `pl_predictor`, sans dupliquer la
 logique) + frontend React/Vite en trois pages :
 
-- **Match** : deux équipes (sélecteur avec crests), probabilités
-  victoire/nul/défaite, buts attendus, grille des scores exacts (carte de
-  chaleur), buteurs probables. La prédiction se met à jour dès qu'on change
-  d'équipe.
+- **Match** : l'affiche sert de titre, et chaque nom de club se clique pour
+  changer d'équipe. Probabilités victoire/nul/défaite, buts attendus, grille
+  des scores exacts (carte de chaleur), buteurs probables. La prédiction se
+  met à jour dès qu'on change d'équipe.
 - **Saison** : course au titre, lutte pour le maintien et classement projeté,
   avec pour chaque club la distribution complète de ses positions finales.
-- **Comment ça marche** : toute la méthode expliquée, formules comprises
-  (KaTeX), avec le tableau du backtest et les limites du modèle.
+- **Méthode** : toute la méthode expliquée, formules comprises (KaTeX), avec
+  le tableau du backtest et les limites du modèle.
 
-Les couleurs des graphiques ne reprennent pas celles des clubs (Arsenal et
-Liverpool, par exemple, ont deux rouges quasi identiques) : domicile = bleu,
-nul = gris, extérieur = orange, une palette validée pour la lisibilité par
-les daltoniens. L'identité des clubs passe par les crests.
+Parti pris graphique : une interface monochrome (graphite, filets fins, une
+seule famille de caractères, Archivo, condensée pour les titres et les
+chiffres), pour que les données soient les seules à porter de la couleur. Les
+graphiques ne reprennent pas les couleurs des clubs (Arsenal et Liverpool,
+par exemple, ont deux rouges quasi identiques) : domicile = bleu, nul = gris,
+extérieur = orange, une palette validée pour la lisibilité par les
+daltoniens. L'identité des clubs passe par les crests.
 
 **Développement** (deux process, avec rechargement à chaud) :
 

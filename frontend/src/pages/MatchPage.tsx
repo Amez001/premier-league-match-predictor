@@ -5,7 +5,7 @@ import { HBarChart } from '../components/HBarChart'
 import { OutcomeBar } from '../components/OutcomeBar'
 import { ScoreHeatmap } from '../components/ScoreHeatmap'
 import { TeamPicker } from '../components/TeamPicker'
-import { num2, pct, signed } from '../format'
+import { int, num2, pct } from '../format'
 
 const POSITION_FR: Record<string, string> = { FW: 'ATT', MF: 'MIL', DF: 'DÉF', GK: 'GB' }
 const positionLabel = (pos: string) => POSITION_FR[pos.split(',')[0]] ?? pos
@@ -27,7 +27,7 @@ export function MatchPage({ teams }: { teams: string[] }) {
     setAway(a)
   }, [teams]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Predict as soon as the fixture changes: no "Predict" button to press.
+  // Predict as soon as the fixture changes: there's no button to press.
   useEffect(() => {
     if (!teams.includes(home) || !teams.includes(away) || home === away) return
     let cancelled = false
@@ -55,84 +55,74 @@ export function MatchPage({ teams }: { teams: string[] }) {
 
   return (
     <div className="page">
-      <header className="page-header">
-        <span className="eyebrow">Prédiction de match</span>
-        <h1>Qui gagne ce match ?</h1>
-        <p className="lede">
-          Choisis deux équipes : le modèle estime l'issue, le score et les buteurs les plus probables.
-        </p>
-      </header>
+      <h1 className="sr-only">
+        Prédiction : {home} contre {away}
+      </h1>
 
-      <section className={`card matchup${loading ? ' is-loading' : ''}`} aria-busy={loading}>
-        <div className="matchup-teams">
-          <div className="matchup-side">
-            <ClubCrest team={home} size={96} />
-            <TeamPicker label="Domicile" teams={teams} value={home} onChange={setHome} disabledTeam={away} />
+      <section className={`fixture${loading ? ' is-loading' : ''}`} aria-busy={loading}>
+        <div className="fixture-row">
+          <div className="fixture-team">
+            <ClubCrest team={home} size={76} />
+            <div className="fixture-team-text">
+              <TeamPicker label="Équipe à domicile" teams={teams} value={home} onChange={setHome} disabledTeam={away} />
+              <span className="fixture-meta tabular">Domicile{p && <> · Elo {int(Math.round(p.elo_home))}</>}</span>
+            </div>
           </div>
 
-          <div className="matchup-center">
-            <button type="button" className="swap-button" onClick={swap} aria-label="Inverser domicile et extérieur" title="Inverser domicile / extérieur">
-              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 7h13l-4-4M17 17H4l4 4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
-            <span className="vs">VS</span>
-            {p && (
-              <span className="elo-chip" title="Écart de rating Elo (domicile − extérieur)">
-                Elo {signed(p.elo_diff)}
-              </span>
-            )}
-          </div>
+          <button type="button" className="swap" onClick={swap} aria-label="Inverser domicile et extérieur">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 8h15m0 0l-4-4m4 4l-4 4M20 16H5m0 0l4-4m-4 4l4 4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
 
-          <div className="matchup-side">
-            <ClubCrest team={away} size={96} />
-            <TeamPicker label="Extérieur" teams={teams} value={away} onChange={setAway} disabledTeam={home} align="right" />
+          <div className="fixture-team fixture-team-away">
+            <div className="fixture-team-text">
+              <TeamPicker label="Équipe à l'extérieur" teams={teams} value={away} onChange={setAway} disabledTeam={home} align="right" />
+              <span className="fixture-meta tabular">Extérieur{p && <> · Elo {int(Math.round(p.elo_away))}</>}</span>
+            </div>
+            <ClubCrest team={away} size={76} />
           </div>
         </div>
 
         {error && <p className="error">{error}</p>}
 
-        {p && (
-          <OutcomeBar home={p.home_team} away={p.away_team} pHome={p.home_win_proba} pDraw={p.draw_proba} pAway={p.away_win_proba} />
-        )}
+        {p && <OutcomeBar home={p.home_team} away={p.away_team} pHome={p.home_win_proba} pDraw={p.draw_proba} pAway={p.away_win_proba} />}
       </section>
 
       {p && (
-        <div className="grid-2">
-          <section className="card">
-            <div className="card-head">
-              <h2>Buts attendus</h2>
-              <p className="muted">Moyenne de buts prévue par le modèle Poisson</p>
-            </div>
+        <div className="columns">
+          <section className="module">
+            <h2>Buts attendus</h2>
             <div className="xg">
               <div className="xg-side">
+                <span className="xg-value tabular">{num2(p.expected_goals_home)}</span>
                 <span className="xg-team">
                   <i className="swatch swatch-home" aria-hidden="true" />
                   {p.home_team}
                 </span>
-                <span className="xg-value">{num2(p.expected_goals_home)}</span>
               </div>
               <div className="xg-bars" aria-hidden="true">
                 <span className="xg-bar xg-bar-home" style={{ flexGrow: p.expected_goals_home }} />
                 <span className="xg-bar xg-bar-away" style={{ flexGrow: p.expected_goals_away }} />
               </div>
-              <div className="xg-side xg-side-right">
+              <div className="xg-side xg-side-away">
+                <span className="xg-value tabular">{num2(p.expected_goals_away)}</span>
                 <span className="xg-team">
                   {p.away_team}
                   <i className="swatch swatch-away" aria-hidden="true" />
                 </span>
-                <span className="xg-value">{num2(p.expected_goals_away)}</span>
               </div>
             </div>
 
-            <div className="card-head card-head-spaced">
-              <h2>Scores les plus probables</h2>
-            </div>
+            <h2 className="module-subhead">Scores les plus probables</h2>
             <ol className="top-scores">
-              {p.most_likely_scores.map((s, i) => (
-                <li key={`${s.home_goals}-${s.away_goals}`} className={i === 0 ? 'is-first' : ''}>
+              {p.most_likely_scores.map((s) => (
+                <li key={`${s.home_goals}-${s.away_goals}`}>
                   <span className="top-score tabular">
-                    {s.home_goals} – {s.away_goals}
+                    {s.home_goals}–{s.away_goals}
+                  </span>
+                  <span className="top-score-bar" aria-hidden="true">
+                    <span style={{ width: `${(s.probability / p.most_likely_scores[0].probability) * 100}%` }} />
                   </span>
                   <span className="top-score-p tabular">{pct(s.probability)}</span>
                 </li>
@@ -140,34 +130,29 @@ export function MatchPage({ teams }: { teams: string[] }) {
             </ol>
           </section>
 
-          <section className="card">
-            <div className="card-head">
-              <h2>Grille des scores</h2>
-              <p className="muted">Probabilité de chaque score exact</p>
-            </div>
+          <section className="module">
+            <h2>Grille des scores</h2>
             <ScoreHeatmap home={p.home_team} away={p.away_team} matrix={p.score_matrix} />
           </section>
         </div>
       )}
 
       {p && (
-        <section className="card">
-          <div className="card-head">
-            <h2>Buteurs probables</h2>
-            <p className="muted">Probabilité de marquer au moins un but dans ce match</p>
-          </div>
+        <section className="module">
+          <h2>Buteurs probables</h2>
+          <p className="module-note">Probabilité de marquer au moins un but dans ce match.</p>
           {p.top_scorers_home.length === 0 && p.top_scorers_away.length === 0 ? (
             <p className="muted">
               Pas encore de données joueurs : lance <code>python scripts/download_player_data.py</code>.
             </p>
           ) : (
-            <div className="grid-2 grid-2-tight">
+            <div className="columns">
               {[
                 { team: p.home_team, scorers: p.top_scorers_home, tone: 'home' as const },
                 { team: p.away_team, scorers: p.top_scorers_away, tone: 'away' as const },
               ].map(({ team, scorers, tone }) => (
                 <div key={team}>
-                  <h3 className="subhead">
+                  <h3 className="team-heading">
                     <ClubCrest team={team} size={22} />
                     {team}
                   </h3>
