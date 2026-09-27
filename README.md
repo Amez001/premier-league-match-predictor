@@ -36,7 +36,8 @@ seulement sur le taux de bonnes réponses.
 - [Récupérer les données](#récupérer-les-données)
 - [Lancer le backtest](#lancer-le-backtest)
 - [Prédire un match](#prédire-un-match)
-- [Dashboard](#dashboard)
+- [Interface web](#interface-web)
+- [Crests des clubs](#crests-des-clubs)
 - [Méthodologie](#méthodologie)
   - [1. Baseline — régression logistique multinomiale](#1-baseline--régression-logistique-multinomiale)
   - [2. Elo Rating](#2-elo-rating)
@@ -48,7 +49,7 @@ seulement sur le taux de bonnes réponses.
 - [Performances du modèle](#performances-du-modèle)
 - [Structure du projet](#structure-du-projet)
 - [Sources de données](#sources-de-données)
-- [Roadmap — Phase 2](#roadmap--phase-2)
+- [Roadmap](#roadmap)
 
 ## Installation
 
@@ -59,6 +60,10 @@ python -m venv .venv && .venv\Scripts\activate   # ou `source .venv/bin/activate
 pip install -r requirements.txt
 pip install -e .
 ```
+
+L'interface web React (voir [Interface web](#interface-web)) nécessite en
+plus [Node.js](https://nodejs.org/) ≥ 18 (`npm install` dans `frontend/`) ;
+le dashboard Streamlit legacy n'en a pas besoin.
 
 ## Récupérer les données
 
@@ -131,15 +136,69 @@ Most likely scores
 0-0              6.9%
 ```
 
-## Dashboard
+## Interface web
+
+### React (recommandé)
+
+Backend FastAPI (réutilise directement `predict.py`/`player_goals.py`, sans
+dupliquer la logique) + frontend React/Vite avec thème sombre, crests des
+clubs et section buteurs probables.
+
+**Développement** (deux process, avec rechargement à chaud) :
+
+```bash
+# terminal 1
+uvicorn api.main:app --reload --port 8000
+# terminal 2
+cd frontend && npm install && npm run dev
+```
+
+Puis ouvrir l'URL donnée par Vite (typiquement `http://localhost:5173`).
+
+**Usage local ("prod")**, un seul process :
+
+```bash
+cd frontend && npm install && npm run build && cd ..
+uvicorn api.main:app --port 8000
+```
+
+Puis ouvrir `http://localhost:8000` — FastAPI sert directement le front
+buildé en plus de l'API.
+
+Pour les vrais crests des clubs (best-effort, voir
+[Crests des clubs](#crests-des-clubs)) :
+
+```bash
+python scripts/download_club_crests.py
+```
+
+### Streamlit (legacy)
+
+Gardé comme interface de secours, plus rapide à lancer, sans étape de build :
 
 ```bash
 streamlit run dashboard/app.py
 ```
 
 Sélectionne une équipe à domicile et une équipe à l'extérieur, et obtiens les
-probabilités H/D/A, les buts attendus (xG) et les scores les plus probables —
-plus un onglet avec les performances historiques du backtest.
+probabilités H/D/A, les buts attendus (xG), les scores les plus probables et
+les buteurs probables — plus un onglet avec les performances historiques du
+backtest.
+
+## Crests des clubs
+
+Les vrais logos des clubs sont des marques déposées : ce repo ne les
+redistribue **pas** publiquement. À la place,
+[`scripts/download_club_crests.py`](scripts/download_club_crests.py) va les
+chercher sur Wikipedia à la demande, en best-effort, et les enregistre
+localement dans `frontend/public/crests/` (ignoré par git). L'API
+`pageimages` de Wikipedia exclut les logos ("non-free content"), donc le
+script analyse la liste des images de la page de chaque club et choisit le
+meilleur candidat par heuristique sur le nom de fichier. Un club dont le
+crest n'est pas trouvé (ou le script jamais lancé) affiche simplement un
+monogramme coloré dans l'interface — voir
+[`ClubCrest.tsx`](frontend/src/components/ClubCrest.tsx) — jamais d'icône
+cassée.
 
 ## Méthodologie
 
@@ -375,11 +434,19 @@ premier-league-match-predictor/
 │   ├── evaluation/
 │   │   ├── metrics.py             # accuracy, log loss, Brier score
 │   │   └── backtest.py             # validation walk-forward par saison
-│   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI
-├── dashboard/app.py            # dashboard Streamlit
+│   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI/l'API
+├── api/main.py                  # backend FastAPI (fine couche HTTP sur pl_predictor)
+├── frontend/                    # front React/Vite (thème sombre, crests, buteurs)
+│   ├── src/
+│   │   ├── components/            # TeamSelect, ClubCrest, OutcomeProbabilities, ...
+│   │   ├── data/clubColors.ts      # couleurs + slugs des 20 clubs actuels
+│   │   └── api.ts                   # wrapper fetch typé vers l'API FastAPI
+│   └── public/crests/              # crests téléchargés (non versionnés, voir plus bas)
+├── dashboard/app.py            # dashboard Streamlit (legacy, gardé en secours)
 ├── scripts/
 │   ├── download_data.py
 │   ├── download_player_data.py
+│   ├── download_club_crests.py
 │   ├── run_backtest.py
 │   └── predict_match.py
 ├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs)
@@ -399,20 +466,23 @@ premier-league-match-predictor/
   non officiel pour les fixtures/classements en cours (utilisé uniquement pour
   le calendrier à venir dans le dashboard, en option).
 
-## Roadmap — Phase 2
+## Roadmap
 
-Prochain chantier, séparé de cette Phase 1 (données + modèle buteurs) : une
-vraie refonte de l'interface, pour remplacer le dashboard Streamlit actuel :
+**Fait** : Elo/Poisson/ML avec backtest walk-forward (Phase 0), restriction
+aux 20 équipes actuelles + buteurs probables (Phase 1), API FastAPI + front
+React avec vrais crests des clubs (Phase 2).
 
-- **Backend** : API FastAPI exposant `predict.py` et `player_goals.py`
-  (`/teams`, `/predict?home=&away=`, `/players?team=`).
-- **Frontend** : application React (Vite) avec un thème sombre sur-mesure,
-  les vrais crests des clubs (usage personnel/non-commercial), et une mise en
-  page pensée dès le départ pour l'affichage des buteurs probables à côté des
-  probabilités H/D/A et des scores.
+**Prochain chantier possible** :
+
 - **Enrichissement des données joueurs** : intégrer Understat (xG par
   joueur/tir) pour affiner le modèle de buteurs au-delà du simple partage de
   `attack_share × recent_form_multiplier`.
+- **Calendrier réel** : brancher `/api/fixtures`
+  ([`fixtures_api.py`](src/pl_predictor/data/fixtures_api.py), déjà prêt côté
+  backend) sur le front pour proposer directement les prochains matchs plutôt
+  que de choisir les deux équipes à la main.
+- **Déploiement** : usage local uniquement pour l'instant (pas de Docker/
+  hébergement prévu).
 
 ## Licence
 

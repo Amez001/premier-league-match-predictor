@@ -96,8 +96,12 @@ def fetch_current_squad_stats(season_start_year: int) -> pd.DataFrame:
 def save_snapshot(df: pd.DataFrame) -> None:
     """Persist a freshly fetched squad-stats dataframe as today's snapshot + latest.csv."""
     today = dt.date.today().isoformat()
-    df.to_csv(SNAPSHOTS_DIR / f"{today}.csv", index=False)
-    df.to_csv(LATEST_PATH, index=False)
+    # Player names include non-ASCII characters (Gyökeres, Zubimendi, ...);
+    # pandas' default encoding falls back to the OS locale (cp1252 on
+    # Windows) rather than UTF-8, which silently mangles them. Always be
+    # explicit here.
+    df.to_csv(SNAPSHOTS_DIR / f"{today}.csv", index=False, encoding="utf-8")
+    df.to_csv(LATEST_PATH, index=False, encoding="utf-8")
 
 
 def load_latest_snapshot() -> pd.DataFrame:
@@ -105,7 +109,7 @@ def load_latest_snapshot() -> pd.DataFrame:
         raise FileNotFoundError(
             f"No player data found at {LATEST_PATH}. Run `python scripts/download_player_data.py` first."
         )
-    return pd.read_csv(LATEST_PATH)
+    return pd.read_csv(LATEST_PATH, encoding="utf-8")
 
 
 def load_previous_snapshot() -> pd.DataFrame | None:
@@ -117,4 +121,4 @@ def load_previous_snapshot() -> pd.DataFrame | None:
     snapshots = sorted(SNAPSHOTS_DIR.glob("*.csv"))
     if len(snapshots) < 2:
         return None
-    return pd.read_csv(snapshots[-2])
+    return pd.read_csv(snapshots[-2], encoding="utf-8")
