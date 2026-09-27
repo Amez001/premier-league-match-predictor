@@ -37,6 +37,7 @@ seulement sur le taux de bonnes réponses.
 
 ## Sommaire
 
+- [Lancement rapide (Windows)](#lancement-rapide-windows)
 - [Installation](#installation)
 - [Récupérer les données](#récupérer-les-données)
 - [Lancer le backtest](#lancer-le-backtest)
@@ -56,6 +57,29 @@ seulement sur le taux de bonnes réponses.
 - [Structure du projet](#structure-du-projet)
 - [Sources de données](#sources-de-données)
 - [Roadmap](#roadmap)
+
+## Lancement rapide (Windows)
+
+Après l'[installation](#installation) une première fois,
+[`run_app.bat`](run_app.bat) lance tout en un double-clic : installe les
+dépendances manquantes, construit l'interface web si besoin, démarre l'API
+et ouvre `http://localhost:8000` dans le navigateur.
+
+Pour lui donner une icône ([`app.ico`](app.ico)) et le poser où tu veux
+(bureau, barre des tâches, dossier du projet) :
+
+```powershell
+$dir = "C:\chemin\vers\premier-league-match-predictor"
+$WshShell = New-Object -ComObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$dir\PL Predictor.lnk")
+$Shortcut.TargetPath = "$dir\run_app.bat"
+$Shortcut.WorkingDirectory = $dir
+$Shortcut.IconLocation = "$dir\app.ico"
+$Shortcut.Save()
+```
+
+Ce raccourci n'est pas versionné (il contiendrait un chemin absolu propre à
+ta machine) : chacun le régénère avec la commande ci-dessus.
 
 ## Installation
 
@@ -519,6 +543,8 @@ Quelques enseignements :
 
 ```
 premier-league-match-predictor/
+├── run_app.bat                  # lance tout en un double-clic (Windows)
+├── app.ico                       # icône du raccourci créé par run_app.bat
 ├── data/
 │   ├── raw/                  # CSV football-data.co.uk téléchargés (non versionnés)
 │   ├── processed/            # tables de features mises en cache (non versionnées)

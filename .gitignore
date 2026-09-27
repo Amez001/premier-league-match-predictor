@@ -31,3 +31,8 @@ reports/*.png
 
 .DS_Store
 downloaded_files/
+
+# Windows shortcut created by run_app.bat's setup - bakes in an absolute
+# path (and Windows username), so it's regenerated locally rather than
+# committed. See README "Lancement rapide (Windows)".
+*.lnk
