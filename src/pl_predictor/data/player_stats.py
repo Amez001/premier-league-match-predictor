@@ -45,6 +45,11 @@ FBREF_TEAM_NAME_FIXES = {
     "Nottingham": "Nottm Forest",
     "Nott'ham Forest": "Nottm Forest",
     "Newcastle Utd": "Newcastle",
+    # match reports spell clubs out in full, unlike the schedule/season tables
+    "Nottingham Forest": "Nottm Forest",
+    "Newcastle United": "Newcastle",
+    "Manchester United": "Man United",
+    "AFC Bournemouth": "Bournemouth",
     # Clubs that regularly go up/down - listed ahead of time so a newly
     # promoted side doesn't silently lose its players at the next rollover.
     "Coventry City": "Coventry",

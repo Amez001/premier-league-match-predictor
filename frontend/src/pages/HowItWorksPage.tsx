@@ -21,6 +21,7 @@ const SECTIONS = [
   ['simulation', 'La simulation de saison'],
   ['trophees', 'Buteur et passeur'],
   ['validation', 'La validation'],
+  ['bilan', 'Le bilan de la saison'],
   ['limites', 'Les limites'],
 ] as const
 
@@ -292,6 +293,29 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
                 surprises restent fréquents.
               </p>
             )}
+          </section>
+
+          <section id="bilan">
+            <h2>Le bilan de la saison</h2>
+            <p>
+              La page Bilan applique la même règle à la saison en cours, journée par journée. Avant chaque journée, tout
+              est reconstruit avec les seules données disponibles à ce moment-là : les modèles sont réentraînés sur les
+              matchs précédents, et les statistiques des joueurs sont recalculées à partir des feuilles de match
+              antérieures. Les totaux de saison actuels contiennent déjà les buts qu'on cherche à prédire, ils ne sont
+              donc jamais utilisés ici.
+            </p>
+            <p>
+              Chaque indicateur est comparé à ce que nos propres probabilités annonçaient. Si le favori est donné à 55 %
+              en moyenne, un modèle bien calibré a raison environ 55 % du temps. Le nombre de bons pronostics suit alors
+              une loi dont on connaît la moyenne et l'écart-type :
+            </p>
+            <Tex display>{'\\mathbb{E}[\\text{réussites}] = \\sum_m p_m, \\qquad \\sigma^2 = \\sum_m p_m (1 - p_m)'}</Tex>
+            <p>
+              La fourchette affichée (moyenne ± 1,28 σ) contient le vrai nombre 8 fois sur 10 si le modèle dit vrai.
+              Sortir de la bande de temps en temps est normal ; en sortir durablement signalerait un modèle trop sûr de
+              lui, ou pas assez. Le bilan est recalculé avec le modèle actuel : il mesure le modèle d'aujourd'hui, pas un
+              historique de ce que le site affichait à l'époque.
+            </p>
           </section>
 
           <section id="limites">

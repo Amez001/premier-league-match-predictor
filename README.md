@@ -53,6 +53,7 @@ seulement sur le taux de bonnes réponses.
 - [Simulation de la saison](#simulation-de-la-saison)
 - [Meilleur buteur et meilleur passeur](#meilleur-buteur-et-meilleur-passeur)
 - [Statistiques réelles](#statistiques-réelles)
+- [Bilan de la saison](#bilan-de-la-saison)
 - [Validation temporelle (pas de data leakage)](#validation-temporelle-pas-de-data-leakage)
 - [Métriques](#métriques)
 - [Performances du modèle](#performances-du-modèle)
@@ -173,7 +174,7 @@ Most likely scores
 ### React (recommandé)
 
 Backend FastAPI (fine couche HTTP sur `pl_predictor`, sans dupliquer la
-logique) + frontend React/Vite en quatre pages :
+logique) + frontend React/Vite en cinq pages :
 
 - **Match** : l'affiche sert de titre, et chaque nom de club se clique pour
   changer d'équipe. Probabilités victoire/nul/défaite, buts attendus, grille
@@ -184,6 +185,9 @@ logique) + frontend React/Vite en quatre pages :
 - **Projections** : course au titre, lutte pour le maintien, meilleur buteur
   et meilleur passeur en fin de saison, et classement projeté avec pour chaque
   club la distribution complète de ses positions finales.
+- **Bilan** : nos prédictions de la saison face aux vrais résultats, journée
+  par journée (bon résultat, score exact, buteur favori), comparées à ce que
+  nos propres probabilités annonçaient.
 - **Méthode** : toute la méthode expliquée, formules comprises (KaTeX), avec
   le tableau du backtest et les limites du modèle.
 
@@ -521,6 +525,45 @@ sur les 5 derniers matchs, derniers résultats, meilleurs buteurs et passeurs
 coupe un groupe d'ex æquo, la page le signale ("Et 1 autre joueur à 3 buts")
 plutôt que d'en choisir certains arbitrairement.
 
+## Bilan de la saison
+
+```bash
+python scripts/download_match_players.py   # feuilles de match FBref (buteurs, minutes), en incrémental
+python scripts/build_track_record.py
+```
+
+```
+2026-27: 50 matches over 5 matchweeks (2.9s)
+
+Result (H/D/A)   23/50  =  46%   expected 26.6 (80% range 22-31)
+Exact score       5/50  =  10%   expected 5.8 (80% range 3-9)
+Top scorer pick   ...
+Log loss        1.042   (reference, historical frequencies: 1.119)
+```
+
+[`src/pl_predictor/track_record.py`](src/pl_predictor/track_record.py)
+reconstruit le prédicteur **avant chaque journée** avec les seules données
+disponibles à ce moment-là, puis le confronte aux résultats :
+
+- Les modèles (Elo, logistique, Poisson) sont réentraînés sur les matchs
+  antérieurs au premier match de la journée.
+- Les parts des joueurs sont recalculées à partir des **feuilles de match**
+  antérieures ([`match_players.py`](src/pl_predictor/data/match_players.py)),
+  jamais à partir des totaux de saison actuels, qui contiennent déjà les buts
+  qu'on cherche à prédire. Un test vérifie que modifier les résultats d'une
+  journée ne change aucune prédiction de cette journée.
+- Chaque indicateur est comparé à ce que nos probabilités annonçaient : le
+  nombre de réussites a pour moyenne $\sum p$ et pour variance
+  $\sum p(1-p)$, d'où une fourchette à 80 %. Avec 50 matchs, un écart de
+  quelques points relève du hasard ; c'est la sortie durable de la fourchette
+  qui signalerait un problème de calibration.
+
+FBref limite fortement le rythme des requêtes (~1 min par feuille de match
+ici) : les feuilles sont donc stockées dans `data/players/match_stats_<saison>.csv`
+et seuls les nouveaux matchs sont téléchargés (une dizaine par semaine). Le
+bilan est recalculé avec le modèle actuel : il mesure le modèle d'aujourd'hui,
+pas un historique de ce que le site affichait.
+
 ## Validation temporelle (pas de data leakage)
 
 Deux précautions structurent tout le projet :
@@ -618,6 +661,7 @@ premier-league-match-predictor/
 │   │   ├── download.py         # téléchargement football-data.co.uk
 │   │   ├── load.py              # nettoyage + concaténation en une table de matchs
 │   │   ├── player_stats.py       # effectifs/stats joueurs via FBref (soccerdata)
+│   │   ├── match_players.py       # calendrier + feuilles de match FBref (buteurs, minutes)
 │   │   └── fixtures_api.py        # wrapper optionnel Premier-League-API (fixtures à venir)
 │   ├── features/
 │   │   ├── elo.py               # système de rating Elo maison
@@ -635,11 +679,12 @@ premier-league-match-predictor/
 │   ├── simulation.py              # Monte Carlo de la fin de saison (titre, top 4, relégation)
 │   ├── season_awards.py           # Monte Carlo meilleur buteur / meilleur passeur
 │   ├── stats.py                   # statistiques réelles (classement, forme, leaders)
+│   ├── track_record.py            # bilan : prédictions reconstituées vs résultats
 │   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI/l'API
 ├── api/main.py                  # backend FastAPI (fine couche HTTP sur pl_predictor)
 ├── frontend/                    # front React/Vite
 │   ├── src/
-│   │   ├── pages/                 # MatchPage, StatsPage, SeasonPage, HowItWorksPage
+│   │   ├── pages/                 # MatchPage, StatsPage, SeasonPage, RecordPage, HowItWorksPage
 │   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, AwardTable, LeaderList, FormGuide, ...
 │   │   ├── data/clubColors.ts      # couleurs (monogrammes de repli) + slugs des clubs
 │   │   └── api.ts                   # wrapper fetch typé vers l'API FastAPI
@@ -652,6 +697,8 @@ premier-league-match-predictor/
 │   ├── run_backtest.py
 │   ├── tune_poisson.py             # réglage du Poisson sur saisons de validation
 │   ├── simulate_season.py          # titre / relégation + meilleur buteur / passeur
+│   ├── download_match_players.py   # feuilles de match FBref, en incrémental
+│   ├── build_track_record.py       # bilan de la saison -> reports/track_record.json
 │   ├── wait_for_server.py          # utilisé par run_app.bat
 │   └── predict_match.py
 ├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs, simulation, trophées, stats)
@@ -677,7 +724,8 @@ premier-league-match-predictor/
 aux 20 équipes actuelles + buteurs probables (Phase 1), API FastAPI + front
 React avec vrais crests des clubs (Phase 2), simulation de saison, Poisson
 pondéré dans le temps et refonte du site (Phase 3), meilleur buteur/passeur,
-page de statistiques réelles et gestion des transferts (Phase 4).
+page de statistiques réelles et gestion des transferts (Phase 4), bilan de la
+saison sans fuite d'information (Phase 5).
 
 **Prochain chantier possible** :
 

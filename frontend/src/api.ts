@@ -114,6 +114,61 @@ export interface Leaderboard {
   more_tied: number
 }
 
+export interface HitBlock {
+  n: number
+  hits: number
+  /** what our own probabilities predicted: mean and 80% range of the hit count */
+  expected: number
+  expected_low: number
+  expected_high: number
+}
+
+export interface RecordSummary {
+  matches: number
+  outcome: HitBlock
+  exact: HitBlock
+  scorer_favourite: HitBlock
+  scorer_listed: HitBlock
+  log_loss: number | null
+  log_loss_reference: number | null
+}
+
+export interface ScorerPick {
+  player: string
+  probability: number
+  scored: boolean
+}
+
+export interface RecordMatch {
+  week: number
+  date: string
+  home_team: string
+  away_team: string
+  home_goals: number
+  away_goals: number
+  p_home: number
+  p_draw: number
+  p_away: number
+  favourite: 'H' | 'D' | 'A'
+  p_favourite: number
+  actual: 'H' | 'D' | 'A'
+  outcome_hit: boolean
+  predicted_score: [number, number]
+  p_predicted_score: number
+  exact_hit: boolean
+  scorers_known: boolean
+  scorers_home: ScorerPick[]
+  scorers_away: ScorerPick[]
+  actual_scorers: { team: string; player: string; goals: number }[]
+}
+
+export interface TrackRecord {
+  season_start_year: number
+  overall: RecordSummary
+  weeks: (RecordSummary & { week: number })[]
+  matches: RecordMatch[]
+}
+
 export interface Meta {
   season: string
   last_match_date: string
@@ -147,6 +202,8 @@ export const api = {
   getSeason: () => getJson<SeasonSimulation>('/api/season'),
   getAwards: () => getJson<Awards>('/api/awards'),
   getStats: () => getJson<Stats>('/api/stats'),
+  /** `{}` until scripts/build_track_record.py has run - RecordPage handles that. */
+  getTrackRecord: () => getJson<Partial<TrackRecord>>('/api/track-record'),
   getMeta: () => getJson<Meta>('/api/meta'),
   getBacktestSummary: () => getJson<BacktestRow[]>('/api/backtest-summary'),
 }

@@ -1,9 +1,10 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import './App.css'
-import { api, type Awards, type BacktestRow, type Meta, type SeasonSimulation, type Stats } from './api'
+import { api, type Awards, type BacktestRow, type Meta, type SeasonSimulation, type Stats, type TrackRecord } from './api'
 import { TooltipProvider } from './components/Tooltip'
 import { longDate, shortDate } from './format'
 import { MatchPage } from './pages/MatchPage'
+import { RecordPage } from './pages/RecordPage'
 import { SeasonPage } from './pages/SeasonPage'
 import { StatsPage } from './pages/StatsPage'
 
@@ -11,18 +12,19 @@ import { StatsPage } from './pages/StatsPage'
 // otherwise double the bundle for the Match and Season pages.
 const HowItWorksPage = lazy(() => import('./pages/HowItWorksPage').then((m) => ({ default: m.HowItWorksPage })))
 
-type Route = 'match' | 'stats' | 'saison' | 'methode'
+type Route = 'match' | 'stats' | 'saison' | 'bilan' | 'methode'
 
 const NAV: { route: Route; label: string }[] = [
   { route: 'match', label: 'Match' },
   { route: 'stats', label: 'Stats' },
   { route: 'saison', label: 'Projections' },
+  { route: 'bilan', label: 'Bilan' },
   { route: 'methode', label: 'Méthode' },
 ]
 
 function readRoute(): Route {
   const r = window.location.hash.replace(/^#\/?/, '').split('/')[0]
-  return r === 'stats' || r === 'saison' || r === 'methode' ? r : 'match'
+  return r === 'stats' || r === 'saison' || r === 'bilan' || r === 'methode' ? r : 'match'
 }
 
 export default function App() {
@@ -31,6 +33,7 @@ export default function App() {
   const [season, setSeason] = useState<SeasonSimulation | null>(null)
   const [awards, setAwards] = useState<Awards | null>(null)
   const [stats, setStats] = useState<Stats | null>(null)
+  const [record, setRecord] = useState<TrackRecord | null>(null)
   const [meta, setMeta] = useState<Meta | null>(null)
   const [backtest, setBacktest] = useState<BacktestRow[]>([])
   const [error, setError] = useState<string | null>(null)
@@ -49,6 +52,10 @@ export default function App() {
     api.getSeason().then(setSeason).catch(() => setSeason(null))
     api.getAwards().then(setAwards).catch(() => setAwards(null))
     api.getStats().then(setStats).catch(() => setStats(null))
+    api
+      .getTrackRecord()
+      .then((r) => setRecord({ matches: [], weeks: [], ...r } as TrackRecord))
+      .catch(() => setRecord(null))
     api.getMeta().then(setMeta).catch(() => setMeta(null))
     api.getBacktestSummary().then(setBacktest).catch(() => setBacktest([]))
   }, [])
@@ -96,6 +103,7 @@ export default function App() {
           {route === 'match' && <MatchPage teams={teams} />}
           {route === 'stats' && <StatsPage stats={stats} meta={meta} />}
           {route === 'saison' && <SeasonPage sim={season} awards={awards} />}
+          {route === 'bilan' && <RecordPage record={record} />}
           {route === 'methode' && (
             <Suspense fallback={<p className="muted">Chargement…</p>}>
               <HowItWorksPage meta={meta} backtest={backtest} />

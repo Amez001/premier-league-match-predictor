@@ -1,0 +1,991 @@
+game_id,week,date,team,player,nation,born,position,minutes,goals,assists
+3085a362,1,2026-08-21,Arsenal,Ben White,ENG,1997.0,DF,90,0,1
+3085a362,1,2026-08-21,Arsenal,Bukayo Saka,ENG,2001.0,MF,67,1,0
+3085a362,1,2026-08-21,Arsenal,Christos Tzolis,GRE,2002.0,MF,75,0,0
+3085a362,1,2026-08-21,Arsenal,Cristhian Mosquera,ESP,2004.0,DF,90,0,0
+3085a362,1,2026-08-21,Arsenal,David Raya,ESP,1995.0,GK,90,0,0
+3085a362,1,2026-08-21,Arsenal,Declan Rice,ENG,1999.0,MF,67,0,0
+3085a362,1,2026-08-21,Arsenal,Eberechi Eze,ENG,1998.0,FW,15,0,0
+3085a362,1,2026-08-21,Arsenal,Gabriel Magalhães,BRA,1997.0,DF,90,0,0
+3085a362,1,2026-08-21,Arsenal,Kai Havertz,GER,1999.0,FW,90,1,0
+3085a362,1,2026-08-21,Arsenal,Martin Ødegaard,NOR,1998.0,MF,75,1,0
+3085a362,1,2026-08-21,Arsenal,Martín Zubimendi,ESP,1999.0,MF,23,0,0
+3085a362,1,2026-08-21,Arsenal,Mikel Merino,ESP,1996.0,MF,15,0,0
+3085a362,1,2026-08-21,Arsenal,Myles Lewis-Skelly,ENG,2006.0,MF,90,0,0
+3085a362,1,2026-08-21,Arsenal,Noni Madueke,ENG,2002.0,FW,23,0,0
+3085a362,1,2026-08-21,Arsenal,Piero Hincapié,ECU,2002.0,DF,9,0,0
+3085a362,1,2026-08-21,Arsenal,Riccardo Calafiori,ITA,2002.0,DF,81,0,1
+3085a362,1,2026-08-21,Coventry,Aurèle Amenda,SUI,2003.0,DF,90,0,0
+3085a362,1,2026-08-21,Coventry,Bobby Thomas,ENG,2001.0,DF,90,0,0
+3085a362,1,2026-08-21,Coventry,Brandon Thomas-Asante,GHA,1998.0,FW,69,0,0
+3085a362,1,2026-08-21,Coventry,Caleb Yirenkyi,GHA,2006.0,MF,61,0,0
+3085a362,1,2026-08-21,Coventry,Carl Rushworth,ENG,2001.0,GK,90,0,0
+3085a362,1,2026-08-21,Coventry,Ellis Simms,ENG,2001.0,FW,69,0,0
+3085a362,1,2026-08-21,Coventry,Frank Onyeka,NGA,1998.0,MF,90,0,0
+3085a362,1,2026-08-21,Coventry,Gustavo Hamer,NED,1997.0,MF,9,0,0
+3085a362,1,2026-08-21,Coventry,Jack Rudoni,ENG,2000.0,MF,21,0,0
+3085a362,1,2026-08-21,Coventry,Jay Dasilva,WAL,1998.0,DF,90,0,0
+3085a362,1,2026-08-21,Coventry,Loum Tchaouna,FRA,2003.0,FW,81,0,0
+3085a362,1,2026-08-21,Coventry,Matt Grimes,ENG,1995.0,MF,90,0,0
+3085a362,1,2026-08-21,Coventry,Milan van Ewijk,NED,2000.0,DF,90,0,0
+3085a362,1,2026-08-21,Coventry,Taiwo Awoniyi,NGA,1997.0,FW,21,0,0
+3085a362,1,2026-08-21,Coventry,Victor Torp,DEN,1999.0,MF,29,0,0
+01f07042,1,2026-08-22,Brentford,Aaron Hickey,SCO,2002.0,DF,15,0,0
+01f07042,1,2026-08-22,Brentford,Callum Wilson,ENG,1992.0,FW,8,0,0
+01f07042,1,2026-08-22,Brentford,Caoimhín Kelleher,IRL,1998.0,GK,90,0,0
+01f07042,1,2026-08-22,Brentford,Dango Ouattara,BFA,2002.0,MF,66,0,0
+01f07042,1,2026-08-22,Brentford,Igor Thiago,BRA,2001.0,FW,82,0,0
+01f07042,1,2026-08-22,Brentford,Jaidon Anthony,ENG,1999.0,FW,24,0,0
+01f07042,1,2026-08-22,Brentford,Keane Lewis-Potter,ENG,2001.0,DF,90,1,0
+01f07042,1,2026-08-22,Brentford,Kevin Schade,GER,2001.0,MF,90,0,0
+01f07042,1,2026-08-22,Brentford,Kristoffer Ajer,NOR,1998.0,DF,90,0,0
+01f07042,1,2026-08-22,Brentford,Mamadou Sangare,MLI,2002.0,MF,75,0,1
+01f07042,1,2026-08-22,Brentford,Mathias Jensen,DEN,1996.0,MF,66,0,0
+01f07042,1,2026-08-22,Brentford,Michael Kayode,ITA,2004.0,DF,75,1,0
+01f07042,1,2026-08-22,Brentford,Mikkel Damsgaard,DEN,2000.0,FW,15,0,0
+01f07042,1,2026-08-22,Brentford,Nathan Collins,IRL,2001.0,DF,90,0,0
+01f07042,1,2026-08-22,Brentford,Vitaly Janelt,GER,1998.0,MF,90,1,0
+01f07042,1,2026-08-22,Brentford,Yehor Yarmoliuk,UKR,2004.0,MF,24,0,0
+01f07042,1,2026-08-22,Tottenham,Andy Robertson,SCO,1994.0,DF,90,0,0
+01f07042,1,2026-08-22,Tottenham,Antonín Kinský,CZE,2003.0,GK,90,0,0
+01f07042,1,2026-08-22,Tottenham,Archie Gray,ENG,2006.0,DF,85,0,0
+01f07042,1,2026-08-22,Tottenham,Conor Gallagher,ENG,2000.0,MF,45,0,0
+01f07042,1,2026-08-22,Tottenham,Destiny Udogie,ITA,2002.0,DF,5,0,0
+01f07042,1,2026-08-22,Tottenham,Dominic Solanke,ENG,1997.0,FW,23,0,0
+01f07042,1,2026-08-22,Tottenham,James Maddison,ENG,1996.0,FW,23,0,0
+01f07042,1,2026-08-22,Tottenham,Jan Paul van Hecke,NED,2000.0,DF,90,0,0
+01f07042,1,2026-08-22,Tottenham,Lucas Bergvall,SWE,2006.0,MF,45,0,0
+01f07042,1,2026-08-22,Tottenham,Marcos Senesi,ARG,1997.0,DF,90,0,0
+01f07042,1,2026-08-22,Tottenham,Mateus Fernandes,POR,2004.0,MF,45,0,0
+01f07042,1,2026-08-22,Tottenham,Mathys Tel,FRA,2005.0,MF,90,0,0
+01f07042,1,2026-08-22,Tottenham,Mikey Moore,ENG,2007.0,MF,67,0,0
+01f07042,1,2026-08-22,Tottenham,Richarlison,BRA,1997.0,FW,67,0,0
+01f07042,1,2026-08-22,Tottenham,Rodrigo Bentancur,URU,1997.0,MF,45,0,0
+01f07042,1,2026-08-22,Tottenham,Sandro Tonali,ITA,2000.0,MF,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Adam Wharton,ENG,2004.0,MF,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Anan Khalaili,ISR,2004.0,MF,36,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Chadi Riad,MAR,2003.0,DF,71,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Chris Richards,USA,2000.0,DF,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Daichi Kamada,JPN,1996.0,MF,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Daniel Muñoz,COL,1996.0,MF,54,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Dean Henderson,ENG,1997.0,GK,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Dwight McNeil,ENG,1999.0,MF,62,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Eddie Nketiah,ENG,1999.0,MF,54,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Evann Guessand,CIV,2001.0,FW,28,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Jaydee Canvot,FRA,2006.0,DF,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Jean-Philippe Mateta,FRA,1997.0,FW,62,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Jørgen Strand Larsen,NOR,2000.0,FW,28,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Takehiro Tomiyasu,JPN,1998.0,DF,19,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Tyrick Mitchell,ENG,1999.0,MF,90,0,0
+cbc27eaf,1,2026-08-22,Crystal Palace,Yéremy Pino,ESP,2002.0,FW,36,0,0
+cbc27eaf,1,2026-08-22,Everton,Beto,GNB,1998.0,FW,12,0,0
+cbc27eaf,1,2026-08-22,Everton,Brennan Johnson,WAL,2001.0,FW,7,0,0
+cbc27eaf,1,2026-08-22,Everton,Carlos Alcaraz,ARG,2002.0,MF,1,0,0
+cbc27eaf,1,2026-08-22,Everton,Harrison Armstrong,ENG,2007.0,MF,90,0,1
+cbc27eaf,1,2026-08-22,Everton,Hayden Hackney,ENG,2002.0,MF,78,0,0
+cbc27eaf,1,2026-08-22,Everton,Iliman Ndiaye,SEN,2000.0,MF,90,0,1
+cbc27eaf,1,2026-08-22,Everton,James Garner,ENG,2001.0,MF,12,0,0
+cbc27eaf,1,2026-08-22,Everton,James Tarkowski,ENG,1992.0,DF,90,0,0
+cbc27eaf,1,2026-08-22,Everton,Jarrad Branthwaite,ENG,2002.0,DF,90,0,0
+cbc27eaf,1,2026-08-22,Everton,Jordan Pickford,ENG,1994.0,GK,90,0,0
+cbc27eaf,1,2026-08-22,Everton,Kiernan Dewsbury-Hall,ENG,1998.0,MF,89,1,0
+cbc27eaf,1,2026-08-22,Everton,Merlin Röhl,GER,2002.0,DF,90,0,0
+cbc27eaf,1,2026-08-22,Everton,Thierno Barry,FRA,2002.0,FW,78,1,0
+cbc27eaf,1,2026-08-22,Everton,Tyrique George,ENG,2006.0,MF,83,0,0
+cbc27eaf,1,2026-08-22,Everton,Vitaliy Mykolenko,UKR,1999.0,DF,90,0,0
+69e3855f,1,2026-08-22,Hull,Bachir Belloumi,ALG,2002.0,MF,90,0,0
+69e3855f,1,2026-08-22,Hull,Cody Drameh,ENG,2001.0,DF,21,0,0
+69e3855f,1,2026-08-22,Hull,Elliot Stroud,SWE,2002.0,MF,70,0,0
+69e3855f,1,2026-08-22,Hull,John Egan,IRL,1992.0,DF,90,0,0
+69e3855f,1,2026-08-22,Hull,Kostas Tzolakis,GRE,2002.0,GK,90,0,0
+69e3855f,1,2026-08-22,Hull,Lewie Coyle,ENG,1995.0,DF,69,0,0
+69e3855f,1,2026-08-22,Hull,Liam Millar,CAN,1999.0,FW,20,0,0
+69e3855f,1,2026-08-22,Hull,Lucas Herrington,AUS,2007.0,DF,27,0,0
+69e3855f,1,2026-08-22,Hull,Matt Crooks,ENG,1994.0,MF,90,0,0
+69e3855f,1,2026-08-22,Hull,Matt Targett,ENG,1995.0,DF,6,0,0
+69e3855f,1,2026-08-22,Hull,Nobel Mendy,SEN,2004.0,DF,63,1,0
+69e3855f,1,2026-08-22,Hull,Oliver McBurnie,SCO,1996.0,FW,90,0,0
+69e3855f,1,2026-08-22,Hull,Paddy McNair,NIR,1995.0,DF,27,0,0
+69e3855f,1,2026-08-22,Hull,Regan Slater,ENG,1999.0,MF,90,0,1
+69e3855f,1,2026-08-22,Hull,Ryan Giles,ENG,2000.0,DF,84,0,0
+69e3855f,1,2026-08-22,Hull,Semi Ajayi,NGA,1993.0,DF,63,1,0
+69e3855f,1,2026-08-22,Manchester United,Andrey Santos,BRA,2004.0,MF,66,0,0
+69e3855f,1,2026-08-22,Manchester United,Ayden Heaven,ENG,2006.0,DF,90,0,0
+69e3855f,1,2026-08-22,Manchester United,Benjamin Šeško,SVN,2003.0,FW,24,0,0
+69e3855f,1,2026-08-22,Manchester United,Bruno Fernandes,POR,1994.0,MF,90,0,0
+69e3855f,1,2026-08-22,Manchester United,Bryan Mbeumo,CMR,1999.0,MF,90,0,0
+69e3855f,1,2026-08-22,Manchester United,Diogo Dalot,POR,1999.0,DF,11,0,0
+69e3855f,1,2026-08-22,Manchester United,Harry Maguire,ENG,1993.0,DF,90,0,0
+69e3855f,1,2026-08-22,Manchester United,Kobbie Mainoo,ENG,2005.0,MF,24,0,0
+69e3855f,1,2026-08-22,Manchester United,Luke Shaw,ENG,1995.0,DF,90,0,0
+69e3855f,1,2026-08-22,Manchester United,Marcus Rashford,ENG,1997.0,FW,45,0,0
+69e3855f,1,2026-08-22,Manchester United,Matheus Cunha,BRA,1999.0,FW,79,0,0
+69e3855f,1,2026-08-22,Manchester United,Noussair Mazraoui,MAR,1997.0,DF,79,0,0
+69e3855f,1,2026-08-22,Manchester United,Patrick Dorgu,DEN,2004.0,MF,45,0,0
+69e3855f,1,2026-08-22,Manchester United,Senne Lammens,BEL,2002.0,GK,90,0,0
+69e3855f,1,2026-08-22,Manchester United,Shea Lacey,ENG,2007.0,FW,11,0,0
+69e3855f,1,2026-08-22,Manchester United,Youri Tielemans,BEL,1997.0,MF,66,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Abdoul Ouattara,FRA,2005.0,DF,11,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Abdul Fatawu Issahaku,GHA,2004.0,MF,65,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Chuba Akpom,ENG,1995.0,FW,25,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Daizen Maeda,JPN,1997.0,MF,79,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Dara O'Shea,IRL,1999.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Emersonn,BRA,2004.0,FW,65,1,0
+2d0f0fb4,1,2026-08-22,Ipswich,Issa Diop,MAR,1997.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Jack Clarke,ENG,2000.0,FW,20,1,0
+2d0f0fb4,1,2026-08-22,Ipswich,Jacob Greaves,ENG,2000.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Julio Enciso,PAR,2004.0,MF,70,0,1
+2d0f0fb4,1,2026-08-22,Ipswich,Kasey McAteer,IRL,2001.0,MF,25,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Kjell Scherpen,NED,2000.0,GK,90,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Leif Davis,ENG,2000.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Marcelino Núñez,CHI,2000.0,MF,79,0,0
+2d0f0fb4,1,2026-08-22,Ipswich,Saša Lukić,SRB,1996.0,MF,90,0,1
+2d0f0fb4,1,2026-08-22,Ipswich,Sindre Egeli,NOR,2006.0,FW,11,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Brian Brobbey,NED,2002.0,FW,66,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Chemsdine Talbi,MAR,2005.0,MF,32,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Chris Rigg,ENG,2007.0,MF,11,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Daniel Ballard,NIR,1999.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Enzo Le Fée,FRA,2000.0,MF,79,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Granit Xhaka,SUI,1992.0,MF,90,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Habib Diarra,SEN,2004.0,MF,11,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Luke O'Nien,ENG,1994.0,DF,66,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Nilson Angulo,ECU,2003.0,MF,58,1,0
+2d0f0fb4,1,2026-08-22,Sunderland,Noah Sadiki,COD,2004.0,MF,90,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Omar Alderete,PAR,1996.0,DF,24,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Reinildo Mandava,MOZ,1994.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Robin Roefs,NED,2003.0,GK,90,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Thomas Meunier,BEL,1991.0,DF,90,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Trai Hume,NIR,2002.0,MF,79,0,0
+2d0f0fb4,1,2026-08-22,Sunderland,Wilson Isidor,HAI,2000.0,FW,24,0,0
+b6600c62,1,2026-08-22,Leeds,Anton Stach,GER,1998.0,MF,90,1,0
+b6600c62,1,2026-08-22,Leeds,Brenden Aaronson,USA,2000.0,MF,81,0,0
+b6600c62,1,2026-08-22,Leeds,Dominic Calvert-Lewin,ENG,1997.0,FW,90,0,0
+b6600c62,1,2026-08-22,Leeds,Ethan Ampadu,WAL,2000.0,MF,90,0,0
+b6600c62,1,2026-08-22,Leeds,Harry Wilson,WAL,1997.0,MF,65,0,0
+b6600c62,1,2026-08-22,Leeds,Jaka Bijol,SVN,1999.0,DF,90,0,0
+b6600c62,1,2026-08-22,Leeds,James Justin,ENG,1998.0,MF,90,0,0
+b6600c62,1,2026-08-22,Leeds,James Trafford,ENG,2002.0,GK,90,0,0
+b6600c62,1,2026-08-22,Leeds,Jayden Bogle,ENG,2000.0,MF,90,0,0
+b6600c62,1,2026-08-22,Leeds,Joe Rodon,WAL,1997.0,DF,90,0,0
+b6600c62,1,2026-08-22,Leeds,Noah Okafor,SUI,2000.0,FW,25,0,0
+b6600c62,1,2026-08-22,Leeds,Sean Longstaff,ENG,1997.0,MF,9,0,0
+b6600c62,1,2026-08-22,Leeds,Tarik Muharemovic,BIH,2003.0,DF,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Arnaud Kalimuendo,FRA,2002.0,FW,1,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Chris Wood,NZL,1991.0,FW,29,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Dan Ndoye,SUI,2000.0,MF,61,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Ibrahim Sangaré,CIV,1997.0,MF,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Igor Jesus,BRA,2001.0,FW,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Jair Cunha,BRA,2005.0,DF,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,James Mcatee,ENG,2002.0,MF,73,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Luca Netz,GER,2003.0,DF,17,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Matz Sels,BEL,1992.0,GK,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Morgan Gibbs-White,ENG,2000.0,MF,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Murillo,BRA,2002.0,DF,89,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Neco Williams,WAL,2001.0,MF,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Nikola Milenković,SRB,1997.0,DF,90,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Ola Aina,NGA,1996.0,MF,73,0,0
+b6600c62,1,2026-08-22,Nottingham Forest,Xaver Schlager,AUT,1997.0,MF,17,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Alejandro Garnacho,ARG,2004.0,MF,5,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Alysson,BRA,2006.0,MF,9,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Boubacar Kamara,FRA,1999.0,MF,90,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Emi Buendía,ARG,1996.0,FW,85,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,George Hemmings,ENG,2007.0,MF,90,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Ian Maatsen,NED,2002.0,DF,81,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,John McGinn,SCO,1994.0,MF,81,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,João Gomes,BRA,2001.0,MF,39,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Lamare Bogarde,NED,2004.0,DF,17,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Marco Bizot,NED,1991.0,GK,90,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Matteo Ruggeri,ITA,2002.0,DF,9,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Matty Cash,POL,1997.0,DF,90,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Pau Torres,ESP,1997.0,DF,73,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Ross Barkley,ENG,1993.0,MF,73,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Tyrone Mings,ENG,1993.0,DF,17,0,0
+cc39f2ef,1,2026-08-23,Aston Villa,Victor Lindelöf,SWE,1994.0,DF,90,0,0
+cc39f2ef,1,2026-08-23,Brighton,Bart Verbruggen,NED,2002.0,GK,90,0,0
+cc39f2ef,1,2026-08-23,Brighton,Charalampos Kostoulas,GRE,2007.0,FW,27,0,0
+cc39f2ef,1,2026-08-23,Brighton,Costinha,POR,2000.0,DF,27,0,0
+cc39f2ef,1,2026-08-23,Brighton,Diego Gómez,PAR,2003.0,MF,85,0,1
+cc39f2ef,1,2026-08-23,Brighton,Georginio Rutter,FRA,2002.0,FW,90,0,1
+cc39f2ef,1,2026-08-23,Brighton,Ibrahim Osman,GHA,2004.0,FW,13,0,0
+cc39f2ef,1,2026-08-23,Brighton,Jack Hinshelwood,ENG,2005.0,MF,63,2,0
+cc39f2ef,1,2026-08-23,Brighton,Lewis Dunk,ENG,1991.0,DF,90,0,0
+cc39f2ef,1,2026-08-23,Brighton,Luka Vušković,CRO,2007.0,DF,90,0,0
+cc39f2ef,1,2026-08-23,Brighton,Malick Yalcouye,CIV,2005.0,MF,5,0,0
+cc39f2ef,1,2026-08-23,Brighton,Mats Wieffer,NED,1999.0,DF,77,0,0
+cc39f2ef,1,2026-08-23,Brighton,Maxim De Cuyper,BEL,2000.0,MF,77,1,0
+cc39f2ef,1,2026-08-23,Brighton,Olivier Boscagli,FRA,1997.0,DF,90,0,0
+cc39f2ef,1,2026-08-23,Brighton,Pascal Groß,GER,1991.0,MF,90,0,0
+cc39f2ef,1,2026-08-23,Brighton,Yasin Ayari,SWE,2003.0,MF,63,0,0
+cc39f2ef,1,2026-08-23,Brighton,Zadok Yohanna,NGA,2007.0,FW,13,0,0
+029e3234,1,2026-08-23,Bournemouth,Adam Smith,ENG,1991.0,DF,90,0,0
+029e3234,1,2026-08-23,Bournemouth,Adrien Truffert,FRA,2001.0,DF,90,0,0
+029e3234,1,2026-08-23,Bournemouth,Alex Scott,ENG,2003.0,MF,90,0,0
+029e3234,1,2026-08-23,Bournemouth,Alex Tóth,HUN,2005.0,MF,16,0,0
+029e3234,1,2026-08-23,Bournemouth,António Silva,POR,2003.0,DF,90,0,0
+029e3234,1,2026-08-23,Bournemouth,Ben Gannon-Doak,SCO,2005.0,MF,2,0,0
+029e3234,1,2026-08-23,Bournemouth,Daniel Jebbison,CAN,2003.0,FW,16,0,0
+029e3234,1,2026-08-23,Bournemouth,Evanilson,BRA,1999.0,FW,74,0,1
+029e3234,1,2026-08-23,Bournemouth,James Hill,ENG,2002.0,DF,90,0,0
+029e3234,1,2026-08-23,Bournemouth,Justin Kluivert,NED,1999.0,MF,74,0,0
+029e3234,1,2026-08-23,Bournemouth,Lewis Cook,ENG,1997.0,MF,74,0,0
+029e3234,1,2026-08-23,Bournemouth,Marcus Tavernier,ENG,1999.0,MF,90,1,0
+029e3234,1,2026-08-23,Bournemouth,Rayan,BRA,2006.0,MF,88,0,0
+029e3234,1,2026-08-23,Bournemouth,Tyler Adams,USA,1999.0,MF,16,0,0
+029e3234,1,2026-08-23,Bournemouth,Đorđe Petrović,SRB,1999.0,GK,90,0,0
+029e3234,1,2026-08-23,Man City,Abdukodir Khusanov,UZB,2004.0,DF,90,0,0
+029e3234,1,2026-08-23,Man City,Antoine Semenyo,GHA,2000.0,MF,90,0,0
+029e3234,1,2026-08-23,Man City,Elliot Anderson,ENG,2002.0,MF,62,0,0
+029e3234,1,2026-08-23,Man City,Erling Haaland,NOR,2000.0,FW,90,0,0
+029e3234,1,2026-08-23,Man City,Gianluigi Donnarumma,ITA,1999.0,GK,90,0,0
+029e3234,1,2026-08-23,Man City,Jack Grealish,ENG,1995.0,FW,9,0,0
+029e3234,1,2026-08-23,Man City,Joško Gvardiol,CRO,2002.0,DF,90,1,0
+029e3234,1,2026-08-23,Man City,Marc Guéhi,ENG,2000.0,MF,90,1,0
+029e3234,1,2026-08-23,Man City,Mateo Kovačić,CRO,1994.0,MF,28,0,0
+029e3234,1,2026-08-23,Man City,Matheus Nunes,POR,1998.0,DF,34,0,0
+029e3234,1,2026-08-23,Man City,Nico O'Reilly,ENG,2005.0,MF,62,0,0
+029e3234,1,2026-08-23,Man City,Phil Foden,ENG,2000.0,MF,81,0,0
+029e3234,1,2026-08-23,Man City,Rayan Cherki,FRA,2003.0,FW,28,0,2
+029e3234,1,2026-08-23,Man City,Rico Lewis,ENG,2004.0,DF,56,0,0
+029e3234,1,2026-08-23,Man City,Rúben Dias,POR,1997.0,DF,90,0,0
+a02c581c,1,2026-08-23,Liverpool,Alexander Isak,SWE,1999.0,FW,90,0,0
+a02c581c,1,2026-08-23,Liverpool,Alexis Mac Allister,ARG,1998.0,MF,28,0,0
+a02c581c,1,2026-08-23,Liverpool,Alisson,BRA,1992.0,GK,90,0,0
+a02c581c,1,2026-08-23,Liverpool,Cody Gakpo,NED,1999.0,MF,90,1,0
+a02c581c,1,2026-08-23,Liverpool,Dominik Szoboszlai,HUN,2000.0,MF,90,1,0
+a02c581c,1,2026-08-23,Liverpool,Florian Wirtz,GER,2003.0,MF,62,0,0
+a02c581c,1,2026-08-23,Liverpool,Jeremie Frimpong,NED,2000.0,DF,90,0,0
+a02c581c,1,2026-08-23,Liverpool,Jérémy Jacquet,FRA,2005.0,DF,69,0,0
+a02c581c,1,2026-08-23,Liverpool,Lewis Koumas,WAL,2005.0,FW,13,0,0
+a02c581c,1,2026-08-23,Liverpool,Milos Kerkez,HUN,2003.0,DF,90,0,0
+a02c581c,1,2026-08-23,Liverpool,Rio Ngumoha,ENG,2008.0,MF,62,0,0
+a02c581c,1,2026-08-23,Liverpool,Ronald Araújo,URU,1999.0,DF,21,0,0
+a02c581c,1,2026-08-23,Liverpool,Ryan Gravenberch,NED,2002.0,MF,77,0,1
+a02c581c,1,2026-08-23,Liverpool,Virgil van Dijk,NED,1991.0,DF,90,0,0
+a02c581c,1,2026-08-23,Liverpool,Víctor Muñoz,ESP,2003.0,MF,28,0,0
+a02c581c,1,2026-08-23,Newcastle United,Aladji Bamba,FRA,2006.0,MF,15,0,0
+a02c581c,1,2026-08-23,Newcastle United,Amar Dedić,BIH,2002.0,DF,90,0,0
+a02c581c,1,2026-08-23,Newcastle United,Anthony Elanga,SWE,2002.0,MF,75,1,0
+a02c581c,1,2026-08-23,Newcastle United,Fabian Schär,SUI,1991.0,DF,1,0,0
+a02c581c,1,2026-08-23,Newcastle United,Harvey Barnes,ENG,1997.0,MF,90,0,0
+a02c581c,1,2026-08-23,Newcastle United,Jacob Murphy,ENG,1995.0,DF,15,0,0
+a02c581c,1,2026-08-23,Newcastle United,Jacob Ramsey,ENG,2001.0,MF,35,0,0
+a02c581c,1,2026-08-23,Newcastle United,Joe Willock,ENG,1999.0,MF,35,1,0
+a02c581c,1,2026-08-23,Newcastle United,Lewis Hall,ENG,2004.0,DF,90,0,0
+a02c581c,1,2026-08-23,Newcastle United,Lewis Miley,ENG,2006.0,MF,75,0,0
+a02c581c,1,2026-08-23,Newcastle United,Lukáš Horníček,CZE,2002.0,GK,90,0,0
+a02c581c,1,2026-08-23,Newcastle United,Malick Thiaw,GER,2001.0,DF,90,0,0
+a02c581c,1,2026-08-23,Newcastle United,Sean Steur,NED,2008.0,MF,55,0,0
+a02c581c,1,2026-08-23,Newcastle United,Sven Botman,NED,2000.0,DF,90,0,0
+a02c581c,1,2026-08-23,Newcastle United,William Osula,DEN,2003.0,FW,55,0,1
+a02c581c,1,2026-08-23,Newcastle United,Yoane Wissa,COD,1996.0,MF,89,0,1
+98138a1e,1,2026-08-24,Chelsea,Cole Palmer,ENG,2002.0,MF,82,1,1
+98138a1e,1,2026-08-24,Chelsea,Enzo Fernández,ARG,2001.0,MF,26,0,0
+98138a1e,1,2026-08-24,Chelsea,Estêvão Willian,BRA,2007.0,MF,8,0,0
+98138a1e,1,2026-08-24,Chelsea,Geovany Quenda,POR,2007.0,MF,9,0,0
+98138a1e,1,2026-08-24,Chelsea,Jorrel Hato,NED,2006.0,MF,64,0,0
+98138a1e,1,2026-08-24,Chelsea,Joshua Acheampong,ENG,2006.0,DF,90,0,0
+98138a1e,1,2026-08-24,Chelsea,João Pedro,BRA,2001.0,FW,90,1,1
+98138a1e,1,2026-08-24,Chelsea,Levi Colwill,ENG,2003.0,DF,90,0,0
+98138a1e,1,2026-08-24,Chelsea,Malo Gusto,FRA,2003.0,MF,75,0,0
+98138a1e,1,2026-08-24,Chelsea,Maxence Lacroix,FRA,2000.0,DF,90,0,1
+98138a1e,1,2026-08-24,Chelsea,Morgan Rogers,ENG,2002.0,MF,81,1,0
+98138a1e,1,2026-08-24,Chelsea,Pedro Neto,POR,2000.0,FW,15,0,0
+98138a1e,1,2026-08-24,Chelsea,Pep Chavarría,ESP,1998.0,DF,26,0,0
+98138a1e,1,2026-08-24,Chelsea,Reece James,ENG,1999.0,MF,90,0,0
+98138a1e,1,2026-08-24,Chelsea,Robert Sánchez,ESP,1997.0,GK,90,0,0
+98138a1e,1,2026-08-24,Chelsea,Roméo Lavia,BEL,2004.0,MF,64,0,0
+98138a1e,1,2026-08-24,Fulham,Alex Iwobi,NGA,1996.0,MF,90,0,0
+98138a1e,1,2026-08-24,Fulham,Antonee Robinson,USA,1997.0,DF,81,0,0
+98138a1e,1,2026-08-24,Fulham,Bernd Leno,GER,1992.0,GK,90,0,0
+98138a1e,1,2026-08-24,Fulham,Calvin Bassey,NGA,2000.0,DF,90,0,0
+98138a1e,1,2026-08-24,Fulham,César Palacios,ESP,2004.0,MF,72,0,0
+98138a1e,1,2026-08-24,Fulham,Gonzalo García,ESP,2004.0,FW,90,1,0
+98138a1e,1,2026-08-24,Fulham,Jorge Cuenca,ESP,1999.0,DF,90,0,0
+98138a1e,1,2026-08-24,Fulham,Joshua King,ENG,2007.0,MF,90,1,0
+98138a1e,1,2026-08-24,Fulham,Kevin,BRA,2003.0,MF,18,0,0
+98138a1e,1,2026-08-24,Fulham,Oscar Bobb,NOR,2003.0,MF,66,0,0
+98138a1e,1,2026-08-24,Fulham,Rodrigo Muniz,BRA,2001.0,FW,9,0,0
+98138a1e,1,2026-08-24,Fulham,Ryan Sessegnon,ENG,2000.0,DF,18,0,0
+98138a1e,1,2026-08-24,Fulham,Sander Berge,NOR,1998.0,MF,72,0,0
+98138a1e,1,2026-08-24,Fulham,Shea Charles,NIR,2003.0,DF,24,0,0
+98138a1e,1,2026-08-24,Fulham,Timothy Castagne,BEL,1995.0,DF,90,0,1
+5b62d64d,2,2026-08-28,Crystal Palace,Adam Wharton,ENG,2004.0,MF,90,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Anan Khalaili,ISR,2004.0,MF,74,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Axel Disasi,FRA,1998.0,DF,16,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Chris Richards,USA,2000.0,DF,90,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Daichi Kamada,JPN,1996.0,MF,90,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Dean Henderson,ENG,1997.0,GK,90,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Dwight McNeil,ENG,1999.0,MF,23,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Eddie Nketiah,ENG,1999.0,MF,67,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Evann Guessand,CIV,2001.0,FW,28,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Jaydee Canvot,FRA,2006.0,DF,90,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Jørgen Strand Larsen,NOR,2000.0,FW,62,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Takehiro Tomiyasu,JPN,1998.0,DF,74,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Tyrick Mitchell,ENG,1999.0,MF,90,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Yéremy Pino,ESP,2002.0,MF,67,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Zavier Gozo,USA,2007.0,MF,23,0,0
+5b62d64d,2,2026-08-28,Crystal Palace,Óscar Mingueza,ESP,1999.0,DF,16,0,0
+5b62d64d,2,2026-08-28,Man City,Abdukodir Khusanov,UZB,2004.0,DF,88,0,0
+5b62d64d,2,2026-08-28,Man City,Antoine Semenyo,GHA,2000.0,MF,90,0,1
+5b62d64d,2,2026-08-28,Man City,Ayyoub Bouaddi,MAR,2007.0,MF,9,0,0
+5b62d64d,2,2026-08-28,Man City,Elliot Anderson,ENG,2002.0,MF,81,0,0
+5b62d64d,2,2026-08-28,Man City,Erling Haaland,NOR,2000.0,FW,90,2,0
+5b62d64d,2,2026-08-28,Man City,Gianluigi Donnarumma,ITA,1999.0,GK,90,0,0
+5b62d64d,2,2026-08-28,Man City,Joško Gvardiol,CRO,2002.0,DF,74,0,1
+5b62d64d,2,2026-08-28,Man City,Kaden Braithwaite,ENG,2008.0,DF,2,0,0
+5b62d64d,2,2026-08-28,Man City,Marc Guéhi,ENG,2000.0,DF,90,0,0
+5b62d64d,2,2026-08-28,Man City,Mateo Kovačić,CRO,1994.0,MF,16,0,0
+5b62d64d,2,2026-08-28,Man City,Nico O'Reilly,ENG,2005.0,MF,88,0,0
+5b62d64d,2,2026-08-28,Man City,Phil Foden,ENG,2000.0,MF,90,0,2
+5b62d64d,2,2026-08-28,Man City,Rayan Cherki,FRA,2003.0,MF,81,2,0
+5b62d64d,2,2026-08-28,Man City,Ryan Mcaidoo,ENG,2008.0,FW,9,0,0
+5b62d64d,2,2026-08-28,Man City,Rúben Dias,POR,1997.0,DF,90,0,0
+5b62d64d,2,2026-08-28,Man City,Vitor Reis,BRA,2006.0,DF,2,0,0
+aa96770b,2,2026-08-29,Bournemouth,Adam Smith,ENG,1991.0,DF,90,0,0
+aa96770b,2,2026-08-29,Bournemouth,Adrien Truffert,FRA,2001.0,DF,90,0,0
+aa96770b,2,2026-08-29,Bournemouth,Alex Scott,ENG,2003.0,MF,86,1,0
+aa96770b,2,2026-08-29,Bournemouth,António Silva,POR,2003.0,DF,90,0,0
+aa96770b,2,2026-08-29,Bournemouth,David Brooks,WAL,1997.0,FW,10,0,0
+aa96770b,2,2026-08-29,Bournemouth,Evanilson,BRA,1999.0,FW,80,0,1
+aa96770b,2,2026-08-29,Bournemouth,James Hill,ENG,2002.0,DF,90,0,0
+aa96770b,2,2026-08-29,Bournemouth,Justin Kluivert,NED,1999.0,MF,80,0,0
+aa96770b,2,2026-08-29,Bournemouth,Lewis Cook,ENG,1997.0,MF,68,0,0
+aa96770b,2,2026-08-29,Bournemouth,Marcus Tavernier,ENG,1999.0,MF,90,0,0
+aa96770b,2,2026-08-29,Bournemouth,Rayan,BRA,2006.0,MF,90,0,0
+aa96770b,2,2026-08-29,Bournemouth,Ryan Christie,SCO,1995.0,FW,4,0,0
+aa96770b,2,2026-08-29,Bournemouth,Tyler Adams,USA,1999.0,MF,22,0,0
+aa96770b,2,2026-08-29,Bournemouth,Álvaro Rodríguez,URU,2004.0,FW,10,0,0
+aa96770b,2,2026-08-29,Bournemouth,Đorđe Petrović,SRB,1999.0,GK,90,0,0
+aa96770b,2,2026-08-29,Everton,Beto,GNB,1998.0,FW,21,0,0
+aa96770b,2,2026-08-29,Everton,Brennan Johnson,WAL,2001.0,FW,29,0,0
+aa96770b,2,2026-08-29,Everton,Carlos Alcaraz,ARG,2002.0,MF,5,0,0
+aa96770b,2,2026-08-29,Everton,Harrison Armstrong,ENG,2007.0,MF,85,0,0
+aa96770b,2,2026-08-29,Everton,Hayden Hackney,ENG,2002.0,MF,29,0,0
+aa96770b,2,2026-08-29,Everton,Iliman Ndiaye,SEN,2000.0,MF,90,0,0
+aa96770b,2,2026-08-29,Everton,James Garner,ENG,2001.0,MF,61,0,0
+aa96770b,2,2026-08-29,Everton,James Tarkowski,ENG,1992.0,DF,90,1,0
+aa96770b,2,2026-08-29,Everton,Jarrad Branthwaite,ENG,2002.0,DF,90,0,0
+aa96770b,2,2026-08-29,Everton,Jordan Pickford,ENG,1994.0,GK,90,0,0
+aa96770b,2,2026-08-29,Everton,Kiernan Dewsbury-Hall,ENG,1998.0,MF,90,0,0
+aa96770b,2,2026-08-29,Everton,Merlin Röhl,GER,2002.0,DF,85,0,0
+aa96770b,2,2026-08-29,Everton,Thierno Barry,FRA,2002.0,FW,69,0,0
+aa96770b,2,2026-08-29,Everton,Tim Iroegbunam,ENG,2003.0,MF,5,0,0
+aa96770b,2,2026-08-29,Everton,Tyrique George,ENG,2006.0,MF,61,0,0
+aa96770b,2,2026-08-29,Everton,Vitaliy Mykolenko,UKR,1999.0,DF,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Aurèle Amenda,SUI,2003.0,DF,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Bobby Thomas,ENG,2001.0,DF,77,0,0
+2efaf8c6,2,2026-08-29,Coventry,Brandon Thomas-Asante,GHA,1998.0,FW,32,0,0
+2efaf8c6,2,2026-08-29,Coventry,Caleb Yirenkyi,GHA,2006.0,MF,70,0,0
+2efaf8c6,2,2026-08-29,Coventry,Carl Rushworth,ENG,2001.0,GK,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Ephron Mason-Clark,JAM,1999.0,MF,58,0,0
+2efaf8c6,2,2026-08-29,Coventry,Ethan Pinnock,JAM,1993.0,DF,13,0,0
+2efaf8c6,2,2026-08-29,Coventry,Gustavo Hamer,NED,1997.0,MF,20,0,0
+2efaf8c6,2,2026-08-29,Coventry,Jack Rudoni,ENG,2000.0,MF,70,0,0
+2efaf8c6,2,2026-08-29,Coventry,Jay Dasilva,WAL,1998.0,DF,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Loum Tchaouna,FRA,2003.0,MF,58,0,0
+2efaf8c6,2,2026-08-29,Coventry,Matt Grimes,ENG,1995.0,MF,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Milan van Ewijk,NED,2000.0,DF,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Taiwo Awoniyi,NGA,1997.0,FW,90,0,0
+2efaf8c6,2,2026-08-29,Coventry,Tatsuhiro Sakamoto,JPN,1996.0,FW,32,0,0
+2efaf8c6,2,2026-08-29,Coventry,Victor Torp,DEN,1999.0,MF,20,0,0
+2efaf8c6,2,2026-08-29,Hull,Bachir Belloumi,ALG,2002.0,MF,82,0,1
+2efaf8c6,2,2026-08-29,Hull,Cody Drameh,ENG,2001.0,DF,45,0,0
+2efaf8c6,2,2026-08-29,Hull,Elliot Stroud,SWE,2002.0,MF,58,0,0
+2efaf8c6,2,2026-08-29,Hull,Hidemasa Morita,JPN,1995.0,MF,45,0,0
+2efaf8c6,2,2026-08-29,Hull,John Egan,IRL,1992.0,DF,90,0,0
+2efaf8c6,2,2026-08-29,Hull,Kostas Tzolakis,GRE,2002.0,GK,90,0,0
+2efaf8c6,2,2026-08-29,Hull,Lewie Coyle,ENG,1995.0,DF,45,0,0
+2efaf8c6,2,2026-08-29,Hull,Liam Millar,CAN,1999.0,FW,32,1,0
+2efaf8c6,2,2026-08-29,Hull,Lucas Gourna-Douath,FRA,2003.0,MF,45,0,0
+2efaf8c6,2,2026-08-29,Hull,Lucas Herrington,AUS,2007.0,DF,32,0,0
+2efaf8c6,2,2026-08-29,Hull,Mohamed Ali Cho,FRA,2004.0,FW,8,0,0
+2efaf8c6,2,2026-08-29,Hull,Nobel Mendy,SEN,2004.0,DF,58,0,0
+2efaf8c6,2,2026-08-29,Hull,Oliver McBurnie,SCO,1996.0,FW,90,0,0
+2efaf8c6,2,2026-08-29,Hull,Regan Slater,ENG,1999.0,MF,90,0,0
+2efaf8c6,2,2026-08-29,Hull,Ryan Giles,ENG,2000.0,DF,90,0,0
+2efaf8c6,2,2026-08-29,Hull,Semi Ajayi,NGA,1993.0,DF,90,0,0
+d4340a69,2,2026-08-29,Liverpool,Alexander Isak,SWE,1999.0,FW,90,1,0
+d4340a69,2,2026-08-29,Liverpool,Alexis Mac Allister,ARG,1998.0,MF,76,0,0
+d4340a69,2,2026-08-29,Liverpool,Alisson,BRA,1992.0,GK,90,0,0
+d4340a69,2,2026-08-29,Liverpool,Cody Gakpo,NED,1999.0,MF,70,0,1
+d4340a69,2,2026-08-29,Liverpool,Dominik Szoboszlai,HUN,2000.0,MF,90,0,0
+d4340a69,2,2026-08-29,Liverpool,Florian Wirtz,GER,2003.0,MF,90,0,1
+d4340a69,2,2026-08-29,Liverpool,Jeremie Frimpong,NED,2000.0,DF,70,0,0
+d4340a69,2,2026-08-29,Liverpool,Jérémy Jacquet,FRA,2005.0,DF,76,0,0
+d4340a69,2,2026-08-29,Liverpool,Kostas Tsimikas,GRE,1996.0,DF,20,0,0
+d4340a69,2,2026-08-29,Liverpool,Milos Kerkez,HUN,2003.0,DF,70,0,0
+d4340a69,2,2026-08-29,Liverpool,Rio Ngumoha,ENG,2008.0,MF,20,0,0
+d4340a69,2,2026-08-29,Liverpool,Ronald Araújo,URU,1999.0,DF,14,0,0
+d4340a69,2,2026-08-29,Liverpool,Ryan Gravenberch,NED,2002.0,MF,20,0,0
+d4340a69,2,2026-08-29,Liverpool,Trey Nyoni,ENG,2007.0,MF,14,0,0
+d4340a69,2,2026-08-29,Liverpool,Virgil van Dijk,NED,1991.0,DF,90,0,0
+d4340a69,2,2026-08-29,Liverpool,Víctor Muñoz,ESP,2003.0,MF,90,1,0
+d4340a69,2,2026-08-29,Nottingham Forest,Callum Hudson-Odoi,ENG,2000.0,FW,1,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Dan Ndoye,SUI,2000.0,MF,65,1,0
+d4340a69,2,2026-08-29,Nottingham Forest,Igor Jesus,BRA,2001.0,FW,89,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Jair Cunha,BRA,2005.0,DF,90,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,James Mcatee,ENG,2002.0,MF,89,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Liam Delap,ENG,2003.0,FW,25,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Luca Netz,GER,2003.0,DF,5,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Matz Sels,BEL,1992.0,GK,90,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Morgan Gibbs-White,ENG,2000.0,MF,90,1,1
+d4340a69,2,2026-08-29,Nottingham Forest,Murillo,BRA,2002.0,DF,90,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Neco Williams,WAL,2001.0,MF,90,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Nicolás Domínguez,ARG,1998.0,MF,1,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Nikola Milenković,SRB,1997.0,DF,90,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Ola Aina,NGA,1996.0,MF,85,0,0
+d4340a69,2,2026-08-29,Nottingham Forest,Xaver Schlager,AUT,1997.0,MF,90,0,0
+10027be4,2,2026-08-29,Newcastle United,Amar Dedić,BIH,2002.0,DF,90,0,1
+10027be4,2,2026-08-29,Newcastle United,Anthony Elanga,SWE,2002.0,MF,81,1,0
+10027be4,2,2026-08-29,Newcastle United,Bazoumana Touré,CIV,2006.0,MF,1,0,0
+10027be4,2,2026-08-29,Newcastle United,Harvey Barnes,ENG,1997.0,MF,89,0,0
+10027be4,2,2026-08-29,Newcastle United,Jacob Murphy,ENG,1995.0,DF,9,0,0
+10027be4,2,2026-08-29,Newcastle United,Jacob Ramsey,ENG,2001.0,MF,9,0,0
+10027be4,2,2026-08-29,Newcastle United,Joe Willock,ENG,1999.0,MF,70,0,0
+10027be4,2,2026-08-29,Newcastle United,Lewis Hall,ENG,2004.0,DF,90,0,0
+10027be4,2,2026-08-29,Newcastle United,Lewis Miley,ENG,2006.0,MF,90,0,0
+10027be4,2,2026-08-29,Newcastle United,Lukáš Horníček,CZE,2002.0,GK,90,0,0
+10027be4,2,2026-08-29,Newcastle United,Malick Thiaw,GER,2001.0,DF,90,0,0
+10027be4,2,2026-08-29,Newcastle United,Nick Woltemade,GER,2002.0,FW,20,0,1
+10027be4,2,2026-08-29,Newcastle United,Nicolás González,ESP,2002.0,MF,70,0,0
+10027be4,2,2026-08-29,Newcastle United,Sean Steur,NED,2008.0,MF,20,0,0
+10027be4,2,2026-08-29,Newcastle United,Sven Botman,NED,2000.0,DF,90,0,0
+10027be4,2,2026-08-29,Newcastle United,Yoane Wissa,COD,1996.0,FW,81,1,0
+10027be4,2,2026-08-29,Tottenham,Andy Robertson,SCO,1994.0,DF,67,0,0
+10027be4,2,2026-08-29,Tottenham,Antonín Kinský,CZE,2003.0,GK,90,0,0
+10027be4,2,2026-08-29,Tottenham,Archie Gray,ENG,2006.0,DF,67,0,0
+10027be4,2,2026-08-29,Tottenham,Destiny Udogie,ITA,2002.0,DF,23,0,0
+10027be4,2,2026-08-29,Tottenham,Dominic Solanke,ENG,1997.0,FW,16,0,0
+10027be4,2,2026-08-29,Tottenham,Jan Paul van Hecke,NED,2000.0,DF,90,0,0
+10027be4,2,2026-08-29,Tottenham,Mateus Fernandes,POR,2004.0,MF,90,0,0
+10027be4,2,2026-08-29,Tottenham,Mathys Tel,FRA,2005.0,MF,67,0,0
+10027be4,2,2026-08-29,Tottenham,Micky van de Ven,NED,2001.0,DF,90,0,0
+10027be4,2,2026-08-29,Tottenham,Mikey Moore,ENG,2007.0,MF,23,0,0
+10027be4,2,2026-08-29,Tottenham,Mohammed Kudus,GHA,2000.0,FW,23,0,0
+10027be4,2,2026-08-29,Tottenham,Omar Marmoush,EGY,1999.0,FW,90,0,0
+10027be4,2,2026-08-29,Tottenham,Pedro Porro,ESP,1999.0,MF,90,0,0
+10027be4,2,2026-08-29,Tottenham,Rodrigo Bentancur,URU,1997.0,MF,90,0,0
+10027be4,2,2026-08-29,Tottenham,Sandro Tonali,ITA,2000.0,MF,74,0,0
+a50cd1e7,2,2026-08-30,Brighton,Bart Verbruggen,NED,2002.0,GK,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Charalampos Kostoulas,GRE,2007.0,FW,79,0,0
+a50cd1e7,2,2026-08-30,Brighton,Costinha,POR,2000.0,DF,11,0,0
+a50cd1e7,2,2026-08-30,Brighton,Diego Gómez,PAR,2003.0,MF,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Ferdi Kadioglu,TUR,1999.0,DF,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Ibrahim Osman,GHA,2004.0,FW,17,0,0
+a50cd1e7,2,2026-08-30,Brighton,Lewis Dunk,ENG,1991.0,DF,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Luka Vušković,CRO,2007.0,DF,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Malick Yalcouye,CIV,2005.0,MF,73,1,0
+a50cd1e7,2,2026-08-30,Brighton,Mats Wieffer,NED,1999.0,DF,79,0,0
+a50cd1e7,2,2026-08-30,Brighton,Maxim De Cuyper,BEL,2000.0,MF,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Olivier Boscagli,FRA,1997.0,MF,90,0,0
+a50cd1e7,2,2026-08-30,Brighton,Pascal Groß,GER,1991.0,MF,90,1,0
+a50cd1e7,2,2026-08-30,Brighton,Promise David,CAN,2001.0,FW,11,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Cole Palmer,ENG,2002.0,MF,90,1,0
+a50cd1e7,2,2026-08-30,Chelsea,Emiliano Martínez,ARG,1992.0,GK,90,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Jorrel Hato,NED,2006.0,MF,90,0,1
+a50cd1e7,2,2026-08-30,Chelsea,Joshua Acheampong,ENG,2006.0,DF,23,0,0
+a50cd1e7,2,2026-08-30,Chelsea,João Pedro,BRA,2001.0,FW,90,1,1
+a50cd1e7,2,2026-08-30,Chelsea,Levi Colwill,ENG,2003.0,DF,71,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Malo Gusto,FRA,2003.0,MF,90,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Maxence Lacroix,FRA,2000.0,DF,90,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Moisés Caicedo,ECU,2001.0,MF,14,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Morgan Rogers,ENG,2002.0,MF,90,0,1
+a50cd1e7,2,2026-08-30,Chelsea,Pedro Neto,POR,2000.0,MF,67,1,0
+a50cd1e7,2,2026-08-30,Chelsea,Pep Chavarría,ESP,1998.0,DF,19,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Reece James,ENG,1999.0,DF,23,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Roméo Lavia,BEL,2004.0,MF,67,1,0
+a50cd1e7,2,2026-08-30,Chelsea,Valentín Barco,ARG,2004.0,DF,9,0,0
+a50cd1e7,2,2026-08-30,Chelsea,Wesley Fofana,FRA,2000.0,DF,67,0,0
+b6f0dcde,2,2026-08-30,Brentford,Aaron Hickey,SCO,2002.0,DF,3,0,0
+b6f0dcde,2,2026-08-30,Brentford,Callum Wilson,ENG,1992.0,FW,3,0,0
+b6f0dcde,2,2026-08-30,Brentford,Caoimhín Kelleher,IRL,1998.0,GK,90,0,0
+b6f0dcde,2,2026-08-30,Brentford,Dango Ouattara,BFA,2002.0,FW,30,0,0
+b6f0dcde,2,2026-08-30,Brentford,Igor Thiago,BRA,2001.0,FW,90,0,0
+b6f0dcde,2,2026-08-30,Brentford,Jaidon Anthony,ENG,1999.0,MF,60,0,0
+b6f0dcde,2,2026-08-30,Brentford,Keane Lewis-Potter,ENG,2001.0,DF,87,0,1
+b6f0dcde,2,2026-08-30,Brentford,Kevin Schade,GER,2001.0,MF,87,1,0
+b6f0dcde,2,2026-08-30,Brentford,Kristoffer Ajer,NOR,1998.0,DF,90,0,0
+b6f0dcde,2,2026-08-30,Brentford,Mamadou Sangare,MLI,2002.0,MF,90,0,0
+b6f0dcde,2,2026-08-30,Brentford,Michael Kayode,ITA,2004.0,DF,87,0,0
+b6f0dcde,2,2026-08-30,Brentford,Mikkel Damsgaard,DEN,2000.0,MF,68,0,0
+b6f0dcde,2,2026-08-30,Brentford,Nathan Collins,IRL,2001.0,DF,90,0,0
+b6f0dcde,2,2026-08-30,Brentford,Rico Henry,JAM,1997.0,DF,3,0,0
+b6f0dcde,2,2026-08-30,Brentford,Vitaly Janelt,GER,1998.0,MF,90,0,0
+b6f0dcde,2,2026-08-30,Brentford,Yehor Yarmoliuk,UKR,2004.0,MF,22,0,0
+b6f0dcde,2,2026-08-30,Leeds,Anton Stach,GER,1998.0,MF,90,0,0
+b6f0dcde,2,2026-08-30,Leeds,Ao Tanaka,JPN,1998.0,MF,45,0,0
+b6f0dcde,2,2026-08-30,Leeds,Brenden Aaronson,USA,2000.0,MF,45,0,0
+b6f0dcde,2,2026-08-30,Leeds,Daniel James,WAL,1997.0,FW,23,0,0
+b6f0dcde,2,2026-08-30,Leeds,Dominic Calvert-Lewin,ENG,1997.0,FW,90,1,0
+b6f0dcde,2,2026-08-30,Leeds,Ethan Ampadu,WAL,2000.0,MF,90,0,0
+b6f0dcde,2,2026-08-30,Leeds,Harry Wilson,WAL,1997.0,FW,45,0,0
+b6f0dcde,2,2026-08-30,Leeds,Jaka Bijol,SVN,1999.0,DF,45,0,0
+b6f0dcde,2,2026-08-30,Leeds,James Justin,ENG,1998.0,MF,90,0,0
+b6f0dcde,2,2026-08-30,Leeds,James Trafford,ENG,2002.0,GK,90,0,0
+b6f0dcde,2,2026-08-30,Leeds,Jayden Bogle,ENG,2000.0,MF,67,0,0
+b6f0dcde,2,2026-08-30,Leeds,Joe Rodon,WAL,1997.0,DF,33,0,0
+b6f0dcde,2,2026-08-30,Leeds,Lukas Nmecha,GER,1998.0,FW,22,0,1
+b6f0dcde,2,2026-08-30,Leeds,Nico Elvedi,SUI,1996.0,DF,57,0,0
+b6f0dcde,2,2026-08-30,Leeds,Noah Okafor,SUI,2000.0,MF,68,0,0
+b6f0dcde,2,2026-08-30,Leeds,Tarik Muharemovic,BIH,2003.0,DF,90,0,0
+fb31b175,2,2026-08-30,Ipswich,Abdoul Ouattara,FRA,2005.0,DF,18,0,0
+fb31b175,2,2026-08-30,Ipswich,Abdul Fatawu Issahaku,GHA,2004.0,MF,82,0,1
+fb31b175,2,2026-08-30,Ipswich,Chuba Akpom,ENG,1995.0,FW,45,1,0
+fb31b175,2,2026-08-30,Ipswich,Daizen Maeda,JPN,1997.0,MF,72,0,0
+fb31b175,2,2026-08-30,Ipswich,Dara O'Shea,IRL,1999.0,DF,90,0,0
+fb31b175,2,2026-08-30,Ipswich,Darnell Furlong,ENG,1995.0,DF,18,0,0
+fb31b175,2,2026-08-30,Ipswich,Emersonn,BRA,2004.0,FW,45,0,0
+fb31b175,2,2026-08-30,Ipswich,Exequiel Palacios,ARG,1998.0,DF,29,0,0
+fb31b175,2,2026-08-30,Ipswich,Issa Diop,MAR,1997.0,DF,90,0,0
+fb31b175,2,2026-08-30,Ipswich,Jacob Greaves,ENG,2000.0,DF,90,0,0
+fb31b175,2,2026-08-30,Ipswich,Julio Enciso,PAR,2004.0,MF,90,0,1
+fb31b175,2,2026-08-30,Ipswich,Kasey McAteer,IRL,2001.0,MF,8,0,0
+fb31b175,2,2026-08-30,Ipswich,Kjell Scherpen,NED,2000.0,GK,90,0,0
+fb31b175,2,2026-08-30,Ipswich,Leif Davis,ENG,2000.0,DF,90,1,0
+fb31b175,2,2026-08-30,Ipswich,Marcelino Núñez,CHI,2000.0,MF,61,0,0
+fb31b175,2,2026-08-30,Ipswich,Saša Lukić,SRB,1996.0,MF,72,0,0
+fb31b175,2,2026-08-30,Manchester United,Andrey Santos,BRA,2004.0,MF,11,0,0
+fb31b175,2,2026-08-30,Manchester United,Benjamin Šeško,SVN,2003.0,FW,11,0,0
+fb31b175,2,2026-08-30,Manchester United,Bruno Fernandes,POR,1994.0,MF,90,3,1
+fb31b175,2,2026-08-30,Manchester United,Bryan Mbeumo,CMR,1999.0,MF,90,1,0
+fb31b175,2,2026-08-30,Manchester United,Diogo Dalot,POR,1999.0,DF,73,0,0
+fb31b175,2,2026-08-30,Manchester United,Harry Maguire,ENG,1993.0,DF,90,0,0
+fb31b175,2,2026-08-30,Manchester United,Kobbie Mainoo,ENG,2005.0,MF,79,0,0
+fb31b175,2,2026-08-30,Manchester United,Leny Yoro,FRA,2005.0,DF,17,0,0
+fb31b175,2,2026-08-30,Manchester United,Lisandro Martínez,ARG,1998.0,DF,90,0,0
+fb31b175,2,2026-08-30,Manchester United,Luke Shaw,ENG,1995.0,DF,72,0,0
+fb31b175,2,2026-08-30,Manchester United,Marcus Rashford,ENG,1997.0,MF,79,0,0
+fb31b175,2,2026-08-30,Manchester United,Matheus Cunha,BRA,1999.0,FW,79,0,1
+fb31b175,2,2026-08-30,Manchester United,Noussair Mazraoui,MAR,1997.0,DF,18,0,0
+fb31b175,2,2026-08-30,Manchester United,Patrick Dorgu,DEN,2004.0,DF,11,0,0
+fb31b175,2,2026-08-30,Manchester United,Senne Lammens,BEL,2002.0,GK,90,0,0
+fb31b175,2,2026-08-30,Manchester United,Youri Tielemans,BEL,1997.0,MF,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Alex Iwobi,NGA,1996.0,MF,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Antonee Robinson,USA,1997.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Bernd Leno,GER,1992.0,GK,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Calvin Bassey,NGA,2000.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Fulham,César Palacios,ESP,2004.0,MF,75,0,0
+a90f3aae,2,2026-08-30,Fulham,Emile Smith Rowe,ENG,2000.0,MF,15,0,0
+a90f3aae,2,2026-08-30,Fulham,Gonzalo García,ESP,2004.0,FW,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Joachim Andersen,DEN,1996.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Joshua King,ENG,2007.0,MF,90,0,0
+a90f3aae,2,2026-08-30,Fulham,Kevin,BRA,2003.0,MF,8,0,0
+a90f3aae,2,2026-08-30,Fulham,Oscar Bobb,NOR,2003.0,MF,67,0,0
+a90f3aae,2,2026-08-30,Fulham,Ryan Sessegnon,ENG,2000.0,DF,23,0,0
+a90f3aae,2,2026-08-30,Fulham,Sander Berge,NOR,1998.0,MF,82,0,0
+a90f3aae,2,2026-08-30,Fulham,Shea Charles,NIR,2003.0,DF,23,0,0
+a90f3aae,2,2026-08-30,Fulham,Timothy Castagne,BEL,1995.0,DF,67,0,0
+a90f3aae,2,2026-08-30,Sunderland,Brian Brobbey,NED,2002.0,FW,64,0,0
+a90f3aae,2,2026-08-30,Sunderland,Chris Rigg,ENG,2007.0,MF,8,0,0
+a90f3aae,2,2026-08-30,Sunderland,Daniel Ballard,NIR,1999.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Enzo Le Fée,FRA,2000.0,MF,89,0,0
+a90f3aae,2,2026-08-30,Sunderland,Granit Xhaka,SUI,1992.0,MF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Habib Diarra,SEN,2004.0,MF,18,0,1
+a90f3aae,2,2026-08-30,Sunderland,Nilson Angulo,ECU,2003.0,MF,64,0,0
+a90f3aae,2,2026-08-30,Sunderland,Noah Sadiki,COD,2004.0,MF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Nordi Mukiele,FRA,1997.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Reinildo Mandava,MOZ,1994.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Robin Roefs,NED,2003.0,GK,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Romaine Mundle,ENG,2003.0,MF,1,0,0
+a90f3aae,2,2026-08-30,Sunderland,Thomas Meunier,BEL,1991.0,DF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Trai Hume,NIR,2002.0,MF,90,0,0
+a90f3aae,2,2026-08-30,Sunderland,Wilson Isidor,HAI,2000.0,FW,26,1,0
+e95b1641,2,2026-08-31,Arsenal,Ben White,ENG,1997.0,DF,90,0,0
+e95b1641,2,2026-08-31,Arsenal,Bruno Guimarães,BRA,1997.0,MF,20,0,0
+e95b1641,2,2026-08-31,Arsenal,Bukayo Saka,ENG,2001.0,MF,90,1,0
+e95b1641,2,2026-08-31,Arsenal,Christos Tzolis,GRE,2002.0,MF,45,0,0
+e95b1641,2,2026-08-31,Arsenal,Cristhian Mosquera,ESP,2004.0,DF,78,0,0
+e95b1641,2,2026-08-31,Arsenal,David Raya,ESP,1995.0,GK,90,0,0
+e95b1641,2,2026-08-31,Arsenal,Declan Rice,ENG,1999.0,MF,84,0,0
+e95b1641,2,2026-08-31,Arsenal,Eberechi Eze,ENG,1998.0,FW,45,0,0
+e95b1641,2,2026-08-31,Arsenal,Ezri Konsa,ENG,1997.0,DF,12,0,0
+e95b1641,2,2026-08-31,Arsenal,Gabriel Magalhães,BRA,1997.0,DF,90,0,0
+e95b1641,2,2026-08-31,Arsenal,Kai Havertz,GER,1999.0,FW,90,0,0
+e95b1641,2,2026-08-31,Arsenal,Martin Ødegaard,NOR,1998.0,MF,70,0,0
+e95b1641,2,2026-08-31,Arsenal,Martín Zubimendi,ESP,1999.0,MF,6,0,0
+e95b1641,2,2026-08-31,Arsenal,Mikel Merino,ESP,1996.0,MF,20,0,0
+e95b1641,2,2026-08-31,Arsenal,Myles Lewis-Skelly,ENG,2006.0,MF,70,0,0
+e95b1641,2,2026-08-31,Arsenal,Riccardo Calafiori,ITA,2002.0,DF,90,0,1
+e95b1641,2,2026-08-31,Aston Villa,Aaron Wan-Bissaka,COD,1997.0,DF,13,0,0
+e95b1641,2,2026-08-31,Aston Villa,Alejandro Garnacho,ARG,2004.0,MF,13,0,0
+e95b1641,2,2026-08-31,Aston Villa,Alysson,BRA,2006.0,MF,20,0,0
+e95b1641,2,2026-08-31,Aston Villa,Boubacar Kamara,FRA,1999.0,MF,90,0,0
+e95b1641,2,2026-08-31,Aston Villa,Emi Buendía,ARG,1996.0,MF,90,0,0
+e95b1641,2,2026-08-31,Aston Villa,George Hemmings,ENG,2007.0,MF,70,0,0
+e95b1641,2,2026-08-31,Aston Villa,Ian Maatsen,NED,2002.0,DF,90,0,0
+e95b1641,2,2026-08-31,Aston Villa,John McGinn,SCO,1994.0,MF,90,0,0
+e95b1641,2,2026-08-31,Aston Villa,Matty Cash,POL,1997.0,DF,77,0,0
+e95b1641,2,2026-08-31,Aston Villa,Nicolas Jackson,SEN,2001.0,FW,70,0,0
+e95b1641,2,2026-08-31,Aston Villa,Pau Torres,ESP,1997.0,DF,90,0,0
+e95b1641,2,2026-08-31,Aston Villa,Ross Barkley,ENG,1993.0,MF,77,0,0
+e95b1641,2,2026-08-31,Aston Villa,Tammy Abraham,ENG,1997.0,FW,20,0,0
+e95b1641,2,2026-08-31,Aston Villa,Victor Lindelöf,SWE,1994.0,DF,90,0,0
+e95b1641,2,2026-08-31,Aston Villa,Zion Suzuki,JPN,2002.0,GK,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Abdoul Ouattara,FRA,2005.0,DF,13,0,0
+368c66a8,3,2026-09-04,Ipswich,Abdul Fatawu Issahaku,GHA,2004.0,MF,78,0,0
+368c66a8,3,2026-09-04,Ipswich,Daizen Maeda,JPN,1997.0,MF,65,0,0
+368c66a8,3,2026-09-04,Ipswich,Dara O'Shea,IRL,1999.0,DF,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Emersonn,BRA,2004.0,FW,65,0,0
+368c66a8,3,2026-09-04,Ipswich,Exequiel Palacios,ARG,1998.0,MF,77,0,0
+368c66a8,3,2026-09-04,Ipswich,Issa Diop,MAR,1997.0,DF,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Jack Clarke,ENG,2000.0,FW,25,0,0
+368c66a8,3,2026-09-04,Ipswich,Jacob Greaves,ENG,2000.0,DF,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Julio Enciso,PAR,2004.0,MF,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Kasey McAteer,IRL,2001.0,MF,12,0,0
+368c66a8,3,2026-09-04,Ipswich,Kjell Scherpen,NED,2000.0,GK,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Leif Davis,ENG,2000.0,DF,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Saša Lukić,SRB,1996.0,MF,90,0,0
+368c66a8,3,2026-09-04,Ipswich,Zian Flemming,NED,1998.0,FW,25,0,0
+368c66a8,3,2026-09-04,Liverpool,Alexander Isak,SWE,1999.0,FW,63,2,0
+368c66a8,3,2026-09-04,Liverpool,Alexis Mac Allister,ARG,1998.0,MF,83,0,0
+368c66a8,3,2026-09-04,Liverpool,Alisson,BRA,1992.0,GK,90,0,0
+368c66a8,3,2026-09-04,Liverpool,Bradley Barcola,FRA,2002.0,FW,27,0,0
+368c66a8,3,2026-09-04,Liverpool,Cody Gakpo,NED,1999.0,MF,90,0,2
+368c66a8,3,2026-09-04,Liverpool,Dominik Szoboszlai,HUN,2000.0,MF,90,0,0
+368c66a8,3,2026-09-04,Liverpool,Florian Wirtz,GER,2003.0,MF,89,0,0
+368c66a8,3,2026-09-04,Liverpool,Jérémy Jacquet,FRA,2005.0,DF,90,0,0
+368c66a8,3,2026-09-04,Liverpool,Lewis Koumas,WAL,2005.0,FW,1,0,0
+368c66a8,3,2026-09-04,Liverpool,Milos Kerkez,HUN,2003.0,DF,90,0,0
+368c66a8,3,2026-09-04,Liverpool,Ronald Araújo,URU,1999.0,DF,90,0,0
+368c66a8,3,2026-09-04,Liverpool,Ryan Gravenberch,NED,2002.0,MF,27,0,0
+368c66a8,3,2026-09-04,Liverpool,Trey Nyoni,ENG,2007.0,MF,7,0,0
+368c66a8,3,2026-09-04,Liverpool,Virgil van Dijk,NED,1991.0,DF,90,0,0
+368c66a8,3,2026-09-04,Liverpool,Víctor Muñoz,ESP,2003.0,MF,63,0,0
+c201fd2f,3,2026-09-05,Brentford,Aaron Hickey,SCO,2002.0,DF,45,0,0
+c201fd2f,3,2026-09-05,Brentford,Callum Wilson,ENG,1992.0,FW,5,0,0
+c201fd2f,3,2026-09-05,Brentford,Caoimhín Kelleher,IRL,1998.0,GK,90,0,0
+c201fd2f,3,2026-09-05,Brentford,Dango Ouattara,BFA,2002.0,MF,45,0,0
+c201fd2f,3,2026-09-05,Brentford,Igor Thiago,BRA,2001.0,FW,90,0,0
+c201fd2f,3,2026-09-05,Brentford,Jaidon Anthony,ENG,1999.0,FW,45,0,0
+c201fd2f,3,2026-09-05,Brentford,Jannik Schuster,AUT,2006.0,DF,74,0,0
+c201fd2f,3,2026-09-05,Brentford,Keane Lewis-Potter,ENG,2001.0,DF,90,0,0
+c201fd2f,3,2026-09-05,Brentford,Kevin Schade,GER,2001.0,MF,90,0,0
+c201fd2f,3,2026-09-05,Brentford,Kristoffer Ajer,NOR,1998.0,DF,90,0,0
+c201fd2f,3,2026-09-05,Brentford,Mamadou Sangare,MLI,2002.0,MF,45,0,0
+c201fd2f,3,2026-09-05,Brentford,Michael Kayode,ITA,2004.0,DF,45,0,0
+c201fd2f,3,2026-09-05,Brentford,Mikkel Damsgaard,DEN,2000.0,MF,85,0,0
+c201fd2f,3,2026-09-05,Brentford,Nathan Collins,IRL,2001.0,DF,16,0,0
+c201fd2f,3,2026-09-05,Brentford,Vitaly Janelt,GER,1998.0,MF,90,1,0
+c201fd2f,3,2026-09-05,Brentford,Yehor Yarmoliuk,UKR,2004.0,MF,45,0,0
+c201fd2f,3,2026-09-05,Sunderland,Brian Brobbey,NED,2002.0,FW,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Daniel Ballard,NIR,1999.0,DF,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Enzo Le Fée,FRA,2000.0,MF,90,1,0
+c201fd2f,3,2026-09-05,Sunderland,Granit Xhaka,SUI,1992.0,MF,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Kevin Danso,AUT,1998.0,DF,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Malick Fofana,BEL,2005.0,FW,17,0,0
+c201fd2f,3,2026-09-05,Sunderland,Nilson Angulo,ECU,2003.0,MF,63,0,0
+c201fd2f,3,2026-09-05,Sunderland,Noah Sadiki,COD,2004.0,MF,73,0,0
+c201fd2f,3,2026-09-05,Sunderland,Nordi Mukiele,FRA,1997.0,DF,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Reinildo Mandava,MOZ,1994.0,DF,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Robin Roefs,NED,2003.0,GK,90,0,0
+c201fd2f,3,2026-09-05,Sunderland,Thomas Meunier,BEL,1991.0,MF,63,0,0
+c201fd2f,3,2026-09-05,Sunderland,Trai Hume,NIR,2002.0,DF,27,0,0
+c201fd2f,3,2026-09-05,Sunderland,Wilson Isidor,HAI,2000.0,FW,27,0,0
+f2afd8c7,3,2026-09-05,Brighton,Bart Verbruggen,NED,2002.0,GK,90,0,0
+f2afd8c7,3,2026-09-05,Brighton,Charalampos Kostoulas,GRE,2007.0,FW,90,0,0
+f2afd8c7,3,2026-09-05,Brighton,Costinha,POR,2000.0,DF,13,0,0
+f2afd8c7,3,2026-09-05,Brighton,Diego Gómez,PAR,2003.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Brighton,Ferdi Kadioglu,TUR,1999.0,DF,77,0,0
+f2afd8c7,3,2026-09-05,Brighton,Lewis Dunk,ENG,1991.0,DF,90,0,0
+f2afd8c7,3,2026-09-05,Brighton,Luka Vušković,CRO,2007.0,DF,90,1,0
+f2afd8c7,3,2026-09-05,Brighton,Malick Yalcouye,CIV,2005.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Brighton,Maxim De Cuyper,BEL,2000.0,MF,77,0,1
+f2afd8c7,3,2026-09-05,Brighton,Olivier Boscagli,FRA,1997.0,DF,89,0,0
+f2afd8c7,3,2026-09-05,Brighton,Pascal Groß,GER,1991.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Brighton,Pascal Struijk,NED,1999.0,DF,1,0,0
+f2afd8c7,3,2026-09-05,Brighton,Promise David,CAN,2001.0,FW,13,0,0
+f2afd8c7,3,2026-09-05,Brighton,Yasin Ayari,SWE,2003.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,Anton Stach,GER,1998.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,Ao Tanaka,JPN,1998.0,MF,72,0,1
+f2afd8c7,3,2026-09-05,Leeds,Brenden Aaronson,USA,2000.0,FW,29,0,0
+f2afd8c7,3,2026-09-05,Leeds,Dominic Calvert-Lewin,ENG,1997.0,FW,72,0,0
+f2afd8c7,3,2026-09-05,Leeds,Ethan Ampadu,WAL,2000.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,Gabriel Gudmundsson,SWE,1999.0,MF,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,Harry Wilson,WAL,1997.0,FW,18,0,0
+f2afd8c7,3,2026-09-05,Leeds,Jaka Bijol,SVN,1999.0,DF,30,0,0
+f2afd8c7,3,2026-09-05,Leeds,James Justin,ENG,1998.0,DF,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,James Trafford,ENG,2002.0,GK,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,Jayden Bogle,ENG,2000.0,MF,60,1,0
+f2afd8c7,3,2026-09-05,Leeds,Lukas Nmecha,GER,1998.0,FW,18,0,0
+f2afd8c7,3,2026-09-05,Leeds,Nico Elvedi,SUI,1996.0,DF,90,0,0
+f2afd8c7,3,2026-09-05,Leeds,Noah Okafor,SUI,2000.0,FW,61,0,0
+f2afd8c7,3,2026-09-05,Leeds,Tarik Muharemovic,BIH,2003.0,DF,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Adam Wharton,ENG,2004.0,MF,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Anan Khalaili,ISR,2004.0,MF,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Axel Disasi,FRA,1998.0,DF,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Ben Chilwell,ENG,1996.0,DF,17,1,0
+3809f875,3,2026-09-05,Crystal Palace,Chris Richards,USA,2000.0,DF,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Daichi Kamada,JPN,1996.0,MF,88,0,1
+3809f875,3,2026-09-05,Crystal Palace,Darío Osorio,CHI,2004.0,FW,2,0,0
+3809f875,3,2026-09-05,Crystal Palace,Dean Henderson,ENG,1997.0,GK,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Eddie Nketiah,ENG,1999.0,FW,45,0,1
+3809f875,3,2026-09-05,Crystal Palace,Jaydee Canvot,FRA,2006.0,DF,90,0,0
+3809f875,3,2026-09-05,Crystal Palace,Jørgen Strand Larsen,NOR,2000.0,FW,45,0,0
+3809f875,3,2026-09-05,Crystal Palace,Quinten Timber,NED,2001.0,MF,73,0,0
+3809f875,3,2026-09-05,Crystal Palace,Tyrick Mitchell,ENG,1999.0,MF,73,2,0
+3809f875,3,2026-09-05,Crystal Palace,Will Hughes,ENG,1995.0,MF,17,0,0
+3809f875,3,2026-09-05,Crystal Palace,Yéremy Pino,ESP,2002.0,MF,88,0,0
+3809f875,3,2026-09-05,Crystal Palace,Óscar Mingueza,ESP,1999.0,DF,2,0,0
+3809f875,3,2026-09-05,Fulham,Alex Iwobi,NGA,1996.0,MF,82,0,0
+3809f875,3,2026-09-05,Fulham,Antonee Robinson,USA,1997.0,DF,78,0,0
+3809f875,3,2026-09-05,Fulham,Bernd Leno,GER,1992.0,GK,90,0,0
+3809f875,3,2026-09-05,Fulham,Calvin Bassey,NGA,2000.0,DF,90,0,0
+3809f875,3,2026-09-05,Fulham,César Palacios,ESP,2004.0,MF,60,1,0
+3809f875,3,2026-09-05,Fulham,Emile Smith Rowe,ENG,2000.0,MF,12,0,0
+3809f875,3,2026-09-05,Fulham,Gonzalo García,ESP,2004.0,FW,90,0,0
+3809f875,3,2026-09-05,Fulham,Hugo Larsson,SWE,2004.0,MF,12,0,0
+3809f875,3,2026-09-05,Fulham,Joachim Andersen,DEN,1996.0,DF,90,0,0
+3809f875,3,2026-09-05,Fulham,Joshua King,ENG,2007.0,MF,90,1,0
+3809f875,3,2026-09-05,Fulham,Oscar Bobb,NOR,2003.0,MF,78,0,0
+3809f875,3,2026-09-05,Fulham,Rodrigo Muniz,BRA,2001.0,FW,8,0,0
+3809f875,3,2026-09-05,Fulham,Ryan Sessegnon,ENG,2000.0,DF,12,0,0
+3809f875,3,2026-09-05,Fulham,Sander Berge,NOR,1998.0,MF,30,0,0
+3809f875,3,2026-09-05,Fulham,Shea Charles,NIR,2003.0,MF,78,0,0
+3809f875,3,2026-09-05,Fulham,Timothy Castagne,BEL,1995.0,DF,90,0,0
+6816748a,3,2026-09-05,Aston Villa,Aaron Wan-Bissaka,COD,1997.0,DF,6,0,0
+6816748a,3,2026-09-05,Aston Villa,Alejandro Garnacho,ARG,2004.0,MF,16,0,0
+6816748a,3,2026-09-05,Aston Villa,Alysson,BRA,2006.0,MF,16,0,0
+6816748a,3,2026-09-05,Aston Villa,Boubacar Kamara,FRA,1999.0,MF,90,0,0
+6816748a,3,2026-09-05,Aston Villa,Emi Buendía,ARG,1996.0,MF,74,0,0
+6816748a,3,2026-09-05,Aston Villa,George Hemmings,ENG,2007.0,MF,74,0,0
+6816748a,3,2026-09-05,Aston Villa,Ian Maatsen,NED,2002.0,DF,74,0,0
+6816748a,3,2026-09-05,Aston Villa,John McGinn,SCO,1994.0,MF,90,0,0
+6816748a,3,2026-09-05,Aston Villa,Matteo Ruggeri,ITA,2002.0,DF,16,0,0
+6816748a,3,2026-09-05,Aston Villa,Matty Cash,POL,1997.0,DF,84,0,0
+6816748a,3,2026-09-05,Aston Villa,Nicolas Jackson,SEN,2001.0,FW,84,0,0
+6816748a,3,2026-09-05,Aston Villa,Ross Barkley,ENG,1993.0,MF,90,0,0
+6816748a,3,2026-09-05,Aston Villa,Tammy Abraham,ENG,1997.0,FW,6,0,0
+6816748a,3,2026-09-05,Aston Villa,Tyrone Mings,ENG,1993.0,DF,90,0,0
+6816748a,3,2026-09-05,Aston Villa,Victor Lindelöf,SWE,1994.0,DF,90,0,0
+6816748a,3,2026-09-05,Aston Villa,Zion Suzuki,JPN,2002.0,GK,90,0,0
+6816748a,3,2026-09-05,Hull,Bachir Belloumi,ALG,2002.0,MF,81,0,0
+6816748a,3,2026-09-05,Hull,Brooke Norton-Cuffy,ENG,2004.0,DF,27,0,0
+6816748a,3,2026-09-05,Hull,Elliot Stroud,SWE,2002.0,MF,62,0,0
+6816748a,3,2026-09-05,Hull,Jens Hjertø-Dahl,NOR,2005.0,MF,9,0,0
+6816748a,3,2026-09-05,Hull,John Egan,IRL,1992.0,DF,90,0,0
+6816748a,3,2026-09-05,Hull,Kostas Tzolakis,GRE,2002.0,GK,90,0,0
+6816748a,3,2026-09-05,Hull,Lewie Coyle,ENG,1995.0,DF,63,0,0
+6816748a,3,2026-09-05,Hull,Lucas Gourna-Douath,FRA,2003.0,MF,81,0,0
+6816748a,3,2026-09-05,Hull,Lucas Herrington,AUS,2007.0,DF,20,0,0
+6816748a,3,2026-09-05,Hull,Mohamed Ali Cho,FRA,2004.0,FW,9,0,0
+6816748a,3,2026-09-05,Hull,Nobel Mendy,SEN,2004.0,DF,70,0,0
+6816748a,3,2026-09-05,Hull,Oliver McBurnie,SCO,1996.0,FW,90,0,0
+6816748a,3,2026-09-05,Hull,Regan Slater,ENG,1999.0,MF,90,0,0
+6816748a,3,2026-09-05,Hull,Ryan Giles,ENG,2000.0,DF,90,0,0
+6816748a,3,2026-09-05,Hull,Semi Ajayi,NGA,1993.0,DF,90,0,0
+6816748a,3,2026-09-05,Hull,Sorba Thomas,WAL,1999.0,FW,28,0,0
+e49890d8,3,2026-09-05,Coventry,Aurèle Amenda,SUI,2003.0,DF,90,0,0
+e49890d8,3,2026-09-05,Coventry,Bobby Thomas,ENG,2001.0,DF,90,0,0
+e49890d8,3,2026-09-05,Coventry,Brandon Thomas-Asante,GHA,1998.0,FW,20,0,0
+e49890d8,3,2026-09-05,Coventry,Caleb Yirenkyi,GHA,2006.0,MF,28,0,0
+e49890d8,3,2026-09-05,Coventry,Carl Rushworth,ENG,2001.0,GK,90,0,0
+e49890d8,3,2026-09-05,Coventry,Ellis Simms,ENG,2001.0,FW,20,0,0
+e49890d8,3,2026-09-05,Coventry,Ephron Mason-Clark,JAM,1999.0,MF,70,0,0
+e49890d8,3,2026-09-05,Coventry,Ethan Pinnock,JAM,1993.0,DF,90,0,0
+e49890d8,3,2026-09-05,Coventry,Frank Onyeka,NGA,1998.0,MF,62,0,0
+e49890d8,3,2026-09-05,Coventry,Gustavo Hamer,NED,1997.0,MF,6,0,0
+e49890d8,3,2026-09-05,Coventry,Jack Rudoni,ENG,2000.0,MF,62,0,0
+e49890d8,3,2026-09-05,Coventry,Jay Dasilva,WAL,1998.0,MF,84,0,0
+e49890d8,3,2026-09-05,Coventry,Loum Tchaouna,FRA,2003.0,FW,28,0,0
+e49890d8,3,2026-09-05,Coventry,Matt Grimes,ENG,1995.0,MF,90,0,0
+e49890d8,3,2026-09-05,Coventry,Milan van Ewijk,NED,2000.0,MF,90,0,0
+e49890d8,3,2026-09-05,Coventry,Taiwo Awoniyi,NGA,1997.0,FW,70,0,0
+e49890d8,3,2026-09-05,Man City,Abdukodir Khusanov,UZB,2004.0,DF,90,0,0
+e49890d8,3,2026-09-05,Man City,Antoine Semenyo,GHA,2000.0,MF,90,0,1
+e49890d8,3,2026-09-05,Man City,Ayyoub Bouaddi,MAR,2007.0,MF,15,0,0
+e49890d8,3,2026-09-05,Man City,Elliot Anderson,ENG,2002.0,MF,90,0,0
+e49890d8,3,2026-09-05,Man City,Enzo Fernández,ARG,2001.0,MF,75,0,0
+e49890d8,3,2026-09-05,Man City,Erling Haaland,NOR,2000.0,FW,90,1,0
+e49890d8,3,2026-09-05,Man City,Gianluigi Donnarumma,ITA,1999.0,GK,90,0,0
+e49890d8,3,2026-09-05,Man City,Iliman Ndiaye,SEN,2000.0,MF,86,0,0
+e49890d8,3,2026-09-05,Man City,Joško Gvardiol,CRO,2002.0,DF,90,0,0
+e49890d8,3,2026-09-05,Man City,Marc Guéhi,ENG,2000.0,DF,90,0,0
+e49890d8,3,2026-09-05,Man City,Phil Foden,ENG,2000.0,FW,25,0,0
+e49890d8,3,2026-09-05,Man City,Rayan Cherki,FRA,2003.0,MF,65,0,0
+e49890d8,3,2026-09-05,Man City,Ryan Mcaidoo,ENG,2008.0,FW,4,0,0
+e49890d8,3,2026-09-05,Man City,Rúben Dias,POR,1997.0,DF,90,0,0
+198be7a7,3,2026-09-05,Bournemouth,Adam Smith,ENG,1991.0,DF,90,0,0
+198be7a7,3,2026-09-05,Bournemouth,Adrien Truffert,FRA,2001.0,DF,90,0,0
+198be7a7,3,2026-09-05,Bournemouth,Alex Scott,ENG,2003.0,MF,89,0,0
+198be7a7,3,2026-09-05,Bournemouth,António Silva,POR,2003.0,DF,90,0,0
+198be7a7,3,2026-09-05,Bournemouth,Ben Gannon-Doak,SCO,2005.0,MF,2,0,0
+198be7a7,3,2026-09-05,Bournemouth,Daniel Jebbison,CAN,2003.0,FW,2,0,0
+198be7a7,3,2026-09-05,Bournemouth,David Brooks,WAL,1997.0,FW,15,0,0
+198be7a7,3,2026-09-05,Bournemouth,Evanilson,BRA,1999.0,FW,90,0,0
+198be7a7,3,2026-09-05,Bournemouth,James Hill,ENG,2002.0,DF,90,0,0
+198be7a7,3,2026-09-05,Bournemouth,Justin Kluivert,NED,1999.0,MF,75,0,0
+198be7a7,3,2026-09-05,Bournemouth,Lewis Cook,ENG,1997.0,MF,15,0,0
+198be7a7,3,2026-09-05,Bournemouth,Marcus Tavernier,ENG,1999.0,MF,88,1,0
+198be7a7,3,2026-09-05,Bournemouth,Rayan,BRA,2006.0,MF,88,0,0
+198be7a7,3,2026-09-05,Bournemouth,Ryan Christie,SCO,1995.0,FW,1,0,0
+198be7a7,3,2026-09-05,Bournemouth,Tyler Adams,USA,1999.0,MF,75,0,0
+198be7a7,3,2026-09-05,Bournemouth,Đorđe Petrović,SRB,1999.0,GK,90,0,0
+198be7a7,3,2026-09-05,Newcastle United,Amar Dedić,BIH,2002.0,DF,90,0,0
+198be7a7,3,2026-09-05,Newcastle United,Anthony Elanga,SWE,2002.0,MF,76,0,0
+198be7a7,3,2026-09-05,Newcastle United,Harvey Barnes,ENG,1997.0,MF,90,1,0
+198be7a7,3,2026-09-05,Newcastle United,Jacob Murphy,ENG,1995.0,DF,14,0,0
+198be7a7,3,2026-09-05,Newcastle United,Jacob Ramsey,ENG,2001.0,MF,28,1,0
+198be7a7,3,2026-09-05,Newcastle United,Joe Willock,ENG,1999.0,MF,62,0,0
+198be7a7,3,2026-09-05,Newcastle United,Lewis Hall,ENG,2004.0,DF,89,0,1
+198be7a7,3,2026-09-05,Newcastle United,Lewis Miley,ENG,2006.0,MF,62,0,0
+198be7a7,3,2026-09-05,Newcastle United,Lukáš Horníček,CZE,2002.0,GK,90,0,0
+198be7a7,3,2026-09-05,Newcastle United,Malick Thiaw,GER,2001.0,DF,90,0,0
+198be7a7,3,2026-09-05,Newcastle United,Matias Fernandez-Pardo,BEL,2005.0,FW,28,0,0
+198be7a7,3,2026-09-05,Newcastle United,Nicolás González,ESP,2002.0,MF,76,0,0
+198be7a7,3,2026-09-05,Newcastle United,Sean Steur,NED,2008.0,MF,14,0,0
+198be7a7,3,2026-09-05,Newcastle United,Sven Botman,NED,2000.0,DF,90,0,0
+198be7a7,3,2026-09-05,Newcastle United,Tino Livramento,ENG,2002.0,DF,1,0,0
+198be7a7,3,2026-09-05,Newcastle United,Yoane Wissa,COD,1996.0,FW,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Chris Wood,NZL,1991.0,FW,17,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Dan Ndoye,SUI,2000.0,MF,58,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Daniel Muñoz,COL,1996.0,DF,32,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Igor Jesus,BRA,2001.0,FW,32,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Jair Cunha,BRA,2005.0,DF,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,James Mcatee,ENG,2002.0,MF,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Liam Delap,ENG,2003.0,FW,73,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Matz Sels,BEL,1992.0,GK,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Morgan Gibbs-White,ENG,2000.0,MF,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Murillo,BRA,2002.0,DF,89,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Neco Williams,WAL,2001.0,MF,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Nikola Milenković,SRB,1997.0,DF,90,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Ola Aina,NGA,1996.0,MF,58,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Ousmane Diomande,CIV,2003.0,DF,1,0,0
+184a826e,3,2026-09-05,Nottingham Forest,Xaver Schlager,AUT,1997.0,MF,90,0,0
+184a826e,3,2026-09-05,Tottenham,Andy Robertson,SCO,1994.0,DF,30,0,0
+184a826e,3,2026-09-05,Tottenham,Antonín Kinský,CZE,2003.0,GK,90,0,0
+184a826e,3,2026-09-05,Tottenham,Conor Gallagher,ENG,2000.0,MF,83,0,0
+184a826e,3,2026-09-05,Tottenham,Destiny Udogie,ITA,2002.0,DF,60,0,0
+184a826e,3,2026-09-05,Tottenham,Dominic Solanke,ENG,1997.0,FW,7,0,0
+184a826e,3,2026-09-05,Tottenham,Jan Paul van Hecke,NED,2000.0,DF,90,0,0
+184a826e,3,2026-09-05,Tottenham,Mateus Fernandes,POR,2004.0,MF,7,0,0
+184a826e,3,2026-09-05,Tottenham,Mathys Tel,FRA,2005.0,MF,73,0,0
+184a826e,3,2026-09-05,Tottenham,Micky van de Ven,NED,2001.0,DF,90,0,0
+184a826e,3,2026-09-05,Tottenham,Mohammed Kudus,GHA,2000.0,FW,30,0,0
+184a826e,3,2026-09-05,Tottenham,Mykhailo Mudryk,UKR,2001.0,MF,17,0,0
+184a826e,3,2026-09-05,Tottenham,Omar Marmoush,EGY,1999.0,FW,83,0,0
+184a826e,3,2026-09-05,Tottenham,Pedro Porro,ESP,1999.0,DF,90,0,0
+184a826e,3,2026-09-05,Tottenham,Rodrigo Bentancur,URU,1997.0,MF,90,0,0
+184a826e,3,2026-09-05,Tottenham,Sandro Tonali,ITA,2000.0,MF,90,0,0
+184a826e,3,2026-09-05,Tottenham,Sávio,BRA,2004.0,MF,60,0,0
+a99c87a3,3,2026-09-06,Arsenal,Ben White,ENG,1997.0,DF,90,0,0
+a99c87a3,3,2026-09-06,Arsenal,Bukayo Saka,ENG,2001.0,MF,89,0,0
+a99c87a3,3,2026-09-06,Arsenal,Christos Tzolis,GRE,2002.0,MF,90,0,1
+a99c87a3,3,2026-09-06,Arsenal,David Raya,ESP,1995.0,GK,90,0,0
+a99c87a3,3,2026-09-06,Arsenal,Declan Rice,ENG,1999.0,MF,90,0,1
+a99c87a3,3,2026-09-06,Arsenal,Ezri Konsa,ENG,1997.0,DF,90,0,0
+a99c87a3,3,2026-09-06,Arsenal,Gabriel Magalhães,BRA,1997.0,DF,90,0,0
+a99c87a3,3,2026-09-06,Arsenal,Kai Havertz,GER,1999.0,FW,77,1,0
+a99c87a3,3,2026-09-06,Arsenal,Martin Ødegaard,NOR,1998.0,MF,77,1,0
+a99c87a3,3,2026-09-06,Arsenal,Martín Zubimendi,ESP,1999.0,MF,24,0,0
+a99c87a3,3,2026-09-06,Arsenal,Mikel Merino,ESP,1996.0,MF,13,0,0
+a99c87a3,3,2026-09-06,Arsenal,Myles Lewis-Skelly,ENG,2006.0,MF,66,0,0
+a99c87a3,3,2026-09-06,Arsenal,Noni Madueke,ENG,2002.0,FW,1,0,0
+a99c87a3,3,2026-09-06,Arsenal,Piero Hincapié,ECU,2002.0,DF,24,0,0
+a99c87a3,3,2026-09-06,Arsenal,Riccardo Calafiori,ITA,2002.0,DF,66,0,0
+a99c87a3,3,2026-09-06,Arsenal,Viktor Gyökeres,SWE,1998.0,FW,13,0,0
+a99c87a3,3,2026-09-06,Chelsea,Cole Palmer,ENG,2002.0,MF,90,0,0
+a99c87a3,3,2026-09-06,Chelsea,Danny Welbeck,ENG,1990.0,FW,4,0,0
+a99c87a3,3,2026-09-06,Chelsea,Emiliano Martínez,ARG,1992.0,GK,90,0,0
+a99c87a3,3,2026-09-06,Chelsea,Estêvão Willian,BRA,2007.0,MF,10,0,0
+a99c87a3,3,2026-09-06,Chelsea,Jorrel Hato,NED,2006.0,MF,59,0,1
+a99c87a3,3,2026-09-06,Chelsea,Joshua Acheampong,ENG,2006.0,DF,90,0,0
+a99c87a3,3,2026-09-06,Chelsea,João Pedro,BRA,2001.0,FW,90,0,0
+a99c87a3,3,2026-09-06,Chelsea,Malo Gusto,FRA,2003.0,DF,31,0,0
+a99c87a3,3,2026-09-06,Chelsea,Maxence Lacroix,FRA,2000.0,DF,90,0,0
+a99c87a3,3,2026-09-06,Chelsea,Morgan Rogers,ENG,2002.0,MF,86,1,0
+a99c87a3,3,2026-09-06,Chelsea,Pedro Neto,POR,2000.0,MF,80,0,0
+a99c87a3,3,2026-09-06,Chelsea,Pep Chavarría,ESP,1998.0,DF,31,0,0
+a99c87a3,3,2026-09-06,Chelsea,Reece James,ENG,1999.0,MF,90,0,0
+a99c87a3,3,2026-09-06,Chelsea,Roméo Lavia,BEL,2004.0,MF,59,0,0
+a99c87a3,3,2026-09-06,Chelsea,Wesley Fofana,FRA,2000.0,DF,90,0,0
+b07da8ea,3,2026-09-06,Everton,Ainsley Maitland-Niles,ENG,1997.0,DF,14,1,0
+b07da8ea,3,2026-09-06,Everton,Brennan Johnson,WAL,2001.0,MF,65,0,0
+b07da8ea,3,2026-09-06,Everton,Harrison Armstrong,ENG,2007.0,MF,90,0,0
+b07da8ea,3,2026-09-06,Everton,Hayden Hackney,ENG,2002.0,MF,16,0,1
+b07da8ea,3,2026-09-06,Everton,Jack Grealish,ENG,1995.0,FW,25,0,0
+b07da8ea,3,2026-09-06,Everton,James Garner,ENG,2001.0,MF,76,0,0
+b07da8ea,3,2026-09-06,Everton,James Tarkowski,ENG,1992.0,DF,90,0,0
+b07da8ea,3,2026-09-06,Everton,Jarrad Branthwaite,ENG,2002.0,DF,90,0,0
+b07da8ea,3,2026-09-06,Everton,Jordan Pickford,ENG,1994.0,GK,90,0,0
+b07da8ea,3,2026-09-06,Everton,Kiernan Dewsbury-Hall,ENG,1998.0,MF,90,0,0
+b07da8ea,3,2026-09-06,Everton,Merlin Röhl,GER,2002.0,DF,74,0,0
+b07da8ea,3,2026-09-06,Everton,Thierno Barry,FRA,2002.0,FW,90,0,0
+b07da8ea,3,2026-09-06,Everton,Tyrique George,ENG,2006.0,MF,90,1,0
+b07da8ea,3,2026-09-06,Everton,Vitaliy Mykolenko,UKR,1999.0,DF,90,0,0
+b07da8ea,3,2026-09-06,Manchester United,Andrey Santos,BRA,2004.0,MF,7,0,0
+b07da8ea,3,2026-09-06,Manchester United,Benjamin Šeško,SVN,2003.0,FW,21,1,0
+b07da8ea,3,2026-09-06,Manchester United,Bruno Fernandes,POR,1994.0,MF,90,0,0
+b07da8ea,3,2026-09-06,Manchester United,Bryan Mbeumo,CMR,1999.0,MF,90,1,0
+b07da8ea,3,2026-09-06,Manchester United,Diogo Dalot,POR,1999.0,DF,83,0,0
+b07da8ea,3,2026-09-06,Manchester United,Harry Maguire,ENG,1993.0,DF,90,0,0
+b07da8ea,3,2026-09-06,Manchester United,Kobbie Mainoo,ENG,2005.0,MF,83,0,1
+b07da8ea,3,2026-09-06,Manchester United,Leny Yoro,FRA,2005.0,DF,7,0,0
+b07da8ea,3,2026-09-06,Manchester United,Lisandro Martínez,ARG,1998.0,DF,90,0,0
+b07da8ea,3,2026-09-06,Manchester United,Luke Shaw,ENG,1995.0,DF,89,0,1
+b07da8ea,3,2026-09-06,Manchester United,Marcus Rashford,ENG,1997.0,MF,69,0,0
+b07da8ea,3,2026-09-06,Manchester United,Matheus Cunha,BRA,1999.0,FW,69,0,0
+b07da8ea,3,2026-09-06,Manchester United,Noussair Mazraoui,MAR,1997.0,DF,1,0,0
+b07da8ea,3,2026-09-06,Manchester United,Patrick Dorgu,DEN,2004.0,DF,21,0,0
+b07da8ea,3,2026-09-06,Manchester United,Senne Lammens,BEL,2002.0,GK,90,0,0
+b07da8ea,3,2026-09-06,Manchester United,Youri Tielemans,BEL,1997.0,MF,90,0,0
+2044821e,4,2026-09-12,Aston Villa,Aaron Wan-Bissaka,COD,1997.0,DF,90,0,0
+2044821e,4,2026-09-12,Aston Villa,Alysson,BRA,2006.0,MF,45,1,0
+2044821e,4,2026-09-12,Aston Villa,Boubacar Kamara,FRA,1999.0,MF,90,0,0
+2044821e,4,2026-09-12,Aston Villa,Emi Buendía,ARG,1996.0,MF,62,0,0
+2044821e,4,2026-09-12,Aston Villa,George Hemmings,ENG,2007.0,MF,45,0,0
+2044821e,4,2026-09-12,Aston Villa,Ian Maatsen,NED,2002.0,DF,90,0,0
+2044821e,4,2026-09-12,Aston Villa,Ibrahim Mbaye,SEN,2008.0,FW,28,0,0
+2044821e,4,2026-09-12,Aston Villa,Johan Manzambi,SUI,2005.0,MF,28,0,0
+2044821e,4,2026-09-12,Aston Villa,John McGinn,SCO,1994.0,MF,90,0,1
+2044821e,4,2026-09-12,Aston Villa,Nicolas Jackson,SEN,2001.0,FW,45,0,0
+2044821e,4,2026-09-12,Aston Villa,Pau Torres,ESP,1997.0,DF,24,0,0
+2044821e,4,2026-09-12,Aston Villa,Ross Barkley,ENG,1993.0,MF,62,0,0
+2044821e,4,2026-09-12,Aston Villa,Tammy Abraham,ENG,1997.0,FW,45,0,0
+2044821e,4,2026-09-12,Aston Villa,Tyrone Mings,ENG,1993.0,DF,66,0,0
+2044821e,4,2026-09-12,Aston Villa,Victor Lindelöf,SWE,1994.0,DF,90,0,0
+2044821e,4,2026-09-12,Aston Villa,Zion Suzuki,JPN,2002.0,GK,90,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Chris Wood,NZL,1991.0,FW,1,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Dan Ndoye,SUI,2000.0,MF,74,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Daniel Muñoz,COL,1996.0,MF,90,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Ibrahim Sangaré,CIV,1997.0,MF,9,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Igor Jesus,BRA,2001.0,FW,16,1,0
+2044821e,4,2026-09-12,Nottingham Forest,James Mcatee,ENG,2002.0,MF,81,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Liam Delap,ENG,2003.0,FW,89,1,0
+2044821e,4,2026-09-12,Nottingham Forest,Matz Sels,BEL,1992.0,GK,90,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Morgan Gibbs-White,ENG,2000.0,MF,90,0,1
+2044821e,4,2026-09-12,Nottingham Forest,Murillo,BRA,2002.0,DF,90,0,1
+2044821e,4,2026-09-12,Nottingham Forest,Neco Williams,WAL,2001.0,MF,90,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Ola Aina,NGA,1996.0,DF,90,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Ousmane Diomande,CIV,2003.0,DF,90,0,0
+2044821e,4,2026-09-12,Nottingham Forest,Xaver Schlager,AUT,1997.0,MF,90,0,0
+84407529,4,2026-09-12,Bournemouth,Adam Smith,ENG,1991.0,DF,90,0,0
+84407529,4,2026-09-12,Bournemouth,Adrien Truffert,FRA,2001.0,DF,90,0,0
+84407529,4,2026-09-12,Bournemouth,Alex Scott,ENG,2003.0,MF,90,0,0
+84407529,4,2026-09-12,Bournemouth,António Silva,POR,2003.0,DF,90,0,0
+84407529,4,2026-09-12,Bournemouth,Ben Gannon-Doak,SCO,2005.0,MF,9,0,0
+84407529,4,2026-09-12,Bournemouth,David Brooks,WAL,1997.0,FW,8,0,0
+84407529,4,2026-09-12,Bournemouth,Evanilson,BRA,1999.0,FW,89,0,1
+84407529,4,2026-09-12,Bournemouth,James Hill,ENG,2002.0,DF,90,0,0
+84407529,4,2026-09-12,Bournemouth,Justin Kluivert,NED,1999.0,MF,65,1,0
+84407529,4,2026-09-12,Bournemouth,Lewis Cook,ENG,1997.0,MF,9,0,0
+84407529,4,2026-09-12,Bournemouth,Marcus Tavernier,ENG,1999.0,MF,82,1,0
+84407529,4,2026-09-12,Bournemouth,Rayan,BRA,2006.0,MF,81,0,0
+84407529,4,2026-09-12,Bournemouth,Ryan Christie,SCO,1995.0,FW,25,0,0
+84407529,4,2026-09-12,Bournemouth,Tyler Adams,USA,1999.0,MF,81,0,0
+84407529,4,2026-09-12,Bournemouth,Álvaro Rodríguez,URU,2004.0,FW,1,0,0
+84407529,4,2026-09-12,Bournemouth,Đorđe Petrović,SRB,1999.0,GK,90,0,0
+84407529,4,2026-09-12,Brentford,Aaron Hickey,SCO,2002.0,DF,70,0,0
+84407529,4,2026-09-12,Brentford,Caoimhín Kelleher,IRL,1998.0,GK,90,0,0
+84407529,4,2026-09-12,Brentford,Dango Ouattara,BFA,2002.0,FW,31,0,0
+84407529,4,2026-09-12,Brentford,El Hadji Malick Diouf,SEN,2004.0,DF,31,0,0
+84407529,4,2026-09-12,Brentford,Igor Thiago,BRA,2001.0,FW,90,0,0
+84407529,4,2026-09-12,Brentford,Jaidon Anthony,ENG,1999.0,MF,59,0,0
+84407529,4,2026-09-12,Brentford,Jannik Schuster,AUT,2006.0,DF,90,0,0
+84407529,4,2026-09-12,Brentford,Keane Lewis-Potter,ENG,2001.0,DF,59,0,0
+84407529,4,2026-09-12,Brentford,Kevin Schade,GER,2001.0,MF,90,2,0
+84407529,4,2026-09-12,Brentford,Kristoffer Ajer,NOR,1998.0,DF,90,0,0
+84407529,4,2026-09-12,Brentford,Mamadou Sangare,MLI,2002.0,MF,90,0,0
+84407529,4,2026-09-12,Brentford,Michael Kayode,ITA,2004.0,DF,20,0,0
+84407529,4,2026-09-12,Brentford,Mikkel Damsgaard,DEN,2000.0,FW,31,0,0
+84407529,4,2026-09-12,Brentford,Vitaly Janelt,GER,1998.0,MF,90,0,0
+84407529,4,2026-09-12,Brentford,Yehor Yarmoliuk,UKR,2004.0,MF,59,0,1

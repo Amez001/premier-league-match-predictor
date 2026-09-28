@@ -26,15 +26,24 @@ logger = logging.getLogger(__name__)
 SCORE_GRID_MAX_GOALS = 5
 
 
-class MatchPredictor:
-    """Fit once on full history, then call .predict(home, away) as many times as needed."""
+_LOAD_PLAYERS = object()  # sentinel: "load the latest player snapshot from disk"
 
-    def __init__(self, matches: pd.DataFrame):
+
+class MatchPredictor:
+    """Fit once on full history, then call .predict(home, away) as many times as needed.
+
+    `teams` and `player_df` default to the live setup (this season's clubs,
+    latest player snapshot). The track record passes them explicitly to
+    rebuild the predictor as it stood before a past matchweek: fitted on
+    earlier matches only, with player totals rebuilt from earlier matches.
+    """
+
+    def __init__(self, matches: pd.DataFrame, teams: list[str] | None = None, player_df=_LOAD_PLAYERS):
         with_elo, self.elo = compute_running_elo(matches)
         self.feature_df = add_form_features(with_elo)
         # Only the 20 clubs actually in the Premier League this season - not
         # every club that has passed through the division across 25 years.
-        self.known_teams = get_current_season_teams(matches)
+        self.known_teams = teams if teams is not None else get_current_season_teams(matches)
 
         self.elo_model = LogisticOutcomeModel(feature_columns=["elo_diff"], name="elo_logistic")
         self.elo_model.fit(self.feature_df)
@@ -42,7 +51,7 @@ class MatchPredictor:
         self.poisson_model = PoissonGoalsModel()
         self.poisson_model.fit(self.feature_df)
 
-        self.player_df = self._load_player_features()
+        self.player_df = self._load_player_features() if player_df is _LOAD_PLAYERS else player_df
 
     @staticmethod
     def _load_player_features() -> pd.DataFrame | None:

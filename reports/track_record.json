@@ -1,0 +1,2739 @@
+{
+ "season_start_year": 2026,
+ "overall": {
+  "matches": 50,
+  "outcome": {
+   "n": 50,
+   "hits": 23,
+   "expected": 26.560489146924198,
+   "expected_low": 22.19695453727137,
+   "expected_high": 30.924023756577025
+  },
+  "exact": {
+   "n": 50,
+   "hits": 5,
+   "expected": 5.8277617473818,
+   "expected_low": 2.924938880403545,
+   "expected_high": 8.730584614360055
+  },
+  "scorer_favourite": {
+   "n": 44,
+   "hits": 8,
+   "expected": 13.37231868685059,
+   "expected_low": 9.600789630693384,
+   "expected_high": 17.143847743007797
+  },
+  "scorer_listed": {
+   "n": 132,
+   "hits": 20,
+   "expected": 29.72485393471124,
+   "expected_low": 23.774351851003406,
+   "expected_high": 35.67535601841907
+  },
+  "log_loss": 1.0418124504698092,
+  "log_loss_reference": 1.1186293521112045
+ },
+ "weeks": [
+  {
+   "week": 1,
+   "matches": 10,
+   "outcome": {
+    "n": 10,
+    "hits": 5,
+    "expected": 5.234242522833051,
+    "expected_low": 3.290012621961356,
+    "expected_high": 7.178472423704745
+   },
+   "exact": {
+    "n": 10,
+    "hits": 0,
+    "expected": 1.1566978957392733,
+    "expected_low": 0.0,
+    "expected_high": 2.450721044708909
+   },
+   "scorer_favourite": {
+    "n": 0,
+    "hits": 0,
+    "expected": 0,
+    "expected_low": 0.0,
+    "expected_high": 0.0
+   },
+   "scorer_listed": {
+    "n": 0,
+    "hits": 0,
+    "expected": 0,
+    "expected_low": 0.0,
+    "expected_high": 0.0
+   },
+   "log_loss": 0.9760260335310624,
+   "log_loss_reference": 0.9320334031910317
+  },
+  {
+   "week": 2,
+   "matches": 10,
+   "outcome": {
+    "n": 10,
+    "hits": 6,
+    "expected": 4.954130179407327,
+    "expected_low": 2.9824468664774195,
+    "expected_high": 6.925813492337236
+   },
+   "exact": {
+    "n": 10,
+    "hits": 2,
+    "expected": 1.1414505170221534,
+    "expected_low": 0.0,
+    "expected_high": 2.4279531256162588
+   },
+   "scorer_favourite": {
+    "n": 20,
+    "hits": 5,
+    "expected": 5.40283761643811,
+    "expected_low": 2.8895072057530324,
+    "expected_high": 7.916168027123188
+   },
+   "scorer_listed": {
+    "n": 60,
+    "hits": 10,
+    "expected": 13.155683855523746,
+    "expected_low": 9.121330828107904,
+    "expected_high": 17.190036882939587
+   },
+   "log_loss": 0.9577676831398986,
+   "log_loss_reference": 1.1413192497830227
+  },
+  {
+   "week": 3,
+   "matches": 10,
+   "outcome": {
+    "n": 10,
+    "hits": 3,
+    "expected": 5.658149732381307,
+    "expected_low": 3.719544834860735,
+    "expected_high": 7.596754629901878
+   },
+   "exact": {
+    "n": 10,
+    "hits": 2,
+    "expected": 1.1612161844359845,
+    "expected_low": 0.0,
+    "expected_high": 2.4573907282474954
+   },
+   "scorer_favourite": {
+    "n": 20,
+    "hits": 2,
+    "expected": 6.667530178147416,
+    "expected_low": 4.1106743126289995,
+    "expected_high": 9.224386043665833
+   },
+   "scorer_listed": {
+    "n": 60,
+    "hits": 8,
+    "expected": 13.831593123021072,
+    "expected_low": 9.848957029800394,
+    "expected_high": 17.81422921624175
+   },
+   "log_loss": 1.0428258793514857,
+   "log_loss_reference": 1.2371556080159227
+  },
+  {
+   "week": 4,
+   "matches": 10,
+   "outcome": {
+    "n": 10,
+    "hits": 3,
+    "expected": 5.363232798447783,
+    "expected_low": 3.3955677050383826,
+    "expected_high": 7.330897891857182
+   },
+   "exact": {
+    "n": 10,
+    "hits": 0,
+    "expected": 1.1897106613880857,
+    "expected_low": 0.0,
+    "expected_high": 2.4989655113481772
+   },
+   "scorer_favourite": {
+    "n": 4,
+    "hits": 1,
+    "expected": 1.3019508922650649,
+    "expected_low": 0.13144256203938354,
+    "expected_high": 2.4724592224907465
+   },
+   "scorer_listed": {
+    "n": 12,
+    "hits": 2,
+    "expected": 2.7375769561664214,
+    "expected_low": 0.9289641044571759,
+    "expected_high": 4.546189807875667
+   },
+   "log_loss": 1.207028734899756,
+   "log_loss_reference": 1.2459621730790182
+  },
+  {
+   "week": 5,
+   "matches": 10,
+   "outcome": {
+    "n": 10,
+    "hits": 6,
+    "expected": 5.35073391385473,
+    "expected_low": 3.4160570862693884,
+    "expected_high": 7.285410741440071
+   },
+   "exact": {
+    "n": 10,
+    "hits": 1,
+    "expected": 1.1786864887963031,
+    "expected_low": 0.0,
+    "expected_high": 2.483515602088202
+   },
+   "scorer_favourite": {
+    "n": 0,
+    "hits": 0,
+    "expected": 0,
+    "expected_low": 0.0,
+    "expected_high": 0.0
+   },
+   "scorer_listed": {
+    "n": 0,
+    "hits": 0,
+    "expected": 0,
+    "expected_low": 0.0,
+    "expected_high": 0.0
+   },
+   "log_loss": 1.025413921426843,
+   "log_loss_reference": 1.0366763264870271
+  }
+ ],
+ "matches": [
+  {
+   "week": 1,
+   "date": "2026-08-21",
+   "home_team": "Arsenal",
+   "away_team": "Coventry",
+   "home_goals": 3,
+   "away_goals": 0,
+   "p_home": 0.8437607175940192,
+   "p_draw": 0.12547391325469862,
+   "p_away": 0.03076536915128211,
+   "favourite": "H",
+   "p_favourite": 0.8437607175940192,
+   "actual": "H",
+   "p_actual": 0.8437607175940192,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    2,
+    0
+   ],
+   "p_predicted_score": 0.1210707236967834,
+   "exact_hit": false,
+   "expected_goals": [
+    2.079671162845906,
+    0.8029816402260253
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-22",
+   "home_team": "Brentford",
+   "away_team": "Tottenham",
+   "home_goals": 3,
+   "away_goals": 0,
+   "p_home": 0.5481246545206615,
+   "p_draw": 0.25384051646729094,
+   "p_away": 0.19803482901204747,
+   "favourite": "H",
+   "p_favourite": 0.5481246545206615,
+   "actual": "H",
+   "p_actual": 0.5481246545206615,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10465791862002893,
+   "exact_hit": false,
+   "expected_goals": [
+    1.7895701270804814,
+    1.348331031236467
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-22",
+   "home_team": "Everton",
+   "away_team": "Crystal Palace",
+   "home_goals": 2,
+   "away_goals": 0,
+   "p_home": 0.4556479933403279,
+   "p_draw": 0.2711783775565647,
+   "p_away": 0.27317362910310733,
+   "favourite": "H",
+   "p_favourite": 0.4556479933403279,
+   "actual": "H",
+   "p_actual": 0.4556479933403279,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.13135686988831816,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2595982873413676,
+    1.0461224291321092
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-22",
+   "home_team": "Hull",
+   "away_team": "Man United",
+   "home_goals": 2,
+   "away_goals": 0,
+   "p_home": 0.1751602521789989,
+   "p_draw": 0.24334959249953508,
+   "p_away": 0.581490155321466,
+   "favourite": "A",
+   "p_favourite": 0.581490155321466,
+   "actual": "H",
+   "p_actual": 0.1751602521789989,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11574335070950273,
+   "exact_hit": false,
+   "expected_goals": [
+    1.3885070556299122,
+    1.504686969254927
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-22",
+   "home_team": "Ipswich",
+   "away_team": "Sunderland",
+   "home_goals": 2,
+   "away_goals": 1,
+   "p_home": 0.3102009943667007,
+   "p_draw": 0.27476074320187777,
+   "p_away": 0.41503826243142156,
+   "favourite": "A",
+   "p_favourite": 0.41503826243142156,
+   "actual": "H",
+   "p_actual": 0.3102009943667007,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12301681966917069,
+   "exact_hit": false,
+   "expected_goals": [
+    1.1092229898293828,
+    1.4858743370270375
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-22",
+   "home_team": "Nottm Forest",
+   "away_team": "Leeds",
+   "home_goals": 0,
+   "away_goals": 1,
+   "p_home": 0.5303330066988766,
+   "p_draw": 0.2580108412871311,
+   "p_away": 0.2116561520139923,
+   "favourite": "H",
+   "p_favourite": 0.5303330066988766,
+   "actual": "A",
+   "p_actual": 0.2116561520139923,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11881906205267247,
+   "exact_hit": false,
+   "expected_goals": [
+    1.5659178079321476,
+    1.168004291276561
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-23",
+   "home_team": "Brighton",
+   "away_team": "Aston Villa",
+   "home_goals": 4,
+   "away_goals": 0,
+   "p_home": 0.40769274555051044,
+   "p_draw": 0.27578208691024314,
+   "p_away": 0.3165251675392464,
+   "favourite": "H",
+   "p_favourite": 0.40769274555051044,
+   "actual": "H",
+   "p_actual": 0.40769274555051044,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11675513966413871,
+   "exact_hit": false,
+   "expected_goals": [
+    1.5160016801615273,
+    1.3416550095792446
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-23",
+   "home_team": "Man City",
+   "away_team": "Bournemouth",
+   "home_goals": 2,
+   "away_goals": 1,
+   "p_home": 0.6595986521715876,
+   "p_draw": 0.21884795105070504,
+   "p_away": 0.12155339677770736,
+   "favourite": "H",
+   "p_favourite": 0.6595986521715876,
+   "actual": "H",
+   "p_actual": 0.6595986521715876,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    2,
+    0
+   ],
+   "p_predicted_score": 0.10212360859669821,
+   "exact_hit": false,
+   "expected_goals": [
+    2.1536717602154964,
+    0.9691007715598118
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-23",
+   "home_team": "Newcastle",
+   "away_team": "Liverpool",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.3347078247951717,
+   "p_draw": 0.2764401868199504,
+   "p_away": 0.3888519883848779,
+   "favourite": "A",
+   "p_favourite": 0.3888519883848779,
+   "actual": "D",
+   "p_actual": 0.2764401868199504,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10175109311990788,
+   "exact_hit": false,
+   "expected_goals": [
+    1.5706809648919213,
+    1.6919150759783042
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 1,
+   "date": "2026-08-24",
+   "home_team": "Fulham",
+   "away_team": "Chelsea",
+   "home_goals": 2,
+   "away_goals": 3,
+   "p_home": 0.40370434681930234,
+   "p_draw": 0.276022062796344,
+   "p_away": 0.3202735903843536,
+   "favourite": "H",
+   "p_favourite": 0.40370434681930234,
+   "actual": "A",
+   "p_actual": 0.3202735903843536,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12140330972205217,
+   "exact_hit": false,
+   "expected_goals": [
+    1.3481166339179151,
+    1.3847451563845161
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 2,
+   "date": "2026-08-28",
+   "home_team": "Crystal Palace",
+   "away_team": "Man City",
+   "home_goals": 1,
+   "away_goals": 4,
+   "p_home": 0.18205201601853277,
+   "p_draw": 0.24596790066463942,
+   "p_away": 0.5719800833168278,
+   "favourite": "A",
+   "p_favourite": 0.5719800833168278,
+   "actual": "A",
+   "p_actual": 0.5719800833168278,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    0,
+    1
+   ],
+   "p_predicted_score": 0.11368921616987654,
+   "exact_hit": false,
+   "expected_goals": [
+    0.9722660712700175,
+    1.7768792529862836
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Jean-Philippe Mateta",
+     "probability": 0.2151862205117393,
+     "scored": false
+    },
+    {
+     "player": "Eddie Nketiah",
+     "probability": 0.1271387117492896,
+     "scored": false
+    },
+    {
+     "player": "Daniel Muñoz",
+     "probability": 0.07905903519612001,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Erling Haaland",
+     "probability": 0.3791778849227013,
+     "scored": true
+    },
+    {
+     "player": "Antoine Semenyo",
+     "probability": 0.251490022646111,
+     "scored": false
+    },
+    {
+     "player": "Marc Guéhi",
+     "probability": 0.22406147279347033,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Man City",
+     "player": "Erling Haaland",
+     "goals": 2
+    },
+    {
+     "team": "Man City",
+     "player": "Rayan Cherki",
+     "goals": 2
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-29",
+   "home_team": "Bournemouth",
+   "away_team": "Everton",
+   "home_goals": 1,
+   "away_goals": 1,
+   "p_home": 0.5215451746941336,
+   "p_draw": 0.2597582042479806,
+   "p_away": 0.21869662105788581,
+   "favourite": "H",
+   "p_favourite": 0.5215451746941336,
+   "actual": "D",
+   "p_actual": 0.2597582042479806,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12490962026838853,
+   "exact_hit": true,
+   "expected_goals": [
+    1.444959893011462,
+    1.0832798596394253
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Marcus Tavernier",
+     "probability": 0.31682953421150906,
+     "scored": false
+    },
+    {
+     "player": "Rayan",
+     "probability": 0.2607110232032789,
+     "scored": false
+    },
+    {
+     "player": "Evanilson",
+     "probability": 0.15416066434476516,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Thierno Barry",
+     "probability": 0.24084950169841224,
+     "scored": false
+    },
+    {
+     "player": "Kiernan Dewsbury-Hall",
+     "probability": 0.22533857835924587,
+     "scored": false
+    },
+    {
+     "player": "Iliman Ndiaye",
+     "probability": 0.10748028567857904,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Bournemouth",
+     "player": "Alex Scott",
+     "goals": 1
+    },
+    {
+     "team": "Everton",
+     "player": "James Tarkowski",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-29",
+   "home_team": "Coventry",
+   "away_team": "Hull",
+   "home_goals": 0,
+   "away_goals": 1,
+   "p_home": 0.426998505039573,
+   "p_draw": 0.2741325623798047,
+   "p_away": 0.29886893258062236,
+   "favourite": "H",
+   "p_favourite": 0.426998505039573,
+   "actual": "A",
+   "p_actual": 0.29886893258062236,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12169913045306173,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2717178052591251,
+    1.4383527271931504
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Matt Grimes",
+     "probability": 0.15160459507306123,
+     "scored": false
+    },
+    {
+     "player": "Ellis Simms",
+     "probability": 0.139222594876092,
+     "scored": false
+    },
+    {
+     "player": "Brandon Thomas-Asante",
+     "probability": 0.139222594876092,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Oliver McBurnie",
+     "probability": 0.17983417492613474,
+     "scored": false
+    },
+    {
+     "player": "Nobel Mendy",
+     "probability": 0.16710942453288624,
+     "scored": false
+    },
+    {
+     "player": "Semi Ajayi",
+     "probability": 0.16710942453288624,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Hull",
+     "player": "Liam Millar",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-29",
+   "home_team": "Liverpool",
+   "away_team": "Nottm Forest",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.615273270921196,
+   "p_draw": 0.2344444589488156,
+   "p_away": 0.1502822701299883,
+   "favourite": "H",
+   "p_favourite": 0.615273270921196,
+   "actual": "D",
+   "p_actual": 0.2344444589488156,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10064102058081024,
+   "exact_hit": false,
+   "expected_goals": [
+    1.9683120914036134,
+    1.1039954428715124
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Cody Gakpo",
+     "probability": 0.3433232973695972,
+     "scored": false
+    },
+    {
+     "player": "Dominik Szoboszlai",
+     "probability": 0.31039844841682984,
+     "scored": false
+    },
+    {
+     "player": "Alexander Isak",
+     "probability": 0.2593914674606056,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Morgan Gibbs-White",
+     "probability": 0.2747092269100324,
+     "scored": true
+    },
+    {
+     "player": "Igor Jesus",
+     "probability": 0.17833237834191928,
+     "scored": false
+    },
+    {
+     "player": "Ibrahim Sangaré",
+     "probability": 0.0947324056703368,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Liverpool",
+     "player": "Alexander Isak",
+     "goals": 1
+    },
+    {
+     "team": "Liverpool",
+     "player": "Víctor Muñoz",
+     "goals": 1
+    },
+    {
+     "team": "Nottm Forest",
+     "player": "Dan Ndoye",
+     "goals": 1
+    },
+    {
+     "team": "Nottm Forest",
+     "player": "Morgan Gibbs-White",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-29",
+   "home_team": "Tottenham",
+   "away_team": "Newcastle",
+   "home_goals": 0,
+   "away_goals": 2,
+   "p_home": 0.34102174283643794,
+   "p_draw": 0.27654239918125123,
+   "p_away": 0.3824358579823109,
+   "favourite": "A",
+   "p_favourite": 0.3824358579823109,
+   "actual": "A",
+   "p_actual": 0.3824358579823109,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10444872277732373,
+   "exact_hit": false,
+   "expected_goals": [
+    1.5767363727842145,
+    1.6202767193365444
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Richarlison",
+     "probability": 0.30346568855097056,
+     "scored": false
+    },
+    {
+     "player": "Mathys Tel",
+     "probability": 0.24047122713155578,
+     "scored": false
+    },
+    {
+     "player": "Mikey Moore",
+     "probability": 0.1522412195618399,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "William Osula",
+     "probability": 0.23284316698120233,
+     "scored": false
+    },
+    {
+     "player": "Harvey Barnes",
+     "probability": 0.2214891280573673,
+     "scored": false
+    },
+    {
+     "player": "Anthony Elanga",
+     "probability": 0.19707719906374233,
+     "scored": true
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Newcastle",
+     "player": "Anthony Elanga",
+     "goals": 1
+    },
+    {
+     "team": "Newcastle",
+     "player": "Yoane Wissa",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-30",
+   "home_team": "Chelsea",
+   "away_team": "Brighton",
+   "home_goals": 4,
+   "away_goals": 3,
+   "p_home": 0.46184464243207296,
+   "p_draw": 0.27018563379727845,
+   "p_away": 0.26796972377064854,
+   "favourite": "H",
+   "p_favourite": 0.46184464243207296,
+   "actual": "H",
+   "p_actual": 0.46184464243207296,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11309682250769623,
+   "exact_hit": false,
+   "expected_goals": [
+    1.630877744256501,
+    1.3005017992097136
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "João Pedro",
+     "probability": 0.3611516017251132,
+     "scored": true
+    },
+    {
+     "player": "Cole Palmer",
+     "probability": 0.31856967593490293,
+     "scored": true
+    },
+    {
+     "player": "Morgan Rogers",
+     "probability": 0.264390217615876,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Jack Hinshelwood",
+     "probability": 0.2905299169893588,
+     "scored": false
+    },
+    {
+     "player": "Maxim De Cuyper",
+     "probability": 0.19476953645309902,
+     "scored": false
+    },
+    {
+     "player": "Diego Gómez",
+     "probability": 0.13662694106600748,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brighton",
+     "player": "Malick Yalcouye",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Pascal Groß",
+     "goals": 1
+    },
+    {
+     "team": "Chelsea",
+     "player": "Cole Palmer",
+     "goals": 1
+    },
+    {
+     "team": "Chelsea",
+     "player": "João Pedro",
+     "goals": 1
+    },
+    {
+     "team": "Chelsea",
+     "player": "Pedro Neto",
+     "goals": 1
+    },
+    {
+     "team": "Chelsea",
+     "player": "Roméo Lavia",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-30",
+   "home_team": "Leeds",
+   "away_team": "Brentford",
+   "home_goals": 1,
+   "away_goals": 1,
+   "p_home": 0.37049186951055474,
+   "p_draw": 0.2769563091916968,
+   "p_away": 0.35255182129774854,
+   "favourite": "H",
+   "p_favourite": 0.37049186951055474,
+   "actual": "D",
+   "p_actual": 0.2769563091916968,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.1181833343807203,
+   "exact_hit": true,
+   "expected_goals": [
+    1.4067101574854426,
+    1.4224247967810482
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Dominic Calvert-Lewin",
+     "probability": 0.2836438955503022,
+     "scored": true
+    },
+    {
+     "player": "Anton Stach",
+     "probability": 0.26884129174864924,
+     "scored": false
+    },
+    {
+     "player": "Harry Wilson",
+     "probability": 0.16351732470785785,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Igor Thiago",
+     "probability": 0.2589803545397078,
+     "scored": false
+    },
+    {
+     "player": "Keane Lewis-Potter",
+     "probability": 0.18223989702926957,
+     "scored": false
+    },
+    {
+     "player": "Vitaly Janelt",
+     "probability": 0.18106495564987457,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brentford",
+     "player": "Kevin Schade",
+     "goals": 1
+    },
+    {
+     "team": "Leeds",
+     "player": "Dominic Calvert-Lewin",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-30",
+   "home_team": "Man United",
+   "away_team": "Ipswich",
+   "home_goals": 5,
+   "away_goals": 2,
+   "p_home": 0.7346788437915188,
+   "p_draw": 0.18636979748488056,
+   "p_away": 0.0789513587236006,
+   "favourite": "H",
+   "p_favourite": 0.7346788437915188,
+   "actual": "H",
+   "p_actual": 0.7346788437915188,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    2,
+    0
+   ],
+   "p_predicted_score": 0.09832696638498614,
+   "exact_hit": false,
+   "expected_goals": [
+    2.268577331396953,
+    0.996038267600005
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Bryan Mbeumo",
+     "probability": 0.3819078756154686,
+     "scored": true
+    },
+    {
+     "player": "Matheus Cunha",
+     "probability": 0.33981802302524255,
+     "scored": false
+    },
+    {
+     "player": "Bruno Fernandes",
+     "probability": 0.3025723046313925,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Emersonn",
+     "probability": 0.17747653001392005,
+     "scored": false
+    },
+    {
+     "player": "Jack Clarke",
+     "probability": 0.12109009499397061,
+     "scored": false
+    },
+    {
+     "player": "Daizen Maeda",
+     "probability": 0.09323053984249718,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Ipswich",
+     "player": "Chuba Akpom",
+     "goals": 1
+    },
+    {
+     "team": "Ipswich",
+     "player": "Leif Davis",
+     "goals": 1
+    },
+    {
+     "team": "Man United",
+     "player": "Bruno Fernandes",
+     "goals": 3
+    },
+    {
+     "team": "Man United",
+     "player": "Bryan Mbeumo",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-30",
+   "home_team": "Sunderland",
+   "away_team": "Fulham",
+   "home_goals": 1,
+   "away_goals": 0,
+   "p_home": 0.3742132098546569,
+   "p_draw": 0.2769132793375172,
+   "p_away": 0.34887351080782597,
+   "favourite": "H",
+   "p_favourite": 0.3742132098546569,
+   "actual": "H",
+   "p_actual": 0.3742132098546569,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12998494146428302,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2744243800628527,
+    1.1353321618120733
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Brian Brobbey",
+     "probability": 0.208650601809227,
+     "scored": false
+    },
+    {
+     "player": "Nilson Angulo",
+     "probability": 0.20798082349441205,
+     "scored": false
+    },
+    {
+     "player": "Enzo Le Fée",
+     "probability": 0.1426093640290339,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Gonzalo García",
+     "probability": 0.27142091275943425,
+     "scored": false
+    },
+    {
+     "player": "Joshua King",
+     "probability": 0.1973421799886843,
+     "scored": false
+    },
+    {
+     "player": "Alex Iwobi",
+     "probability": 0.133637018041468,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Sunderland",
+     "player": "Wilson Isidor",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "date": "2026-08-31",
+   "home_team": "Aston Villa",
+   "away_team": "Arsenal",
+   "home_goals": 0,
+   "away_goals": 1,
+   "p_home": 0.24141746372202844,
+   "p_draw": 0.2639138144134885,
+   "p_away": 0.4946687218644831,
+   "favourite": "A",
+   "p_favourite": 0.4946687218644831,
+   "actual": "A",
+   "p_actual": 0.4946687218644831,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.1164707420350068,
+   "exact_hit": false,
+   "expected_goals": [
+    1.055904955725542,
+    1.648434372783867
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Emi Buendía",
+     "probability": 0.2114082807593668,
+     "scored": false
+    },
+    {
+     "player": "Ross Barkley",
+     "probability": 0.16732849586455711,
+     "scored": false
+    },
+    {
+     "player": "George Hemmings",
+     "probability": 0.1529604477519506,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Kai Havertz",
+     "probability": 0.31984435552085144,
+     "scored": false
+    },
+    {
+     "player": "Bukayo Saka",
+     "probability": 0.27670088712411656,
+     "scored": true
+    },
+    {
+     "player": "Martin Ødegaard",
+     "probability": 0.21131891359976007,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Arsenal",
+     "player": "Bukayo Saka",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-04",
+   "home_team": "Ipswich",
+   "away_team": "Liverpool",
+   "home_goals": 0,
+   "away_goals": 2,
+   "p_home": 0.13152324932580706,
+   "p_draw": 0.22165888014281154,
+   "p_away": 0.6468178705313813,
+   "favourite": "A",
+   "p_favourite": 0.6468178705313813,
+   "actual": "A",
+   "p_actual": 0.6468178705313813,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    2
+   ],
+   "p_predicted_score": 0.0936589920753666,
+   "exact_hit": false,
+   "expected_goals": [
+    1.191919496526267,
+    2.454172305742129
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Chuba Akpom",
+     "probability": 0.21679805465866242,
+     "scored": false
+    },
+    {
+     "player": "Leif Davis",
+     "probability": 0.19475114784061087,
+     "scored": false
+    },
+    {
+     "player": "Jack Clarke",
+     "probability": 0.10478024169428524,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Alexander Isak",
+     "probability": 0.6147358845771029,
+     "scored": true
+    },
+    {
+     "player": "Víctor Muñoz",
+     "probability": 0.33416988640591794,
+     "scored": false
+    },
+    {
+     "player": "Cody Gakpo",
+     "probability": 0.17591335315307943,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Liverpool",
+     "player": "Alexander Isak",
+     "goals": 2
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Brentford",
+   "away_team": "Sunderland",
+   "home_goals": 1,
+   "away_goals": 1,
+   "p_home": 0.5817848930745801,
+   "p_draw": 0.24485646805721753,
+   "p_away": 0.17335863886820232,
+   "favourite": "H",
+   "p_favourite": 0.5817848930745801,
+   "actual": "D",
+   "p_actual": 0.24485646805721753,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12271740991774004,
+   "exact_hit": true,
+   "expected_goals": [
+    1.508488111163795,
+    1.0316596680895858
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Kevin Schade",
+     "probability": 0.3919335795083224,
+     "scored": false
+    },
+    {
+     "player": "Igor Thiago",
+     "probability": 0.27135292054335636,
+     "scored": false
+    },
+    {
+     "player": "Mamadou Sangare",
+     "probability": 0.09604885977242117,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Wilson Isidor",
+     "probability": 0.18681107072385583,
+     "scored": false
+    },
+    {
+     "player": "Brian Brobbey",
+     "probability": 0.1803895102908154,
+     "scored": false
+    },
+    {
+     "player": "Enzo Le Fée",
+     "probability": 0.12100838477394826,
+     "scored": true
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brentford",
+     "player": "Vitaly Janelt",
+     "goals": 1
+    },
+    {
+     "team": "Sunderland",
+     "player": "Enzo Le Fée",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Brighton",
+   "away_team": "Leeds",
+   "home_goals": 1,
+   "away_goals": 1,
+   "p_home": 0.5531489498778913,
+   "p_draw": 0.25255043903821744,
+   "p_away": 0.19430061108389118,
+   "favourite": "H",
+   "p_favourite": 0.5531489498778913,
+   "actual": "D",
+   "p_actual": 0.25255043903821744,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11300435438135766,
+   "exact_hit": true,
+   "expected_goals": [
+    1.6999736845442899,
+    1.1555086501729075
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Pascal Groß",
+     "probability": 0.3107114477197699,
+     "scored": false
+    },
+    {
+     "player": "Jack Hinshelwood",
+     "probability": 0.26561369805893986,
+     "scored": false
+    },
+    {
+     "player": "Malick Yalcouye",
+     "probability": 0.18309439743996414,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Dominic Calvert-Lewin",
+     "probability": 0.4261358148868952,
+     "scored": false
+    },
+    {
+     "player": "Noah Okafor",
+     "probability": 0.09725010266802503,
+     "scored": false
+    },
+    {
+     "player": "Harry Wilson",
+     "probability": 0.09370243791437327,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brighton",
+     "player": "Luka Vušković",
+     "goals": 1
+    },
+    {
+     "team": "Leeds",
+     "player": "Jayden Bogle",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Fulham",
+   "away_team": "Crystal Palace",
+   "home_goals": 2,
+   "away_goals": 3,
+   "p_home": 0.47012371432921235,
+   "p_draw": 0.2690981547983833,
+   "p_away": 0.26077813087240437,
+   "favourite": "H",
+   "p_favourite": 0.47012371432921235,
+   "actual": "A",
+   "p_actual": 0.26077813087240437,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12560270636150977,
+   "exact_hit": false,
+   "expected_goals": [
+    1.421251526678331,
+    1.1024797728380051
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Gonzalo García",
+     "probability": 0.2724124478560761,
+     "scored": false
+    },
+    {
+     "player": "Alex Iwobi",
+     "probability": 0.2090352878143117,
+     "scored": false
+    },
+    {
+     "player": "César Palacios",
+     "probability": 0.19594676928994714,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Eddie Nketiah",
+     "probability": 0.16277041871586262,
+     "scored": false
+    },
+    {
+     "player": "Jean-Philippe Mateta",
+     "probability": 0.1418095095674794,
+     "scored": false
+    },
+    {
+     "player": "Anan Khalaili",
+     "probability": 0.10593834311000327,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Crystal Palace",
+     "player": "Ben Chilwell",
+     "goals": 1
+    },
+    {
+     "team": "Crystal Palace",
+     "player": "Tyrick Mitchell",
+     "goals": 2
+    },
+    {
+     "team": "Fulham",
+     "player": "César Palacios",
+     "goals": 1
+    },
+    {
+     "team": "Fulham",
+     "player": "Joshua King",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Hull",
+   "away_team": "Aston Villa",
+   "home_goals": 0,
+   "away_goals": 0,
+   "p_home": 0.2301189759308276,
+   "p_draw": 0.2611067474414499,
+   "p_away": 0.5087742766277226,
+   "favourite": "A",
+   "p_favourite": 0.5087742766277226,
+   "actual": "D",
+   "p_actual": 0.2611067474414499,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12415938139078662,
+   "exact_hit": false,
+   "expected_goals": [
+    1.4485224154829062,
+    1.133678143054941
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Oliver McBurnie",
+     "probability": 0.23718597652914508,
+     "scored": false
+    },
+    {
+     "player": "Liam Millar",
+     "probability": 0.20271745251516515,
+     "scored": false
+    },
+    {
+     "player": "Regan Slater",
+     "probability": 0.15026968919178707,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Emi Buendía",
+     "probability": 0.22653578560849918,
+     "scored": false
+    },
+    {
+     "player": "Ross Barkley",
+     "probability": 0.16283229325846205,
+     "scored": false
+    },
+    {
+     "player": "John McGinn",
+     "probability": 0.15315431093241805,
+     "scored": false
+    }
+   ],
+   "actual_scorers": []
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Man City",
+   "away_team": "Coventry",
+   "home_goals": 1,
+   "away_goals": 0,
+   "p_home": 0.8476154331078062,
+   "p_draw": 0.12301092844678255,
+   "p_away": 0.029373638445411278,
+   "favourite": "H",
+   "p_favourite": 0.8476154331078062,
+   "actual": "H",
+   "p_actual": 0.8476154331078062,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    2,
+    0
+   ],
+   "p_predicted_score": 0.12246112801726285,
+   "exact_hit": false,
+   "expected_goals": [
+    2.4131812515131523,
+    0.7555249864197645
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Erling Haaland",
+     "probability": 0.690540354224358,
+     "scored": true
+    },
+    {
+     "player": "Rayan Cherki",
+     "probability": 0.37932987818612407,
+     "scored": false
+    },
+    {
+     "player": "Antoine Semenyo",
+     "probability": 0.19720829242930182,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Taiwo Awoniyi",
+     "probability": 0.12386765968607305,
+     "scored": false
+    },
+    {
+     "player": "Matt Grimes",
+     "probability": 0.08163661912899678,
+     "scored": false
+    },
+    {
+     "player": "Brandon Thomas-Asante",
+     "probability": 0.07637654463865962,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Man City",
+     "player": "Erling Haaland",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Newcastle",
+   "away_team": "Bournemouth",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.457607368399451,
+   "p_draw": 0.27083123134851056,
+   "p_away": 0.2715614002520385,
+   "favourite": "H",
+   "p_favourite": 0.457607368399451,
+   "actual": "D",
+   "p_actual": 0.27083123134851056,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10959044534016905,
+   "exact_hit": false,
+   "expected_goals": [
+    1.7196353114844327,
+    1.281560456680727
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Yoane Wissa",
+     "probability": 0.4306515193007472,
+     "scored": false
+    },
+    {
+     "player": "Anthony Elanga",
+     "probability": 0.2576363350370815,
+     "scored": false
+    },
+    {
+     "player": "Harvey Barnes",
+     "probability": 0.19158389512824148,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Alex Scott",
+     "probability": 0.3208953266054959,
+     "scored": false
+    },
+    {
+     "player": "Rayan",
+     "probability": 0.2124944093516451,
+     "scored": false
+    },
+    {
+     "player": "Evanilson",
+     "probability": 0.13964744604499013,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Bournemouth",
+     "player": "Marcus Tavernier",
+     "goals": 1
+    },
+    {
+     "team": "Newcastle",
+     "player": "Harvey Barnes",
+     "goals": 1
+    },
+    {
+     "team": "Newcastle",
+     "player": "Jacob Ramsey",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-05",
+   "home_team": "Nottm Forest",
+   "away_team": "Tottenham",
+   "home_goals": 0,
+   "away_goals": 0,
+   "p_home": 0.5515409983508025,
+   "p_draw": 0.25295256921291037,
+   "p_away": 0.1955064324362872,
+   "favourite": "H",
+   "p_favourite": 0.5515409983508025,
+   "actual": "D",
+   "p_actual": 0.25295256921291037,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11414674872982895,
+   "exact_hit": false,
+   "expected_goals": [
+    1.634920625440069,
+    1.2504375475663982
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Morgan Gibbs-White",
+     "probability": 0.5053225239373917,
+     "scored": false
+    },
+    {
+     "player": "Dan Ndoye",
+     "probability": 0.27561784915072296,
+     "scored": false
+    },
+    {
+     "player": "Igor Jesus",
+     "probability": 0.16599925838282947,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Mathys Tel",
+     "probability": 0.17561869721076373,
+     "scored": false
+    },
+    {
+     "player": "Omar Marmoush",
+     "probability": 0.14820558078661494,
+     "scored": false
+    },
+    {
+     "player": "Richarlison",
+     "probability": 0.14481308844440244,
+     "scored": false
+    }
+   ],
+   "actual_scorers": []
+  },
+  {
+   "week": 3,
+   "date": "2026-09-06",
+   "home_team": "Arsenal",
+   "away_team": "Chelsea",
+   "home_goals": 2,
+   "away_goals": 1,
+   "p_home": 0.6753278454328064,
+   "p_draw": 0.21267787767325635,
+   "p_away": 0.11199427689393712,
+   "favourite": "H",
+   "p_favourite": 0.6753278454328064,
+   "actual": "H",
+   "p_actual": 0.6753278454328064,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    0
+   ],
+   "p_predicted_score": 0.10969582541292487,
+   "exact_hit": false,
+   "expected_goals": [
+    1.938620306138076,
+    0.933400198525785
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Bukayo Saka",
+     "probability": 0.4456422131762191,
+     "scored": false
+    },
+    {
+     "player": "Kai Havertz",
+     "probability": 0.2470455481507957,
+     "scored": true
+    },
+    {
+     "player": "Martin Ødegaard",
+     "probability": 0.14464817613092773,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "João Pedro",
+     "probability": 0.22632355015306105,
+     "scored": false
+    },
+    {
+     "player": "Cole Palmer",
+     "probability": 0.19538919463985982,
+     "scored": false
+    },
+    {
+     "player": "Roméo Lavia",
+     "probability": 0.14697749623529144,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Arsenal",
+     "player": "Kai Havertz",
+     "goals": 1
+    },
+    {
+     "team": "Arsenal",
+     "player": "Martin Ødegaard",
+     "goals": 1
+    },
+    {
+     "team": "Chelsea",
+     "player": "Morgan Rogers",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 3,
+   "date": "2026-09-06",
+   "home_team": "Everton",
+   "away_team": "Man United",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.3654083826496528,
+   "p_draw": 0.2770016885158131,
+   "p_away": 0.35758992883453417,
+   "favourite": "H",
+   "p_favourite": 0.3654083826496528,
+   "actual": "D",
+   "p_actual": 0.2770016885158131,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12617919280903805,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2708796545972996,
+    1.3053631185668775
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "James Tarkowski",
+     "probability": 0.2675331609287319,
+     "scored": false
+    },
+    {
+     "player": "Thierno Barry",
+     "probability": 0.1592780919944502,
+     "scored": false
+    },
+    {
+     "player": "Kiernan Dewsbury-Hall",
+     "probability": 0.14727796117922554,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Bruno Fernandes",
+     "probability": 0.4351046921403825,
+     "scored": false
+    },
+    {
+     "player": "Bryan Mbeumo",
+     "probability": 0.3031867747039031,
+     "scored": true
+    },
+    {
+     "player": "Matheus Cunha",
+     "probability": 0.1099319088942815,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Everton",
+     "player": "Ainsley Maitland-Niles",
+     "goals": 1
+    },
+    {
+     "team": "Everton",
+     "player": "Tyrique George",
+     "goals": 1
+    },
+    {
+     "team": "Man United",
+     "player": "Benjamin Šeško",
+     "goals": 1
+    },
+    {
+     "team": "Man United",
+     "player": "Bryan Mbeumo",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Aston Villa",
+   "away_team": "Nottm Forest",
+   "home_goals": 1,
+   "away_goals": 2,
+   "p_home": 0.5113425244530371,
+   "p_draw": 0.2623159087860609,
+   "p_away": 0.226341566760902,
+   "favourite": "H",
+   "p_favourite": 0.5113425244530371,
+   "actual": "A",
+   "p_actual": 0.226341566760902,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12150829527839449,
+   "exact_hit": false,
+   "expected_goals": [
+    1.5063436408901116,
+    1.156593020663226
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Emi Buendía",
+     "probability": 0.24921324881075024,
+     "scored": false
+    },
+    {
+     "player": "Ross Barkley",
+     "probability": 0.22581085748079655,
+     "scored": false
+    },
+    {
+     "player": "John McGinn",
+     "probability": 0.20468718299461997,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Morgan Gibbs-White",
+     "probability": 0.2271622156148032,
+     "scored": false
+    },
+    {
+     "player": "Igor Jesus",
+     "probability": 0.16617601636804458,
+     "scored": true
+    },
+    {
+     "player": "Xaver Schlager",
+     "probability": 0.11483413134260767,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Aston Villa",
+     "player": "Alysson",
+     "goals": 1
+    },
+    {
+     "team": "Nottm Forest",
+     "player": "Igor Jesus",
+     "goals": 1
+    },
+    {
+     "team": "Nottm Forest",
+     "player": "Liam Delap",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Bournemouth",
+   "away_team": "Brentford",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.4826922650105944,
+   "p_draw": 0.2675213777465576,
+   "p_away": 0.2497863572428481,
+   "favourite": "H",
+   "p_favourite": 0.4826922650105944,
+   "actual": "D",
+   "p_actual": 0.2675213777465576,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.1152223325410403,
+   "exact_hit": false,
+   "expected_goals": [
+    1.54449607737057,
+    1.354598146135303
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Marcus Tavernier",
+     "probability": 0.4876781765535185,
+     "scored": true
+    },
+    {
+     "player": "Rayan",
+     "probability": 0.22026852887844672,
+     "scored": false
+    },
+    {
+     "player": "Evanilson",
+     "probability": 0.14798248240432077,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Vitaly Janelt",
+     "probability": 0.3378972512859929,
+     "scored": false
+    },
+    {
+     "player": "Igor Thiago",
+     "probability": 0.240889914266324,
+     "scored": false
+    },
+    {
+     "player": "Michael Kayode",
+     "probability": 0.11497695016619647,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Bournemouth",
+     "player": "Justin Kluivert",
+     "goals": 1
+    },
+    {
+     "team": "Bournemouth",
+     "player": "Marcus Tavernier",
+     "goals": 1
+    },
+    {
+     "team": "Brentford",
+     "player": "Kevin Schade",
+     "goals": 2
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Chelsea",
+   "away_team": "Hull",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.6797315928269819,
+   "p_draw": 0.21111762458719305,
+   "p_away": 0.10915078258582508,
+   "favourite": "H",
+   "p_favourite": 0.6797315928269819,
+   "actual": "D",
+   "p_actual": 0.21111762458719305,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12768292556087613,
+   "exact_hit": false,
+   "expected_goals": [
+    1.3633162478860472,
+    1.101304716177802
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Crystal Palace",
+   "away_team": "Ipswich",
+   "home_goals": 2,
+   "away_goals": 3,
+   "p_home": 0.6580310730360551,
+   "p_draw": 0.21969166055403308,
+   "p_away": 0.12227726640991181,
+   "favourite": "H",
+   "p_favourite": 0.6580310730360551,
+   "actual": "A",
+   "p_actual": 0.12227726640991181,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10261462465402856,
+   "exact_hit": false,
+   "expected_goals": [
+    1.9363407204288883,
+    1.0505062842494042
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Liverpool",
+   "away_team": "Fulham",
+   "home_goals": 0,
+   "away_goals": 0,
+   "p_home": 0.6432556610886154,
+   "p_draw": 0.22518988492354047,
+   "p_away": 0.13155445398784407,
+   "favourite": "H",
+   "p_favourite": 0.6432556610886154,
+   "actual": "D",
+   "p_actual": 0.22518988492354047,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    2,
+    1
+   ],
+   "p_predicted_score": 0.09913934255287381,
+   "exact_hit": false,
+   "expected_goals": [
+    2.0465481856430108,
+    1.090246419085695
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Sunderland",
+   "away_team": "Arsenal",
+   "home_goals": 0,
+   "away_goals": 2,
+   "p_home": 0.13285283873359338,
+   "p_draw": 0.22283974285226435,
+   "p_away": 0.6443074184141423,
+   "favourite": "A",
+   "p_favourite": 0.6443074184141423,
+   "actual": "A",
+   "p_actual": 0.6443074184141423,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    0,
+    1
+   ],
+   "p_predicted_score": 0.14933844401828453,
+   "exact_hit": false,
+   "expected_goals": [
+    0.7996019458055894,
+    1.5218933540520483
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-12",
+   "home_team": "Tottenham",
+   "away_team": "Everton",
+   "home_goals": 0,
+   "away_goals": 0,
+   "p_home": 0.37438697583807584,
+   "p_draw": 0.27735923920253586,
+   "p_away": 0.34825378495938825,
+   "favourite": "H",
+   "p_favourite": 0.37438697583807584,
+   "actual": "D",
+   "p_actual": 0.27735923920253586,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12482767665983996,
+   "exact_hit": false,
+   "expected_goals": [
+    1.3882709000720364,
+    1.2169888362443126
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-13",
+   "home_team": "Coventry",
+   "away_team": "Brighton",
+   "home_goals": 0,
+   "away_goals": 5,
+   "p_home": 0.20381464066622554,
+   "p_draw": 0.2539784280239549,
+   "p_away": 0.5422069313098196,
+   "favourite": "A",
+   "p_favourite": 0.5422069313098196,
+   "actual": "A",
+   "p_actual": 0.5422069313098196,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12648693214819864,
+   "exact_hit": false,
+   "expected_goals": [
+    1.1368883146249051,
+    1.3840028967291071
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-13",
+   "home_team": "Man United",
+   "away_team": "Man City",
+   "home_goals": 0,
+   "away_goals": 1,
+   "p_home": 0.26543111358070587,
+   "p_draw": 0.26911508266669765,
+   "p_away": 0.4654538037525964,
+   "favourite": "A",
+   "p_favourite": 0.4654538037525964,
+   "actual": "A",
+   "p_actual": 0.4654538037525964,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10629819083874227,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2522894504148916,
+    1.8044429014030265
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 4,
+   "date": "2026-09-14",
+   "home_team": "Leeds",
+   "away_team": "Newcastle",
+   "home_goals": 4,
+   "away_goals": 1,
+   "p_home": 0.3607625850716185,
+   "p_draw": 0.277412862210517,
+   "p_away": 0.36182455271786446,
+   "favourite": "A",
+   "p_favourite": 0.36182455271786446,
+   "actual": "H",
+   "p_actual": 0.3607625850716185,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11659189713580706,
+   "exact_hit": false,
+   "expected_goals": [
+    1.3853001171001522,
+    1.4853274298679786
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-18",
+   "home_team": "Brentford",
+   "away_team": "Chelsea",
+   "home_goals": 3,
+   "away_goals": 0,
+   "p_home": 0.43779455031841374,
+   "p_draw": 0.2736538121252401,
+   "p_away": 0.2885516375563462,
+   "favourite": "H",
+   "p_favourite": 0.43779455031841374,
+   "actual": "H",
+   "p_actual": 0.43779455031841374,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10855104518167602,
+   "exact_hit": false,
+   "expected_goals": [
+    1.6137795098331476,
+    1.471863433976668
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-19",
+   "home_team": "Brighton",
+   "away_team": "Arsenal",
+   "home_goals": 3,
+   "away_goals": 0,
+   "p_home": 0.22081615640331312,
+   "p_draw": 0.25891592997831814,
+   "p_away": 0.5202679136183687,
+   "favourite": "A",
+   "p_favourite": 0.5202679136183687,
+   "actual": "H",
+   "p_actual": 0.22081615640331312,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11781599506668793,
+   "exact_hit": false,
+   "expected_goals": [
+    1.066197468265322,
+    1.6172748747414203
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-19",
+   "home_team": "Everton",
+   "away_team": "Ipswich",
+   "home_goals": 1,
+   "away_goals": 0,
+   "p_home": 0.6661863372145603,
+   "p_draw": 0.21676521722287462,
+   "p_away": 0.11704844556256506,
+   "favourite": "H",
+   "p_favourite": 0.6661863372145603,
+   "actual": "H",
+   "p_actual": 0.6661863372145603,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10737623786545943,
+   "exact_hit": false,
+   "expected_goals": [
+    1.8425621978637103,
+    1.0047560516142782
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-19",
+   "home_team": "Newcastle",
+   "away_team": "Hull",
+   "home_goals": 2,
+   "away_goals": 1,
+   "p_home": 0.6499490458420143,
+   "p_draw": 0.22295760548187554,
+   "p_away": 0.1270933486761101,
+   "favourite": "H",
+   "p_favourite": 0.6499490458420143,
+   "actual": "H",
+   "p_actual": 0.6499490458420143,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12393878392347296,
+   "exact_hit": false,
+   "expected_goals": [
+    1.421022820487174,
+    1.2038284772501564
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-19",
+   "home_team": "Nottm Forest",
+   "away_team": "Coventry",
+   "home_goals": 0,
+   "away_goals": 1,
+   "p_home": 0.6941106861399033,
+   "p_draw": 0.20533014527346635,
+   "p_away": 0.10055916858663033,
+   "favourite": "H",
+   "p_favourite": 0.6941106861399033,
+   "actual": "A",
+   "p_actual": 0.10055916858663033,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    0
+   ],
+   "p_predicted_score": 0.12674829393791812,
+   "exact_hit": false,
+   "expected_goals": [
+    1.7752861843991548,
+    0.864227552836676
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-19",
+   "home_team": "Tottenham",
+   "away_team": "Aston Villa",
+   "home_goals": 2,
+   "away_goals": 3,
+   "p_home": 0.33107057891050884,
+   "p_draw": 0.2765107065066015,
+   "p_away": 0.39241871458288974,
+   "favourite": "A",
+   "p_favourite": 0.39241871458288974,
+   "actual": "A",
+   "p_actual": 0.39241871458288974,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11605521502218866,
+   "exact_hit": false,
+   "expected_goals": [
+    1.4445238191463243,
+    1.4451767602658987
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-20",
+   "home_team": "Bournemouth",
+   "away_team": "Liverpool",
+   "home_goals": 0,
+   "away_goals": 1,
+   "p_home": 0.3565847664399696,
+   "p_draw": 0.27739449998649923,
+   "p_away": 0.36602073357353115,
+   "favourite": "A",
+   "p_favourite": 0.36602073357353115,
+   "actual": "A",
+   "p_actual": 0.36602073357353115,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10780384400505916,
+   "exact_hit": false,
+   "expected_goals": [
+    1.419031410234213,
+    1.673008719562638
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-20",
+   "home_team": "Fulham",
+   "away_team": "Man United",
+   "home_goals": 1,
+   "away_goals": 1,
+   "p_home": 0.3461242979261081,
+   "p_draw": 0.27715929274894,
+   "p_away": 0.3767164093249519,
+   "favourite": "A",
+   "p_favourite": 0.3767164093249519,
+   "actual": "D",
+   "p_actual": 0.27715929274894,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11928205549214671,
+   "exact_hit": true,
+   "expected_goals": [
+    1.3584821501135882,
+    1.4360385569931973
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-20",
+   "home_team": "Leeds",
+   "away_team": "Crystal Palace",
+   "home_goals": 0,
+   "away_goals": 0,
+   "p_home": 0.4685320519789521,
+   "p_draw": 0.26984234622437175,
+   "p_away": 0.26162560179667604,
+   "favourite": "H",
+   "p_favourite": 0.4685320519789521,
+   "actual": "D",
+   "p_actual": 0.26984234622437175,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12070398719462917,
+   "exact_hit": false,
+   "expected_goals": [
+    1.5231920727384487,
+    1.1632360133984847
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  },
+  {
+   "week": 5,
+   "date": "2026-09-20",
+   "home_team": "Man City",
+   "away_team": "Sunderland",
+   "home_goals": 5,
+   "away_goals": 3,
+   "p_home": 0.7787374712611445,
+   "p_draw": 0.16433391407738732,
+   "p_away": 0.05692861466146814,
+   "favourite": "H",
+   "p_favourite": 0.7787374712611445,
+   "actual": "H",
+   "p_actual": 0.7787374712611445,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    0
+   ],
+   "p_predicted_score": 0.13041103110706506,
+   "exact_hit": false,
+   "expected_goals": [
+    1.9748399427089152,
+    0.7427114493818987
+   ],
+   "scorers_known": false,
+   "scorers_home": [],
+   "scorers_away": [],
+   "actual_scorers": []
+  }
+ ]
+}

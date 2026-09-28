@@ -12,6 +12,7 @@ Run with:
 from __future__ import annotations
 
 import csv
+import json
 import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
@@ -26,15 +27,32 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from pl_predictor.config import REPORTS_DIR, season_label  # noqa: E402
 from pl_predictor.data.fixtures_api import get_upcoming_fixtures  # noqa: E402
 from pl_predictor.data.load import load_clean_matches  # noqa: E402
+from pl_predictor.data.match_players import load_match_players, load_schedule  # noqa: E402
+from pl_predictor.data.player_stats import load_previous_season_totals  # noqa: E402
 from pl_predictor.predict import MatchPredictor  # noqa: E402
 from pl_predictor.season_awards import project_awards  # noqa: E402
 from pl_predictor.simulation import simulate_season  # noqa: E402
 from pl_predictor.stats import current_stats  # noqa: E402
+from pl_predictor.track_record import build_track_record  # noqa: E402
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 FRONTEND_DIST = ROOT_DIR / "frontend" / "dist"
 
 _state: dict = {}
+
+TRACK_RECORD_PATH = REPORTS_DIR / "track_record.json"
+
+
+def _load_track_record(matches) -> dict:
+    """reports/track_record.json (scripts/build_track_record.py, refreshed
+    weekly); if it's missing but the schedule is there, compute it now."""
+    if TRACK_RECORD_PATH.exists():
+        return json.loads(TRACK_RECORD_PATH.read_text(encoding="utf-8"))
+    season = int(matches["season_start_year"].max())
+    schedule = load_schedule(season)
+    if schedule is None:
+        return {}
+    return build_track_record(matches, schedule, load_match_players(season), load_previous_season_totals(season))
 
 
 @asynccontextmanager
@@ -50,6 +68,7 @@ async def lifespan(app: FastAPI):
         else {"n_sims": 0, "top_scorer": [], "top_assister": []}
     )
     _state["stats"] = current_stats(matches, predictor.player_df)
+    _state["track_record"] = _load_track_record(matches)
     _state["meta"] = {
         "season": season_label(int(matches["season_start_year"].max())),
         "last_match_date": matches["date"].max().date().isoformat(),
@@ -109,6 +128,12 @@ def awards() -> dict:
 def stats() -> dict:
     """Real current-season numbers: table, form, latest results, scoring and assist leaders."""
     return _state["stats"]
+
+
+@app.get("/api/track-record")
+def track_record() -> dict:
+    """This season's predictions, rebuilt before each matchweek, against the actual results."""
+    return _state["track_record"]
 
 
 @app.get("/api/meta")
