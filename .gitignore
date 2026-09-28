@@ -14,7 +14,8 @@ data/processed/*.parquet
 
 # player snapshots fetched by scripts/download_player_data.py ARE committed
 # on purpose (unlike data/raw/ above). Committing snapshots lets the weekly cloud
-# routine's "recent form" delta (see player_goals.py) survive across its
+# routine compare two successive snapshots (which club a transferred player
+# now plays for, see mark_current_club in player_goals.py) across its
 # ephemeral runs, and lets a local checkout `git pull` fresh squad data
 # instead of having to re-scrape FBref itself.
 

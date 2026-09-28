@@ -18,7 +18,7 @@ from pl_predictor.data.player_stats import load_latest_snapshot, load_previous_s
 from pl_predictor.features.elo import compute_running_elo
 from pl_predictor.features.engineering import add_form_features
 from pl_predictor.models.baseline_logreg import LogisticOutcomeModel
-from pl_predictor.models.player_goals import predict_team_scorers, prepare_player_features
+from pl_predictor.models.player_goals import credit_rates, predict_team_scorers, prepare_player_features
 from pl_predictor.models.poisson_model import PoissonGoalsModel
 
 logger = logging.getLogger(__name__)
@@ -29,16 +29,42 @@ SCORE_GRID_MAX_GOALS = 5
 _LOAD_PLAYERS = object()  # sentinel: "load the latest player snapshot from disk"
 
 
+def load_player_features() -> tuple[pd.DataFrame | None, pd.DataFrame | None]:
+    """(player features, last season's per-player totals) from disk.
+
+    Best-effort: probable-scorer predictions are optional extra flavor, never
+    something the rest of the app should crash over if the FBref scrape
+    hasn't been run yet (see scripts/download_player_data.py) or failed.
+    """
+    try:
+        latest = load_latest_snapshot()
+    except FileNotFoundError:
+        logger.info("no player data snapshot found; probable-scorer predictions disabled")
+        return None, None
+    previous = load_previous_snapshot()
+    last_season = None
+    if "season_start_year" in latest.columns:
+        last_season = load_previous_season_totals(int(latest["season_start_year"].iloc[0]))
+    return prepare_player_features(latest, previous, last_season), last_season
+
+
 class MatchPredictor:
     """Fit once on full history, then call .predict(home, away) as many times as needed.
 
-    `teams` and `player_df` default to the live setup (this season's clubs,
-    latest player snapshot). The track record passes them explicitly to
-    rebuild the predictor as it stood before a past matchweek: fitted on
-    earlier matches only, with player totals rebuilt from earlier matches.
+    `teams`, `player_df` and `last_season` default to the live setup (this
+    season's clubs, latest player snapshot, last season's totals). The track
+    record passes them explicitly to rebuild the predictor as it stood before
+    a past matchweek: fitted on earlier matches only, with player totals
+    rebuilt from earlier matches.
     """
 
-    def __init__(self, matches: pd.DataFrame, teams: list[str] | None = None, player_df=_LOAD_PLAYERS):
+    def __init__(
+        self,
+        matches: pd.DataFrame,
+        teams: list[str] | None = None,
+        player_df=_LOAD_PLAYERS,
+        last_season: pd.DataFrame | None = None,
+    ):
         with_elo, self.elo = compute_running_elo(matches)
         self.feature_df = add_form_features(with_elo)
         # Only the 20 clubs actually in the Premier League this season - not
@@ -51,25 +77,13 @@ class MatchPredictor:
         self.poisson_model = PoissonGoalsModel()
         self.poisson_model.fit(self.feature_df)
 
-        self.player_df = self._load_player_features() if player_df is _LOAD_PLAYERS else player_df
-
-    @staticmethod
-    def _load_player_features() -> pd.DataFrame | None:
-        """Best-effort: probable-scorer predictions are optional extra flavor,
-        never something the rest of the app should crash over if the FBref
-        scrape hasn't been run yet (see scripts/download_player_data.py) or
-        failed.
-        """
-        try:
-            latest = load_latest_snapshot()
-        except FileNotFoundError:
-            logger.info("no player data snapshot found; probable-scorer predictions disabled")
-            return None
-        previous = load_previous_snapshot()
-        last_season = None
-        if "season_start_year" in latest.columns:
-            last_season = load_previous_season_totals(int(latest["season_start_year"].iloc[0]))
-        return prepare_player_features(latest, previous, last_season)
+        if player_df is _LOAD_PLAYERS:
+            player_df, last_season = load_player_features()
+        self.player_df = player_df
+        self.last_season = last_season
+        # Only the goals a club's own players score are split among its squad;
+        # the rest (~4%) are the opponents' own goals.
+        self.goal_credit_rate, self.assists_per_goal = credit_rates(matches, last_season, player_df)
 
     def latest_elo_diff(self, home: str, away: str) -> float:
         return self.elo.get(home) - self.elo.get(away)
@@ -121,7 +135,7 @@ class MatchPredictor:
     def _top_scorers(self, team: str, team_expected_goals: float, top_n: int = 5) -> list[dict]:
         if self.player_df is None:
             return []
-        scorers = predict_team_scorers(self.player_df, team, team_expected_goals, top_n=top_n)
+        scorers = predict_team_scorers(self.player_df, team, team_expected_goals * self.goal_credit_rate, top_n=top_n)
         return scorers.to_dict(orient="records")
 
 

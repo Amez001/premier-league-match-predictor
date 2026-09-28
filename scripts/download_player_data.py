@@ -6,8 +6,8 @@ Usage:
 
 Writes a dated snapshot to data/players/snapshots/<date>.csv and updates
 data/players/latest.csv. Run this periodically (e.g. weekly) - comparing
-successive snapshots is how the "recent form" signal in the goalscorer
-model is computed (see src/pl_predictor/models/player_goals.py).
+successive snapshots tells which club a player who moved mid-season now
+plays for (see mark_current_club in src/pl_predictor/models/player_goals.py).
 
 Also keeps data/players/previous_season.csv (last season's per-player
 totals, the prior for goal/assist shares); it's only fetched when missing or

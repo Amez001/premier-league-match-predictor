@@ -63,7 +63,7 @@ async def lifespan(app: FastAPI):
     # ~0.25s for 10k seasons, so compute once at startup and serve from memory.
     _state["season"] = simulate_season(matches, predictor.poisson_model).to_dict()
     _state["awards"] = (
-        project_awards(matches, predictor.player_df, predictor.poisson_model)
+        project_awards(matches, predictor.player_df, predictor.poisson_model, last_season=predictor.last_season)
         if predictor.player_df is not None
         else {"n_sims": 0, "top_scorer": [], "top_assister": []}
     )

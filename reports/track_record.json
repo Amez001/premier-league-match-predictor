@@ -17,18 +17,18 @@
    "expected_high": 8.730584614360055
   },
   "scorer_favourite": {
-   "n": 44,
-   "hits": 8,
-   "expected": 13.37231868685059,
-   "expected_low": 9.600789630693384,
-   "expected_high": 17.143847743007797
+   "n": 80,
+   "hits": 17,
+   "expected": 21.891890448450116,
+   "expected_low": 16.901733607456073,
+   "expected_high": 26.88204728944416
   },
   "scorer_listed": {
-   "n": 132,
-   "hits": 20,
-   "expected": 29.72485393471124,
-   "expected_low": 23.774351851003406,
-   "expected_high": 35.67535601841907
+   "n": 240,
+   "hits": 43,
+   "expected": 51.668490435048554,
+   "expected_low": 43.69209134468118,
+   "expected_high": 59.64488952541593
   },
   "log_loss": 1.0418124504698092,
   "log_loss_reference": 1.1186293521112045
@@ -88,16 +88,16 @@
    "scorer_favourite": {
     "n": 20,
     "hits": 5,
-    "expected": 5.40283761643811,
-    "expected_low": 2.8895072057530324,
-    "expected_high": 7.916168027123188
+    "expected": 5.228072897660229,
+    "expected_low": 2.7400612441085075,
+    "expected_high": 7.71608455121195
    },
    "scorer_listed": {
     "n": 60,
     "hits": 10,
-    "expected": 13.155683855523746,
-    "expected_low": 9.121330828107904,
-    "expected_high": 17.190036882939587
+    "expected": 12.717884325837506,
+    "expected_low": 8.73052165212906,
+    "expected_high": 16.705246999545952
    },
    "log_loss": 0.9577676831398986,
    "log_loss_reference": 1.1413192497830227
@@ -121,17 +121,17 @@
    },
    "scorer_favourite": {
     "n": 20,
-    "hits": 2,
-    "expected": 6.667530178147416,
-    "expected_low": 4.1106743126289995,
-    "expected_high": 9.224386043665833
+    "hits": 3,
+    "expected": 5.526571463514263,
+    "expected_low": 3.038267185497521,
+    "expected_high": 8.014875741531005
    },
    "scorer_listed": {
     "n": 60,
-    "hits": 8,
-    "expected": 13.831593123021072,
-    "expected_low": 9.848957029800394,
-    "expected_high": 17.81422921624175
+    "hits": 9,
+    "expected": 13.040362414913535,
+    "expected_low": 9.052508529628337,
+    "expected_high": 17.028216300198732
    },
    "log_loss": 1.0428258793514857,
    "log_loss_reference": 1.2371556080159227
@@ -154,18 +154,18 @@
     "expected_high": 2.4989655113481772
    },
    "scorer_favourite": {
-    "n": 4,
-    "hits": 1,
-    "expected": 1.3019508922650649,
-    "expected_low": 0.13144256203938354,
-    "expected_high": 2.4724592224907465
+    "n": 20,
+    "hits": 5,
+    "expected": 5.4240146575233705,
+    "expected_low": 2.935132131741017,
+    "expected_high": 7.912897183305724
    },
    "scorer_listed": {
-    "n": 12,
-    "hits": 2,
-    "expected": 2.7375769561664214,
-    "expected_low": 0.9289641044571759,
-    "expected_high": 4.546189807875667
+    "n": 60,
+    "hits": 13,
+    "expected": 12.739119618219862,
+    "expected_low": 8.764551333384244,
+    "expected_high": 16.71368790305548
    },
    "log_loss": 1.207028734899756,
    "log_loss_reference": 1.2459621730790182
@@ -188,18 +188,18 @@
     "expected_high": 2.483515602088202
    },
    "scorer_favourite": {
-    "n": 0,
-    "hits": 0,
-    "expected": 0,
-    "expected_low": 0.0,
-    "expected_high": 0.0
+    "n": 20,
+    "hits": 4,
+    "expected": 5.713231429752254,
+    "expected_low": 3.19822270166217,
+    "expected_high": 8.228240157842338
    },
    "scorer_listed": {
-    "n": 0,
-    "hits": 0,
-    "expected": 0,
-    "expected_low": 0.0,
-    "expected_high": 0.0
+    "n": 60,
+    "hits": 11,
+    "expected": 13.171124076077653,
+    "expected_low": 9.168161461222914,
+    "expected_high": 17.17408669093239
    },
    "log_loss": 1.025413921426843,
    "log_loss_reference": 1.0366763264870271
@@ -546,34 +546,34 @@
    "scorers_home": [
     {
      "player": "Jean-Philippe Mateta",
-     "probability": 0.2151862205117393,
+     "probability": 0.20787322809357378,
      "scored": false
     },
     {
      "player": "Eddie Nketiah",
-     "probability": 0.1271387117492896,
+     "probability": 0.1225836915279136,
      "scored": false
     },
     {
      "player": "Daniel Muñoz",
-     "probability": 0.07905903519612001,
+     "probability": 0.0761511777707291,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Erling Haaland",
-     "probability": 0.3791778849227013,
+     "probability": 0.36774557092718685,
      "scored": true
     },
     {
      "player": "Antoine Semenyo",
-     "probability": 0.251490022646111,
+     "probability": 0.24314445546090546,
      "scored": false
     },
     {
      "player": "Marc Guéhi",
-     "probability": 0.22406147279347033,
+     "probability": 0.21649016487044503,
      "scored": false
     }
    ],
@@ -620,34 +620,34 @@
    "scorers_home": [
     {
      "player": "Marcus Tavernier",
-     "probability": 0.31682953421150906,
+     "probability": 0.30679306625112546,
      "scored": false
     },
     {
      "player": "Rayan",
-     "probability": 0.2607110232032789,
+     "probability": 0.2521134971935153,
      "scored": false
     },
     {
      "player": "Evanilson",
-     "probability": 0.15416066434476516,
+     "probability": 0.1487225736169966,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Thierno Barry",
-     "probability": 0.24084950169841224,
+     "probability": 0.23279993248262165,
      "scored": false
     },
     {
      "player": "Kiernan Dewsbury-Hall",
-     "probability": 0.22533857835924587,
+     "probability": 0.21773040960832057,
      "scored": false
     },
     {
      "player": "Iliman Ndiaye",
-     "probability": 0.10748028567857904,
+     "probability": 0.10358720914487674,
      "scored": false
     }
    ],
@@ -694,34 +694,34 @@
    "scorers_home": [
     {
      "player": "Matt Grimes",
-     "probability": 0.15160459507306123,
+     "probability": 0.1462486827489714,
      "scored": false
     },
     {
      "player": "Ellis Simms",
-     "probability": 0.139222594876092,
+     "probability": 0.1342687897196465,
      "scored": false
     },
     {
      "player": "Brandon Thomas-Asante",
-     "probability": 0.139222594876092,
+     "probability": 0.1342687897196465,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Oliver McBurnie",
-     "probability": 0.17983417492613474,
+     "probability": 0.1735866981795413,
      "scored": false
     },
     {
      "player": "Nobel Mendy",
-     "probability": 0.16710942453288624,
+     "probability": 0.161259443058149,
      "scored": false
     },
     {
      "player": "Semi Ajayi",
-     "probability": 0.16710942453288624,
+     "probability": 0.161259443058149,
      "scored": false
     }
    ],
@@ -763,34 +763,34 @@
    "scorers_home": [
     {
      "player": "Cody Gakpo",
-     "probability": 0.3433232973695972,
+     "probability": 0.332666487879256,
      "scored": false
     },
     {
      "player": "Dominik Szoboszlai",
-     "probability": 0.31039844841682984,
+     "probability": 0.3005184106725767,
      "scored": false
     },
     {
      "player": "Alexander Isak",
-     "probability": 0.2593914674606056,
+     "probability": 0.25082973627506455,
      "scored": true
     }
    ],
    "scorers_away": [
     {
      "player": "Morgan Gibbs-White",
-     "probability": 0.2747092269100324,
+     "probability": 0.26573741266123885,
      "scored": true
     },
     {
      "player": "Igor Jesus",
-     "probability": 0.17833237834191928,
+     "probability": 0.17213143579789847,
      "scored": false
     },
     {
      "player": "Ibrahim Sangaré",
-     "probability": 0.0947324056703368,
+     "probability": 0.091277159243487,
      "scored": false
     }
    ],
@@ -847,34 +847,34 @@
    "scorers_home": [
     {
      "player": "Richarlison",
-     "probability": 0.30346568855097056,
+     "probability": 0.2937567914992385,
      "scored": false
     },
     {
      "player": "Mathys Tel",
-     "probability": 0.24047122713155578,
+     "probability": 0.23243228336843524,
      "scored": false
     },
     {
      "player": "Mikey Moore",
-     "probability": 0.1522412195618399,
+     "probability": 0.1468648128539699,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "William Osula",
-     "probability": 0.23284316698120233,
+     "probability": 0.2250199805504005,
      "scored": false
     },
     {
      "player": "Harvey Barnes",
-     "probability": 0.2214891280573673,
+     "probability": 0.21399230222155985,
      "scored": false
     },
     {
      "player": "Anthony Elanga",
-     "probability": 0.19707719906374233,
+     "probability": 0.19030279330884847,
      "scored": true
     }
    ],
@@ -921,34 +921,34 @@
    "scorers_home": [
     {
      "player": "João Pedro",
-     "probability": 0.3611516017251132,
+     "probability": 0.35009975915683533,
      "scored": true
     },
     {
      "player": "Cole Palmer",
-     "probability": 0.31856967593490293,
+     "probability": 0.30849126843992114,
      "scored": true
     },
     {
      "player": "Morgan Rogers",
-     "probability": 0.264390217615876,
+     "probability": 0.25569335196128107,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Jack Hinshelwood",
-     "probability": 0.2905299169893588,
+     "probability": 0.2811472158985867,
      "scored": false
     },
     {
      "player": "Maxim De Cuyper",
-     "probability": 0.19476953645309902,
+     "probability": 0.18806486036656733,
      "scored": false
     },
     {
      "player": "Diego Gómez",
-     "probability": 0.13662694106600748,
+     "probability": 0.13175826953587044,
      "scored": false
     }
    ],
@@ -1015,34 +1015,34 @@
    "scorers_home": [
     {
      "player": "Dominic Calvert-Lewin",
-     "probability": 0.2836438955503022,
+     "probability": 0.2744384350922976,
      "scored": true
     },
     {
      "player": "Anton Stach",
-     "probability": 0.26884129174864924,
+     "probability": 0.2600251619413727,
      "scored": false
     },
     {
      "player": "Harry Wilson",
-     "probability": 0.16351732470785785,
+     "probability": 0.15778086247228806,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Igor Thiago",
-     "probability": 0.2589803545397078,
+     "probability": 0.2504297932709888,
      "scored": false
     },
     {
      "player": "Keane Lewis-Potter",
-     "probability": 0.18223989702926957,
+     "probability": 0.17591808997699254,
      "scored": false
     },
     {
      "player": "Vitaly Janelt",
-     "probability": 0.18106495564987457,
+     "probability": 0.17477941835732735,
      "scored": false
     }
    ],
@@ -1089,34 +1089,34 @@
    "scorers_home": [
     {
      "player": "Bryan Mbeumo",
-     "probability": 0.3819078756154686,
+     "probability": 0.3704196376753276,
      "scored": true
     },
     {
      "player": "Matheus Cunha",
-     "probability": 0.33981802302524255,
+     "probability": 0.3292410284897478,
      "scored": false
     },
     {
      "player": "Bruno Fernandes",
-     "probability": 0.3025723046313925,
+     "probability": 0.29288564937241124,
      "scored": true
     }
    ],
    "scorers_away": [
     {
      "player": "Emersonn",
-     "probability": 0.17747653001392005,
+     "probability": 0.17130215207435762,
      "scored": false
     },
     {
      "player": "Jack Clarke",
-     "probability": 0.12109009499397061,
+     "probability": 0.11673701799019809,
      "scored": false
     },
     {
      "player": "Daizen Maeda",
-     "probability": 0.09323053984249718,
+     "probability": 0.08982731417691725,
      "scored": false
     }
    ],
@@ -1173,34 +1173,34 @@
    "scorers_home": [
     {
      "player": "Brian Brobbey",
-     "probability": 0.208650601809227,
+     "probability": 0.20153021620342393,
      "scored": false
     },
     {
      "player": "Nilson Angulo",
-     "probability": 0.20798082349441205,
+     "probability": 0.20088029002498742,
      "scored": false
     },
     {
      "player": "Enzo Le Fée",
-     "probability": 0.1426093640290339,
+     "probability": 0.13754491370659894,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Gonzalo García",
-     "probability": 0.27142091275943425,
+     "probability": 0.2625361250524437,
      "scored": false
     },
     {
      "player": "Joshua King",
-     "probability": 0.1973421799886843,
+     "probability": 0.19055978316217226,
      "scored": false
     },
     {
      "player": "Alex Iwobi",
-     "probability": 0.133637018041468,
+     "probability": 0.1288667695749145,
      "scored": false
     }
    ],
@@ -1242,34 +1242,34 @@
    "scorers_home": [
     {
      "player": "Emi Buendía",
-     "probability": 0.2114082807593668,
+     "probability": 0.20420637995504176,
      "scored": false
     },
     {
      "player": "Ross Barkley",
-     "probability": 0.16732849586455711,
+     "probability": 0.1614716097484813,
      "scored": false
     },
     {
      "player": "George Hemmings",
-     "probability": 0.1529604477519506,
+     "probability": 0.1475609087675267,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Kai Havertz",
-     "probability": 0.31984435552085144,
+     "probability": 0.3097353320077718,
      "scored": false
     },
     {
      "player": "Bukayo Saka",
-     "probability": 0.27670088712411656,
+     "probability": 0.2676766327995448,
      "scored": true
     },
     {
      "player": "Martin Ødegaard",
-     "probability": 0.21131891359976007,
+     "probability": 0.2041196488210233,
      "scored": false
     }
    ],
@@ -1310,35 +1310,35 @@
    "scorers_known": true,
    "scorers_home": [
     {
+     "player": "Emersonn",
+     "probability": 0.18240293671874586,
+     "scored": false
+    },
+    {
      "player": "Chuba Akpom",
-     "probability": 0.21679805465866242,
+     "probability": 0.1503159813004642,
      "scored": false
     },
     {
      "player": "Leif Davis",
-     "probability": 0.19475114784061087,
-     "scored": false
-    },
-    {
-     "player": "Jack Clarke",
-     "probability": 0.10478024169428524,
+     "probability": 0.11730696570567067,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Alexander Isak",
-     "probability": 0.6147358845771029,
+     "probability": 0.4182488500546443,
      "scored": true
     },
     {
-     "player": "Víctor Muñoz",
-     "probability": 0.33416988640591794,
+     "player": "Cody Gakpo",
+     "probability": 0.32671241069688406,
      "scored": false
     },
     {
-     "player": "Cody Gakpo",
-     "probability": 0.17591335315307943,
+     "player": "Dominik Szoboszlai",
+     "probability": 0.31010473827358664,
      "scored": false
     }
    ],
@@ -1379,36 +1379,36 @@
    "scorers_known": true,
    "scorers_home": [
     {
-     "player": "Kevin Schade",
-     "probability": 0.3919335795083224,
-     "scored": false
-    },
-    {
      "player": "Igor Thiago",
-     "probability": 0.27135292054335636,
+     "probability": 0.2553791395074969,
      "scored": false
     },
     {
-     "player": "Mamadou Sangare",
-     "probability": 0.09604885977242117,
+     "player": "Kevin Schade",
+     "probability": 0.22697239515793477,
+     "scored": false
+    },
+    {
+     "player": "Keane Lewis-Potter",
+     "probability": 0.16716839548789197,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Wilson Isidor",
-     "probability": 0.18681107072385583,
+     "probability": 0.1668378830714662,
      "scored": false
     },
     {
      "player": "Brian Brobbey",
-     "probability": 0.1803895102908154,
+     "probability": 0.1610332892638986,
      "scored": false
     },
     {
-     "player": "Enzo Le Fée",
-     "probability": 0.12100838477394826,
-     "scored": true
+     "player": "Nilson Angulo",
+     "probability": 0.15051873157382378,
+     "scored": false
     }
    ],
    "actual_scorers": [
@@ -1453,35 +1453,35 @@
    "scorers_known": true,
    "scorers_home": [
     {
-     "player": "Pascal Groß",
-     "probability": 0.3107114477197699,
-     "scored": false
-    },
-    {
      "player": "Jack Hinshelwood",
-     "probability": 0.26561369805893986,
+     "probability": 0.2648485305060626,
      "scored": false
     },
     {
-     "player": "Malick Yalcouye",
-     "probability": 0.18309439743996414,
+     "player": "Maxim De Cuyper",
+     "probability": 0.2108528875813912,
+     "scored": false
+    },
+    {
+     "player": "Pascal Groß",
+     "probability": 0.18618507582181643,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Dominic Calvert-Lewin",
-     "probability": 0.4261358148868952,
+     "probability": 0.2890577982454816,
+     "scored": false
+    },
+    {
+     "player": "Anton Stach",
+     "probability": 0.19184274444601424,
      "scored": false
     },
     {
      "player": "Noah Okafor",
-     "probability": 0.09725010266802503,
-     "scored": false
-    },
-    {
-     "player": "Harry Wilson",
-     "probability": 0.09370243791437327,
+     "probability": 0.10696508828247187,
      "scored": false
     }
    ],
@@ -1528,34 +1528,34 @@
    "scorers_home": [
     {
      "player": "Gonzalo García",
-     "probability": 0.2724124478560761,
+     "probability": 0.36410720968764976,
      "scored": false
+    },
+    {
+     "player": "Joshua King",
+     "probability": 0.22718976702310822,
+     "scored": true
     },
     {
      "player": "Alex Iwobi",
-     "probability": 0.2090352878143117,
+     "probability": 0.15372848909623582,
      "scored": false
-    },
-    {
-     "player": "César Palacios",
-     "probability": 0.19594676928994714,
-     "scored": true
     }
    ],
    "scorers_away": [
     {
      "player": "Eddie Nketiah",
-     "probability": 0.16277041871586262,
+     "probability": 0.1570576324428159,
      "scored": false
     },
     {
      "player": "Jean-Philippe Mateta",
-     "probability": 0.1418095095674794,
+     "probability": 0.13677114574584393,
      "scored": false
     },
     {
      "player": "Anan Khalaili",
-     "probability": 0.10593834311000327,
+     "probability": 0.10209786917437069,
      "scored": false
     }
    ],
@@ -1612,34 +1612,34 @@
    "scorers_home": [
     {
      "player": "Oliver McBurnie",
-     "probability": 0.23718597652914508,
+     "probability": 0.20638270961385974,
      "scored": false
     },
     {
      "player": "Liam Millar",
-     "probability": 0.20271745251516515,
+     "probability": 0.17586516628154303,
      "scored": false
     },
     {
-     "player": "Regan Slater",
-     "probability": 0.15026968919178707,
+     "player": "Semi Ajayi",
+     "probability": 0.14770566852097944,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Emi Buendía",
-     "probability": 0.22653578560849918,
+     "probability": 0.2188931331908981,
      "scored": false
     },
     {
      "player": "Ross Barkley",
-     "probability": 0.16283229325846205,
+     "probability": 0.1571175447032166,
      "scored": false
     },
     {
      "player": "John McGinn",
-     "probability": 0.15315431093241805,
+     "probability": 0.14774854066674925,
      "scored": false
     }
    ],
@@ -1675,34 +1675,34 @@
    "scorers_home": [
     {
      "player": "Erling Haaland",
-     "probability": 0.690540354224358,
+     "probability": 0.5388747026783893,
      "scored": true
     },
     {
      "player": "Rayan Cherki",
-     "probability": 0.37932987818612407,
+     "probability": 0.34363824790504416,
      "scored": false
     },
     {
      "player": "Antoine Semenyo",
-     "probability": 0.19720829242930182,
+     "probability": 0.22967310801150753,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Taiwo Awoniyi",
-     "probability": 0.12386765968607305,
+     "probability": 0.11942165714557251,
      "scored": false
     },
     {
      "player": "Matt Grimes",
-     "probability": 0.08163661912899678,
+     "probability": 0.07863805869428087,
      "scored": false
     },
     {
      "player": "Brandon Thomas-Asante",
-     "probability": 0.07637654463865962,
+     "probability": 0.07356336468634461,
      "scored": false
     }
    ],
@@ -1744,34 +1744,34 @@
    "scorers_home": [
     {
      "player": "Yoane Wissa",
-     "probability": 0.4306515193007472,
+     "probability": 0.281526337740191,
      "scored": false
     },
     {
      "player": "Anthony Elanga",
-     "probability": 0.2576363350370815,
+     "probability": 0.27882693178533446,
      "scored": false
     },
     {
      "player": "Harvey Barnes",
-     "probability": 0.19158389512824148,
+     "probability": 0.20125210836073704,
      "scored": true
     }
    ],
    "scorers_away": [
     {
-     "player": "Alex Scott",
-     "probability": 0.3208953266054959,
-     "scored": false
+     "player": "Marcus Tavernier",
+     "probability": 0.2537332191396253,
+     "scored": true
     },
     {
      "player": "Rayan",
-     "probability": 0.2124944093516451,
+     "probability": 0.20851703855152492,
      "scored": false
     },
     {
-     "player": "Evanilson",
-     "probability": 0.13964744604499013,
+     "player": "Alex Scott",
+     "probability": 0.18978444913033576,
      "scored": false
     }
    ],
@@ -1823,34 +1823,34 @@
    "scorers_home": [
     {
      "player": "Morgan Gibbs-White",
-     "probability": 0.5053225239373917,
-     "scored": false
-    },
-    {
-     "player": "Dan Ndoye",
-     "probability": 0.27561784915072296,
+     "probability": 0.40641439233449184,
      "scored": false
     },
     {
      "player": "Igor Jesus",
-     "probability": 0.16599925838282947,
+     "probability": 0.21504012502656256,
+     "scored": false
+    },
+    {
+     "player": "Dan Ndoye",
+     "probability": 0.21253399062266953,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Mathys Tel",
-     "probability": 0.17561869721076373,
+     "probability": 0.1695020980053501,
      "scored": false
     },
     {
      "player": "Omar Marmoush",
-     "probability": 0.14820558078661494,
+     "probability": 0.14295938956895027,
      "scored": false
     },
     {
      "player": "Richarlison",
-     "probability": 0.14481308844440244,
+     "probability": 0.13967690873951955,
      "scored": false
     }
    ],
@@ -1886,35 +1886,35 @@
    "scorers_home": [
     {
      "player": "Bukayo Saka",
-     "probability": 0.4456422131762191,
+     "probability": 0.4004451506197092,
      "scored": false
     },
     {
      "player": "Kai Havertz",
-     "probability": 0.2470455481507957,
+     "probability": 0.34898691344402977,
      "scored": true
     },
     {
      "player": "Martin Ødegaard",
-     "probability": 0.14464817613092773,
+     "probability": 0.21049233188990535,
      "scored": true
     }
    ],
    "scorers_away": [
     {
      "player": "João Pedro",
-     "probability": 0.22632355015306105,
+     "probability": 0.2216400386679933,
      "scored": false
     },
     {
      "player": "Cole Palmer",
-     "probability": 0.19538919463985982,
+     "probability": 0.19921038139619163,
      "scored": false
     },
     {
-     "player": "Roméo Lavia",
-     "probability": 0.14697749623529144,
-     "scored": false
+     "player": "Morgan Rogers",
+     "probability": 0.12141487225253511,
+     "scored": true
     }
    ],
    "actual_scorers": [
@@ -1964,35 +1964,35 @@
    "scorers_known": true,
    "scorers_home": [
     {
-     "player": "James Tarkowski",
-     "probability": 0.2675331609287319,
-     "scored": false
-    },
-    {
      "player": "Thierno Barry",
-     "probability": 0.1592780919944502,
+     "probability": 0.2513060264496344,
      "scored": false
     },
     {
      "player": "Kiernan Dewsbury-Hall",
-     "probability": 0.14727796117922554,
+     "probability": 0.23339371818308263,
+     "scored": false
+    },
+    {
+     "player": "James Tarkowski",
+     "probability": 0.13434691910888297,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Bruno Fernandes",
-     "probability": 0.4351046921403825,
+     "probability": 0.3604920176941854,
      "scored": false
     },
     {
      "player": "Bryan Mbeumo",
-     "probability": 0.3031867747039031,
+     "probability": 0.24630618740393628,
      "scored": true
     },
     {
      "player": "Matheus Cunha",
-     "probability": 0.1099319088942815,
+     "probability": 0.15133301183400039,
      "scored": false
     }
    ],
@@ -2049,35 +2049,35 @@
    "scorers_home": [
     {
      "player": "Emi Buendía",
-     "probability": 0.24921324881075024,
+     "probability": 0.24093054623742627,
      "scored": false
     },
     {
      "player": "Ross Barkley",
-     "probability": 0.22581085748079655,
+     "probability": 0.21818907725381986,
      "scored": false
     },
     {
      "player": "John McGinn",
-     "probability": 0.20468718299461997,
+     "probability": 0.19768457831340114,
      "scored": false
     }
    ],
    "scorers_away": [
     {
      "player": "Morgan Gibbs-White",
-     "probability": 0.2271622156148032,
+     "probability": 0.3125281127094627,
+     "scored": false
+    },
+    {
+     "player": "Dan Ndoye",
+     "probability": 0.15461130958204106,
      "scored": false
     },
     {
      "player": "Igor Jesus",
-     "probability": 0.16617601636804458,
+     "probability": 0.12378218315739153,
      "scored": true
-    },
-    {
-     "player": "Xaver Schlager",
-     "probability": 0.11483413134260767,
-     "scored": false
     }
    ],
    "actual_scorers": [
@@ -2128,35 +2128,35 @@
    "scorers_home": [
     {
      "player": "Marcus Tavernier",
-     "probability": 0.4876781765535185,
+     "probability": 0.3670663081821397,
      "scored": true
     },
     {
      "player": "Rayan",
-     "probability": 0.22026852887844672,
+     "probability": 0.22825579585108846,
      "scored": false
     },
     {
-     "player": "Evanilson",
-     "probability": 0.14798248240432077,
+     "player": "Alex Scott",
+     "probability": 0.2071394668824159,
      "scored": false
     }
    ],
    "scorers_away": [
     {
-     "player": "Vitaly Janelt",
-     "probability": 0.3378972512859929,
-     "scored": false
-    },
-    {
      "player": "Igor Thiago",
-     "probability": 0.240889914266324,
+     "probability": 0.22356107765892386,
      "scored": false
     },
     {
-     "player": "Michael Kayode",
-     "probability": 0.11497695016619647,
+     "player": "Vitaly Janelt",
+     "probability": 0.22304851926792446,
      "scored": false
+    },
+    {
+     "player": "Kevin Schade",
+     "probability": 0.1954572436473606,
+     "scored": true
     }
    ],
    "actual_scorers": [
@@ -2203,10 +2203,58 @@
     1.3633162478860472,
     1.101304716177802
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "João Pedro",
+     "probability": 0.2897862097640447,
+     "scored": true
+    },
+    {
+     "player": "Cole Palmer",
+     "probability": 0.2653697026665177,
+     "scored": false
+    },
+    {
+     "player": "Morgan Rogers",
+     "probability": 0.22982887771792004,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Oliver McBurnie",
+     "probability": 0.15148301899191496,
+     "scored": false
+    },
+    {
+     "player": "Liam Millar",
+     "probability": 0.12007849683085836,
+     "scored": false
+    },
+    {
+     "player": "Semi Ajayi",
+     "probability": 0.11522052792093807,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Chelsea",
+     "player": "João Pedro",
+     "goals": 1
+    },
+    {
+     "team": "Chelsea",
+     "player": "Morgan Rogers",
+     "goals": 1
+    },
+    {
+     "team": "Hull",
+     "player": "Bachir Belloumi",
+     "goals": 2
+    }
+   ]
   },
   {
    "week": 4,
@@ -2234,10 +2282,68 @@
     1.9363407204288883,
     1.0505062842494042
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Tyrick Mitchell",
+     "probability": 0.3460831953898581,
+     "scored": false
+    },
+    {
+     "player": "Eddie Nketiah",
+     "probability": 0.19720522798044382,
+     "scored": false
+    },
+    {
+     "player": "Anan Khalaili",
+     "probability": 0.16552269312484302,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Emersonn",
+     "probability": 0.16179934390851036,
+     "scored": true
+    },
+    {
+     "player": "Chuba Akpom",
+     "probability": 0.11406693636043197,
+     "scored": false
+    },
+    {
+     "player": "Leif Davis",
+     "probability": 0.10359531558931101,
+     "scored": true
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Crystal Palace",
+     "player": "Anan Khalaili",
+     "goals": 1
+    },
+    {
+     "team": "Crystal Palace",
+     "player": "Jørgen Strand Larsen",
+     "goals": 1
+    },
+    {
+     "team": "Ipswich",
+     "player": "Emersonn",
+     "goals": 1
+    },
+    {
+     "team": "Ipswich",
+     "player": "Leif Davis",
+     "goals": 1
+    },
+    {
+     "team": "Ipswich",
+     "player": "Zian Flemming",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 4,
@@ -2265,9 +2371,41 @@
     2.0465481856430108,
     1.090246419085695
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Alexander Isak",
+     "probability": 0.4716729183879095,
+     "scored": false
+    },
+    {
+     "player": "Cody Gakpo",
+     "probability": 0.25464675229209754,
+     "scored": false
+    },
+    {
+     "player": "Dominik Szoboszlai",
+     "probability": 0.23634999920808375,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Gonzalo García",
+     "probability": 0.2410374424342504,
+     "scored": false
+    },
+    {
+     "player": "Joshua King",
+     "probability": 0.2259677437349269,
+     "scored": false
+    },
+    {
+     "player": "César Palacios",
+     "probability": 0.1684323284093302,
+     "scored": false
+    }
+   ],
    "actual_scorers": []
   },
   {
@@ -2296,10 +2434,53 @@
     0.7996019458055894,
     1.5218933540520483
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Enzo Le Fée",
+     "probability": 0.1415105646452568,
+     "scored": false
+    },
+    {
+     "player": "Brian Brobbey",
+     "probability": 0.1272233041137094,
+     "scored": false
+    },
+    {
+     "player": "Wilson Isidor",
+     "probability": 0.12050050383638888,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Kai Havertz",
+     "probability": 0.3151465760307761,
+     "scored": false
+    },
+    {
+     "player": "Bukayo Saka",
+     "probability": 0.29952320453834014,
+     "scored": true
+    },
+    {
+     "player": "Martin Ødegaard",
+     "probability": 0.2337978640944679,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Arsenal",
+     "player": "Bruno Guimarães",
+     "goals": 1
+    },
+    {
+     "team": "Arsenal",
+     "player": "Bukayo Saka",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 4,
@@ -2327,9 +2508,41 @@
     1.3882709000720364,
     1.2169888362443126
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Omar Marmoush",
+     "probability": 0.19654430470116213,
+     "scored": false
+    },
+    {
+     "player": "Mathys Tel",
+     "probability": 0.1916294666550411,
+     "scored": false
+    },
+    {
+     "player": "Richarlison",
+     "probability": 0.1089449156971769,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Thierno Barry",
+     "probability": 0.23053876463879275,
+     "scored": false
+    },
+    {
+     "player": "Kiernan Dewsbury-Hall",
+     "probability": 0.2089098587325201,
+     "scored": false
+    },
+    {
+     "player": "Tyrique George",
+     "probability": 0.14433644199591766,
+     "scored": false
+    }
+   ],
    "actual_scorers": []
   },
   {
@@ -2358,10 +2571,68 @@
     1.1368883146249051,
     1.3840028967291071
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Taiwo Awoniyi",
+     "probability": 0.19602805881480556,
+     "scored": false
+    },
+    {
+     "player": "Matt Grimes",
+     "probability": 0.12468976425550782,
+     "scored": false
+    },
+    {
+     "player": "Loum Tchaouna",
+     "probability": 0.08622598129569203,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Jack Hinshelwood",
+     "probability": 0.19662932642058195,
+     "scored": false
+    },
+    {
+     "player": "Maxim De Cuyper",
+     "probability": 0.16297706674000678,
+     "scored": false
+    },
+    {
+     "player": "Malick Yalcouye",
+     "probability": 0.15061881722976422,
+     "scored": true
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brighton",
+     "player": "Charalampos Kostoulas",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Lewis Dunk",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Malick Yalcouye",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Pascal Groß",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Yasin Ayari",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 4,
@@ -2389,10 +2660,48 @@
     1.2522894504148916,
     1.8044429014030265
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Bruno Fernandes",
+     "probability": 0.31358139852697464,
+     "scored": false
+    },
+    {
+     "player": "Bryan Mbeumo",
+     "probability": 0.2812402822658505,
+     "scored": false
+    },
+    {
+     "player": "Matheus Cunha",
+     "probability": 0.12710807029060822,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Erling Haaland",
+     "probability": 0.4808087412813835,
+     "scored": true
+    },
+    {
+     "player": "Rayan Cherki",
+     "probability": 0.2494798971110923,
+     "scored": false
+    },
+    {
+     "player": "Antoine Semenyo",
+     "probability": 0.1676019832064446,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Man City",
+     "player": "Erling Haaland",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 4,
@@ -2420,10 +2729,63 @@
     1.3853001171001522,
     1.4853274298679786
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Dominic Calvert-Lewin",
+     "probability": 0.3036662674473184,
+     "scored": true
+    },
+    {
+     "player": "Anton Stach",
+     "probability": 0.21116436717833909,
+     "scored": false
+    },
+    {
+     "player": "Jayden Bogle",
+     "probability": 0.14331896276704725,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Harvey Barnes",
+     "probability": 0.24361248135187819,
+     "scored": false
+    },
+    {
+     "player": "Anthony Elanga",
+     "probability": 0.21589929829831034,
+     "scored": false
+    },
+    {
+     "player": "Yoane Wissa",
+     "probability": 0.21546213460312036,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Leeds",
+     "player": "Dominic Calvert-Lewin",
+     "goals": 1
+    },
+    {
+     "team": "Leeds",
+     "player": "Jayden Bogle",
+     "goals": 1
+    },
+    {
+     "team": "Leeds",
+     "player": "Noah Okafor",
+     "goals": 1
+    },
+    {
+     "team": "Newcastle",
+     "player": "Bazoumana Touré",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2451,10 +2813,58 @@
     1.6137795098331476,
     1.471863433976668
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Kevin Schade",
+     "probability": 0.35034417803073337,
+     "scored": false
+    },
+    {
+     "player": "Vitaly Janelt",
+     "probability": 0.23004093484974286,
+     "scored": false
+    },
+    {
+     "player": "Igor Thiago",
+     "probability": 0.22942943542590832,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "João Pedro",
+     "probability": 0.3347510068775117,
+     "scored": false
+    },
+    {
+     "player": "Morgan Rogers",
+     "probability": 0.28184999896100194,
+     "scored": false
+    },
+    {
+     "player": "Cole Palmer",
+     "probability": 0.25738020544597084,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brentford",
+     "player": "Fabio Carvalho",
+     "goals": 1
+    },
+    {
+     "team": "Brentford",
+     "player": "Igor Thiago",
+     "goals": 1
+    },
+    {
+     "team": "Brentford",
+     "player": "Jaidon Anthony",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2482,10 +2892,58 @@
     1.066197468265322,
     1.6172748747414203
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Malick Yalcouye",
+     "probability": 0.13866308612180167,
+     "scored": false
+    },
+    {
+     "player": "Charalampos Kostoulas",
+     "probability": 0.13411780163124598,
+     "scored": true
+    },
+    {
+     "player": "Pascal Groß",
+     "probability": 0.13342372590474483,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Bukayo Saka",
+     "probability": 0.3494403306365701,
+     "scored": false
+    },
+    {
+     "player": "Kai Havertz",
+     "probability": 0.2970193687846603,
+     "scored": false
+    },
+    {
+     "player": "Martin Ødegaard",
+     "probability": 0.2210540667733253,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Brighton",
+     "player": "Charalampos Kostoulas",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Chema",
+     "goals": 1
+    },
+    {
+     "team": "Brighton",
+     "player": "Pascal Groß",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2513,10 +2971,48 @@
     1.8425621978637103,
     1.0047560516142782
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Thierno Barry",
+     "probability": 0.33265287433950097,
+     "scored": true
+    },
+    {
+     "player": "Kiernan Dewsbury-Hall",
+     "probability": 0.29840731181408886,
+     "scored": false
+    },
+    {
+     "player": "Tyrique George",
+     "probability": 0.20837828904935685,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Emersonn",
+     "probability": 0.17849071594298205,
+     "scored": false
+    },
+    {
+     "player": "Leif Davis",
+     "probability": 0.13446415053489946,
+     "scored": false
+    },
+    {
+     "player": "Jack Clarke",
+     "probability": 0.0906429618510135,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Everton",
+     "player": "Thierno Barry",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2544,10 +3040,58 @@
     1.421022820487174,
     1.2038284772501564
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Harvey Barnes",
+     "probability": 0.21912488612259762,
+     "scored": false
+    },
+    {
+     "player": "Yoane Wissa",
+     "probability": 0.19491699345717584,
+     "scored": false
+    },
+    {
+     "player": "Anthony Elanga",
+     "probability": 0.18859758740146815,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Bachir Belloumi",
+     "probability": 0.23669631335797048,
+     "scored": false
+    },
+    {
+     "player": "Oliver McBurnie",
+     "probability": 0.13956672675350146,
+     "scored": false
+    },
+    {
+     "player": "Liam Millar",
+     "probability": 0.10535395713877782,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Hull",
+     "player": "Mohamed Ali Cho",
+     "goals": 1
+    },
+    {
+     "team": "Newcastle",
+     "player": "Joe Willock",
+     "goals": 1
+    },
+    {
+     "team": "Newcastle",
+     "player": "Lewis Hall",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2575,10 +3119,48 @@
     1.7752861843991548,
     0.864227552836676
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Morgan Gibbs-White",
+     "probability": 0.3767240480379116,
+     "scored": false
+    },
+    {
+     "player": "Igor Jesus",
+     "probability": 0.2413066286205564,
+     "scored": false
+    },
+    {
+     "player": "Dan Ndoye",
+     "probability": 0.19655065043655484,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Taiwo Awoniyi",
+     "probability": 0.15408131820324988,
+     "scored": false
+    },
+    {
+     "player": "Matt Grimes",
+     "probability": 0.10192004354721473,
+     "scored": false
+    },
+    {
+     "player": "Jack Rudoni",
+     "probability": 0.06622278104880264,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Coventry",
+     "player": "Jay Dasilva",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2606,10 +3188,68 @@
     1.4445238191463243,
     1.4451767602658987
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Omar Marmoush",
+     "probability": 0.21519460218397934,
+     "scored": false
+    },
+    {
+     "player": "Mathys Tel",
+     "probability": 0.16840981855470916,
+     "scored": false
+    },
+    {
+     "player": "Dominic Solanke",
+     "probability": 0.08484754464538247,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Emi Buendía",
+     "probability": 0.1954287523653092,
+     "scored": true
+    },
+    {
+     "player": "Ross Barkley",
+     "probability": 0.17866638544310187,
+     "scored": false
+    },
+    {
+     "player": "Alysson",
+     "probability": 0.1775793920448765,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Aston Villa",
+     "player": "Emi Buendía",
+     "goals": 1
+    },
+    {
+     "team": "Aston Villa",
+     "player": "Johan Manzambi",
+     "goals": 1
+    },
+    {
+     "team": "Aston Villa",
+     "player": "Nicolas Jackson",
+     "goals": 1
+    },
+    {
+     "team": "Tottenham",
+     "player": "Conor Gallagher",
+     "goals": 1
+    },
+    {
+     "team": "Tottenham",
+     "player": "Jan Paul van Hecke",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2637,10 +3277,48 @@
     1.419031410234213,
     1.673008719562638
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Marcus Tavernier",
+     "probability": 0.36751981306851234,
+     "scored": false
+    },
+    {
+     "player": "Justin Kluivert",
+     "probability": 0.18682971247761004,
+     "scored": false
+    },
+    {
+     "player": "Rayan",
+     "probability": 0.17989642581237764,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Alexander Isak",
+     "probability": 0.40896526401735434,
+     "scored": true
+    },
+    {
+     "player": "Cody Gakpo",
+     "probability": 0.19765375007112063,
+     "scored": false
+    },
+    {
+     "player": "Dominik Szoboszlai",
+     "probability": 0.19762982685397812,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Liverpool",
+     "player": "Alexander Isak",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2668,10 +3346,48 @@
     1.3584821501135882,
     1.4360385569931973
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Gonzalo García",
+     "probability": 0.29102521929218395,
+     "scored": false
+    },
+    {
+     "player": "Joshua King",
+     "probability": 0.27397401650661735,
+     "scored": false
+    },
+    {
+     "player": "César Palacios",
+     "probability": 0.18591058831212404,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Bruno Fernandes",
+     "probability": 0.34746241887122176,
+     "scored": false
+    },
+    {
+     "player": "Bryan Mbeumo",
+     "probability": 0.3108825359052436,
+     "scored": false
+    },
+    {
+     "player": "Matheus Cunha",
+     "probability": 0.14549956120520813,
+     "scored": true
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Man United",
+     "player": "Matheus Cunha",
+     "goals": 1
+    }
+   ]
   },
   {
    "week": 5,
@@ -2699,9 +3415,41 @@
     1.5231920727384487,
     1.1632360133984847
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Dominic Calvert-Lewin",
+     "probability": 0.34235215507624794,
+     "scored": false
+    },
+    {
+     "player": "Jayden Bogle",
+     "probability": 0.21408955974642208,
+     "scored": false
+    },
+    {
+     "player": "Noah Okafor",
+     "probability": 0.2131606981892512,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Tyrick Mitchell",
+     "probability": 0.19337169036344326,
+     "scored": false
+    },
+    {
+     "player": "Anan Khalaili",
+     "probability": 0.17517779152488477,
+     "scored": false
+    },
+    {
+     "player": "Jørgen Strand Larsen",
+     "probability": 0.15513997280339586,
+     "scored": false
+    }
+   ],
    "actual_scorers": []
   },
   {
@@ -2730,10 +3478,68 @@
     1.9748399427089152,
     0.7427114493818987
    ],
-   "scorers_known": false,
-   "scorers_home": [],
-   "scorers_away": [],
-   "actual_scorers": []
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Erling Haaland",
+     "probability": 0.5472915314592022,
+     "scored": true
+    },
+    {
+     "player": "Rayan Cherki",
+     "probability": 0.25325399022838546,
+     "scored": true
+    },
+    {
+     "player": "Antoine Semenyo",
+     "probability": 0.17257891695579541,
+     "scored": true
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Enzo Le Fée",
+     "probability": 0.13365122538396956,
+     "scored": false
+    },
+    {
+     "player": "Brian Brobbey",
+     "probability": 0.12558923353107232,
+     "scored": true
+    },
+    {
+     "player": "Wilson Isidor",
+     "probability": 0.11047930608383194,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Man City",
+     "player": "Antoine Semenyo",
+     "goals": 2
+    },
+    {
+     "team": "Man City",
+     "player": "Enzo Fernández",
+     "goals": 1
+    },
+    {
+     "team": "Man City",
+     "player": "Erling Haaland",
+     "goals": 1
+    },
+    {
+     "team": "Man City",
+     "player": "Rayan Cherki",
+     "goals": 1
+    },
+    {
+     "team": "Sunderland",
+     "player": "Brian Brobbey",
+     "goals": 3
+    }
+   ]
   }
  ]
 }

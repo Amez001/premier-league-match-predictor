@@ -361,9 +361,8 @@ de sur-apprendre le bruit historique — voir
 
 ## Effectifs & buteurs probables
 
-Les modèles ci-dessus raisonnent au niveau équipe. Mais un attaquant en forme
-peut faire pencher un match indépendamment du niveau global de son équipe —
-d'où une couche supplémentaire, au niveau joueur.
+Les modèles ci-dessus raisonnent au niveau équipe. Pour dire *qui* marque,
+une couche supplémentaire descend au niveau des joueurs.
 
 **Restriction aux 20 équipes actuelles.** Le picker d'équipes (dashboard et
 CLI) ne propose que les clubs réellement en Premier League cette saison, pas
@@ -387,9 +386,10 @@ Chaque appel écrit un snapshot horodaté dans `data/players/snapshots/` et met
 Contrairement à `data/raw/` (résultats bruts) et aux crests (marques
 déposées, voir plus bas), `data/players/` **est versionné** : ce ne sont que
 des faits publics (effectif, buts, minutes), et les garder dans le dépôt
-permet à la routine cloud hebdomadaire de calculer la "forme récente" d'une
-semaine à l'autre, et à n'importe quel checkout local de récupérer un
-effectif à jour avec un simple `git pull`, sans avoir à re-scraper FBref.
+permet à la routine cloud hebdomadaire de comparer deux relevés successifs
+(pour savoir dans quel club joue désormais un joueur transféré), et à
+n'importe quel checkout local de récupérer un effectif à jour avec un simple
+`git pull`, sans avoir à re-scraper FBref.
 
 > Les données reflètent toujours FBref au moment du scrape — pas de valeur
 > modifiée à la main. Un transfert de joueur n'apparaît qu'une fois que FBref
@@ -417,23 +417,27 @@ backtest — est **réparti entre les joueurs de l'effectif** :
    confirmé et un joueur quelconque au même poste étaient indiscernables.
    $K$ est un choix raisonné, pas réglé sur données. `assist_share` applique
    le même traitement aux passes décisives.
-2. `recent_form_multiplier` : ratio entre le taux de buts/90 min "récent"
-   (delta entre les deux derniers snapshots) et le taux saison, **clippé à
-   [0.5, 1.8]** pour ne pas laisser un petit échantillon (une semaine entre
-   deux snapshots) s'emballer.
-3. Les parts `attack_share × recent_form_multiplier` sont renormalisées pour
-   sommer à 1 sur l'effectif, puis multipliées par le nombre de buts attendus
-   de l'équipe — la somme des buts attendus par joueur retombe donc
-   exactement sur le total d'équipe déjà backtesté.
-4. `P(joueur marque ≥ 1 but) = 1 - exp(-λ_joueur)` (loi de Poisson).
+2. Seuls les buts **crédités à un joueur du club** sont répartis : une
+   partie des buts d'une équipe sont des CSC adverses, qu'aucun de ses
+   joueurs ne marque. Cette proportion, $\rho$, est mesurée sur la saison
+   précédente complète — 96 % en 2025-26 (1 005 buts de joueurs pour 1 045
+   buts d'équipe), bien plus stable que les premières journées de la saison
+   en cours ([`credit_rates`](src/pl_predictor/models/player_goals.py)).
+3. Les parts somment à 1 sur l'effectif, donc
+   $\lambda_i = \lambda_{\text{équipe}} \cdot \rho \cdot \text{part}_i$ :
+   les buts attendus des joueurs retombent exactement sur les buts d'équipe
+   déjà backtestés, CSC mis à part.
+4. `P(joueur marque ≥ 1 but) = 1 - exp(-λ_i)` (loi de Poisson).
 
-**Limite assumée sur la "forme récente"** : au tout premier lancement, un
-seul snapshot existe, donc le multiplicateur de forme reste neutre (1.0) et
-le modèle se rabat sur le taux saison — c'est un choix honnête plutôt que de
-fabriquer un signal de récence à partir d'une seule mesure. Le signal
-s'affine ensuite au fil des rafraîchissements successifs de
-`data/players/`. Deux snapshots de saisons différentes ne sont jamais
-comparés : les totaux repartent de zéro chaque mois d'août.
+**Pas de bonus de "forme récente".** Une première version multipliait la
+part par un facteur de forme (taux de buts/90 min depuis le relevé précédent,
+rapporté au taux de la saison, borné à [0,5 ; 1,8]), sans l'avoir validé.
+Le [bilan de la saison](#bilan-de-la-saison) l'a démenti : sur les journées
+2 à 5 de 2026-27, le buteur favori de chaque équipe a marqué 16 fois pour
+25,2 attendus, sous la fourchette à 80 % (20-30). Une semaine de matchs est
+un échantillon trop petit pour qu'une série veuille dire quelque chose. Sans
+ce facteur et avec les CSC déduits, les mêmes matchs donnent 17 buts pour
+21,9 attendus, dans la fourchette (17-27).
 
 **Transferts en cours de saison** : FBref liste un joueur transféré une fois
 par club. Il est identifié par nom + année de naissance + nationalité (pour
@@ -482,13 +486,13 @@ peu trop tranchées, surtout en début de saison.
 
 ```
 Top scorer              Team              Now   Proj.   P(top)
-Erling Haaland          Man City            5    28.0    62.1%
-Alexander Isak          Liverpool           4    25.3    31.9%
-Bukayo Saka             Arsenal             3    18.0     1.7%
+Erling Haaland          Man City            5    28.3    61.5%
+Alexander Isak          Liverpool           4    25.7    32.9%
+Bukayo Saka             Arsenal             3    18.2     1.7%
 ...
 Top assists             Team              Now   Proj.   P(top)
-Cody Gakpo              Liverpool           3    15.2    36.1%
-Evanilson               Bournemouth         3    13.2    14.6%
+Cody Gakpo              Liverpool           3    14.7    36.1%
+Evanilson               Bournemouth         3    12.7    15.1%
 ...
 ```
 
@@ -501,8 +505,9 @@ pousse la simulation au niveau des joueurs :
 2. Chaque but revient au joueur $i$ avec une probabilité
    $\rho \cdot \text{part}_i$ : $\text{part}_i$ est la part décrite plus haut, et
    $\rho$ la proportion de buts attribués à un buteur (le reste, ce sont des
-   CSC), **mesurée sur la saison en cours** (0,95). Pour les passes, $\rho$
-   devient le nombre de passes décisives par but (0,69).
+   CSC), **mesurée sur la saison précédente** (0,96), comme pour les buteurs
+   d'un match. Pour les passes, $\rho$ devient le nombre de passes décisives
+   par but (0,66).
 3. **Amincissement de Poisson** : répartir au hasard un nombre poissonnien
    donne pour chaque joueur un nombre lui aussi poissonnien,
    $\text{Poisson}(\Lambda_{\text{club}} \cdot \rho \cdot \text{part}_i)$, et
@@ -533,11 +538,12 @@ python scripts/build_track_record.py
 ```
 
 ```
-2026-27: 50 matches over 5 matchweeks (2.9s)
+2026-27: 50 matches over 5 matchweeks (3.2s)
 
 Result (H/D/A)   23/50  =  46%   expected 26.6 (80% range 22-31)
 Exact score       5/50  =  10%   expected 5.8 (80% range 3-9)
-Top scorer pick   ...
+Top scorer pick  17/80  =  21%   expected 21.9 (80% range 17-27)
+Listed scorers   43/240 =  18%   expected 51.7 (80% range 44-60)
 Log loss        1.042   (reference, historical frequencies: 1.119)
 ```
 
@@ -557,6 +563,16 @@ disponibles à ce moment-là, puis le confronte aux résultats :
   $\sum p(1-p)$, d'où une fourchette à 80 %. Avec 50 matchs, un écart de
   quelques points relève du hasard ; c'est la sortie durable de la fourchette
   qui signalerait un problème de calibration.
+
+Ce bilan a déjà servi : il a fait retirer le bonus de forme récente du
+modèle de buteurs (voir [plus haut](#effectifs--buteurs-probables)). L'écart
+qui reste sur les buteurs listés (43 pour 51,7 attendus après 5 journées)
+vient surtout des compositions : 28 des 240 joueurs listés (12 %) n'ont pas
+joué le match, blessés ou laissés sur le banc, ce qu'on ne peut pas savoir
+avant l'annonce des équipes. Parmi ceux qui ont joué, 43 ont marqué pour
+46,9 attendus, un écart normal. Seuls 10 de ces absents avaient déjà manqué
+le match précédent, donc écarter les absents de la semaine d'avant
+n'apporterait presque rien.
 
 FBref limite fortement le rythme des requêtes (~1 min par feuille de match
 ici) : les feuilles sont donc stockées dans `data/players/match_stats_<saison>.csv`
@@ -730,8 +746,8 @@ saison sans fuite d'information (Phase 5).
 **Prochain chantier possible** :
 
 - **Enrichissement des données joueurs** : intégrer Understat (xG par
-  joueur/tir) pour affiner le modèle de buteurs au-delà du simple partage de
-  `attack_share × recent_form_multiplier`.
+  joueur/tir) pour affiner le modèle de buteurs au-delà du simple partage des
+  buts de l'équipe selon `attack_share`.
 - **Calendrier réel** : brancher `/api/fixtures`
   ([`fixtures_api.py`](src/pl_predictor/data/fixtures_api.py), déjà prêt côté
   backend) sur le front pour proposer directement les prochains matchs plutôt

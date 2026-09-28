@@ -9,8 +9,9 @@ down to players:
 2. Each future goal is credited to a player with probability
    credit_rate x share_i, where share_i is the shrunk goal share from
    player_goals.py (assist_share for assists) and credit_rate is measured on
-   this season's data: the fraction of team goals credited to a scorer (the
-   rest are own goals), or assists per team goal.
+   last season (`credit_rates`): the fraction of team goals credited to a
+   scorer (the rest are own goals), or assists per team goal. The Match
+   page's probable scorers use the same goal credit rate.
 3. Poisson thinning: splitting a Poisson(Lambda) count at random with
    probabilities p_i gives *independent* Poisson(Lambda * p_i) counts. So
    each player's future tally can be drawn directly and independently -
@@ -30,7 +31,7 @@ import numpy as np
 import pandas as pd
 
 from pl_predictor.data.load import get_current_season_teams
-from pl_predictor.models.player_goals import player_identity
+from pl_predictor.models.player_goals import credit_rates, player_identity
 from pl_predictor.models.poisson_model import PoissonGoalsModel
 from pl_predictor.simulation import DEFAULT_N_SIMS, remaining_fixtures
 
@@ -86,22 +87,14 @@ def project_awards(
     matches: pd.DataFrame,
     player_df: pd.DataFrame,
     model: PoissonGoalsModel,
+    last_season: pd.DataFrame | None = None,
     n_sims: int = DEFAULT_N_SIMS,
     seed: int | None = 42,
 ) -> dict:
     """Top-scorer and top-assist races. `player_df` must come from
-    prepare_player_features (attack_share, assist_share, is_current_club)."""
-    season = int(matches["season_start_year"].max())
-    played = matches[matches["season_start_year"] == season]
-    team_goals_so_far = float((played["home_goals"] + played["away_goals"]).sum())
-
-    # Measured on this season, not assumed: share of team goals credited to a
-    # scorer (the rest are own goals) and assists per team goal.
-    if team_goals_so_far > 0:
-        goal_credit_rate = min(1.0, player_df["season_goals"].sum() / team_goals_so_far)
-        assists_per_goal = min(1.0, player_df["season_assists"].sum() / team_goals_so_far)
-    else:
-        goal_credit_rate, assists_per_goal = 0.97, 0.7  # before any match: typical league values
+    prepare_player_features (attack_share, assist_share, is_current_club);
+    `last_season` (per-player totals) sets the goal credit and assist rates."""
+    goal_credit_rate, assists_per_goal = credit_rates(matches, last_season, player_df)
 
     club_lambda = remaining_expected_goals(matches, model)
 

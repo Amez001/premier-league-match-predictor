@@ -183,10 +183,19 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
             <Tex display>{'\\text{part}_i = \\frac{\\text{buts}_i + K \\cdot \\text{a priori}_i}{\\text{buts}_{équipe} + K}'}</Tex>
             <p>
               En début de saison, l'a priori pèse lourd : quatre buts en cinq matchs ne valent pas 60 % de l'attaque d'une
-              équipe. À mi-saison, les buts réels l'emportent. La part est ensuite ajustée par la forme récente, bornée
-              entre ×0,5 et ×1,8 :
+              équipe. À mi-saison, les buts réels l'emportent. Seuls les buts marqués par les joueurs du club sont
+              répartis : environ 4 % des buts d'une équipe sont des buts contre son camp de joueurs adverses. Cette proportion,{' '}
+              <Tex>{'\\rho \\approx 0{,}96'}</Tex>, est mesurée sur toute la saison précédente, plus stable que les
+              premières journées :
             </p>
-            <Tex display>{'\\lambda_i = \\lambda_{équipe} \\cdot \\text{part}_i, \\qquad P(\\text{marque}) = 1 - e^{-\\lambda_i}'}</Tex>
+            <Tex display>{'\\lambda_i = \\lambda_{équipe} \\cdot \\rho \\cdot \\text{part}_i, \\qquad P(\\text{marque}) = 1 - e^{-\\lambda_i}'}</Tex>
+            <p>
+              Une première version ajoutait un bonus de forme récente : la part d'un joueur qui venait d'enchaîner les
+              buts pouvait presque doubler. Le bilan de la saison l'a démenti. Sur les journées 2 à 5 de 2026-27, le buteur
+              favori de chaque équipe a marqué 16 fois pour 25 attendus. Une semaine de matchs est un échantillon trop petit
+              pour qu'une série veuille dire quelque chose. Sans ce bonus, les mêmes matchs donnent 17 buts pour 22
+              attendus, dans la fourchette normale.
+            </p>
           </section>
 
           <section id="simulation">
@@ -218,9 +227,8 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
             <p>
               Même principe, au niveau des joueurs. Les buts qu'un club doit encore marquer suivent une loi de Poisson
               de moyenne <Tex>{'\\Lambda_{club}'}</Tex>, la somme de ses buts attendus sur les matchs restants. Chaque but
-              revient à un joueur avec une probabilité égale à sa part (la même que pour les buteurs d'un match), multipliée
-              par la proportion de buts réellement attribués à un buteur cette saison, puisque les autres sont des buts
-              contre son camp.
+              revient à un joueur avec une probabilité égale à sa part, multipliée par <Tex>{'\\rho'}</Tex>, la proportion
+              de buts attribués à un buteur la saison précédente, comme pour les buteurs d'un match.
             </p>
             <p>
               Une propriété de la loi de Poisson simplifie tout : répartir au hasard un nombre de buts poissonnien donne,
@@ -230,7 +238,7 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
             <Tex display>{'\\text{Buts}_i^{\\text{fin}} = \\text{buts}_i^{\\text{actuels}} + \\text{Poisson}\\big(\\Lambda_{club} \\cdot \\rho \\cdot \\text{part}_i\\big)'}</Tex>
             <p>
               Pour les passes décisives, <Tex>{'\\rho'}</Tex> devient le nombre de passes par but, mesuré lui aussi sur la
-              saison en cours (environ 0,7). Un joueur transféré garde ses buts marqués dans son ancien club, puisque le
+              saison précédente (environ 0,66). Un joueur transféré garde ses buts marqués dans son ancien club, puisque le
               titre compte tous les buts en Premier League, mais n'est projeté que dans son club actuel. En cas d'égalité
               dans une saison simulée, le titre est partagé.
             </p>
@@ -328,7 +336,8 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
               </li>
               <li>
                 Les compositions d'équipe ne sont pas connues. Les buteurs probables supposent un temps de jeu habituel ;
-                un titulaire blessé reste dans la liste.
+                un titulaire blessé reste dans la liste. Sur les cinq premières journées de 2026-27, 12 % des joueurs listés
+                n'ont pas joué le match, et c'est la principale raison pour laquelle ils marquent un peu moins que prévu.
               </li>
               <li>
                 Le modèle de buts traite les deux équipes comme indépendantes, ce qui sous-estime légèrement les petits

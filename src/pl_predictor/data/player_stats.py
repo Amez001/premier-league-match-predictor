@@ -7,11 +7,9 @@ local response caching.
 
 Data is snapshotted with a date stamp every time it's fetched
 (data/players/snapshots/<date>.csv) and the latest snapshot is also written
-to data/players/latest.csv. Comparing the two most recent snapshots is how
-models/player_goals.py estimates "recent form" without needing a separate,
-much heavier per-match scrape for every player (see fetch_current_squad_stats
-docstring and the README's "Effectifs & buteurs probables" section for the
-reasoning and its honest limitations).
+to data/players/latest.csv. Comparing the two most recent snapshots tells
+models/player_goals.py which club a player who moved mid-season now plays
+for (see the README's "Effectifs & buteurs probables" section).
 """
 from __future__ import annotations
 
@@ -177,12 +175,13 @@ def load_latest_snapshot() -> pd.DataFrame:
 
 
 def load_previous_snapshot() -> pd.DataFrame | None:
-    """The second-most-recent snapshot, used to compute a "recent form" delta.
+    """The second-most-recent snapshot: whose minutes grew since it tells a
+    transferred player's current club (player_goals.mark_current_club).
 
     Returns None if fewer than two snapshots exist yet (e.g. first ever run),
     or if the previous one belongs to a different season: season-to-date
     totals reset every August, so a cross-season delta would be meaningless.
-    Callers then fall back to season-long rates only.
+    Callers then fall back to the club where he has played the most.
     """
     snapshots = sorted(SNAPSHOTS_DIR.glob("*.csv"))
     if len(snapshots) < 2:

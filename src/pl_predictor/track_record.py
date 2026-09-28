@@ -8,7 +8,8 @@ stood before that matchweek* and asked to predict it:
 - player shares rebuilt from match-by-match rows of earlier matches only
   (data/match_players.py) - the season-total snapshots would already contain
   the goals being predicted, so they're never used here;
-- last season's totals as the share prior, exactly as live.
+- last season's totals as the share prior and for the goal credit rate,
+  exactly as live.
 
 Nothing from the matchweek itself (or later) can leak in, so the record is a
 fair picture of how the site's predictions would have fared. It's computed
@@ -136,7 +137,7 @@ def build_track_record(
         player_df = (
             _player_features_before(match_players, cutoff, season, last_season) if stored_games else None
         )
-        predictor = MatchPredictor(history, teams=teams, player_df=player_df)
+        predictor = MatchPredictor(history, teams=teams, player_df=player_df, last_season=last_season)
 
         for m in fixtures[fixtures["week"] == week].sort_values(["date", "home_team"]).itertuples(index=False):
             pred = predictor.predict(m.home_team, m.away_team)

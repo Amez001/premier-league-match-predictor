@@ -2,10 +2,11 @@ import numpy as np
 import pandas as pd
 
 from pl_predictor.models.player_goals import (
-    FORM_MULTIPLIER_BOUNDS,
+    TYPICAL_ASSISTS_PER_GOAL,
+    TYPICAL_GOAL_CREDIT_RATE,
     compute_assist_shares,
     compute_attack_shares,
-    compute_recent_form_multiplier,
+    credit_rates,
     mark_current_club,
     predict_team_scorers,
     prepare_player_features,
@@ -51,22 +52,6 @@ def test_attack_shares_fall_back_to_minutes_when_team_has_no_goals():
     assert np.isclose(df["attack_share"].sum(), 1.0)
     # equal minutes for Striker/Defender (10 each) -> equal share, higher than Winger (9)
     assert df.loc[df.player == "Striker", "attack_share"].iloc[0] == df.loc[df.player == "Defender", "attack_share"].iloc[0]
-
-
-def test_recent_form_multiplier_defaults_to_neutral_without_previous_snapshot():
-    df = compute_recent_form_multiplier(_toy_squad(), previous_df=None)
-    assert (df["recent_form_multiplier"] == 1.0).all()
-
-
-def test_recent_form_multiplier_is_clipped():
-    latest = _toy_squad()
-    # Striker scored 5 more goals in 1 additional "90" -> absurd recent rate, must be clipped.
-    previous = latest.copy()
-    previous["season_goals"] = latest["season_goals"] - 5
-    previous.loc[previous.player == "Striker", "minutes_90s"] -= 1
-    df = compute_recent_form_multiplier(latest, previous)
-    striker_multiplier = df.loc[df.player == "Striker", "recent_form_multiplier"].iloc[0]
-    assert FORM_MULTIPLIER_BOUNDS[0] <= striker_multiplier <= FORM_MULTIPLIER_BOUNDS[1]
 
 
 def test_predict_team_scorers_lambdas_sum_to_team_expected_goals():
@@ -140,3 +125,18 @@ def test_departed_player_never_listed_as_a_scorer_for_his_old_club():
     features = prepare_player_features(squad, previous_df=None)
     assert "Striker" not in predict_team_scorers(features, "Chelsea", 1.5, top_n=10)["player"].tolist()
     assert "Striker" in predict_team_scorers(features, "Arsenal", 1.5, top_n=10)["player"].tolist()
+
+
+def test_credit_rates_prefer_last_season_then_this_season_then_typical():
+    # 100 team goals last season, 10 so far this season
+    matches = pd.DataFrame(
+        {"season_start_year": [2025, 2025, 2026], "home_goals": [30, 20, 6], "away_goals": [25, 25, 4]}
+    )
+    # 96 of last season's 100 goals credited to players (4 own goals), 66 assists
+    last_season = pd.DataFrame(
+        {"season_start_year": [2025, 2025], "season_goals": [60, 36], "season_assists": [40, 26]}
+    )
+    this_season = pd.DataFrame({"season_goals": [9], "season_assists": [7]})
+    assert np.allclose(credit_rates(matches, last_season, this_season), (0.96, 0.66))
+    assert np.allclose(credit_rates(matches, None, this_season), (0.9, 0.7))
+    assert credit_rates(matches) == (TYPICAL_GOAL_CREDIT_RATE, TYPICAL_ASSISTS_PER_GOAL)
