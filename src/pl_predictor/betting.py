@@ -29,6 +29,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from pl_predictor.betting_search import search_report
 from pl_predictor.config import DEFAULT_FIRST_TEST_SEASON_START_YEAR, REPORTS_DIR
 from pl_predictor.predict import MatchPredictor
 
@@ -513,5 +514,8 @@ def build_report(
         },
         "honesty": honesty_check(df, current),
         "value_edges": value_edge_comparison(df),
+        # the opposite of the fixed strategies: the ~1,000 combinations that
+        # would have won the most, and whether that means anything
+        "search": search_report(df),
         "rounds": season_rounds(this_season, schedule),
     }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { Betting, BettingPeriod, BettingRound, BettingStrategy } from '../api'
+import type { Betting, BettingPeriod, BettingRound, BettingSearch, BettingStrategy } from '../api'
 import { ClubCrest } from '../components/ClubCrest'
 import { HitMark } from '../components/HitMark'
 import { ProfitCurve } from '../components/ProfitCurve'
@@ -234,6 +234,133 @@ function Honesty({ betting }: { betting: Betting }) {
   )
 }
 
+function SearchVerdict({ search }: { search: BettingSearch }) {
+  const wf = search.walk_forward
+  const luck = search.luck
+  if (!wf || !luck) return null
+  const foundInTime = wf.profit > 0
+  const beatsLuck = luck.share_as_good < 0.05
+  let text: string
+  if (!foundInTime && !beatsLuck) {
+    text =
+      'Les combinaisons gagnantes sont celles que le hasard a favorisées. La recherche ne les trouvait pas à temps, et le hasard seul en produit d’aussi belles : rien n’indique un vrai filon.'
+  } else if (!foundInTime) {
+    text =
+      'La meilleure combinaison fait mieux que le hasard, mais personne ne l’aurait choisie à temps : celles qui brillaient sur les saisons précédentes ont perdu ensuite.'
+  } else if (!beatsLuck) {
+    text =
+      'Choisir la meilleure combinaison du passé a payé, mais le hasard seul produit d’aussi beaux résultats : c’est peut-être de la chance.'
+  } else {
+    text =
+      'La meilleure combinaison bat le hasard et aurait été trouvée à temps : un signal à surveiller, pas encore une preuve.'
+  }
+  return <p className="search-verdict">{text}</p>
+}
+
+function CombinationSearch({ search, stake }: { search: BettingSearch; stake: number }) {
+  const top = search.top
+  if (top.length === 0) return null
+  const maxAbs = Math.max(...top.map((t) => Math.abs(t.profit * stake)), 1e-9)
+  const wf = search.walk_forward
+  const luck = search.luck
+  const first = search.seasons[0]
+  return (
+    <section className="module">
+      <h2>Les combinaisons qui auraient rapporté le plus</h2>
+      <p className="module-note">
+        {int(search.n_combinations)} combinaisons de critères testées depuis {seasonLabel(first)} : type de pari, seuil de
+        notre probabilité, fourchette de cotes, valeur minimale, combinés de 2 à 5 matchs. Parmi les{' '}
+        {int(search.n_ranked)} qui comptent au moins {search.min_bets} paris, {int(search.n_profitable)} finissent
+        gagnantes. Voici les dix meilleures, avec {stakeLabel(stake)} par pari.
+      </p>
+      <div className="table-scroll">
+        <table className="data-table search-table">
+          <thead>
+            <tr>
+              <th className="num">#</th>
+              <th>Combinaison</th>
+              <th className="num">Paris</th>
+              <th className="num">Gagnés</th>
+              <th className="num">Cote moy.</th>
+              <th>Gain</th>
+              <th className="num">Rendement</th>
+              <th className="num">Saisons gagnantes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {top.map((t, i) => (
+              <tr key={t.name}>
+                <td className="num tabular muted">{i + 1}</td>
+                <td className="search-name">{t.name}</td>
+                <td className="num tabular">{int(t.n_bets)}</td>
+                <td className="num tabular">{pct(t.hit_rate)}</td>
+                <td className="num tabular">{num2(t.avg_odds)}</td>
+                <td>
+                  <GainCell value={t.profit * stake} max={maxAbs} />
+                </td>
+                <td className="num tabular">{signedPct(t.roi)}</td>
+                <td className="num tabular">
+                  {t.seasons_won} sur {t.seasons_played}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {wf && luck && (
+        <>
+          <dl className="figures search-checks">
+            <div className="figure">
+              <dt>Choisie à l'époque</dt>
+              <dd className="figure-value tabular">{money(wf.profit * stake)}</dd>
+              <dd className="figure-sub">
+                En jouant chaque saison la meilleure combinaison des saisons précédentes, les seules connues alors :{' '}
+                {int(wf.n_bets)} paris, rendement {signedPct(wf.roi)}.
+              </dd>
+            </div>
+            <div className="figure">
+              <dt>Ce que donne le hasard</dt>
+              <dd className="figure-value tabular">{money(luck.best_profit_median * stake)}</dd>
+              <dd className="figure-sub">
+                Gain de la meilleure combinaison quand chaque résultat est tiré selon les cotes elles-mêmes, où aucune n'a
+                d'avantage réel (médiane de {luck.n_sims} saisons simulées). Elle fait au moins aussi bien que notre
+                meilleure dans {pct(luck.share_as_good)} des cas.
+              </dd>
+            </div>
+          </dl>
+          <SearchVerdict search={search} />
+          <details className="search-details">
+            <summary>Les choix saison par saison</summary>
+            <div className="table-scroll">
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Saison</th>
+                    <th>Meilleure combinaison des saisons précédentes</th>
+                    <th className="num">Paris</th>
+                    <th className="num">Résultat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {wf.seasons.map((s) => (
+                    <tr key={s.season}>
+                      <td className="tabular">{seasonLabel(s.season)}</td>
+                      <td className="search-name">{s.name}</td>
+                      <td className="num tabular">{int(s.n_bets)}</td>
+                      <td className="num tabular">{money(s.profit * stake)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </>
+      )}
+    </section>
+  )
+}
+
 function roundTitle(r: BettingRound) {
   return r.matchweek ? `Journée ${r.matchweek}` : `Semaine du ${shortDate(r.round_start)}`
 }
@@ -442,6 +569,8 @@ export function BettingPage({ betting }: { betting: Partial<Betting> | null }) {
         <p className="module-note">{shown.description}</p>
         <StrategyDetail s={shown} stake={stake} period={period} />
       </section>
+
+      {period === 'history' && b.search && <CombinationSearch search={b.search} stake={stake} />}
 
       {period === 'history' && <Honesty betting={b} />}
 

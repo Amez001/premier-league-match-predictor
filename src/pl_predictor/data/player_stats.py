@@ -95,7 +95,10 @@ def fetch_current_squad_stats(season_start_year: int) -> pd.DataFrame:
     """
     import soccerdata as sd  # imported lazily: soccerdata is a heavy optional dependency
 
-    reader = sd.FBref(leagues=FBREF_LEAGUE, seasons=_fbref_season_code(season_start_year))
+    # no_cache: soccerdata keeps a downloaded stats page forever (only the
+    # schedule is refetched for an ongoing season), so without it every
+    # update would re-read the first download of the season's page.
+    reader = sd.FBref(leagues=FBREF_LEAGUE, seasons=_fbref_season_code(season_start_year), no_cache=True)
     raw = reader.read_player_season_stats(stat_type="standard")
 
     df = raw.reset_index()

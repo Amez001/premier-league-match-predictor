@@ -241,6 +241,38 @@ export interface BettingRound {
   combos: Record<string, { odds: number; p: number; won: boolean }>
 }
 
+export interface SearchCombo {
+  name: string
+  n_bets: number
+  hit_rate: number
+  avg_odds: number
+  /** in stakes */
+  profit: number
+  roi: number
+  seasons_won: number
+  seasons_played: number
+  by_season: number[]
+}
+
+export interface BettingSearch {
+  n_combinations: number
+  min_bets: number
+  seasons: number[]
+  n_profitable: number
+  n_ranked: number
+  /** best combinations over every season, most profitable first */
+  top: SearchCombo[]
+  /** each season, the best combination of the seasons before it, bet that season */
+  walk_forward: {
+    seasons: { season: number; name: string; n_bets: number; profit: number }[]
+    n_bets: number
+    profit: number
+    roi: number | null
+  } | null
+  /** the same search on seasons simulated from the bookmakers' own (fair) odds */
+  luck: { n_sims: number; best_profit_median: number; best_profit_p90: number; share_as_good: number } | null
+}
+
 export interface Betting {
   season_start_year: number
   value_edge: number
@@ -253,6 +285,7 @@ export interface Betting {
   } | null
   value_edges: (BettingSummary & { edge: number })[]
   rounds: BettingRound[]
+  search: BettingSearch | null
 }
 
 export type RefreshStepStatus = 'pending' | 'running' | 'done' | 'failed' | 'skipped'

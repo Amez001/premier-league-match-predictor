@@ -65,6 +65,9 @@ def test_data_counts(tmp_path):
     players.mkdir(parents=True)
     (players / "match_stats_2026.csv").write_text("game_id,player\ng1,a\ng1,b\ng2,c\n", encoding="utf-8")
     assert data_counts(2026, tmp_path) == {"results": 3, "match_reports": 2}
+    # FBref has the weekend's scores before football-data.co.uk does
+    (players / "schedule_2026.csv").write_text("week,home_goals\n1,1\n1,0\n2,2\n2,1\n3,\n", encoding="utf-8")
+    assert data_counts(2026, tmp_path)["results"] == 4
 
 
 def _git(cwd, *args):

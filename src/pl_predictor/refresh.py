@@ -77,15 +77,24 @@ def _iso(t: float | None) -> str | None:
 
 
 def data_counts(season: int, root: Path = ROOT_DIR) -> dict:
-    """Results (football-data.co.uk) and match reports (FBref) stored for `season`."""
-    counts = {"results": 0, "match_reports": 0}
-    results = root / "data" / "raw" / f"E0_{season_code(season)}.csv"
-    if results.exists():
-        counts["results"] = sum(1 for line in results.read_bytes().splitlines()[1:] if line.strip(b", \r"))
-    reports = root / "data" / "players" / f"match_stats_{season}.csv"
-    if reports.exists():
-        counts["match_reports"] = int(pd.read_csv(reports, usecols=["game_id"])["game_id"].nunique())
-    return counts
+    """Results and match reports stored for `season`.
+
+    A result counts once known from either source: football-data.co.uk's
+    file, or a score in FBref's schedule, which gets results first (see
+    data/load.py add_fbref_results). One source covers the other's matches
+    in practice, so the larger count is the number of known results.
+    """
+    football_data = fbref = reports = 0
+    raw = root / "data" / "raw" / f"E0_{season_code(season)}.csv"
+    if raw.exists():
+        football_data = sum(1 for line in raw.read_bytes().splitlines()[1:] if line.strip(b", \r"))
+    schedule = root / "data" / "players" / f"schedule_{season}.csv"
+    if schedule.exists():
+        fbref = int(pd.read_csv(schedule, usecols=["home_goals"])["home_goals"].notna().sum())
+    stats = root / "data" / "players" / f"match_stats_{season}.csv"
+    if stats.exists():
+        reports = int(pd.read_csv(stats, usecols=["game_id"])["game_id"].nunique())
+    return {"results": max(football_data, fbref), "match_reports": reports}
 
 
 class Refresh:

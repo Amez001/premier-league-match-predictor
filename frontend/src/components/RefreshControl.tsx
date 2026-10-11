@@ -170,8 +170,8 @@ export function RefreshControl({ meta, onFinished }: { meta: Meta | null; onFini
               <p className="refresh-note">
                 Télécharge les nouveaux résultats et les statistiques des joueurs, recalcule les prédictions, le bilan et
                 l'analyse des paris, puis publie les nouvelles données sur GitHub. Compter environ une minute par nouveau
-                match. Les résultats arrivent sur football-data.co.uk un ou deux jours après les matchs : un match tout
-                juste joué sera pris en compte à la mise à jour suivante.
+                match. FBref publie les scores quelques heures après la fin des matchs ; les cotes, utiles à l'analyse
+                des paris, arrivent un ou deux jours plus tard.
               </p>
               {error && <p className="error">{error}</p>}
               <button type="button" className="btn-primary" onClick={start} disabled={starting}>

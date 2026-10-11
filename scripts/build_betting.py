@@ -74,6 +74,17 @@ def main() -> int:
         best = next(r for r in honesty["strategies"] if r["key"] == honesty["best_first"])
         print(f"\nBest strategy on {honesty['first'][0]}-{honesty['first'][1]}: {best['name']} "
               f"({best['roi_first']:+.1%}); on {honesty['second'][0]}-{honesty['second'][1]}: {best['roi_second']:+.1%}")
+    search = report["search"]
+    if search and search["top"]:
+        print(f"\nSearch: {search['n_combinations']} combinations, {search['n_profitable']} of {search['n_ranked']} "
+              f"with {search['min_bets']}+ bets profitable. Best in hindsight:")
+        for t in search["top"][:5]:
+            print(f"  {t['profit']:+7.1f} {t['roi']:+7.1%} {t['n_bets']:>5} bets  {t['name']}")
+        wf, luck = search["walk_forward"], search["luck"]
+        if wf:
+            print(f"Picked each season from the seasons before: {wf['profit']:+.1f} on {wf['n_bets']} bets ({wf['roi']:+.1%})")
+        print(f"Best of the search on luck alone (median of {luck['n_sims']}): {luck['best_profit_median']:+.1f}; "
+              f"as good as the real best in {luck['share_as_good']:.0%} of them")
     print(f"\nSaved {BETTING_PATH}")
     return 0
 

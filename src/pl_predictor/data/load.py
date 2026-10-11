@@ -8,7 +8,7 @@ import re
 import numpy as np
 import pandas as pd
 
-from pl_predictor.config import DATA_RAW_DIR, FD_DIVISION
+from pl_predictor.config import DATA_RAW_DIR, FD_DIVISION, current_season_start_year, season_code
 
 logger = logging.getLogger(__name__)
 
@@ -163,9 +163,55 @@ def clean_matches(raw: pd.DataFrame) -> pd.DataFrame:
     return df[keep].reset_index(drop=True)
 
 
-def load_clean_matches() -> pd.DataFrame:
-    """Convenience one-shot: load raw CSVs + clean them."""
-    return clean_matches(load_raw_matches())
+def add_fbref_results(matches: pd.DataFrame, schedule: pd.DataFrame | None, season: int) -> pd.DataFrame:
+    """Add this season's results that FBref has but football-data.co.uk not yet.
+
+    football-data.co.uk posts results a day or two after the matches; FBref's
+    fixtures list (data/match_players.py) has the scores within hours. So a
+    match with a score in the FBref schedule but no row in football-data.co.uk
+    gets one from FBref: date, teams and score only. Shots, corners and the
+    bookmakers' odds come with football-data.co.uk's own row, which replaces
+    it at the next update.
+    """
+    if schedule is None or schedule.empty:
+        return matches
+    played = schedule.dropna(subset=["home_goals", "away_goals"])
+    known = matches[matches["season_start_year"] == season]
+    published = set(zip(known["home_team"], known["away_team"]))
+    new = played[[pair not in published for pair in zip(played["home_team"], played["away_team"])]]
+    if new.empty:
+        return matches
+
+    home_goals = new["home_goals"].astype(int).to_numpy()
+    away_goals = new["away_goals"].astype(int).to_numpy()
+    rows = pd.DataFrame(
+        {
+            "date": pd.to_datetime(new["date"]).to_numpy(),
+            "season_start_year": season,
+            "season_code": season_code(season),
+            "home_team": new["home_team"].to_numpy(),
+            "away_team": new["away_team"].to_numpy(),
+            "home_goals": home_goals,
+            "away_goals": away_goals,
+            "result": np.select([home_goals > away_goals, home_goals < away_goals], ["H", "A"], "D"),
+        }
+    )
+    out = pd.concat([matches, rows], ignore_index=True, sort=False)
+    out = out.sort_values(["date", "home_team"], kind="stable").reset_index(drop=True)
+    out["match_id"] = out.index
+    return out
+
+
+def load_clean_matches(include_fbref: bool = True) -> pd.DataFrame:
+    """Convenience one-shot: load raw CSVs + clean them, plus (by default) the
+    current season's results FBref already has (see add_fbref_results)."""
+    matches = clean_matches(load_raw_matches())
+    if include_fbref:
+        from pl_predictor.data.match_players import load_schedule
+
+        season = current_season_start_year()
+        matches = add_fbref_results(matches, load_schedule(season), season)
+    return matches
 
 
 def get_current_season_teams(matches: pd.DataFrame) -> list[str]:

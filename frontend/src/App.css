@@ -2503,3 +2503,49 @@ code {
     font-size: 1.8rem;
   }
 }
+
+/* Combination search (betting page) */
+.search-name {
+  min-width: 16rem;
+  max-width: 30rem;
+  white-space: normal !important;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.search-checks {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.75rem;
+}
+
+.search-verdict {
+  max-width: 72ch;
+  margin-top: 1.25rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.search-details {
+  margin-top: 1.25rem;
+}
+
+.search-details summary {
+  width: max-content;
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+
+.search-details summary:hover {
+  color: var(--ink);
+}
+
+.search-details[open] summary {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .search-checks {
+    grid-template-columns: 1fr;
+  }
+}

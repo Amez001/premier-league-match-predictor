@@ -366,6 +366,14 @@ export function HowItWorksPage({
               d'essais, l'une d'elles gagne par chance. La page Paris le montre en choisissant la meilleure stratégie sur la
               première moitié des saisons, puis en la jouant sur la seconde.
             </p>
+            <p>
+              Elle fait aussi l'inverse, à dessein : parmi un millier de combinaisons de critères (type de pari, seuil de
+              notre probabilité, fourchette de cotes, valeur minimale, combinés de 2 à 5 matchs), elle garde celles qui
+              auraient rapporté le plus. La meilleure de mille essais paraît toujours bonne, quoi que valent les
+              prédictions. Deux contrôles disent ce qu'elle vaut : la choisir à l'époque, en jouant chaque saison la
+              meilleure combinaison des saisons précédentes ; et refaire la même recherche sur des saisons simulées où
+              chaque résultat est tiré selon les cotes elles-mêmes, où aucune combinaison n'a d'avantage réel.
+            </p>
             {market?.log_loss_market != null && market.log_loss_model != null && (
               <p>
                 Tout se joue sur une comparaison : sur les mêmes {int(market.n_matches)} matchs, les probabilités des

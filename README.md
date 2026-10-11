@@ -156,8 +156,12 @@ d'autres commits locaux attendent déjà d'être poussés, et
 `python scripts/refresh_data.py --no-publish` garde les données en local. Voir
 [`src/pl_predictor/refresh.py`](src/pl_predictor/refresh.py).
 
-football-data.co.uk publie les résultats un ou deux jours après les matchs :
-un match tout juste joué entre dans les modèles à la mise à jour suivante.
+football-data.co.uk publie les résultats un ou deux jours après les matchs,
+FBref en quelques heures : en attendant football-data.co.uk, les scores de
+la saison en cours viennent du calendrier FBref
+([`add_fbref_results`](src/pl_predictor/data/load.py)). Seuls les tirs et les
+cotes arrivent plus tard ; les matchs sans cote rejoignent l'analyse des paris
+à la mise à jour suivante.
 
 > Une routine cloud devait faire cette mise à jour chaque mercredi, mais
 > l'environnement cloud refuse l'accès à football-data.co.uk et à FBref (qui
@@ -659,6 +663,23 @@ Le piège classique consiste à tester des dizaines de variantes et à garder la
 meilleure. Le rapport le mesure : la stratégie la plus rentable de 2013-14 à
 2019-20 (le combiné de 4 favoris, +5,7 %) fait −29,6 % de 2020-21 à 2025-26.
 
+[`betting_search.py`](src/pl_predictor/betting_search.py) fait ensuite
+l'inverse, à dessein : il essaie 1 056 combinaisons de critères (type de
+pari, seuil de notre probabilité, fourchette de cotes, valeur minimale,
+combinés de 2 à 5 matchs choisis par notre modèle, par le marché ou par la
+valeur) et garde celles qui auraient rapporté le plus. La meilleure, « moins
+de 2,5 buts quand notre modèle y croit et que la cote dépasse 2,2 », fait
++21 % sur 103 paris. Deux contrôles disent ce qu'elle vaut :
+
+- **choisie à l'époque**, en jouant chaque saison la meilleure combinaison
+  des saisons précédentes : −48,7 % sur 431 paris ;
+- **le hasard** : la même recherche sur 200 saisons simulées où chaque
+  résultat est tiré selon les cotes (aucun avantage possible) trouve une
+  meilleure combinaison à +129 mises en médiane, plus que notre vraie
+  meilleure (+22).
+
+Les combinaisons gagnantes sont celles que le hasard a favorisées.
+
 La page **Paris** du site présente tout cela pour la mise de son choix : le
 gain ou la perte de chaque stratégie, sa courbe dans le temps, son résultat
 saison par saison, et les combinés de chaque journée de la saison en cours.
@@ -781,6 +802,7 @@ premier-league-match-predictor/
 │   ├── stats.py                   # statistiques réelles (classement, forme, leaders)
 │   ├── track_record.py            # bilan : prédictions reconstituées vs résultats
 │   ├── betting.py                 # stratégies de paris rejouées sur nos prédictions passées
+│   ├── betting_search.py          # les ~1 000 combinaisons qui auraient le plus rapporté, et leurs contrôles
 │   ├── refresh.py                 # le bouton "Mettre à jour" : téléchargements, recalculs, publication
 │   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI/l'API
 ├── api/main.py                  # backend FastAPI (fine couche HTTP sur pl_predictor)
