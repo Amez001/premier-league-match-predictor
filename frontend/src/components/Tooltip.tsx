@@ -56,6 +56,11 @@ export function TooltipProvider({ children }: { children: ReactNode }) {
   )
 }
 
+/** Show/hide by hand, for charts whose hovered "mark" is computed (a crosshair). */
+export function useTooltipApi(): TooltipApi {
+  return useContext(TooltipContext)
+}
+
 /** Spread onto any mark: hover + focus show the tooltip, leave/blur hide it. */
 export function useTooltip(content: ReactNode) {
   const { show, hide } = useContext(TooltipContext)

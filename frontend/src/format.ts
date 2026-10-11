@@ -26,6 +26,13 @@ export function pct(p: number): string {
 export const num1 = (x: number) => fixSpaces(num1Fmt.format(x))
 export const num2 = (x: number) => fixSpaces(num2Fmt.format(x))
 export const int = (x: number) => fixSpaces(intFmt.format(x))
+/** "+126 $", "−1 837 $", "+12,40 $": cents only while they still matter. */
+export function money(x: number): string {
+  const abs = Math.abs(x)
+  const sign = x >= 0.005 ? '+' : x <= -0.005 ? '−' : ''
+  return `${sign}${abs >= 100 ? int(Math.round(abs)) : num2(abs)}${NBSP}$`
+}
+
 export const signed = (x: number) => (x > 0 ? '+' : x < 0 ? '−' : '') + int(Math.abs(Math.round(x)))
 
 /**

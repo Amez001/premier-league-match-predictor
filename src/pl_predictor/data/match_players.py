@@ -10,7 +10,7 @@ any given matchweek, and tell us who actually scored.
 FBref serves one match report per request and rate-limits heavily (~25s per
 match here), so rows are stored in the repo (data/players/match_stats_*.csv)
 and only matches not already there are fetched: the first run takes a while,
-each weekly refresh only fetches that week's ~10 matches.
+each refresh only fetches the ~10 matches of the latest matchweek.
 """
 from __future__ import annotations
 

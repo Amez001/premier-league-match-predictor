@@ -32,6 +32,9 @@
   --away: #d95926;
   --draw: #5d6068;
   --seq-rgb: 57, 135, 229; /* sequential ramp = --home at increasing opacity */
+  /* profit/loss (diverging): the same validated pair - no page shows money and home/away together */
+  --gain: var(--home);
+  --loss: var(--away);
 
   --condensed: 'Archivo', system-ui, sans-serif;
   --text: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;

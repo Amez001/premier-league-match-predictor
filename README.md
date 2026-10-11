@@ -40,6 +40,7 @@ seulement sur le taux de bonnes réponses.
 - [Lancement rapide (Windows)](#lancement-rapide-windows)
 - [Installation](#installation)
 - [Récupérer les données](#récupérer-les-données)
+- [Mise à jour des données](#mise-à-jour-des-données)
 - [Lancer le backtest](#lancer-le-backtest)
 - [Prédire un match](#prédire-un-match)
 - [Interface web](#interface-web)
@@ -54,6 +55,7 @@ seulement sur le taux de bonnes réponses.
 - [Meilleur buteur et meilleur passeur](#meilleur-buteur-et-meilleur-passeur)
 - [Statistiques réelles](#statistiques-réelles)
 - [Bilan de la saison](#bilan-de-la-saison)
+- [Paris sportifs](#paris-sportifs)
 - [Validation temporelle (pas de data leakage)](#validation-temporelle-pas-de-data-leakage)
 - [Métriques](#métriques)
 - [Performances du modèle](#performances-du-modèle)
@@ -66,7 +68,9 @@ seulement sur le taux de bonnes réponses.
 Après l'[installation](#installation) une première fois,
 [`run_app.bat`](run_app.bat) lance tout en un double-clic : installe les
 dépendances manquantes, construit l'interface web si besoin, démarre l'API
-et ouvre `http://localhost:8000` dans le navigateur.
+et ouvre `http://localhost:8000` dans le navigateur. Après une journée de
+championnat, le bouton **Mettre à jour** en haut du site récupère les
+nouveaux matchs (voir [Mise à jour des données](#mise-à-jour-des-données)).
 
 Pour lui donner une icône ([`app.ico`](app.ico)) et le poser où tu veux
 (bureau, barre des tâches, dossier du projet) :
@@ -130,6 +134,36 @@ python scripts/download_player_data.py
 
 Voir [Effectifs & buteurs probables](#effectifs--buteurs-probables) pour la
 méthodologie complète.
+
+## Mise à jour des données
+
+Après une journée de championnat, le bouton **Mettre à jour** en haut du site
+(ou `python scripts/refresh_data.py` dans un terminal) enchaîne tout, dans
+l'ordre :
+
+1. les résultats de la saison (football-data.co.uk, quelques secondes) ;
+2. les effectifs et stats joueurs (FBref, une minute environ) ;
+3. les feuilles de match des nouveaux matchs (FBref, environ une minute par
+   match, la source limitant le rythme) ;
+4. le bilan de la saison et l'analyse des paris (quelques secondes) ;
+5. le rechargement du site, puis un commit de `data/players/` et `reports/`
+   poussé sur GitHub.
+
+La mise à jour tourne sur le serveur local : le site affiche la progression
+étape par étape, reste utilisable pendant ce temps et se recharge seul à la
+fin. Une étape FBref qui échoue n'arrête pas les autres. Rien n'est publié si
+d'autres commits locaux attendent déjà d'être poussés, et
+`python scripts/refresh_data.py --no-publish` garde les données en local. Voir
+[`src/pl_predictor/refresh.py`](src/pl_predictor/refresh.py).
+
+football-data.co.uk publie les résultats un ou deux jours après les matchs :
+un match tout juste joué entre dans les modèles à la mise à jour suivante.
+
+> Une routine cloud devait faire cette mise à jour chaque mercredi, mais
+> l'environnement cloud refuse l'accès à football-data.co.uk et à FBref (qui
+> demande en plus un vrai navigateur, Chrome) : aucune de ses exécutions n'a
+> pu télécharger de données. Le bouton, qui tourne sur la machine locale, la
+> remplace.
 
 ## Lancer le backtest
 
@@ -386,17 +420,15 @@ Chaque appel écrit un snapshot horodaté dans `data/players/snapshots/` et met
 Contrairement à `data/raw/` (résultats bruts) et aux crests (marques
 déposées, voir plus bas), `data/players/` **est versionné** : ce ne sont que
 des faits publics (effectif, buts, minutes), et les garder dans le dépôt
-permet à la routine cloud hebdomadaire de comparer deux relevés successifs
-(pour savoir dans quel club joue désormais un joueur transféré), et à
-n'importe quel checkout local de récupérer un effectif à jour avec un simple
-`git pull`, sans avoir à re-scraper FBref.
+permet de comparer deux relevés successifs (pour savoir dans quel club joue
+désormais un joueur transféré), et à n'importe quel checkout local de
+récupérer un effectif à jour avec un simple `git pull`, sans avoir à
+re-scraper FBref.
 
 > Les données reflètent toujours FBref au moment du scrape — pas de valeur
 > modifiée à la main. Un transfert de joueur n'apparaît qu'une fois que FBref
-> l'a répercuté ; la routine cloud du mercredi relance justement
-> `download_player_data.py` chaque semaine pour rester à jour, et signale
-> explicitement dans son rapport tout changement de club détecté d'un
-> snapshot à l'autre.
+> l'a répercuté ; chaque [mise à jour](#mise-à-jour-des-données) relance
+> `download_player_data.py` pour rester à jour.
 
 **Modèle de buteurs probables**
 ([`src/pl_predictor/models/player_goals.py`](src/pl_predictor/models/player_goals.py)) :
@@ -580,6 +612,57 @@ et seuls les nouveaux matchs sont téléchargés (une dizaine par semaine). Le
 bilan est recalculé avec le modèle actuel : il mesure le modèle d'aujourd'hui,
 pas un historique de ce que le site affichait.
 
+## Paris sportifs
+
+```bash
+python scripts/build_betting.py             # quelques secondes (saisons passées en cache)
+python scripts/build_betting.py --rebuild   # tout recalculer (environ 4 min)
+```
+
+```
+Since 2013-14: 4990 matches
+Log loss: model 0.9780, market 0.9590 - bookmaker margin 4.6%
+Strategy                            Bets    Won   Odds   Profit     ROI  Model said
+Combiné de 2 favoris                 542    52%   1.98    -17.0   -3.1%       -1.2%
+Le favori des bookmakers            4990    55%   1.88   -106.5   -2.1%       -3.9%
+Notre favori                        4990    54%   1.95   -183.7   -3.7%       +1.2%
+Paris de valeur                     3689    28%   4.38   -327.2   -8.9%      +19.6%
+...
+```
+
+[`src/pl_predictor/betting.py`](src/pl_predictor/betting.py) rejoue des paris
+sur tous les matchs depuis 2013-14 :
+
+- **Nos prédictions de l'époque** : avant chaque journée (week-end ou milieu
+  de semaine), le prédicteur du site est réentraîné sur les seuls matchs
+  antérieurs, comme pour le bilan. Les prédictions des saisons passées sont
+  gardées dans `reports/betting_predictions.csv` et ne sont recalculées que si
+  le code du modèle change ; seule la saison en cours l'est à chaque mise à
+  jour.
+- **Les vraies cotes** : la moyenne des bookmakers relevée avant chaque match
+  par football-data.co.uk (`BbAv*` jusqu'en 2018-19, `Avg*` ensuite), pour le
+  résultat et pour plus/moins de 2,5 buts
+  ([`data/odds.py`](src/pl_predictor/data/odds.py)).
+- **Neuf stratégies fixées à l'avance**, même mise sur chaque pari : notre
+  favori, celui des bookmakers, nos favoris à plus de 60 %, les paris de
+  valeur (notre probabilité × la cote ≥ 1,05), plus/moins de 2,5 buts (selon
+  nous, puis en paris de valeur), et les combinés de nos 2, 3 et 4 plus gros
+  favoris de chaque journée.
+
+Le verdict : sur 4 990 matchs, **le marché prédit mieux que nous** (log loss
+0,959 contre 0,978), et il prélève en plus environ 4,6 % sur chaque match.
+Aucune stratégie n'est rentable sur la durée. Les paris de valeur, pour
+lesquels notre modèle promettait +19,6 %, perdent 8,9 % : quand notre modèle
+s'écarte beaucoup du marché, c'est le plus souvent lui qui se trompe.
+
+Le piège classique consiste à tester des dizaines de variantes et à garder la
+meilleure. Le rapport le mesure : la stratégie la plus rentable de 2013-14 à
+2019-20 (le combiné de 4 favoris, +5,7 %) fait −29,6 % de 2020-21 à 2025-26.
+
+La page **Paris** du site présente tout cela pour la mise de son choix : le
+gain ou la perte de chaque stratégie, sa courbe dans le temps, son résultat
+saison par saison, et les combinés de chaque journée de la saison en cours.
+
 ## Validation temporelle (pas de data leakage)
 
 Deux précautions structurent tout le projet :
@@ -676,6 +759,7 @@ premier-league-match-predictor/
 │   ├── data/
 │   │   ├── download.py         # téléchargement football-data.co.uk
 │   │   ├── load.py              # nettoyage + concaténation en une table de matchs
+│   │   ├── odds.py               # cotes des bookmakers (football-data.co.uk)
 │   │   ├── player_stats.py       # effectifs/stats joueurs via FBref (soccerdata)
 │   │   ├── match_players.py       # calendrier + feuilles de match FBref (buteurs, minutes)
 │   │   └── fixtures_api.py        # wrapper optionnel Premier-League-API (fixtures à venir)
@@ -696,12 +780,14 @@ premier-league-match-predictor/
 │   ├── season_awards.py           # Monte Carlo meilleur buteur / meilleur passeur
 │   ├── stats.py                   # statistiques réelles (classement, forme, leaders)
 │   ├── track_record.py            # bilan : prédictions reconstituées vs résultats
+│   ├── betting.py                 # stratégies de paris rejouées sur nos prédictions passées
+│   ├── refresh.py                 # le bouton "Mettre à jour" : téléchargements, recalculs, publication
 │   └── predict.py                 # API haut niveau utilisée par le dashboard/CLI/l'API
 ├── api/main.py                  # backend FastAPI (fine couche HTTP sur pl_predictor)
 ├── frontend/                    # front React/Vite
 │   ├── src/
-│   │   ├── pages/                 # MatchPage, StatsPage, SeasonPage, RecordPage, HowItWorksPage
-│   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, AwardTable, LeaderList, FormGuide, ...
+│   │   ├── pages/                 # MatchPage, StatsPage, SeasonPage, RecordPage, BettingPage, HowItWorksPage
+│   │   ├── components/            # TeamPicker, OutcomeBar, ScoreHeatmap, ProfitCurve, RefreshControl, ...
 │   │   ├── data/clubColors.ts      # couleurs (monogrammes de repli) + slugs des clubs
 │   │   └── api.ts                   # wrapper fetch typé vers l'API FastAPI
 │   └── public/crests/              # logos des clubs (Wikipedia, voir plus haut)
@@ -715,6 +801,8 @@ premier-league-match-predictor/
 │   ├── simulate_season.py          # titre / relégation + meilleur buteur / passeur
 │   ├── download_match_players.py   # feuilles de match FBref, en incrémental
 │   ├── build_track_record.py       # bilan de la saison -> reports/track_record.json
+│   ├── build_betting.py            # analyse des paris -> reports/betting.json
+│   ├── refresh_data.py             # toute la mise à jour en une commande (comme le bouton)
 │   ├── wait_for_server.py          # utilisé par run_app.bat
 │   └── predict_match.py
 ├── tests/                       # tests unitaires (Elo, Poisson, métriques, buteurs, simulation, trophées, stats)
@@ -724,7 +812,8 @@ premier-league-match-predictor/
 ## Sources de données
 
 - [football-data.co.uk](https://www.football-data.co.uk/englandm.php) — historique
-  des résultats de Premier League (utilisé pour l'entraînement et le backtest).
+  des résultats de Premier League (entraînement et backtest) et cotes des
+  bookmakers avant chaque match (analyse des paris).
 - [FBref](https://fbref.com/) (via [`soccerdata`](https://github.com/probberechts/soccerdata)) —
   effectifs et stats joueurs de la saison en cours (buts, minutes), utilisés
   pour le modèle de buteurs probables. Scraping fait à un rythme raisonnable
@@ -741,10 +830,17 @@ aux 20 équipes actuelles + buteurs probables (Phase 1), API FastAPI + front
 React avec vrais crests des clubs (Phase 2), simulation de saison, Poisson
 pondéré dans le temps et refonte du site (Phase 3), meilleur buteur/passeur,
 page de statistiques réelles et gestion des transferts (Phase 4), bilan de la
-saison sans fuite d'information (Phase 5).
+saison sans fuite d'information (Phase 5), mise à jour en un clic depuis le
+site et analyse des paris sportifs (Phase 6).
 
 **Prochain chantier possible** :
 
+- **Buteurs appris sur les saisons passées** : télécharger les feuilles de
+  match de quelques saisons (environ 6 heures de FBref par saison) et
+  entraîner un modèle « le joueur marque-t-il ? » (buts attendus de l'équipe,
+  part du joueur, poste, minutes récentes), validé comme le reste, saison par
+  saison. Les minutes récentes s'attaqueraient au principal défaut relevé par
+  le bilan : les joueurs listés qui ne jouent pas.
 - **Enrichissement des données joueurs** : intégrer Understat (xG par
   joueur/tir) pour affiner le modèle de buteurs au-delà du simple partage des
   buts de l'équipe selon `attack_share`.

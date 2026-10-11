@@ -186,6 +186,87 @@ export interface BacktestRow {
   n_seasons: string
 }
 
+export interface BettingSummary {
+  n_bets: number
+  n_won: number
+  hit_rate: number | null
+  avg_odds: number | null
+  avg_p: number | null
+  /** in stakes: +1 means one stake won overall */
+  profit: number
+  roi: number | null
+  /** what our own probabilities promised: mean of p x odds - 1 */
+  expected_roi: number | null
+  max_drawdown: number
+  longest_losing_streak: number
+}
+
+export interface BettingStrategy extends BettingSummary {
+  key: string
+  name: string
+  description: string
+  kind: 'single' | 'accumulator'
+  /** cumulative profit (in stakes) after each round: [last match date, profit] */
+  curve: [string, number][]
+  by_season: { season: number; n_bets: number; profit: number; roi: number }[]
+}
+
+export interface BettingPeriod {
+  label: 'history' | 'season'
+  first_season: number | null
+  last_season: number | null
+  n_matches: number
+  market: { n_matches: number; log_loss_model: number | null; log_loss_market: number | null; margin: number | null }
+  strategies: BettingStrategy[]
+}
+
+export interface BettingPick {
+  home_team: string
+  away_team: string
+  /** the team we pick, or "Nul" */
+  pick: string
+  p: number
+  odds: number
+  won: boolean
+  score: [number, number]
+}
+
+export interface BettingRound {
+  round_start: string
+  first_date: string
+  last_date: string
+  matchweek: number | null
+  /** every match's favourite, most confident first */
+  picks: BettingPick[]
+  combos: Record<string, { odds: number; p: number; won: boolean }>
+}
+
+export interface Betting {
+  season_start_year: number
+  value_edge: number
+  periods: { history: BettingPeriod; season: BettingPeriod }
+  honesty: {
+    first: [number, number]
+    second: [number, number]
+    best_first: string
+    strategies: { key: string; name: string; profit_first: number; roi_first: number | null; profit_second: number; roi_second: number | null }[]
+  } | null
+  value_edges: (BettingSummary & { edge: number })[]
+  rounds: BettingRound[]
+}
+
+export type RefreshStepStatus = 'pending' | 'running' | 'done' | 'failed' | 'skipped'
+
+export interface RefreshStatus {
+  state: 'idle' | 'running' | 'done' | 'error'
+  started_at?: string | null
+  finished_at?: string | null
+  publish?: boolean
+  steps: { key: string; label: string; status: RefreshStepStatus; detail: string; seconds: number | null }[]
+  new_results?: number | null
+  new_match_reports?: number | null
+}
+
 async function getJson<T>(url: string): Promise<T> {
   const res = await fetch(url)
   if (!res.ok) {
@@ -206,4 +287,14 @@ export const api = {
   getTrackRecord: () => getJson<Partial<TrackRecord>>('/api/track-record'),
   getMeta: () => getJson<Meta>('/api/meta'),
   getBacktestSummary: () => getJson<BacktestRow[]>('/api/backtest-summary'),
+  /** `{}` until scripts/build_betting.py has run - BettingPage handles that. */
+  getBetting: () => getJson<Partial<Betting>>('/api/betting'),
+  getRefresh: () => getJson<RefreshStatus>('/api/refresh'),
+  startRefresh: async (): Promise<RefreshStatus> => {
+    // The custom header is what the API checks to refuse requests from other sites.
+    const res = await fetch('/api/refresh', { method: 'POST', headers: { 'X-Requested-With': 'pl-predictor' } })
+    const body = await res.json().catch(() => ({}))
+    if (!res.ok) throw new Error(body.detail ?? `La mise à jour n'a pas pu démarrer (${res.status})`)
+    return body as RefreshStatus
+  },
 }

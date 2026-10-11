@@ -10,7 +10,7 @@ import { int, num2, pct } from '../format'
 const POSITION_FR: Record<string, string> = { FW: 'ATT', MF: 'MIL', DF: 'DÉF', GK: 'GB' }
 const positionLabel = (pos: string) => POSITION_FR[pos.split(',')[0]] ?? pos
 
-export function MatchPage({ teams }: { teams: string[] }) {
+export function MatchPage({ teams, dataVersion = 0 }: { teams: string[]; dataVersion?: number }) {
   const [home, setHome] = useState('Arsenal')
   const [away, setAway] = useState('Liverpool')
   const [prediction, setPrediction] = useState<Prediction | null>(null)
@@ -27,7 +27,8 @@ export function MatchPage({ teams }: { teams: string[] }) {
     setAway(a)
   }, [teams]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Predict as soon as the fixture changes: there's no button to press.
+  // Predict as soon as the fixture changes (there's no button to press), and
+  // again after a data refresh (dataVersion), which changes the models.
   useEffect(() => {
     if (!teams.includes(home) || !teams.includes(away) || home === away) return
     let cancelled = false
@@ -41,7 +42,7 @@ export function MatchPage({ teams }: { teams: string[] }) {
     return () => {
       cancelled = true
     }
-  }, [home, away, teams])
+  }, [home, away, teams, dataVersion])
 
   const swap = () => {
     setHome(away)

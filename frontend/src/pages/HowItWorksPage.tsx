@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { BacktestRow, Meta } from '../api'
+import type { BacktestRow, Betting, Meta } from '../api'
 import { Tex } from '../components/Tex'
 import { int, longDate, num2, pct } from '../format'
 
@@ -22,6 +22,7 @@ const SECTIONS = [
   ['trophees', 'Buteur et passeur'],
   ['validation', 'La validation'],
   ['bilan', 'Le bilan de la saison'],
+  ['paris', 'Les paris'],
   ['limites', 'Les limites'],
 ] as const
 
@@ -55,11 +56,20 @@ function useActiveSection(ids: readonly string[]) {
 
 const SECTION_IDS = SECTIONS.map(([id]) => id)
 
-export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest: BacktestRow[] }) {
+export function HowItWorksPage({
+  meta,
+  backtest,
+  betting,
+}: {
+  meta: Meta | null
+  backtest: BacktestRow[]
+  betting: Partial<Betting> | null
+}) {
   const rows = [...backtest].sort((a, b) => parseFloat(a.log_loss) - parseFloat(b.log_loss))
   const best = rows[0]
   const reference = rows.find((r) => r.model === 'naive_base_rate')
   const active = useActiveSection(SECTION_IDS)
+  const market = betting?.periods?.history.market
 
   return (
     <div className="page">
@@ -127,7 +137,11 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
               {meta?.players_snapshot_date && <> (relevé du {longDate(meta.players_snapshot_date)})</>}. Les vingt équipes
               proposées sont celles de la saison en cours, déduite de la date du jour.
             </p>
-            <p>Une tâche automatique met à jour le dépôt chaque mercredi soir : résultats, effectifs et backtest.</p>
+            <p>
+              Le bouton « Mettre à jour », en haut de chaque page, télécharge les nouveaux résultats et les feuilles de
+              match, recalcule tout, puis publie les données sur GitHub. Compter environ une minute par nouveau match :
+              FBref limite le rythme des téléchargements.
+            </p>
           </section>
 
           <section id="elo">
@@ -326,6 +340,44 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
             </p>
           </section>
 
+          <section id="paris">
+            <h2>Les paris</h2>
+            <p>
+              La page Paris rejoue des stratégies de paris sur toutes les saisons depuis 2013-14, avec nos prédictions de
+              l'époque et les vraies cotes. Comme pour le bilan, chaque journée est prédite par un modèle réentraîné sur
+              les seuls matchs précédents : rien de ce qui s'est passé ensuite ne peut s'y glisser.
+            </p>
+            <p>
+              Les cotes sont la moyenne des bookmakers relevée par football-data.co.uk avant chaque match. Une cote de 2,50
+              rend 2,50 fois la mise, mise comprise. Son inverse est la probabilité qu'affiche le bookmaker, et les trois
+              probabilités d'un match dépassent 100 % : l'excédent est sa marge
+              {market?.margin != null && <> ({pct(market.margin)} en moyenne)</>}.
+            </p>
+            <Tex display>{'P_{bookmaker} = \\frac{1}{\\text{cote}}, \\qquad \\text{marge} = \\frac{1}{c_{dom}} + \\frac{1}{c_{nul}} + \\frac{1}{c_{ext}} - 1'}</Tex>
+            <p>
+              Un pari est « de valeur » quand notre probabilité multipliée par la cote dépasse 1,05 : selon nos chiffres,
+              il rapporte plus qu'il ne coûte. Un combiné réunit plusieurs paris ; sa cote est le produit des cotes, et il
+              ne paie que si tout est gagné.
+            </p>
+            <Tex display>{'p \\times \\text{cote} \\geq 1{,}05, \\qquad \\text{cote}_{combiné} = \\prod_k \\text{cote}_k, \\qquad P_{combiné} = \\prod_k p_k'}</Tex>
+            <p>
+              Les neuf stratégies ont été fixées avant de regarder les résultats, avec la même mise sur chaque pari. Tester
+              des dizaines de variantes et garder la meilleure est le moyen le plus sûr de se tromper : avec assez
+              d'essais, l'une d'elles gagne par chance. La page Paris le montre en choisissant la meilleure stratégie sur la
+              première moitié des saisons, puis en la jouant sur la seconde.
+            </p>
+            {market?.log_loss_market != null && market.log_loss_model != null && (
+              <p>
+                Tout se joue sur une comparaison : sur les mêmes {int(market.n_matches)} matchs, les probabilités des
+                bookmakers, marge retirée, ont une log loss de {num2(market.log_loss_market)} contre{' '}
+                {num2(market.log_loss_model)} pour les nôtres.{' '}
+                {market.log_loss_market < market.log_loss_model
+                  ? "Le marché prédit mieux que nous, et il prélève sa marge en plus : aucune stratégie fondée sur nos probabilités ne peut gagner durablement."
+                  : "Notre modèle prédit mieux que le marché ; reste à battre sa marge, ce que la page Paris mesure stratégie par stratégie."}
+              </p>
+            )}
+          </section>
+
           <section id="limites">
             <h2>Les limites</h2>
             <ul className="limits">
@@ -343,7 +395,7 @@ export function HowItWorksPage({ meta, backtest }: { meta: Meta | null; backtest
                 Le modèle de buts traite les deux équipes comme indépendantes, ce qui sous-estime légèrement les petits
                 scores nuls (0-0, 1-1).
               </li>
-              <li>Un transfert n'apparaît qu'une fois répercuté par FBref, au rafraîchissement hebdomadaire suivant.</li>
+              <li>Un transfert n'apparaît qu'une fois répercuté par FBref, à la mise à jour suivante.</li>
             </ul>
           </section>
         </article>

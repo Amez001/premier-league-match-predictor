@@ -1,8 +1,19 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import './App.css'
-import { api, type Awards, type BacktestRow, type Meta, type SeasonSimulation, type Stats, type TrackRecord } from './api'
+import {
+  api,
+  type Awards,
+  type BacktestRow,
+  type Betting,
+  type Meta,
+  type SeasonSimulation,
+  type Stats,
+  type TrackRecord,
+} from './api'
+import { RefreshControl } from './components/RefreshControl'
 import { TooltipProvider } from './components/Tooltip'
 import { longDate, shortDate } from './format'
+import { BettingPage } from './pages/BettingPage'
 import { MatchPage } from './pages/MatchPage'
 import { RecordPage } from './pages/RecordPage'
 import { SeasonPage } from './pages/SeasonPage'
@@ -12,19 +23,20 @@ import { StatsPage } from './pages/StatsPage'
 // otherwise double the bundle for the Match and Season pages.
 const HowItWorksPage = lazy(() => import('./pages/HowItWorksPage').then((m) => ({ default: m.HowItWorksPage })))
 
-type Route = 'match' | 'stats' | 'saison' | 'bilan' | 'methode'
+type Route = 'match' | 'stats' | 'saison' | 'bilan' | 'paris' | 'methode'
 
 const NAV: { route: Route; label: string }[] = [
   { route: 'match', label: 'Match' },
   { route: 'stats', label: 'Stats' },
   { route: 'saison', label: 'Projections' },
   { route: 'bilan', label: 'Bilan' },
+  { route: 'paris', label: 'Paris' },
   { route: 'methode', label: 'Méthode' },
 ]
 
 function readRoute(): Route {
   const r = window.location.hash.replace(/^#\/?/, '').split('/')[0]
-  return r === 'stats' || r === 'saison' || r === 'bilan' || r === 'methode' ? r : 'match'
+  return r === 'stats' || r === 'saison' || r === 'bilan' || r === 'paris' || r === 'methode' ? r : 'match'
 }
 
 export default function App() {
@@ -36,6 +48,9 @@ export default function App() {
   const [record, setRecord] = useState<TrackRecord | null>(null)
   const [meta, setMeta] = useState<Meta | null>(null)
   const [backtest, setBacktest] = useState<BacktestRow[]>([])
+  const [betting, setBetting] = useState<Partial<Betting> | null>(null)
+  // bumped after a data refresh, so pages that fetch on their own (Match) fetch again
+  const [dataVersion, setDataVersion] = useState(0)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -47,8 +62,14 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  useEffect(() => {
-    api.getTeams().then(setTeams).catch((e: Error) => setError(e.message))
+  const loadAll = useCallback(() => {
+    api
+      .getTeams()
+      .then((t) => {
+        setTeams(t)
+        setError(null)
+      })
+      .catch((e: Error) => setError(e.message))
     api.getSeason().then(setSeason).catch(() => setSeason(null))
     api.getAwards().then(setAwards).catch(() => setAwards(null))
     api.getStats().then(setStats).catch(() => setStats(null))
@@ -58,7 +79,15 @@ export default function App() {
       .catch(() => setRecord(null))
     api.getMeta().then(setMeta).catch(() => setMeta(null))
     api.getBacktestSummary().then(setBacktest).catch(() => setBacktest([]))
+    api.getBetting().then(setBetting).catch(() => setBetting({}))
   }, [])
+
+  useEffect(loadAll, [loadAll])
+
+  const onRefreshed = useCallback(() => {
+    loadAll()
+    setDataVersion((v) => v + 1)
+  }, [loadAll])
 
   return (
     <TooltipProvider>
@@ -91,6 +120,7 @@ export default function App() {
                 {meta.season} <span className="data-stamp-sep">·</span> données au {shortDate(meta.last_match_date)}
               </span>
             )}
+            <RefreshControl meta={meta} onFinished={onRefreshed} />
           </div>
         </header>
 
@@ -100,13 +130,14 @@ export default function App() {
               Impossible de joindre l'API ({error}). Lance <code>uvicorn api.main:app --port 8000</code>.
             </p>
           )}
-          {route === 'match' && <MatchPage teams={teams} />}
+          {route === 'match' && <MatchPage teams={teams} dataVersion={dataVersion} />}
           {route === 'stats' && <StatsPage stats={stats} meta={meta} />}
           {route === 'saison' && <SeasonPage sim={season} awards={awards} />}
           {route === 'bilan' && <RecordPage record={record} />}
+          {route === 'paris' && <BettingPage betting={betting} />}
           {route === 'methode' && (
             <Suspense fallback={<p className="muted">Chargement…</p>}>
-              <HowItWorksPage meta={meta} backtest={backtest} />
+              <HowItWorksPage meta={meta} backtest={backtest} betting={betting} />
             </Suspense>
           )}
         </main>

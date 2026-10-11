@@ -8,12 +8,13 @@ Usage:
 """
 import argparse
 import logging
+import sys
 
 from pl_predictor.config import DATA_RAW_DIR, DEFAULT_END_YEAR, DEFAULT_START_YEAR
 from pl_predictor.data.download import download_all
 
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--start-year", type=int, default=DEFAULT_START_YEAR)
     parser.add_argument("--end-year", type=int, default=DEFAULT_END_YEAR)
@@ -25,7 +26,9 @@ def main():
     print(f"\nDownloaded/verified {len(saved)} season(s) into {DATA_RAW_DIR}")
     if not saved:
         print("No files saved - check your internet connection or try a narrower --start-year/--end-year range.")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

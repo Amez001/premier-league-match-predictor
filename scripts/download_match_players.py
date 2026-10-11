@@ -12,12 +12,13 @@ interrupt: progress is saved after every match.
 """
 import argparse
 import logging
+import sys
 
 from pl_predictor.config import DEFAULT_END_YEAR
 from pl_predictor.data.match_players import match_stats_path, update_match_players
 
 
-def main():
+def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--max-new", type=int, default=None)
     args = parser.parse_args()
@@ -30,12 +31,13 @@ def main():
         schedule, stats = update_match_players(DEFAULT_END_YEAR, max_new=args.max_new)
     except ImportError:
         print("The `soccerdata` package is not installed. Run `pip install soccerdata` first.")
-        return
+        return 1
 
     played = int(schedule["home_goals"].notna().sum())
     stored = stats["game_id"].nunique() if len(stats) else 0
     print(f"\n{stored}/{played} played matches stored in {match_stats_path(DEFAULT_END_YEAR)}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

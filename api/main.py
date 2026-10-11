@@ -17,7 +17,7 @@ import sys
 from contextlib import asynccontextmanager
 from pathlib import Path
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
@@ -30,6 +30,7 @@ from pl_predictor.data.load import load_clean_matches  # noqa: E402
 from pl_predictor.data.match_players import load_match_players, load_schedule  # noqa: E402
 from pl_predictor.data.player_stats import load_previous_season_totals  # noqa: E402
 from pl_predictor.predict import MatchPredictor  # noqa: E402
+from pl_predictor.refresh import RefreshManager  # noqa: E402
 from pl_predictor.season_awards import project_awards  # noqa: E402
 from pl_predictor.simulation import simulate_season  # noqa: E402
 from pl_predictor.stats import current_stats  # noqa: E402
@@ -41,6 +42,7 @@ FRONTEND_DIST = ROOT_DIR / "frontend" / "dist"
 _state: dict = {}
 
 TRACK_RECORD_PATH = REPORTS_DIR / "track_record.json"
+BETTING_PATH = REPORTS_DIR / "betting.json"
 
 
 def _load_track_record(matches) -> dict:
@@ -55,30 +57,53 @@ def _load_track_record(matches) -> dict:
     return build_track_record(matches, schedule, load_match_players(season), load_previous_season_totals(season))
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
+def _load_betting() -> dict:
+    """reports/betting.json (scripts/build_betting.py). Not computed here if
+    missing: rebuilding every season's predictions takes several minutes."""
+    return json.loads(BETTING_PATH.read_text(encoding="utf-8")) if BETTING_PATH.exists() else {}
+
+
+def _build_state() -> dict:
+    """Everything the endpoints serve, computed from the data on disk."""
     matches = load_clean_matches()
     predictor = MatchPredictor(matches)
-    _state["predictor"] = predictor
-    # ~0.25s for 10k seasons, so compute once at startup and serve from memory.
-    _state["season"] = simulate_season(matches, predictor.poisson_model).to_dict()
-    _state["awards"] = (
-        project_awards(matches, predictor.player_df, predictor.poisson_model, last_season=predictor.last_season)
-        if predictor.player_df is not None
-        else {"n_sims": 0, "top_scorer": [], "top_assister": []}
-    )
-    _state["stats"] = current_stats(matches, predictor.player_df)
-    _state["track_record"] = _load_track_record(matches)
-    _state["meta"] = {
-        "season": season_label(int(matches["season_start_year"].max())),
-        "last_match_date": matches["date"].max().date().isoformat(),
-        "n_matches_history": len(matches),
-        "first_season": season_label(int(matches["season_start_year"].min())),
-        "players_snapshot_date": (
-            str(predictor.player_df["snapshot_date"].iloc[0]) if predictor.player_df is not None else None
+    return {
+        "predictor": predictor,
+        # ~0.25s for 10k seasons, so compute once and serve from memory.
+        "season": simulate_season(matches, predictor.poisson_model).to_dict(),
+        "awards": (
+            project_awards(matches, predictor.player_df, predictor.poisson_model, last_season=predictor.last_season)
+            if predictor.player_df is not None
+            else {"n_sims": 0, "top_scorer": [], "top_assister": []}
         ),
+        "stats": current_stats(matches, predictor.player_df),
+        "track_record": _load_track_record(matches),
+        "betting": _load_betting(),
+        "meta": {
+            "season": season_label(int(matches["season_start_year"].max())),
+            "last_match_date": matches["date"].max().date().isoformat(),
+            "n_matches_history": len(matches),
+            "first_season": season_label(int(matches["season_start_year"].min())),
+            "players_snapshot_date": (
+                str(predictor.player_df["snapshot_date"].iloc[0]) if predictor.player_df is not None else None
+            ),
+        },
     }
+
+
+def _reload_state() -> None:
+    # One dict.update: requests in flight see either the old data or the new, never a mix.
+    _state.update(_build_state())
+
+
+refresh_manager = RefreshManager(reload=_reload_state)
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    _state.update(_build_state())
     yield
+    refresh_manager.cancel()
     _state.clear()
 
 
@@ -90,7 +115,7 @@ app = FastAPI(title="Premier League Match Predictor API", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -136,9 +161,38 @@ def track_record() -> dict:
     return _state["track_record"]
 
 
+@app.get("/api/betting")
+def betting() -> dict:
+    """Betting strategies replayed on our past predictions at real odds (see betting.py)."""
+    return _state["betting"]
+
+
 @app.get("/api/meta")
 def meta() -> dict:
     return _state["meta"]
+
+
+@app.get("/api/refresh")
+def refresh_status() -> dict:
+    """Progress of the data refresh started from the site (see refresh.py)."""
+    return refresh_manager.status()
+
+
+@app.post("/api/refresh", status_code=202)
+def start_refresh(request: Request, publish: bool = True) -> dict:
+    """Download the new data, rebuild everything, reload, then commit and push
+    the data (unless publish=false). Runs in the background: poll GET /api/refresh."""
+    # A page on another site can make the browser send a plain POST here, but
+    # not one with a custom header: that needs a CORS preflight, which only
+    # the Vite dev server's origin passes. So this header proves the request
+    # comes from our own frontend.
+    if request.headers.get("x-requested-with") != "pl-predictor":
+        raise HTTPException(status_code=403, detail="Missing X-Requested-With header.")
+    try:
+        refresh_manager.start(publish=publish)
+    except RuntimeError as exc:
+        raise HTTPException(status_code=409, detail="Une mise à jour est déjà en cours.") from exc
+    return refresh_manager.status()
 
 
 @app.get("/api/backtest-summary")
