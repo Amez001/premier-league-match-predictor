@@ -55,9 +55,9 @@ week,date,home_team,away_team,home_goals,away_goals,game_id
 6,2026-10-10,Ipswich,Fulham,2,1,1dd8f12c
 6,2026-10-10,Man United,Tottenham,1,1,1cdeb019
 6,2026-10-10,Sunderland,Brighton,0,2,f4e6859d
-6,2026-10-11,Crystal Palace,Nottm Forest,,,
-6,2026-10-11,Hull,Everton,,,
-6,2026-10-11,Liverpool,Man City,,,
+6,2026-10-11,Crystal Palace,Nottm Forest,3,1,05dae339
+6,2026-10-11,Hull,Everton,2,2,41028b90
+6,2026-10-11,Liverpool,Man City,0,3,84eb3e34
 6,2026-10-12,Coventry,Newcastle,,,
 7,2026-10-17,Brentford,Liverpool,,,
 7,2026-10-17,Everton,Chelsea,,,

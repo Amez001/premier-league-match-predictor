@@ -1,37 +1,37 @@
 {
  "season_start_year": 2026,
  "overall": {
-  "matches": 56,
+  "matches": 59,
   "outcome": {
-   "n": 56,
-   "hits": 26,
-   "expected": 29.730238057094873,
-   "expected_low": 25.10776280603122,
-   "expected_high": 34.35271330815853
+   "n": 59,
+   "hits": 28,
+   "expected": 30.996751461915387,
+   "expected_low": 26.24649417969582,
+   "expected_high": 35.74700874413495
   },
   "exact": {
-   "n": 56,
+   "n": 59,
    "hits": 6,
-   "expected": 6.518386558539294,
-   "expected_low": 3.4480447967532224,
-   "expected_high": 9.588728320325366
+   "expected": 6.898298218381168,
+   "expected_low": 3.7408293326618973,
+   "expected_high": 10.055767104100438
   },
   "scorer_favourite": {
-   "n": 92,
-   "hits": 18,
-   "expected": 25.430208681165137,
-   "expected_low": 20.056815988099817,
-   "expected_high": 30.803601374230457
+   "n": 98,
+   "hits": 21,
+   "expected": 27.21359634619764,
+   "expected_low": 21.66015436050555,
+   "expected_high": 32.76703833188973
   },
   "scorer_listed": {
-   "n": 276,
-   "hits": 47,
-   "expected": 60.160296632275326,
-   "expected_low": 51.56900158140457,
-   "expected_high": 68.75159168314607
+   "n": 294,
+   "hits": 52,
+   "expected": 63.92479960667884,
+   "expected_low": 55.0672779467569,
+   "expected_high": 72.78232126660077
   },
-  "log_loss": 1.0381290632452,
-  "log_loss_reference": 1.1123352363134658
+  "log_loss": 1.0374648504188413,
+  "log_loss_reference": 1.113364719647561
  },
  "weeks": [
   {
@@ -206,37 +206,37 @@
   },
   {
    "week": 6,
-   "matches": 6,
+   "matches": 9,
    "outcome": {
-    "n": 6,
-    "hits": 3,
-    "expected": 3.1697489101706737,
-    "expected_low": 1.6443495667009334,
-    "expected_high": 4.695148253640414
+    "n": 9,
+    "hits": 5,
+    "expected": 4.4362623149911915,
+    "expected_low": 2.5588944880478506,
+    "expected_high": 6.313630141934532
    },
    "exact": {
-    "n": 6,
+    "n": 9,
     "hits": 1,
-    "expected": 0.6906248111574947,
+    "expected": 1.0705364709993679,
     "expected_low": 0.0,
-    "expected_high": 1.6909337319993263
+    "expected_high": 2.3128042228280306
    },
    "scorer_favourite": {
-    "n": 12,
-    "hits": 1,
-    "expected": 3.5383182327150213,
-    "expected_low": 1.5454098715081797,
-    "expected_high": 5.531226593921863
+    "n": 18,
+    "hits": 4,
+    "expected": 5.321705897747524,
+    "expected_low": 2.884688747473844,
+    "expected_high": 7.758723048021205
    },
    "scorer_listed": {
-    "n": 36,
-    "hits": 4,
-    "expected": 8.491806197226774,
-    "expected_low": 5.3000342438593595,
-    "expected_high": 11.683578150594188
+    "n": 54,
+    "hits": 9,
+    "expected": 12.256309171630281,
+    "expected_low": 8.404978556482726,
+    "expected_high": 16.10763978677784
    },
-   "log_loss": 1.0074341697067906,
-   "log_loss_reference": 1.0598842713323082
+   "log_loss": 1.013311516802353,
+   "log_loss_reference": 1.0841167615162068
   }
  ],
  "matches": [
@@ -4045,6 +4045,253 @@
     {
      "team": "Brighton",
      "player": "Maxim De Cuyper",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "date": "2026-10-11",
+   "home_team": "Crystal Palace",
+   "away_team": "Nottm Forest",
+   "home_goals": 3,
+   "away_goals": 1,
+   "p_home": 0.42242505516413836,
+   "p_draw": 0.27501835657484514,
+   "p_away": 0.3025565882610166,
+   "favourite": "H",
+   "p_favourite": 0.42242505516413836,
+   "actual": "H",
+   "p_actual": 0.42242505516413836,
+   "p_reference": 0.45668016194331984,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.12847729561287005,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2716212348701332,
+    1.2173548031049188
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Tyrick Mitchell",
+     "probability": 0.207599977746727,
+     "scored": false
+    },
+    {
+     "player": "Anan Khalaili",
+     "probability": 0.18606342678129162,
+     "scored": false
+    },
+    {
+     "player": "Jørgen Strand Larsen",
+     "probability": 0.179216394458248,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Morgan Gibbs-White",
+     "probability": 0.27452582460720265,
+     "scored": false
+    },
+    {
+     "player": "Igor Jesus",
+     "probability": 0.1683027159479643,
+     "scored": false
+    },
+    {
+     "player": "Liam Delap",
+     "probability": 0.15050649534412486,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Crystal Palace",
+     "player": "Daichi Kamada",
+     "goals": 1
+    },
+    {
+     "team": "Crystal Palace",
+     "player": "Jefferson Lerma",
+     "goals": 1
+    },
+    {
+     "team": "Crystal Palace",
+     "player": "Yéremy Pino",
+     "goals": 1
+    },
+    {
+     "team": "Nottm Forest",
+     "player": "Dan Ndoye",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "date": "2026-10-11",
+   "home_team": "Hull",
+   "away_team": "Everton",
+   "home_goals": 2,
+   "away_goals": 2,
+   "p_home": 0.2854146247666097,
+   "p_draw": 0.27216838167008167,
+   "p_away": 0.44241699356330866,
+   "favourite": "A",
+   "p_favourite": 0.44241699356330866,
+   "actual": "D",
+   "p_actual": 0.27216838167008167,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    0
+   ],
+   "p_predicted_score": 0.14321021592621838,
+   "exact_hit": false,
+   "expected_goals": [
+    1.2307090049583098,
+    0.9203231118845796
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Bachir Belloumi",
+     "probability": 0.2211482407979395,
+     "scored": true
+    },
+    {
+     "player": "Oliver McBurnie",
+     "probability": 0.14951323295301466,
+     "scored": false
+    },
+    {
+     "player": "Mohamed Ali Cho",
+     "probability": 0.10635978548560998,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Thierno Barry",
+     "probability": 0.22864843313133743,
+     "scored": true
+    },
+    {
+     "player": "Kiernan Dewsbury-Hall",
+     "probability": 0.15010736492259813,
+     "scored": true
+    },
+    {
+     "player": "Tyrique George",
+     "probability": 0.09330232778055769,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Everton",
+     "player": "Kiernan Dewsbury-Hall",
+     "goals": 1
+    },
+    {
+     "team": "Everton",
+     "player": "Thierno Barry",
+     "goals": 1
+    },
+    {
+     "team": "Hull",
+     "player": "Bachir Belloumi",
+     "goals": 1
+    },
+    {
+     "team": "Hull",
+     "player": "Joe Gelhardt",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "date": "2026-10-11",
+   "home_team": "Liverpool",
+   "away_team": "Man City",
+   "home_goals": 0,
+   "away_goals": 3,
+   "p_home": 0.32237453200917476,
+   "p_draw": 0.27595411189775493,
+   "p_away": 0.40167135609307036,
+   "favourite": "A",
+   "p_favourite": 0.40167135609307036,
+   "actual": "A",
+   "p_actual": 0.40167135609307036,
+   "p_reference": 0.2952429149797571,
+   "outcome_hit": true,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.10822414830278458,
+   "exact_hit": false,
+   "expected_goals": [
+    1.4442016541923781,
+    1.6440972015184527
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Alexander Isak",
+     "probability": 0.41063793813570193,
+     "scored": false
+    },
+    {
+     "player": "Cody Gakpo",
+     "probability": 0.167471717616686,
+     "scored": false
+    },
+    {
+     "player": "Dominik Szoboszlai",
+     "probability": 0.16167547129604165,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Erling Haaland",
+     "probability": 0.4408272506135946,
+     "scored": true
+    },
+    {
+     "player": "Antoine Semenyo",
+     "probability": 0.23699670398885664,
+     "scored": false
+    },
+    {
+     "player": "Rayan Cherki",
+     "probability": 0.23159967279601068,
+     "scored": true
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Man City",
+     "player": "Erling Haaland",
+     "goals": 1
+    },
+    {
+     "team": "Man City",
+     "player": "Jeremy Doku",
+     "goals": 1
+    },
+    {
+     "team": "Man City",
+     "player": "Rayan Cherki",
      "goals": 1
     }
    ]
