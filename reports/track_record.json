@@ -1,37 +1,37 @@
 {
  "season_start_year": 2026,
  "overall": {
-  "matches": 70,
+  "matches": 71,
   "outcome": {
-   "n": 70,
+   "n": 71,
    "hits": 34,
-   "expected": 36.829096524230934,
-   "expected_low": 31.6585966268282,
-   "expected_high": 41.99959642163367
+   "expected": 37.29607331328684,
+   "expected_low": 32.08628613330938,
+   "expected_high": 42.5058604932643
   },
   "exact": {
-   "n": 70,
-   "hits": 8,
-   "expected": 8.179793661980991,
-   "expected_low": 4.74130075007985,
-   "expected_high": 11.618286573882132
+   "n": 71,
+   "hits": 9,
+   "expected": 8.293428048025872,
+   "expected_low": 4.831021977838019,
+   "expected_high": 11.755834118213723
   },
   "scorer_favourite": {
-   "n": 120,
+   "n": 122,
    "hits": 28,
-   "expected": 33.26343136072543,
-   "expected_low": 27.131755221472062,
-   "expected_high": 39.39510749997879
+   "expected": 33.760311388307805,
+   "expected_low": 27.57960735867463,
+   "expected_high": 39.94101541794098
   },
   "scorer_listed": {
-   "n": 360,
+   "n": 366,
    "hits": 61,
-   "expected": 78.01737319300238,
-   "expected_low": 68.23717765848012,
-   "expected_high": 87.79756872752465
+   "expected": 79.25572460372962,
+   "expected_low": 69.39512383192069,
+   "expected_high": 89.11632537553855
   },
-  "log_loss": 1.0046096635229567,
-  "log_loss_reference": 1.0952142019328681
+  "log_loss": 1.0089678660020778,
+  "log_loss_reference": 1.0994226836973884
  },
  "weeks": [
   {
@@ -271,6 +271,40 @@
    },
    "log_loss": 0.7540939270670914,
    "log_loss_reference": 1.0192703678530664
+  },
+  {
+   "week": 8,
+   "matches": 1,
+   "outcome": {
+    "n": 1,
+    "hits": 0,
+    "expected": 0.4669767890559078,
+    "expected_low": 0.0,
+    "expected_high": 1.1055793819223967
+   },
+   "exact": {
+    "n": 1,
+    "hits": 1,
+    "expected": 0.11363438604488076,
+    "expected_low": 0.0,
+    "expected_high": 0.5198637420487182
+   },
+   "scorer_favourite": {
+    "n": 2,
+    "hits": 0,
+    "expected": 0.49688002758237926,
+    "expected_low": 0.0,
+    "expected_high": 1.273829205608048
+   },
+   "scorer_listed": {
+    "n": 6,
+    "hits": 0,
+    "expected": 1.238351410727223,
+    "expected_low": 0.0,
+    "expected_high": 2.495022762954939
+   },
+   "log_loss": 1.3140420395405552,
+   "log_loss_reference": 1.3940164072138008
   }
  ],
  "matches": [
@@ -5170,6 +5204,80 @@
     {
      "team": "Tottenham",
      "player": "Omar Marmoush",
+     "goals": 1
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "date": "2026-10-23",
+   "home_team": "Ipswich",
+   "away_team": "Nottm Forest",
+   "home_goals": 1,
+   "away_goals": 1,
+   "p_home": 0.2642915766916054,
+   "p_draw": 0.26873163425248664,
+   "p_away": 0.4669767890559078,
+   "favourite": "A",
+   "p_favourite": 0.4669767890559078,
+   "actual": "D",
+   "p_actual": 0.26873163425248664,
+   "p_reference": 0.24807692307692308,
+   "outcome_hit": false,
+   "predicted_score": [
+    1,
+    1
+   ],
+   "p_predicted_score": 0.11363438604488076,
+   "exact_hit": true,
+   "expected_goals": [
+    1.3071262000361072,
+    1.614497957582811
+   ],
+   "scorers_known": true,
+   "scorers_home": [
+    {
+     "player": "Emersonn",
+     "probability": 0.19845796415312156,
+     "scored": false
+    },
+    {
+     "player": "Zian Flemming",
+     "probability": 0.1483356636360108,
+     "scored": false
+    },
+    {
+     "player": "Leif Davis",
+     "probability": 0.14276354535344604,
+     "scored": false
+    }
+   ],
+   "scorers_away": [
+    {
+     "player": "Morgan Gibbs-White",
+     "probability": 0.2984220634292577,
+     "scored": false
+    },
+    {
+     "player": "Dan Ndoye",
+     "probability": 0.2585516060134839,
+     "scored": false
+    },
+    {
+     "player": "Liam Delap",
+     "probability": 0.19182056814190307,
+     "scored": false
+    }
+   ],
+   "actual_scorers": [
+    {
+     "team": "Ipswich",
+     "player": "Julio Enciso",
+     "goals": 1
+    },
+    {
+     "team": "Nottm Forest",
+     "player": "Neco Williams",
      "goals": 1
     }
    ]
