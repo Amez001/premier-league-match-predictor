@@ -70,35 +70,35 @@ week,date,home_team,away_team,home_goals,away_goals,game_id
 7,2026-10-18,Nottm Forest,Arsenal,0,1,8497abb8
 7,2026-10-19,Tottenham,Coventry,3,1,ab141f39
 8,2026-10-23,Ipswich,Nottm Forest,1,1,03d6b216
-8,2026-10-24,Arsenal,Everton,,,
-8,2026-10-24,Aston Villa,Man City,,,
-8,2026-10-24,Chelsea,Tottenham,,,
-8,2026-10-24,Coventry,Fulham,,,
-8,2026-10-25,Crystal Palace,Newcastle,,,
-8,2026-10-25,Hull,Brentford,,,
-8,2026-10-25,Liverpool,Brighton,,,
-8,2026-10-25,Man United,Bournemouth,,,
-8,2026-10-25,Sunderland,Leeds,,,
-9,2026-10-31,Aston Villa,Fulham,,,
-9,2026-10-31,Bournemouth,Leeds,,,
-9,2026-10-31,Brentford,Nottm Forest,,,
-9,2026-10-31,Chelsea,Man United,,,
-9,2026-10-31,Coventry,Sunderland,,,
-9,2026-10-31,Hull,Ipswich,,,
-9,2026-10-31,Man City,Brighton,,,
-9,2026-10-31,Tottenham,Crystal Palace,,,
-9,2026-11-01,Liverpool,Arsenal,,,
-9,2026-11-02,Newcastle,Everton,,,
-10,2026-11-06,Everton,Coventry,,,
-10,2026-11-07,Arsenal,Hull,,,
-10,2026-11-07,Fulham,Newcastle,,,
-10,2026-11-07,Leeds,Tottenham,,,
-10,2026-11-07,Nottm Forest,Man City,,,
-10,2026-11-08,Brighton,Brentford,,,
-10,2026-11-08,Crystal Palace,Liverpool,,,
-10,2026-11-08,Ipswich,Bournemouth,,,
-10,2026-11-08,Man United,Aston Villa,,,
-10,2026-11-08,Sunderland,Chelsea,,,
+8,2026-10-24,Arsenal,Everton,2,0,12e5a4e8
+8,2026-10-24,Aston Villa,Man City,2,1,ddc8005f
+8,2026-10-24,Chelsea,Tottenham,0,2,7b50a001
+8,2026-10-24,Coventry,Fulham,0,1,02120444
+8,2026-10-25,Crystal Palace,Newcastle,0,2,6b143169
+8,2026-10-25,Hull,Brentford,1,1,a318e5b0
+8,2026-10-25,Liverpool,Brighton,2,0,ad6fe5de
+8,2026-10-25,Man United,Bournemouth,0,3,c5e7913c
+8,2026-10-25,Sunderland,Leeds,0,0,f9cd69ce
+9,2026-10-31,Aston Villa,Fulham,1,1,b42a6e10
+9,2026-10-31,Bournemouth,Leeds,2,0,52440342
+9,2026-10-31,Brentford,Nottm Forest,2,0,a84caf48
+9,2026-10-31,Chelsea,Man United,2,0,49be7026
+9,2026-10-31,Coventry,Sunderland,3,1,4c65c81c
+9,2026-10-31,Hull,Ipswich,2,2,ffb1b4ba
+9,2026-10-31,Man City,Brighton,0,1,b8fd91c9
+9,2026-10-31,Tottenham,Crystal Palace,2,0,61a24a9a
+9,2026-11-01,Liverpool,Arsenal,0,1,aae8a9c7
+9,2026-11-02,Newcastle,Everton,0,1,257be233
+10,2026-11-06,Everton,Coventry,3,1,080a55de
+10,2026-11-07,Arsenal,Hull,1,0,5ac6806a
+10,2026-11-07,Fulham,Newcastle,1,1,554fda69
+10,2026-11-07,Leeds,Tottenham,1,0,9b678d1b
+10,2026-11-07,Nottm Forest,Man City,3,1,fe16ee43
+10,2026-11-08,Brighton,Brentford,2,0,0291679b
+10,2026-11-08,Crystal Palace,Liverpool,1,3,fef2fa22
+10,2026-11-08,Ipswich,Bournemouth,1,2,d2b7525d
+10,2026-11-08,Man United,Aston Villa,4,4,6aeb3583
+10,2026-11-08,Sunderland,Chelsea,1,0,42da49e4
 11,2026-11-21,Aston Villa,Sunderland,,,
 11,2026-11-21,Bournemouth,Nottm Forest,,,
 11,2026-11-21,Chelsea,Leeds,,,
@@ -154,9 +154,9 @@ week,date,home_team,away_team,home_goals,away_goals,game_id
 16,2026-12-19,Leeds,Fulham,,,
 16,2026-12-19,Liverpool,Tottenham,,,
 16,2026-12-19,Man City,Hull,,,
-16,2026-12-19,Nottm Forest,Everton,,,
 16,2026-12-20,Arsenal,Man United,,,
 16,2026-12-20,Brighton,Ipswich,,,
+16,2026-12-20,Nottm Forest,Everton,,,
 16,2026-12-20,Sunderland,Crystal Palace,,,
 16,2026-12-21,Chelsea,Aston Villa,,,
 17,2026-12-26,Aston Villa,Leeds,,,
